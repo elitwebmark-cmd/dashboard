@@ -76,6 +76,14 @@ table tr.total td{background:#000;color:#fff;font-weight:800;border-bottom:0;}
 table.summary{min-width:1000px;}
 footer.foot{margin-top:36px;padding:16px 0;border-top:1px solid #DCDCDC;color:#5A5A5A;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 @media(max-width:780px){.wrap{padding:14px;}header{padding:24px 18px;}header h1{font-size:22px;}.cmp-grid{grid-template-columns:1fr;}.cards{grid-template-columns:1fr 1fr;}}
+
+.fallback-nav{background:#FFF6CC;border:2px solid #FE391F;padding:14px 18px;margin:0 0 18px 0;}
+.fallback-nav h4{font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#7A5C00;font-weight:800;}
+.fallback-nav .nav-links{display:flex;gap:8px;flex-wrap:wrap;}
+.fallback-nav a{display:inline-block;padding:6px 12px;background:#000;color:#fff;text-decoration:none;font-weight:700;font-size:11px;border:1px solid #000;}
+.fallback-nav a:hover{background:#FE391F;border-color:#FE391F;}
+.fallback-nav a.month{background:#FE391F;border-color:#FE391F;}
+
 </style>
 </head>
 <body>
@@ -85,6 +93,19 @@ footer.foot{margin-top:36px;padding:16px 0;border-top:1px solid #DCDCDC;color:#5
     <h1><span class="accent">Маркетинг</span> · усі звіти в одному місці</h1>
     <div class="sub">Швидкий перехід до місячного або тижневого звіту + порівняння періодів. Дані: HubSpot, Meta Ads, Google Ads, GA4, GSC (Windsor.ai). Курс $1 = 44 ₴.</div>
   </header>
+  <div class="fallback-nav">
+    <h4>⚡ Швидка навігація (резервна, не залежить від JS)</h4>
+    <div class="nav-links">
+      <a class="month" href="dashboard_may_apr.html">📊 Травень 2026 (місяць)</a>
+      <a href="dashboard_1_4may.html">Тиждень 1–4 травня</a>
+      <a href="dashboard_5_11may.html">Тиждень 5–11 травня</a>
+      <a href="dashboard_12_18may.html">Тиждень 12–18 травня</a>
+      <a href="dashboard_19_25may.html">Тиждень 19–25 травня</a>
+      <a href="dashboard_26may_1jun.html">Тиждень 26.05–01.06</a>
+      <a href="dashboard_2_8jun.html">Тиждень 2–8 червня</a>
+    </div>
+  </div>
+
 
   <section class="section">
     <div class="sec-head"><span class="num">01<span>/</span></span><h2>Перейти до звіту</h2><span class="sub">оберіть місяць і звіт</span></div>
@@ -356,10 +377,22 @@ function refreshSummary() {
 }
 
 // === Init ===
-pickMonth.value = "jun2026";
-refreshReportSelect();
-refreshCompareSelects();
-renderCompare();
+try {
+  pickMonth.value = "jun2026";
+  refreshReportSelect();
+  refreshCompareSelects();
+  renderCompare();
+} catch(e) {
+  console.error("Hub init failed:", e);
+  // Show fallback message if dynamic parts failed
+  const fb = document.querySelector(".fallback-nav");
+  if(fb){
+    const note = document.createElement("div");
+    note.style.cssText = "margin-top:8px;font-size:11px;color:#9F2D26;font-weight:700;";
+    note.textContent = "⚠ JS init помилка: " + e.message + ". Використай лінки вище.";
+    fb.appendChild(note);
+  }
+}
 </script>
 </body>
 </html>
