@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>elit-web · Маркетинг 12–18 травня 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root { --ew-red:#FE391F; --ew-black:#000; --ew-grey:#EDEDED; --ew-grey-text:#5A5A5A; --ew-white:#FFF; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;font-family:'Mulish',sans-serif;color:#000;background:#fafafa;}
+.hero{background:#000;color:#fff;padding:48px 56px 0;}
+.brand-row{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;opacity:0.7;margin-bottom:12px;}
+.brand-row .dot{width:6px;height:6px;background:var(--ew-red);display:inline-block;}
+.hero h1{font-size:52px;font-weight:900;line-height:1.0;margin:4px 0 18px;letter-spacing:-0.02em;text-transform:uppercase;}
+.hero h1 .accent{color:var(--ew-red);}
+.tabs{display:flex;flex-wrap:wrap;gap:0;margin-top:24px;padding-top:18px;}
+.tab-btn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.2);border-bottom:0;padding:12px 22px;font:inherit;font-weight:800;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;margin-right:-1px;}
+.tab-btn:hover{background:rgba(255,255,255,0.06);}
+.tab-btn.active{background:var(--ew-grey);color:#000;border-color:var(--ew-grey);position:relative;z-index:2;}
+.tab-btn .sub{font-size:10px;font-weight:600;opacity:0.7;display:block;margin-top:2px;}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+@media (max-width:760px){.hero,.body{padding-left:18px;padding-right:18px;}.hero h1{font-size:32px;}.tab-btn{padding:10px 14px;font-size:11px;}}
+.body{padding:40px 56px 64px;max-width:1400px;margin:0 auto;}
+.section{margin-bottom:44px;}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:22px;padding-bottom:10px;border-bottom:1px solid #000;}
+.sec-head .num{font-weight:900;font-size:14px;letter-spacing:0.12em;}
+.sec-head .num .slash{color:var(--ew-red);}
+.sec-head h2{margin:0;font-size:26px;font-weight:900;}
+.sec-head .sub{margin-left:auto;font-size:12px;color:var(--ew-grey-text);}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.kpi{background:#fff;border:1px solid #000;padding:22px 20px;}
+.kpi.accent{background:var(--ew-red);color:#fff;border-color:var(--ew-red);}
+.kpi.dark{background:#000;color:#fff;border-color:#000;}
+.kpi .lbl{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.7;font-weight:700;}
+.kpi .val{font-size:38px;font-weight:900;margin:6px 0 4px;line-height:1;}
+.kpi .sub{font-size:11px;opacity:0.8;font-weight:600;line-height:1.4;}
+.delta{display:inline-block;font-weight:800;padding:1px 6px;font-size:10px;}
+.delta.up{background:#0F6E56;color:#fff;}
+.delta.down{background:var(--ew-red);color:#fff;}
+.delta.flat{background:#999;color:#fff;}
+.card{background:#fff;border:1px solid #000;padding:22px;}
+.card.dark{background:#000;color:#fff;}
+.card.red{background:var(--ew-red);color:#fff;}
+.card h3{margin:0 0 14px;font-size:14px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.row.r3{grid-template-columns:1fr 1fr 1fr;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{text-align:left;font-weight:800;padding:9px 8px;background:var(--ew-grey);border-bottom:2px solid #000;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;}
+th.num,td.num{text-align:right;}
+td{padding:8px 8px;border-bottom:1px solid #DCDCDC;vertical-align:top;}
+tr:last-child td{border-bottom:0;}
+tbody tr:hover{background:#F8F8F8;}
+.tag{font-size:10px;font-weight:800;padding:2px 6px;letter-spacing:0.04em;text-transform:uppercase;display:inline-block;}
+.tag.good{background:#0F6E56;color:#fff;}
+.tag.warn{background:#FFD700;color:#000;}
+.tag.red{background:var(--ew-red);color:#fff;}
+.tag.black{background:#000;color:#fff;}
+.tag.notmql{background:#fff;color:var(--ew-red);border:1px solid var(--ew-red);}
+.tag.mql{background:#0F6E56;color:#fff;}
+.tag.lost{background:#000;color:#fff;}
+.tag.won{background:#0F6E56;color:#fff;}
+.tag.progress{background:var(--ew-red);color:#fff;}
+.tag.cold{background:#FE9379;color:#fff;}
+.tag.warm{background:#FE6647;color:#fff;}
+.tag.hot{background:#C42814;color:#fff;}
+.tag.np{background:#fff;color:#5A5A5A;border:1px solid #5A5A5A;}
+.tag.blog{background:#5A5A5A;color:#fff;}
+.tag.com{background:#000;color:#fff;}
+.chart-wrap{position:relative;height:320px;}
+.note{font-size:11px;color:var(--ew-grey-text);margin-top:12px;font-style:italic;}
+.bigflag{background:var(--ew-red);color:#fff;padding:18px 22px;margin:16px 0;font-weight:800;font-size:15px;}
+.bigflag .icon{font-weight:900;font-size:18px;margin-right:8px;}
+.metric-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #DCDCDC;}
+.metric-row:last-child{border-bottom:0;}
+.metric-row .lbl{font-size:12px;color:var(--ew-grey-text);}
+.metric-row .val{font-weight:800;font-size:14px;}
+.foot{display:flex;align-items:center;justify-content:space-between;padding:32px 56px;background:#000;color:#fff;}
+.foot .chev{color:var(--ew-red);font-weight:900;}
+.insights{list-style:none;padding:0;margin:0;}
+.insights li{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:13.5px;line-height:1.5;}
+.insights li:last-child{border-bottom:0;}
+.insights .marker{color:var(--ew-red);font-weight:900;flex-shrink:0;}
+.full-table{font-size:12px;}
+.full-table th{font-size:10px;}
+.full-table td{padding:6px 6px;}
+.deal-name{font-family:monospace;font-size:11.5px;color:#000;}
+.page-url{font-family:monospace;font-size:11.5px;color:#000;word-break:break-all;}
+@media (max-width:980px){.kpi-grid{grid-template-columns:repeat(2,1fr);}.row,.row.r3{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<style>
+#report-nav-btn{position:fixed;top:18px;right:18px;z-index:99999;font-family:'Mulish','Inter',sans-serif;}
+#report-nav-btn>button{background:#000;color:#fff;border:2px solid #FE391F;padding:9px 16px;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;border-radius:0;}
+#report-nav-btn>button:hover{background:#FE391F;}
+#report-nav-menu{display:none;position:absolute;right:0;top:46px;background:#fff;border:2px solid #000;min-width:300px;box-shadow:0 12px 32px rgba(0,0,0,0.18);max-height:80vh;overflow-y:auto;}
+#report-nav-menu.open{display:block;}
+#report-nav-menu a{display:block;padding:10px 14px;text-decoration:none;color:#000;font-size:12px;font-weight:700;border-bottom:1px solid #EDEDED;transition:all 0.1s;}
+#report-nav-menu a:hover{background:#FE391F;color:#fff;}
+#report-nav-menu a.hub{background:#000;color:#fff;font-weight:800;}
+#report-nav-menu a.hub:hover{background:#FE391F;}
+#report-nav-menu .grp{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#5A5A5A;padding:10px 14px 4px;font-weight:800;background:#F8F8F8;}
+#report-nav-menu small{display:block;color:#5A5A5A;font-weight:500;font-size:10px;margin-top:2px;}
+</style>
+<div id="report-nav-btn">
+  <button onclick="document.getElementById('report-nav-menu').classList.toggle('open')">📋 Інші звіти ▾</button>
+  <div id="report-nav-menu">
+    <a href="dashboard_consolidated.html" class="hub">🏠 Хаб (усі звіти)</a>
+    <div class="grp">Місяці</div>
+    <a href="dashboard_may_apr.html">📊 Травень 2026 <small>vs Квітень · 249 лідів · 48 SQL</small></a>
+    <div class="grp">Тижні травня</div>
+    <a href="dashboard_1_4may.html">Тиждень 1 · 1–4.05 <small>4 дні · 31 лід · 7 SQL</small></a>
+    <a href="dashboard_5_11may.html">Тиждень 2 · 5–11.05 <small>67 лідів · 10 SQL</small></a>
+    <a href="dashboard_12_18may.html">Тиждень 3 · 12–18.05 <small>46 лідів · 5 SQL</small></a>
+    <a href="dashboard_19_25may.html">Тиждень 4 · 19–25.05 <small>56 лідів · 15 SQL</small></a>
+    <a href="dashboard_26may_1jun.html">Тиждень 5 · 26.05–01.06 <small>66 лідів · 12 SQL</small></a>
+  </div>
+</div>
+<script>
+document.addEventListener('click', e => {
+  const btn = document.getElementById('report-nav-btn');
+  if (btn && !btn.contains(e.target)) document.getElementById('report-nav-menu').classList.remove('open');
+});
+</script>
+
+
+<header class="hero">
+  <div class="brand-row"><span class="dot"></span><span>elit-web · комплексний дешборд</span><span class="dot"></span><span>12 – 18 травня 2026 · vs 5–11 травня</span></div>
+  <h1>Тиждень · <span class="accent">маркетинг-зріз</span></h1>
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="general">Загальний <span class="sub">12–18.05</span></button>
+    <button class="tab-btn" data-tab="meta">Meta Ads <span class="sub">ABO|SEO</span></button>
+    <button class="tab-btn" data-tab="seo">SEO / Organic <span class="sub">12–18.05</span></button>
+    <button class="tab-btn" data-tab="drp">DRP <span class="sub">12–18.05</span></button>
+  </nav>
+</header>
+
+<div class="body">
+
+<!-- ============ GENERAL ============ -->
+<div class="tab-content active" id="tab-general">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Огляд тижня · 12–18 травня</h2><span class="sub">elit-web UA + DRP · vs 5–11.05</span></div>
+    <div class="kpi-grid" id="gen-kpi"></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Виконання плану</h2><span class="sub">тижневі цілі по каналах</span></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Канал</th><th class="num">План</th><th class="num">Факт</th><th class="num">%</th><th>Прогрес</th><th>Статус</th></tr></thead>
+        <tbody id="gen-plan"></tbody>
+        <tfoot><tr><td><b>Усього план</b></td><td class="num" id="gen-plan-tot"></td><td class="num" id="gen-plan-fact"></td><td class="num" id="gen-plan-pct"></td><td></td><td></td></tr></tfoot>
+      </table>
+      <div class="note">Плани: Target 22 · DRP 15 · Cold Email 10 · SEO 10. Івент-канали (FMCG Expo, New Makers, SMM) — поза планом.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>WoW порівняння</h2><span class="sub">12–18.05 vs 5–11.05</span></div>
+    <div class="row">
+      <div class="card"><h3>Ліди по каналам</h3><div class="chart-wrap"><canvas id="gen-wow-chart"></canvas></div></div>
+      <div class="card"><h3>Ключові показники</h3><table><thead><tr><th>Показник</th><th class="num">12–18.05</th><th class="num">5–11.05</th><th class="num">Δ</th></tr></thead><tbody id="gen-wow-table"></tbody></table></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Канали лідів</h2><span class="sub">обсяг та якість</span></div>
+    <div class="card">
+      <div style="overflow-x:auto;">
+      <table><thead><tr><th>Канал</th><th class="num">Ліди</th><th class="num">vs прев</th><th class="num">MQL</th><th class="num">SQL</th><th class="num">% MQL</th><th class="num">% SQL</th><th>Якість</th></tr></thead>
+      <tbody id="gen-channels"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">04<span class="slash">/</span></span><h2>Стадії заявок</h2><span class="sub">розподіл 46 угод vs 67 угод</span></div>
+    <div class="row">
+      <div class="card"><h3>12–18.05 · 46 угод</h3><div class="chart-wrap" style="height:280px;"><canvas id="gen-stages-cur"></canvas></div></div>
+      <div class="card"><h3>5–11.05 · 67 угод</h3><div class="chart-wrap" style="height:280px;"><canvas id="gen-stages-prev"></canvas></div></div>
+    </div>
+    <div class="card" style="margin-top:18px;">
+      <h3>Порівняння стадій</h3>
+      <table><thead><tr><th>Стадія</th><th class="num">12–18.05</th><th class="num">5–11.05</th><th>Категорія</th></tr></thead>
+      <tbody id="gen-stages-table"></tbody></table>
+      <div class="note">У 12-18 травня 48% угод (22) на стадії «Взято в работу» — це нормально для свіжих лідів. Lost лише 4 угоди (vs 38 минулого тижня) — багато ще «у роботі», результат буде через 2-3 тижні.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">05<span class="slash">/</span></span><h2>Повна матриця 46 лідів</h2><span class="sub">усі назви, джерела, стадії</span></div>
+    <div class="card">
+      <div style="overflow-x:auto;">
+      <table class="full-table"><thead><tr><th>#</th><th>Дата</th><th>Назва</th><th>Канал</th><th>Стадія</th><th>MQL</th><th>SQL</th></tr></thead>
+      <tbody id="gen-leads-matrix"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">06<span class="slash">/</span></span><h2>Висновки</h2><span class="sub">загальний тиждень</span></div>
+    <div class="card dark"><ul class="insights" id="gen-insights"></ul></div>
+  </section>
+</div>
+
+<!-- ============ META ============ -->
+<div class="tab-content" id="tab-meta">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Огляд Meta Ads · 12–18 травня</h2><span class="sub">тільки ABO|SEO (лідген) · Webinar/TRAFFIC — інфоворонки, виключені</span></div>
+    <div class="kpi-grid" id="meta-kpi"></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Денна динаміка ABO|SEO · 14 днів</h2><span class="sub">витрати, ліди, кліки</span></div>
+    <div class="card"><div class="chart-wrap"><canvas id="meta-daily"></canvas></div></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Метрики ABO|SEO — WoW</h2><span class="sub">тільки лідген</span></div>
+    <div class="card"><table><thead><tr><th>Метрика</th><th class="num">12–18.05</th><th class="num">5–11.05</th><th class="num">Δ</th></tr></thead><tbody id="meta-metrics"></tbody></table></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Якість Target-лідів</h2><span class="sub">MQL/SQL розкладка</span></div>
+    <div class="row">
+      <div class="card"><h3>12–18.05 · 23 Target-ліди</h3><div class="chart-wrap" style="height:240px;"><canvas id="meta-q-cur"></canvas></div></div>
+      <div class="card"><h3>5–11.05 · 28 Target-лідів</h3><div class="chart-wrap" style="height:240px;"><canvas id="meta-q-prev"></canvas></div></div>
+    </div>
+    <div class="card" style="margin-top:18px;">
+      <h3>Якість порівняння</h3>
+      <table><thead><tr><th>Категорія</th><th class="num">12–18.05</th><th class="num">% від Target</th><th class="num">5–11.05</th><th class="num">% від Target</th></tr></thead>
+      <tbody id="meta-quality-table"></tbody></table>
+      <div class="note">⚠ 0 SQL у 12-18 vs 3 SQL у 5-11. Це переважно тому що нові ліди ще не дозріли — Sales не встиг кваліфікувати у SQL. Високий % MQL (87%) — свідчить про швидку первинну обробку. Перевірити через 2 тижні чи з'являться SQL.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">04<span class="slash">/</span></span><h2>Розподіл бюджету Meta</h2><span class="sub">лідген vs інфоворонки</span></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Кампанія</th><th>Тип</th><th class="num">$ 12–18</th><th class="num">$ 5–11</th><th class="num">Покази</th><th class="num">Кліки</th><th class="num">Ліди (кабінет)</th></tr></thead>
+        <tbody>
+          <tr><td><b>ABO | SEO</b></td><td><span class="tag good">Лідген</span></td><td class="num"><b>$435.02</b></td><td class="num"><b>$356.12</b></td><td class="num">34 882</td><td class="num">612</td><td class="num"><b>51</b></td></tr>
+          <tr><td>Webinar | 14.05.26 | 159</td><td><span class="tag warn">Інфоворонка</span></td><td class="num">$22.66</td><td class="num">$71.21</td><td class="num">3 051</td><td class="num">34</td><td class="num">3</td></tr>
+          <tr><td>TRAFFIC | САЙТ | КЕЙСЫ (новий)</td><td><span class="tag warn">Інфоворонка</span></td><td class="num">$131.70</td><td class="num">—</td><td class="num">165 141</td><td class="num">3 471</td><td class="num">0</td></tr>
+          <tr><td>Вебинар Охват</td><td><span class="tag warn">Інфоворонка</span></td><td class="num">$0</td><td class="num">$1.48</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr style="background:#EDEDED;font-weight:800;"><td>Усього Meta</td><td>—</td><td class="num">$589.38</td><td class="num">$428.81</td><td class="num">203 074</td><td class="num">4 117</td><td class="num">54</td></tr>
+        </tbody>
+      </table>
+      <div class="note">При перерахунку лише по ABO|SEO (лідген): $435 за тиждень, 51 лід, CPL $8.53. Інфоворонки (Webinar + TRAFFIC) — інша мета (нагрів + просування контенту), не враховуються в lead-метриках.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">05<span class="slash">/</span></span><h2>Висновки</h2><span class="sub">Meta Ads (ABO|SEO)</span></div>
+    <div class="card dark"><ul class="insights" id="meta-insights"></ul></div>
+  </section>
+</div>
+
+<!-- ============ SEO ============ -->
+<div class="tab-content" id="tab-seo">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Огляд органіки · 12–18 травня</h2><span class="sub">GA4 + GSC · vs 5–11.05</span></div>
+    <div class="kpi-grid" id="seo-kpi"></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>GA4 — щоденна динаміка</h2><span class="sub">Organic Search · 14 днів</span></div>
+    <div class="card"><div class="chart-wrap"><canvas id="seo-daily"></canvas></div></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Блог vs Комерція</h2><span class="sub">за префіксом /blog/ в URL</span></div>
+    <div class="row">
+      <div class="card"><h3>Сегментація трафіку</h3><div class="chart-wrap"><canvas id="seo-bvc-chart"></canvas></div></div>
+      <div class="card"><h3>Деталі по сегментах</h3>
+        <table><thead><tr><th>Сегмент</th><th class="num">12–18 сесій</th><th class="num">5–11 сесій</th><th class="num">Δ</th><th class="num">% від трафіку</th></tr></thead>
+        <tbody id="seo-bvc-table"></tbody></table>
+        <div class="note">«(not set)» — сесії без landing page; в обох періодах це ~50-55% органіки. Серед іменованих сторінок частка блогу зросла з 38% (5-11) до 48% (12-18) — органіка все більше «блогова».</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Топ-сторінки 12–18.05</h2><span class="sub">за сесіями organic</span></div>
+    <div class="card">
+      <div style="overflow-x:auto;">
+      <table><thead><tr><th>Тип</th><th>Сторінка</th><th class="num">Сесії 12–18</th><th class="num">Користувачі</th><th class="num">Сесії 5–11</th><th class="num">Δ</th></tr></thead>
+      <tbody id="seo-pages-cur"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">04<span class="slash">/</span></span><h2>Топ-сторінки 5–11.05</h2><span class="sub">за сесіями organic</span></div>
+    <div class="card">
+      <div style="overflow-x:auto;">
+      <table><thead><tr><th>Тип</th><th>Сторінка</th><th class="num">Сесії 5–11</th><th class="num">Користувачі</th><th class="num">Сесії 12–18</th><th class="num">Δ</th></tr></thead>
+      <tbody id="seo-pages-prev"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">05<span class="slash">/</span></span><h2>GSC — динаміка кліків</h2><span class="sub">12 днів доступно</span></div>
+    <div class="card"><div class="chart-wrap"><canvas id="seo-gsc"></canvas></div></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">06<span class="slash">/</span></span><h2>Топ-запити GSC 12–18</h2><span class="sub">≥ 5 кліків</span></div>
+    <div class="card"><div style="overflow-x:auto;">
+    <table><thead><tr><th>Запит</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">Позиція</th></tr></thead>
+    <tbody id="seo-queries"></tbody></table></div></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">07<span class="slash">/</span></span><h2>Висновки</h2><span class="sub">SEO</span></div>
+    <div class="card dark"><ul class="insights" id="seo-insights"></ul></div>
+  </section>
+</div>
+
+<!-- ============ DRP ============ -->
+<div class="tab-content" id="tab-drp">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Огляд DRP · 12–18 травня</h2><span class="sub">0 нових угод · план 15 · ⚠ канал просів</span></div>
+    <div class="kpi-grid" id="drp-kpi"></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Стан DRP-воронки</h2><span class="sub">створені на тижні vs з минулих тижнів</span></div>
+    <div class="card">
+      <table><thead><tr><th>Категорія</th><th class="num">12–18.05</th><th class="num">5–11.05</th><th class="num">Δ</th></tr></thead><tbody id="drp-stages-table"></tbody></table>
+      <div class="note">Цього тижня в DRP-пайплайн не зайшло жодної нової угоди. 7 активних — переходи зі стадій, створених у попередні тижні.</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Бюджет DRP</h2><span class="sub">розрахунок ефективності</span></div>
+    <div class="row">
+      <div class="card red">
+        <h3 style="color:#fff">DRP — критичний тиждень</h3>
+        <div class="metric-row" style="border-color:rgba(255,255,255,0.2)"><span class="lbl" style="color:rgba(255,255,255,0.8)">Бюджет</span><span class="val" style="color:#fff">16 333 ₴</span></div>
+        <div class="metric-row" style="border-color:rgba(255,255,255,0.2)"><span class="lbl" style="color:rgba(255,255,255,0.8)">Нових угод</span><span class="val" style="color:#fff">0</span></div>
+        <div class="metric-row" style="border-color:rgba(255,255,255,0.2)"><span class="lbl" style="color:rgba(255,255,255,0.8)">CPL</span><span class="val" style="color:#fff">∞</span></div>
+        <div class="metric-row" style="border:0"><span class="lbl" style="color:rgba(255,255,255,0.8)">vs минулий</span><span class="val" style="color:#fff">14 угод · 1 167 ₴/lead</span></div>
+      </div>
+      <div class="card"><h3>Активні з попер. тижнів</h3>
+        <table><thead><tr><th>Стадія</th><th class="num">К-сть</th></tr></thead><tbody id="drp-active"></tbody></table>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Висновки</h2><span class="sub">DRP</span></div>
+    <div class="card dark"><ul class="insights" id="drp-insights"></ul></div>
+  </section>
+</div>
+
+</div>
+
+<footer class="foot">
+  <span class="chev">&gt;</span>
+  <span>elit-web · комплексний дешборд · 12–18 травня 2026</span>
+  <span><span style="color:var(--ew-red);">/</span>01</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<script>
+Chart.defaults.font.family = "'Mulish','Inter',sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = "#000";
+const fmt = n => Number(n).toLocaleString("uk-UA");
+const fmtMoney = n => fmt(Math.round(n)) + " ₴";
+const fmtUSD = n => "$" + Number(n).toFixed(2);
+const pct = (a,b) => b===0 ? (a===0?0:100) : ((a-b)/b)*100;
+const deltaTag = (a,b,invert=false) => {
+  if (b===undefined||b===null) return "—";
+  const d = pct(a,b);
+  if (Math.abs(d)<0.5) return `<span class="delta flat">±0%</span>`;
+  const up = d>0;
+  const cls = invert ? (up?"down":"up") : (up?"up":"down");
+  return `<span class="delta ${cls}">${up?"▲":"▼"} ${Math.abs(d).toFixed(0)}%</span>`;
+};
+const tabInit = {general:false, meta:false, seo:false, drp:false};
+document.querySelectorAll(".tab-btn").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    const tab = btn.dataset.tab;
+    document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c=>c.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById("tab-"+tab).classList.add("active");
+    if (!tabInit[tab]) { initTab(tab); tabInit[tab]=true; }
+  });
+});
+function initTab(n) {
+  if (n==="general") renderGeneral();
+  else if (n==="meta") renderMeta();
+  else if (n==="seo") renderSEO();
+  else if (n==="drp") renderDRP();
+}
+</script>
+
+<script>
+// ============ GENERAL ============
+function renderGeneral() {
+  const channels = [
+    {name:"Target (Meta)", leads:23, prev:28, mql:20, sql:0},
+    {name:"FMCG Expo (івент)", leads:11, prev:0, mql:11, sql:0},
+    {name:"SEO", leads:7, prev:10, mql:6, sql:0},
+    {name:"SMM", leads:3, prev:5, mql:3, sql:0},
+    {name:"Cold Email", leads:1, prev:6, mql:0, sql:0},
+    {name:"New Makers (івент)", leads:1, prev:0, mql:1, sql:0},
+    {name:"drp (source)", leads:0, prev:1, mql:0, sql:0},
+    {name:"DRP-воронка", leads:0, prev:13, mql:0, sql:0},
+  ];
+  const totalLeads = channels.reduce((s,c)=>s+c.leads,0);
+  const totalLeadsPrev = channels.reduce((s,c)=>s+c.prev,0);
+  const totalMql = channels.reduce((s,c)=>s+c.mql,0);
+  const totalSql = channels.reduce((s,c)=>s+c.sql,0);
+
+  const kpis = [
+    {lbl:"Усього лідів", val:fmt(totalLeads), sub:fmt(totalLeadsPrev)+" попер. "+deltaTag(totalLeads,totalLeadsPrev), style:""},
+    {lbl:"MQL", val:fmt(totalMql), sub:"42 попер. "+deltaTag(totalMql,42), style:"accent"},
+    {lbl:"SQL", val:fmt(totalSql), sub:"11 попер. "+deltaTag(totalSql,11), style:"dark"},
+    {lbl:"План виконання", val:"54.4%", sub:"31 з 57 · vs 101.8% попер.", style:""},
+    {lbl:"Нових DRP", val:"0", sub:"13 попер. · канал просів", style:"accent"},
+    {lbl:"Target (Meta)", val:"23", sub:"28 попер. "+deltaTag(23,28), style:""},
+    {lbl:"FMCG Expo", val:"11", sub:"івент-канал відпрацював", style:""},
+    {lbl:"Won", val:"0", sub:"1 попер. · ще на стадіях", style:"dark"},
+  ];
+  document.getElementById("gen-kpi").innerHTML = kpis.map(k=>`<div class="kpi ${k.style}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+  const planCh = [
+    {name:"Target (Meta)", plan:22, fact:23},
+    {name:"DRP (воронка)", plan:15, fact:0},
+    {name:"SEO", plan:10, fact:7},
+    {name:"Cold Email", plan:10, fact:1},
+  ];
+  document.getElementById("gen-plan").innerHTML = planCh.map(p=>{
+    const pp = p.fact/p.plan*100;
+    let status, barColor;
+    if (pp>=95) { status="<span class='tag good'>На рівні</span>"; barColor="#0F6E56"; }
+    else if (pp>=70) { status="<span class='tag black'>Близько</span>"; barColor="#000"; }
+    else if (pp>=40) { status="<span class='tag warn'>Відставання</span>"; barColor="#5A5A5A"; }
+    else { status="<span class='tag red'>Критично</span>"; barColor="#FE391F"; }
+    return `<tr><td><b>${p.name}</b></td><td class="num">${p.plan}</td><td class="num"><b>${p.fact}</b></td><td class="num"><b style="color:${pp>=70?'#000':'#FE391F'}">${pp.toFixed(1)}%</b></td><td><div style="background:#EDEDED;height:14px;min-width:140px;position:relative;"><span style="display:block;height:100%;width:${Math.min(100,pp)}%;background:${barColor};"></span></div></td><td>${status}</td></tr>`;
+  }).join("");
+  document.getElementById("gen-plan-tot").textContent = planCh.reduce((s,p)=>s+p.plan,0);
+  document.getElementById("gen-plan-fact").textContent = planCh.reduce((s,p)=>s+p.fact,0);
+  document.getElementById("gen-plan-pct").textContent = (planCh.reduce((s,p)=>s+p.fact,0)/planCh.reduce((s,p)=>s+p.plan,0)*100).toFixed(1)+"%";
+
+  const wow = [
+    ["Усього лідів", totalLeads, totalLeadsPrev, false],
+    ["MQL", totalMql, 42, false],
+    ["SQL", totalSql, 11, false],
+    ["План виконання %", "54.4%", "101.8%", false, 0.544, 1.018],
+    ["Нових DRP-угод", 0, 13, false],
+    ["Target Meta", 23, 28, false],
+    ["FMCG Expo", 11, 0, false],
+    ["Сесії GA4 (organic)", 2226, 2619, false],
+    ["Витрати ABO|SEO $", 435, 356, true],
+    ["Витрати Google Ads ₴", 2533, 2985, true],
+  ];
+  document.getElementById("gen-wow-table").innerHTML = wow.map(r=>{
+    const aN = r[4]!==undefined ? r[4] : (typeof r[1]==='number'?r[1]:parseFloat(String(r[1]).replace(/[^0-9.]/g,'')));
+    const bN = r[5]!==undefined ? r[5] : (typeof r[2]==='number'?r[2]:parseFloat(String(r[2]).replace(/[^0-9.]/g,'')));
+    const d = deltaTag(aN,bN,r[3]);
+    return `<tr><td>${r[0]}</td><td class="num">${typeof r[1]==='number'?fmt(r[1]):r[1]}</td><td class="num">${typeof r[2]==='number'?fmt(r[2]):r[2]}</td><td class="num">${d}</td></tr>`;
+  }).join("");
+
+  document.getElementById("gen-channels").innerHTML = channels.map(c=>{
+    const mqlPct = c.leads ? c.mql/c.leads*100 : 0;
+    const sqlPct = c.leads ? c.sql/c.leads*100 : 0;
+    let rating = c.leads===0 ? "<span class='tag red'>Нема</span>" :
+                 (sqlPct>0 ? "<span class='tag good'>З SQL</span>" :
+                 (mqlPct>=80 ? "<span class='tag good'>MQL-висока</span>" : "<span class='tag warn'>Середня</span>"));
+    return `<tr><td><b>${c.name}</b></td><td class="num">${c.leads}</td><td class="num">${deltaTag(c.leads,c.prev)}</td><td class="num">${c.mql}</td><td class="num">${c.sql}</td><td class="num"><b>${mqlPct.toFixed(0)}%</b></td><td class="num"><b style="color:${sqlPct>0?'#FE391F':'#999'}">${sqlPct.toFixed(0)}%</b></td><td>${rating}</td></tr>`;
+  }).join("");
+
+  // STAGES
+  const stagesCur = {"Взято в работу":22, "Входящие":11, "Заявка с сайта":6, "Закрыто и нереализовано":4, "На прогрев":1, "Подготовка КП":1, "Бриф":1};
+  const stagesPrev = {"Закрыто и нереализовано":38, "Взято в работу":13, "Бриф":6, "Подготовка КП":3, "Встреча назначена":2, "Presale проведен":1, "Заявка с сайта":1, "Успешно реализовано":1, "Готово КП":1, "Согласование договора":1};
+  const stageOrder = ["Закрыто и нереализовано","Успешно реализовано","Взято в работу","Входящие","Заявка с сайта","Бриф","Подготовка КП","Готово КП","Встреча назначена","Presale проведен","На прогрев","Согласование договора"];
+  const stageCategory = {"Закрыто и нереализовано":"lost","Успешно реализовано":"won"};
+  const stageColors = {"Закрыто и нереализовано":"#000","Успешно реализовано":"#0F6E56","Взято в работу":"#FE391F","Входящие":"#FE6647","Заявка с сайта":"#FE9379","Бриф":"#5A5A5A","Подготовка КП":"#C42814","Готово КП":"#1F1F1F","Встреча назначена":"#A8A8A8","Presale проведен":"#7A7A7A","На прогрев":"#DCDCDC","Согласование договора":"#FFD700"};
+
+  // Tables
+  document.getElementById("gen-stages-table").innerHTML = stageOrder.filter(s => (stagesCur[s]||0)+(stagesPrev[s]||0) > 0).map(s=>{
+    const c=stagesCur[s]||0, p=stagesPrev[s]||0;
+    const cat = stageCategory[s] || "progress";
+    const tag = cat==="lost"?"<span class='tag lost'>Lost</span>":cat==="won"?"<span class='tag won'>Won</span>":"<span class='tag progress'>In progress</span>";
+    return `<tr><td><b>${s}</b></td><td class="num">${c}</td><td class="num">${p}</td><td>${tag}</td></tr>`;
+  }).join("");
+
+  // Doughnuts
+  function stageDonut(canvasId, data) {
+    const order = stageOrder.filter(s => (data[s]||0)>0);
+    new Chart(document.getElementById(canvasId), {
+      type:"doughnut",
+      data:{labels: order, datasets:[{data: order.map(s=>data[s]), backgroundColor: order.map(s=>stageColors[s]), borderWidth:1, borderColor:"#fff"}]},
+      options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true, position:"right", labels:{boxWidth:10, font:{size:10}}}}}
+    });
+  }
+  stageDonut("gen-stages-cur", stagesCur);
+  stageDonut("gen-stages-prev", stagesPrev);
+
+  // Leads matrix
+  fetch("leads-data").catch(()=>{}); // placeholder
+  document.getElementById("gen-leads-matrix").innerHTML = LEADS.map((l,i)=>{
+    const stg = stageCategory[l.stage] || "progress";
+    const stTag = stg==="lost"?"<span class='tag lost'>Lost</span>":stg==="won"?"<span class='tag won'>Won</span>":`<span class='tag progress'>${l.stage.substring(0,20)}</span>`;
+    const mqlTag = l.mql==="MQL"?"<span class='tag mql'>MQL</span>":l.mql==="Not MQL"?"<span class='tag notmql'>Not MQL</span>":"—";
+    let sqlTag = l.sql==="—"||!l.sql?"—":(l.sql==="Not SQL"?"<span class='tag np'>Not SQL</span>":`<span class='tag ${l.sql.startsWith('Cold')?'cold':l.sql.startsWith('Warm')?'warm':'hot'}'>${l.sql.replace(' SQL','')}</span>`);
+    return `<tr><td>${i+1}</td><td>${l.date.slice(5)}</td><td><span class="deal-name">${(l.name||'').substring(0,45)}</span></td><td>${l.source}</td><td>${stTag}</td><td>${mqlTag}</td><td>${sqlTag}</td></tr>`;
+  }).join("");
+
+  // WoW chart
+  const wowLabels = ["Target","FMCG Expo","SEO","SMM","Cold Email","New Makers","drp","DRP воронка"];
+  const wowCur = [23,11,7,3,1,1,0,0];
+  const wowPrev = [28,0,10,5,6,0,1,13];
+  new Chart(document.getElementById("gen-wow-chart"), {
+    type:"bar",
+    data:{labels:wowLabels, datasets:[
+      {label:"12-18.05", data:wowCur, backgroundColor:"#FE391F", borderWidth:0},
+      {label:"5-11.05", data:wowPrev, backgroundColor:"#A8A8A8", borderWidth:0},
+    ]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true, position:"bottom", labels:{boxWidth:10}}}, scales:{y:{beginAtZero:true, grid:{color:"#DCDCDC"}}, x:{grid:{display:false}}}}
+  });
+
+  const insights = [
+    "<b>⚠ DRP-канал — 0 нових угод.</b> Перший провал за весь час каналу. Терміновий стенд-ап з партнером (CPL = ∞, бюджет 16 333 ₴ злитий).",
+    "<b>План виконано на 54.4%</b> (31 з 57) vs 101.8% минулого тижня. Без DRP та з провалом Cold Email (1/10) тиждень слабкий.",
+    "<b>FMCG Expo рятує статистику — 11 лідів.</b> Без івенту план би склав ~37%. Івент-канал спрацював.",
+    "<b>Загалом -31% WoW</b> (46 vs 67). Падіння в усіх каналах окрім FMCG Expo та New Makers.",
+    "<b>Якість MQL висока (91.3%)</b> — нормально для свіжих лідів. SQL низький (1 Warm) — потрібен час на дозрівання.",
+    "<b>48% угод на «Взято в работу»</b> (22 з 46) — більшість ще активно опрацьовується. Lost лише 4 (vs 38 минулого тижня) — справжній результат буде через 2-3 тижні.",
+  ];
+  document.getElementById("gen-insights").innerHTML = insights.map(i=>`<li><span class="marker">&gt;</span><span>${i}</span></li>`).join("");
+}
+
+// ============ META (ABO|SEO only) ============
+function renderMeta() {
+  // ABO|SEO only
+  const cur = {spend:435.02, leads:51, imp:34882, clicks:612};
+  const prev = {spend:356.12, leads:62, imp:32671, clicks:589};
+  const crm_cur = 23, crm_prev = 28;
+  const val_cur = crm_cur/cur.leads*100, val_prev = crm_prev/prev.leads*100;
+  const cplCab_cur = cur.spend/cur.leads, cplCab_prev = prev.spend/prev.leads;
+  const cplVal_cur = cur.spend/crm_cur, cplVal_prev = prev.spend/crm_prev;
+
+  const kpis = [
+    {lbl:"Витрати ABO|SEO", val:fmtUSD(cur.spend), sub:fmtUSD(prev.spend)+" попер. "+deltaTag(cur.spend,prev.spend), style:""},
+    {lbl:"Ліди кабінет", val:cur.leads, sub:prev.leads+" попер. "+deltaTag(cur.leads,prev.leads), style:""},
+    {lbl:"Ліди CRM (Target)", val:crm_cur, sub:crm_prev+" попер. "+deltaTag(crm_cur,crm_prev), style:"accent"},
+    {lbl:"Валідність %", val:val_cur.toFixed(1)+"%", sub:val_prev.toFixed(1)+"% попер. "+deltaTag(val_cur,val_prev), style:"accent"},
+    {lbl:"Покази", val:fmt(cur.imp), sub:fmt(prev.imp)+" попер. "+deltaTag(cur.imp,prev.imp), style:""},
+    {lbl:"Кліки", val:fmt(cur.clicks), sub:fmt(prev.clicks)+" попер. "+deltaTag(cur.clicks,prev.clicks), style:""},
+    {lbl:"CPL кабінет", val:fmtUSD(cplCab_cur), sub:fmtUSD(cplCab_prev)+" попер. "+deltaTag(cplCab_cur,cplCab_prev,true), style:"dark"},
+    {lbl:"CPL валідний", val:fmtUSD(cplVal_cur), sub:fmtUSD(cplVal_prev)+" попер. "+deltaTag(cplVal_cur,cplVal_prev,true), style:"dark"},
+  ];
+  document.getElementById("meta-kpi").innerHTML = kpis.map(k=>`<div class="kpi ${k.style}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+  const ctrCur = cur.clicks/cur.imp*100, ctrPrev = prev.clicks/prev.imp*100;
+  const cpcCur = cur.spend/cur.clicks, cpcPrev = prev.spend/prev.clicks;
+  const cpmCur = cur.spend/cur.imp*1000, cpmPrev = prev.spend/prev.imp*1000;
+  const rows = [
+    ["Витрати $", fmtUSD(cur.spend), fmtUSD(prev.spend), pct(cur.spend,prev.spend), true],
+    ["Покази", fmt(cur.imp), fmt(prev.imp), pct(cur.imp,prev.imp), false],
+    ["Кліки", fmt(cur.clicks), fmt(prev.clicks), pct(cur.clicks,prev.clicks), false],
+    ["CTR", ctrCur.toFixed(2)+"%", ctrPrev.toFixed(2)+"%", pct(ctrCur,ctrPrev), false],
+    ["CPC $", fmtUSD(cpcCur), fmtUSD(cpcPrev), pct(cpcCur,cpcPrev), true],
+    ["CPM $", fmtUSD(cpmCur), fmtUSD(cpmPrev), pct(cpmCur,cpmPrev), true],
+    ["Ліди кабінет", cur.leads, prev.leads, pct(cur.leads,prev.leads), false],
+    ["Ліди CRM (Target)", crm_cur, crm_prev, pct(crm_cur,crm_prev), false],
+    ["Валідність %", val_cur.toFixed(1)+"%", val_prev.toFixed(1)+"%", pct(val_cur,val_prev), false],
+    ["CPL кабінет $", fmtUSD(cplCab_cur), fmtUSD(cplCab_prev), pct(cplCab_cur,cplCab_prev), true],
+    ["CPL валідний $", fmtUSD(cplVal_cur), fmtUSD(cplVal_prev), pct(cplVal_cur,cplVal_prev), true],
+  ];
+  document.getElementById("meta-metrics").innerHTML = rows.map(r=>{
+    const d=r[3], inv=r[4];
+    const cls = Math.abs(d)<0.5?"flat":(inv?(d>0?"down":"up"):(d>0?"up":"down"));
+    return `<tr><td>${r[0]}</td><td class="num">${r[1]}</td><td class="num">${r[2]}</td><td class="num"><span class="delta ${cls}">${d>0?'▲':'▼'} ${Math.abs(d).toFixed(0)}%</span></td></tr>`;
+  }).join("");
+
+  // Daily ABO|SEO 14 днів
+  const days = ["05","06","07","08","09","10","11","12","13","14","15","16","17","18"];
+  const spendD = [51.42,53.90,49.55,47.33,45.24,53.02,55.66, 55.71,49.53,45.62,76.25,83.65,86.74,37.52];
+  const leadsD = [9,10,6,12,7,8,10, 12,6,5,9,6,9,4];
+  const clicksD = [100,90,73,81,86,81,78, 78,84,70,118,95,115,52];
+  new Chart(document.getElementById("meta-daily"), {
+    type:"line",
+    data:{labels:days, datasets:[
+      {label:"Витрати $", data:spendD, borderColor:"#000", borderWidth:2, tension:0.3, pointRadius:3, fill:false, yAxisID:"y"},
+      {label:"Ліди кабінет", data:leadsD, borderColor:"#FE391F", backgroundColor:"rgba(254,57,31,0.1)", borderWidth:2, tension:0.3, pointRadius:3, fill:true, yAxisID:"y1"},
+      {label:"Кліки", data:clicksD, borderColor:"#A8A8A8", borderWidth:2, tension:0.3, pointRadius:3, fill:false, borderDash:[4,4], yAxisID:"y2"},
+    ]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true,position:"bottom",labels:{boxWidth:10}}}, scales:{y:{beginAtZero:true,grid:{color:"#DCDCDC"},title:{display:true,text:"Витрати $"}}, y1:{beginAtZero:true,position:"right",grid:{display:false},title:{display:true,text:"Ліди"}}, y2:{display:false}, x:{grid:{display:false}}}}
+  });
+
+  // Quality donuts
+  // 12-18 Target (23): MQL 20, Not MQL 2, null 1; SQL: 0, NotSQL 1, null 22
+  // 5-11 Target (28): MQL 19, Not MQL 9; SQL: Cold 2, Warm 1, NotSQL 18, null 7
+  new Chart(document.getElementById("meta-q-cur"), {
+    type:"doughnut",
+    data:{labels:["MQL","Not MQL","Не вказано"], datasets:[{data:[20,2,1], backgroundColor:["#0F6E56","#FE391F","#DCDCDC"], borderWidth:2, borderColor:"#fff"}]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true,position:"bottom"}}}
+  });
+  new Chart(document.getElementById("meta-q-prev"), {
+    type:"doughnut",
+    data:{labels:["MQL","Not MQL"], datasets:[{data:[19,9], backgroundColor:["#0F6E56","#FE391F"], borderWidth:2, borderColor:"#fff"}]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true,position:"bottom"}}}
+  });
+
+  const qRows = [
+    ["MQL", 20, 87.0, 19, 67.9],
+    ["Not MQL", 2, 8.7, 9, 32.1],
+    ["Не вказано (MQL)", 1, 4.3, 0, 0],
+    ["Cold SQL", 0, 0, 2, 7.1],
+    ["Warm SQL", 0, 0, 1, 3.6],
+    ["Hot SQL", 0, 0, 0, 0],
+    ["Not SQL", 1, 4.3, 18, 64.3],
+    ["SQL не вказано", 22, 95.7, 7, 25.0],
+  ];
+  document.getElementById("meta-quality-table").innerHTML = qRows.map(r=>{
+    return `<tr><td><b>${r[0]}</b></td><td class="num">${r[1]}</td><td class="num">${r[2].toFixed(1)}%</td><td class="num">${r[3]}</td><td class="num">${r[4].toFixed(1)}%</td></tr>`;
+  }).join("");
+
+  const insights = [
+    "<b>ABO|SEO — лідген-кампанія.</b> $435 за тиждень, 51 лід у кабінеті, 23 в CRM (Target). Це чиста лідгенерація — Webinar та TRAFFIC виключені.",
+    "<b>Витрати ABO|SEO +22%</b> ($435 vs $356) при -18% лідів (51 vs 62). CPL виріс з $5.74 до $8.53 (+49%) — серйозне погіршення.",
+    "<b>Валідність кабінет→CRM стабільна</b>: 45.1% (12-18) vs 45.2% (5-11) — Sales бачить ту саму частку лідів.",
+    "<b>CPL валідний $18.91 vs $12.72 (+49%)</b> — той же тренд. Виторг із Meta дорожчий ніж раніше.",
+    "<b>Якість Target по MQL зросла</b> до 87% (vs 68%) — це переважно тому, що ліди ще не дозріли. 0 SQL у 12-18 — Sales не встиг кваліфікувати. Перевірити через 2 тижні.",
+    "<b>Покази +7%, кліки +4%</b> — алгоритм залив трохи більше показів, але CPC зріс ×1.4 ($0.71 vs $0.60).",
+    "<b>Інфоворонки за тиждень: $154</b> (Webinar $23 + TRAFFIC $132). Це 26% усього Meta-бюджету ($589). Їх ефективність окремо: TRAFFIC дав 165K показів і 3471 клік за $132 — гарний результат як трафік-кампанія, але 0 прямих лідів.",
+    "<b>Спостерігати</b>: чи приведе TRAFFIC до ретаргет-лідів у наступних тижнях, чи треба переглянути розподіл бюджету.",
+  ];
+  document.getElementById("meta-insights").innerHTML = insights.map(i=>`<li><span class="marker">&gt;</span><span>${i}</span></li>`).join("");
+}
+
+// ============ SEO ============
+function renderSEO() {
+  const ses_cur = [407,479,372,347,281,274,66];
+  const ses_prev = [412,412,402,405,281,278,429];
+  const conv_cur = [195,245,178,204,159,157,135];
+  const conv_prev = [229,239,217,209,159,154,231];
+  const days_cur = ["Пн 12","Вт 13","Ср 14","Чт 15","Пт 16","Сб 17","Нд 18"];
+  const days_prev = ["Пн 5","Вт 6","Ср 7","Чт 8","Пт 9","Сб 10","Нд 11"];
+
+  const sum=a=>a.reduce((s,x)=>s+x,0);
+  const org_cur={sessions:sum(ses_cur),users:2126,conversions:sum(conv_cur)};
+  const org_prev={sessions:sum(ses_prev),users:2419,conversions:sum(conv_prev)};
+
+  const kpis = [
+    {lbl:"Сесії (Organic)", val:fmt(org_cur.sessions), sub:fmt(org_prev.sessions)+" попер. "+deltaTag(org_cur.sessions,org_prev.sessions), style:""},
+    {lbl:"Користувачі", val:fmt(org_cur.users), sub:fmt(org_prev.users)+" попер. "+deltaTag(org_cur.users,org_prev.users), style:"accent"},
+    {lbl:"Конверсії", val:fmt(org_cur.conversions), sub:fmt(org_prev.conversions)+" попер. "+deltaTag(org_cur.conversions,org_prev.conversions), style:""},
+    {lbl:"Сесії середн./день", val:fmt(Math.round(org_cur.sessions/7)), sub:fmt(Math.round(org_prev.sessions/7))+" попер. "+deltaTag(org_cur.sessions/7,org_prev.sessions/7), style:""},
+    {lbl:"GSC кліки", val:"1 642", sub:"2 264 (7д) "+deltaTag(1642/5,2264/7), style:"dark"},
+    {lbl:"GSC поз. середн.", val:"14.9", sub:"15.5 попер. ▲ 0.6 поз.", style:"dark"},
+    {lbl:"% блог трафіку", val:"48%", sub:"38% попер. ▲ 10 пп", style:"accent"},
+    {lbl:"Пік тижня", val:"Вт 13.05", sub:"479 сесій · 245 конв.", style:""},
+  ];
+  document.getElementById("seo-kpi").innerHTML = kpis.map(k=>`<div class="kpi ${k.style}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+  new Chart(document.getElementById("seo-daily"), {
+    type:"line",
+    data:{labels:[...days_prev,...days_cur], datasets:[
+      {label:"Сесії", data:[...ses_prev,...ses_cur], borderColor:"#FE391F", backgroundColor:"rgba(254,57,31,0.1)", tension:0.3, fill:true, borderWidth:2, pointRadius:3},
+      {label:"Конверсії", data:[...conv_prev,...conv_cur], borderColor:"#000", borderWidth:2, tension:0.3, pointRadius:3, fill:false},
+    ]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true,position:"bottom",labels:{boxWidth:10}}}, scales:{y:{beginAtZero:true,grid:{color:"#DCDCDC"}}, x:{grid:{display:false}}}}
+  });
+
+  const bvc_cur={Blog:482,Commerce:159,Home:390,NotSet:1189};
+  const bvc_prev={Blog:467,Commerce:232,Home:521,NotSet:1507};
+  new Chart(document.getElementById("seo-bvc-chart"), {
+    type:"bar",
+    data:{labels:["Блог","Комерція","Головна","(not set)"], datasets:[
+      {label:"12-18.05", data:[bvc_cur.Blog,bvc_cur.Commerce,bvc_cur.Home,bvc_cur.NotSet], backgroundColor:"#FE391F", borderWidth:0},
+      {label:"5-11.05", data:[bvc_prev.Blog,bvc_prev.Commerce,bvc_prev.Home,bvc_prev.NotSet], backgroundColor:"#A8A8A8", borderWidth:0},
+    ]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true,position:"bottom",labels:{boxWidth:10}}}, scales:{y:{beginAtZero:true,grid:{color:"#DCDCDC"}}, x:{grid:{display:false}}}}
+  });
+
+  const total_cur=bvc_cur.Blog+bvc_cur.Commerce+bvc_cur.Home;
+  const total_prev=bvc_prev.Blog+bvc_prev.Commerce+bvc_prev.Home;
+  document.getElementById("seo-bvc-table").innerHTML = `
+    <tr><td><span class="tag blog">BLOG</span> <b>Блог (/blog/)</b></td><td class="num">${bvc_cur.Blog}</td><td class="num">${bvc_prev.Blog}</td><td class="num">${deltaTag(bvc_cur.Blog,bvc_prev.Blog)}</td><td class="num"><b>${(bvc_cur.Blog/total_cur*100).toFixed(1)}%</b> / ${(bvc_prev.Blog/total_prev*100).toFixed(1)}%</td></tr>
+    <tr><td><span class="tag com">КОМ</span> <b>Комерція</b></td><td class="num">${bvc_cur.Commerce}</td><td class="num">${bvc_prev.Commerce}</td><td class="num">${deltaTag(bvc_cur.Commerce,bvc_prev.Commerce)}</td><td class="num"><b>${(bvc_cur.Commerce/total_cur*100).toFixed(1)}%</b> / ${(bvc_prev.Commerce/total_prev*100).toFixed(1)}%</td></tr>
+    <tr><td><span class="tag np">HOME</span> <b>Головна</b></td><td class="num">${bvc_cur.Home}</td><td class="num">${bvc_prev.Home}</td><td class="num">${deltaTag(bvc_cur.Home,bvc_prev.Home)}</td><td class="num"><b>${(bvc_cur.Home/total_cur*100).toFixed(1)}%</b> / ${(bvc_prev.Home/total_prev*100).toFixed(1)}%</td></tr>
+    <tr style="background:var(--ew-grey);font-weight:800;"><td>Іменовані разом</td><td class="num">${total_cur}</td><td class="num">${total_prev}</td><td class="num">${deltaTag(total_cur,total_prev)}</td><td class="num">100% / 100%</td></tr>
+    <tr><td>(not set) сесії</td><td class="num">${bvc_cur.NotSet}</td><td class="num">${bvc_prev.NotSet}</td><td class="num">${deltaTag(bvc_cur.NotSet,bvc_prev.NotSet)}</td><td class="num">—</td></tr>`;
+
+  const pages_cur=[{url:"/",ses:278,u:182,prev:307},{url:"/blog/stoimost-prodvizhenija-sajta",ses:111,u:82,prev:1},{url:"/ua",ses:112,u:95,prev:214},{url:"/uslugi-smm",ses:77,u:64,prev:67},{url:"/blog/kak-proverit-sajt-na-moshennichestvo",ses:68,u:67,prev:71},{url:"/ua/blog/kak-razblokirovat-akkaunt-instagram",ses:37,u:34,prev:49},{url:"/ua/blog/stoimost-prodvizhenija-sajta",ses:38,u:35,prev:12},{url:"/ua/blog/kak-podkljuchit-biznes-akkaunt-v-tik-tok",ses:35,u:34,prev:13},{url:"/blog/kak-razblokirovat-akkaunt-instagram",ses:33,u:31,prev:40},{url:"/prodvighenie-zarubeghnyh-saytov",ses:33,u:29,prev:115},{url:"/blog/targetirovannaya-reklama",ses:30,u:30,prev:34},{url:"/blog/kak-posmotret-istoriju-sajta",ses:25,u:25,prev:35},{url:"/ua/blog/kak-proverit-sajt-na-moshennichestvo",ses:22,u:21,prev:14},{url:"/ua/blog/chto-takoe-dorozhnaja-karta-proekta-roadmap",ses:19,u:16,prev:22},{url:"/ua/blog/kak-posmotret-statistiku-v-tiktok",ses:18,u:17,prev:17},{url:"/uslugi-kontekstnoy-reklamy",ses:16,u:15,prev:5}];
+  const pages_prev=[{url:"/",ses:307,u:177,cur:278},{url:"/ua",ses:214,u:154,cur:112},{url:"/prodvighenie-zarubeghnyh-saytov",ses:115,u:77,cur:33},{url:"/blog/kak-proverit-sajt-na-moshennichestvo",ses:71,u:66,cur:68},{url:"/uslugi-smm",ses:67,u:55,cur:77},{url:"/google-shopping",ses:50,u:42,cur:12},{url:"/ua/blog/kak-razblokirovat-akkaunt-instagram",ses:49,u:46,cur:37},{url:"/blog/kak-nastroit-google-shopping",ses:44,u:39,cur:5},{url:"/blog/kak-razblokirovat-akkaunt-instagram",ses:40,u:39,cur:33},{url:"/blog/smm-prodvizhenie",ses:38,u:35,cur:13},{url:"/blog/kak-posmotret-istoriju-sajta",ses:35,u:35,cur:25},{url:"/blog/targetirovannaya-reklama",ses:34,u:34,cur:30},{url:"/ua/blog/chto-takoe-tehnicheskaja-optimizatsija-sajta",ses:32,u:30,cur:14},{url:"/ua/blog/direkt-v-instagram",ses:24,u:22,cur:12},{url:"/blog/chto-takoe-tehnicheskaja-optimizatsija-sajta",ses:23,u:22,cur:0},{url:"/ua/blog/chto-takoe-dorozhnaja-karta-proekta-roadmap",ses:22,u:20,cur:19}];
+  function classifyPage(url) {
+    if (url.includes("/blog/")) return "<span class='tag blog'>BLOG</span>";
+    if (url === "/" || url === "/ua") return "<span class='tag np'>HOME</span>";
+    return "<span class='tag com'>КОМ</span>";
+  }
+  document.getElementById("seo-pages-cur").innerHTML = pages_cur.map(p=>`<tr><td>${classifyPage(p.url)}</td><td><span class="page-url">${p.url}</span></td><td class="num"><b>${p.ses}</b></td><td class="num">${p.u}</td><td class="num">${p.prev}</td><td class="num">${deltaTag(p.ses,p.prev)}</td></tr>`).join("");
+  document.getElementById("seo-pages-prev").innerHTML = pages_prev.map(p=>`<tr><td>${classifyPage(p.url)}</td><td><span class="page-url">${p.url}</span></td><td class="num"><b>${p.ses}</b></td><td class="num">${p.u}</td><td class="num">${p.cur}</td><td class="num">${deltaTag(p.cur,p.ses)}</td></tr>`).join("");
+
+  const gsc_days=["05","06","07","08","09","10","11","12","13","14","15","16"];
+  const gsc_clicks=[375,352,359,330,237,244,367,379,396,340,302,225];
+  const gsc_imp=[64525,58118,64477,55502,48900,85246,67080,63288,62964,65371,48625,44815];
+  const gsc_pos=[15.5,13.6,16.6,15.6,16.5,17.1,14.3,15.2,15.7,16.6,12.9,13.9];
+  new Chart(document.getElementById("seo-gsc"), {
+    type:"line",
+    data:{labels:gsc_days, datasets:[
+      {label:"Кліки", data:gsc_clicks, borderColor:"#FE391F", backgroundColor:"rgba(254,57,31,0.1)", tension:0.3, fill:true, borderWidth:2, pointRadius:3, yAxisID:"y"},
+      {label:"Покази ÷100", data:gsc_imp.map(v=>v/100), borderColor:"#A8A8A8", borderWidth:2, tension:0.3, pointRadius:3, fill:false, yAxisID:"y"},
+      {label:"Позиція", data:gsc_pos, borderColor:"#000", borderWidth:2, tension:0.3, pointRadius:3, fill:false, yAxisID:"y1"},
+    ]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true,position:"bottom",labels:{boxWidth:10}}}, scales:{y:{beginAtZero:true,grid:{color:"#DCDCDC"}}, y1:{beginAtZero:false,reverse:true,position:"right",grid:{display:false}}, x:{grid:{display:false}}}}
+  });
+
+  const q=[{q:"seo",c:20,i:339,ctr:5.9,p:17.5},{q:"як зробити більше підписників інстаграм",c:11,i:252,ctr:4.4,p:7.6},{q:"чому зламують аккаунт інстаграм",c:9,i:152,ctr:5.9,p:10.9},{q:"elitweb",c:8,i:22,ctr:36.4,p:1.9},{q:"seo київ",c:8,i:51,ctr:15.7,p:2.9},{q:"seo оптимізація",c:8,i:53,ctr:15.1,p:16.3},{q:"агентство інтернет маркетингу",c:8,i:68,ctr:11.8,p:6.5},{q:"перевірка сайту",c:8,i:288,ctr:2.8,p:9.0},{q:"сео",c:8,i:92,ctr:8.7,p:20.4},{q:"seo киев",c:7,i:74,ctr:9.5,p:2.5},{q:"перевірити сайт",c:7,i:160,ctr:4.4,p:8.6},{q:"розкрутка сайтів",c:7,i:114,ctr:6.1,p:8.0},{q:"google покупки",c:6,i:26,ctr:23.1,p:4.4},{q:"smm агентство",c:6,i:17,ctr:35.3,p:6.6}];
+  document.getElementById("seo-queries").innerHTML = q.map(r=>`<tr><td>${r.q}</td><td class="num"><b>${r.c}</b></td><td class="num">${fmt(r.i)}</td><td class="num">${r.ctr.toFixed(1)}%</td><td class="num">${r.p.toFixed(1)}</td></tr>`).join("");
+
+  const insights=["<b>Сесії -15% WoW</b> (2 226 vs 2 619). Падіння третій тиждень поспіль.","<b>Користувачі -12%</b>, конверсії -11% — якість стабільна.","<b>Частка блогу зросла</b>: 48% vs 38% від іменованих сторінок. Комерція просіла (159 vs 232 сесій, -31%), особливо /prodvighenie-zarubeghnyh-saytov (33 vs 115, -71%).","<b>Нова блогова зірка</b>: /blog/stoimost-prodvizhenija-sajta — 111 сесій (vs 1 минулого тижня).","<b>Брендовий «elitweb» №1.9</b>, CTR 36.4%.","<b>GSC позиція 14.9 vs 15.5</b> — покращилась на 0.6 пунктів.","<b>Пік — вівторок 13.05</b>: 479 сесій, 245 конверсій (найкращий день травня)."];
+  document.getElementById("seo-insights").innerHTML = insights.map(i=>`<li><span class="marker">&gt;</span><span>${i}</span></li>`).join("");
+}
+
+function renderDRP() {
+  const kpis=[{lbl:"Нових угод",val:"0",sub:"13 попер. · -100%",style:"accent"},{lbl:"План / факт",val:"0 / 15",sub:"0% · крит.",style:""},{lbl:"Promo до UA",val:"0",sub:"15 попер. · -100%",style:"accent"},{lbl:"Активні з попер.",val:"7",sub:"зустрічі на 12-18",style:""},{lbl:"MQL",val:"—",sub:"немає нових",style:"dark"},{lbl:"SQL",val:"—",sub:"немає нових",style:"dark"},{lbl:"Бюджет",val:"16 333 ₴",sub:"тарифний за тиждень",style:""},{lbl:"CPL",val:"∞",sub:"бо 0 лідів",style:"accent"}];
+  document.getElementById("drp-kpi").innerHTML = kpis.map(k=>`<div class="kpi ${k.style}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+  const stages=[{n:"Створено в цей тиждень",c:0,p:13},{n:"Просунулись у UA",c:0,p:15},{n:"З КП у картці",c:0,p:7},{n:"З брифом",c:0,p:16}];
+  document.getElementById("drp-stages-table").innerHTML = stages.map(s=>`<tr><td><b>${s.n}</b></td><td class="num"><b style="color:#FE391F">${s.c}</b></td><td class="num">${s.p}</td><td class="num">${deltaTag(s.c,s.p)}</td></tr>`).join("");
+  const active=[{s:"Встреча назначена",c:5},{s:"Presale проведен",c:1},{s:"Бриф",c:1}];
+  document.getElementById("drp-active").innerHTML = active.map(a=>`<tr><td><b>${a.s}</b></td><td class="num">${a.c}</td></tr>`).join("") + `<tr style="border-top:2px solid #000;font-weight:800;background:#EDEDED;"><td>Усього</td><td class="num">7</td></tr>`;
+  const insights=["<b>🚨 0 нових DRP-угод за тиждень.</b> Перший такий тиждень за весь час каналу. Тиждень тому — 13.","<b>Бюджет 16 333 ₴ злитий.</b> CPL = ∞.","<b>7 активних угод</b> з попередніх тижнів — Sales працює з ними.","<b>Можливі причини</b>: вихідні/відпустка партнера, операційні проблеми, виснаження бази.","<b>Стенд-ап з партнером — терміново.</b>"];
+  document.getElementById("drp-insights").innerHTML = insights.map(i=>`<li><span class="marker">&gt;</span><span>${i}</span></li>`).join("");
+}
+</script>
+
+<script>
+const LEADS = [{"date": "2026-05-12", "name": "instagram.com/studiia_zasmagi_sontse", "source": "SMM", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL"}, {"date": "2026-05-12", "name": "eshome.com.ua", "source": "Target", "stage": "На прогрев", "mql": "MQL", "sql": "—"}, {"date": "2026-05-12", "name": "ukraine.hixa.eu", "source": "SEO", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL"}, {"date": "2026-05-12", "name": "instagram.com/bottini_style", "source": "SMM", "stage": "Подготовка КП", "mql": "MQL", "sql": "Warm SQL"}, {"date": "2026-05-12", "name": "tetrapod.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-12", "name": "✅flag.ua", "source": "Target", "stage": "Бриф", "mql": "MQL", "sql": "Not SQL"}, {"date": "2026-05-13", "name": "www.tukir.com.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-13", "name": "kdm-kursi.com.ua", "source": "Cold Email", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-13", "name": "pokerok.com", "source": "SEO", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—"}, {"date": "2026-05-13", "name": "chudno.com.ua", "source": "SEO", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL"}, {"date": "2026-05-14", "name": "desexpert.com.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-14", "name": "ai-novation.online", "source": "SEO", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL"}, {"date": "2026-05-14", "name": "meged.com.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-14", "name": "O-community.vip", "source": "Target", "stage": "Взято в работу", "mql": "Not MQL", "sql": "—"}, {"date": "2026-05-14", "name": "zhyva-shkola.com", "source": "SEO", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "Marketing director Viatec", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "srtategic partnership director", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "vertykal.if.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "Сайта нет ( Егор )", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "natcollection.com.ua", "source": "Target", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "speroni.ua", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "en.goodwe.com", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "saltua.com.ua", "source": "FMCG Expo", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "rsegroup.com.ua", "source": "FMCG Expo", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—"}, {"date": "2026-05-15", "name": "vysoko.kyiv.ua", "source": "SMM", "stage": "Взято в работу", "mql": "Not MQL", "sql": "—"}, {"date": "2026-05-15", "name": "kyiv.energy", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-17", "name": "xdirect.ua", "source": "SEO", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "✅isei.ua", "source": "Target", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "aroma-bouquet.com.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "✅dentectum.com.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "resto-m.com", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "https://www.instagram.com/dr.vitaliy.bodnar?igsh=MXI0bnlkYWM5eGw1dA==", "source": "SEO", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "ENTIE", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "hevea.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "bcraft.group", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "rever.city", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "devohome.com.ua", "source": "Target", "stage": "Входящие", "mql": "—", "sql": "—"}, {"date": "2026-05-18", "name": "kb-market.com", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "timi.com.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "cheitgroup.com", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "shockauto.com.ua", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "heliosstrategia.eu", "source": "FMCG Expo", "stage": "Входящие", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "oksfort-therapy.com", "source": "Target", "stage": "Взято в работу", "mql": "Not MQL", "sql": "—"}, {"date": "2026-05-18", "name": "instagram.com/pasika_melnichenko", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "instagram.com/serpanock", "source": "Target", "stage": "Взято в работу", "mql": "MQL", "sql": "—"}, {"date": "2026-05-18", "name": "ENTIE", "source": "New Makers event 22.04.2026", "stage": "Входящие", "mql": "MQL", "sql": "—"}];
+renderGeneral();
+tabInit.general = true;
+</script>
+
+</body>
+</html>
