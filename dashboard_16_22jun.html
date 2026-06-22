@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>elit-web · Маркетинг 16 – 22 червня 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+:root{--ew-red:#FE391F;--ew-black:#000;--ew-grey:#EDEDED;--ew-grey-dark:#5A5A5A;--ew-green:#0F6E56;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish','Inter',sans-serif;background:#F8F8F8;color:#000;padding:28px;}
+.wrap{max-width:1280px;margin:0 auto;}
+header{background:#000;color:#fff;padding:28px 32px;margin-bottom:20px;border-left:6px solid var(--ew-red);}
+.brand-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);}
+.brand-row .dot{width:8px;height:8px;background:var(--ew-red);border-radius:50%;}
+header h1{font-size:30px;font-weight:900;letter-spacing:-1px;line-height:1.05;}
+header h1 .accent{color:var(--ew-red);}
+header .sub{margin-top:8px;font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:0.5px;}
+nav.tabs{background:#fff;display:flex;border-top:3px solid #000;margin-bottom:20px;overflow-x:auto;}
+nav.tabs .tab-btn{flex:1;background:#fff;color:#000;border:0;border-right:1px solid #EDEDED;padding:14px 18px;font-family:inherit;font-weight:800;font-size:12px;cursor:pointer;text-transform:uppercase;letter-spacing:0.8px;transition:all 0.15s;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:3px;border-radius:0;}
+nav.tabs .tab-btn:last-child{border-right:0;}
+nav.tabs .tab-btn:hover{background:#F8F8F8;color:var(--ew-red);}
+nav.tabs .tab-btn.active{background:var(--ew-red);color:#fff;}
+nav.tabs .tab-btn .sub{font-size:9px;font-weight:600;opacity:0.7;text-transform:none;letter-spacing:0;}
+nav.tabs .tab-btn.active .sub{opacity:0.9;}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.section{margin-bottom:24px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #000;}
+.sec-head .num{font-size:17px;color:var(--ew-red);font-weight:800;}
+.sec-head h2{font-size:20px;font-weight:800;letter-spacing:-0.4px;}
+.sec-head .sub{margin-left:auto;font-size:11px;color:#5A5A5A;letter-spacing:0.5px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.kpi{background:#fff;padding:16px;border-top:3px solid #000;}
+.kpi.accent{border-top-color:var(--ew-red);}
+.kpi.green{border-top-color:var(--ew-green);}
+.kpi.dark{background:#000;color:#fff;border-top-color:var(--ew-red);}
+.kpi .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:700;opacity:0.7;margin-bottom:6px;}
+.kpi .val{font-size:26px;font-weight:900;line-height:1;letter-spacing:-0.5px;}
+.kpi .sub{font-size:10px;margin-top:5px;opacity:0.7;}
+.card{background:#fff;padding:20px;border-top:3px solid #000;}
+.card h3{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid #EDEDED;padding-bottom:6px;}
+.card.dark{background:#000;color:#fff;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+table th{text-align:left;background:#000;color:#fff;padding:9px 10px;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;}
+table th.num{text-align:right;}
+table td{padding:8px 10px;border-bottom:1px solid #EDEDED;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+.delta{display:inline-block;font-weight:700;font-size:10px;padding:1px 6px;}
+.delta.up{background:#D7EBD8;color:#0F6E56;}
+.delta.down{background:#F4DDDB;color:#9F2D26;}
+.delta.flat{background:#EDEDED;color:#5A5A5A;}
+.tag{display:inline-block;padding:1px 6px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;}
+.tag.mql{background:#D7EBD8;color:#0F6E56;}
+.tag.notmql{background:#F4DDDB;color:#9F2D26;}
+.tag.cold{background:#0F6E56;color:#fff;}
+.tag.warm{background:#FE391F;color:#fff;}
+.tag.hot{background:#000;color:#fff;}
+.tag.notsql{background:#EDEDED;color:#5A5A5A;}
+.tag.lost{background:#F4DDDB;color:#9F2D26;}
+.tag.brief{background:#FFF6CC;color:#7A5C00;}
+.tag.work{background:#FFE9CC;color:#7A4A00;}
+.tag.kp{background:#FFE0DC;color:#9F2D26;}
+.tag.won{background:#0F6E56;color:#fff;}
+.bigflag{margin-top:14px;padding:14px 18px;background:#000;color:#fff;border-left:4px solid var(--ew-red);font-weight:700;font-size:13px;display:flex;align-items:center;gap:10px;line-height:1.4;}
+.bigflag .icon{font-size:20px;color:var(--ew-red);}
+.note{font-size:11px;color:#5A5A5A;margin-top:8px;line-height:1.4;}
+.insights{list-style:none;padding:0;}
+.insights li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:12px;line-height:1.4;}
+.insights li:last-child{border-bottom:0;}
+.insights .marker{color:var(--ew-red);font-weight:900;flex-shrink:0;}
+@media(max-width:900px){body{padding:14px;}.kpi-grid{grid-template-columns:repeat(2,1fr);}.row{grid-template-columns:1fr;}header h1{font-size:22px;}nav.tabs{flex-direction:column;}nav.tabs .tab-btn{border-right:0;border-bottom:1px solid #EDEDED;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand-row"><span class="dot"></span><span>elit-web · тижневий дешборд</span><span class="dot"></span><span>16–22 червня 2026 · vs 9–15.06 · 3 воронки · ₴</span></div>
+  <h1><span class="accent">Маркетинг</span> · 16 – 22 червня 2026</h1>
+  <div class="sub">Воронки: Elit-Web UA + Elit-Web/DRP + Leads from Wezom · усі витрати в ₴</div>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="general">Загальний<span class="sub">49 лідів</span></button>
+  <button class="tab-btn" data-tab="meta">Meta · Target<span class="sub">21 · ₴13 129</span></button>
+  <button class="tab-btn" data-tab="seo">SEO<span class="sub">7 · 1901 ses</span></button>
+  <button class="tab-btn" data-tab="ppc">Контекст<span class="sub">2 · ₴13 797</span></button>
+  <button class="tab-btn" data-tab="drp">DRP<span class="sub">6 лідів</span></button>
+</nav>
+
+<div class="tab-content active" id="tab-general">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Огляд тижня</h2><span class="sub">16–22.06 vs 9–15.06 · 3 воронки</span></div>
+    <div class="kpi-grid" id="gen-kpi"></div>
+    <div class="bigflag"><span class="icon">✓</span><b>49 лідів через UA + DRP + Wezom воронки</b> (+36% vs W7: 36). Plan 86%. Target лідер (21, 43%), SEO зростає (7), DRP стабільний (6), PPC ×2 (2 vs 1), Wezom-канал відкритий (1 перший лід). 3 валідні SQL (2 Warm + 1 Cold) — найкращий показник за місяць!</div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Витрати на рекламу</h2><span class="sub">усі в гривнях</span></div>
+    <div class="card"><table><thead><tr><th>Канал</th><th class="num">Витрати ₴</th><th class="num">Покази</th><th class="num">Кліки</th><th class="num">Ліди каб.</th><th class="num">Ліди CRM</th><th class="num">CPL CRM ₴</th></tr></thead><tbody>
+      <tr><td><b>Meta (Target)</b></td><td class="num">₴13 129</td><td class="num">60 052</td><td class="num">2 544</td><td class="num">28</td><td class="num">21</td><td class="num"><b>₴625</b></td></tr>
+      <tr><td><b>Google Ads (Контекст)</b></td><td class="num">₴13 797</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">2</td><td class="num"><b>₴6 898</b></td></tr>
+      <tr style="background:#000;color:#fff;font-weight:800;"><td><b>РАЗОМ</b></td><td class="num">₴26 926</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">23</td><td class="num">₴1 171</td></tr>
+    </tbody></table></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Канали лідів</h2><span class="sub">обсяг та якість</span></div>
+    <div class="card"><table><thead><tr><th>Канал</th><th class="num">Ліди</th><th class="num">vs W7</th><th class="num">MQL</th><th class="num">SQL валід.</th><th class="num">% MQL</th></tr></thead><tbody id="gen-channels"></tbody></table></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Стадії заявок</h2></div>
+    <div class="card"><table><thead><tr><th>Стадія</th><th class="num">К-сть</th><th>Категорія</th></tr></thead><tbody id="gen-stages"></tbody></table></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">04<span class="slash">/</span></span><h2>Усі 49 лідів</h2><span class="sub">UA + DRP + Wezom воронки</span></div>
+    <div class="card"><div style="overflow-x:auto;max-height:520px;overflow-y:auto;"><table id="gen-all-matrix" style="font-size:11px;"></table></div></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">05<span class="slash">/</span></span><h2>Висновки</h2></div>
+    <div class="card dark"><ul class="insights"><li><span class="marker">&gt;</span><span><b>49 лідів за 7 днів</b> через 3 воронки (+36% vs W7: 36). План 86% від тижневого таргета 57.</span></li><li><span class="marker">&gt;</span><span><b>🚀 Target +425%</b> (21 vs 4). Витрати Meta ₴13 129. CPL CRM ₴625 — нормальний показник.</span></li><li><span class="marker">&gt;</span><span><b>✓ SEO зростає +40%</b> (7 vs 5). GA4 органіка стабільна (1 901 сесій). GSC топ-запит «seo оптимізація» поз 4.3.</span></li><li><span class="marker">&gt;</span><span><b>→ DRP стабільний</b> (6 vs 6). 100% MQL — найкраща якість. 4 у воронці DRP-pipeline, 2 з джерела drp у UA-pipeline.</span></li><li><span class="marker">&gt;</span><span><b>🚀 Контекст подвоївся</b>: ₴13 797 (+16%). 2 CRM-ліди (vs 1 W7). Search PPC 2.0 ₴5 821 — основний драйвер.</span></li><li><span class="marker">&gt;</span><span><b>✓ Wezom-канал відкрито</b>: 1 перший лід (nrukraine.com, SEO послуга). Перевіряти чи системний потік чи разовий.</span></li><li><span class="marker">&gt;</span><span><b>✓ 3 валідні SQL у тижні</b> (2 Warm + 1 Cold): Mtzmarket (PPC), audi.kiev.ua (Cold Email), online-apteka (Тендер). Warm з Target і Cold Email — найперспективніші.</span></li><li><span class="marker">&gt;</span><span><b>Загальні витрати:</b> ₴26 926 на рекламу (Meta ₴13 129 + Google ₴13 797). CPL по платних каналах ₴1 171/лід.</span></li></ul></div>
+  </section>
+</div>
+
+<div class="tab-content" id="tab-meta">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Meta ABO|SEO · Target</h2><span class="sub">16–22.06 · 21 лідів CRM · ₴13 129</span></div>
+    <div class="kpi-grid" id="meta-kpi"></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Метрики реклами</h2></div>
+    <div class="card"><table><thead><tr><th>Метрика</th><th class="num">16–22.06</th><th class="num">9–15.06</th><th class="num">Δ</th></tr></thead><tbody id="meta-table"></tbody></table></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Якість Target-лідів</h2></div>
+    <div class="row">
+      <div class="card"><h3>MQL / SQL розподіл</h3><table><thead><tr><th>Категорія</th><th class="num">К-сть</th><th class="num">%</th></tr></thead><tbody id="meta-quality"></tbody></table></div>
+      <div class="card"><h3>Якість + Заперечення</h3><table><thead><tr><th>Якість / Заперечення</th><th class="num">К-сть</th></tr></thead><tbody id="meta-qual2"></tbody></table></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Матриця 21 Target-лідів</h2></div>
+    <div class="card"><div style="overflow-x:auto;max-height:540px;overflow-y:auto;"><table id="meta-matrix" style="font-size:11px;"></table></div></div>
+  </section>
+</div>
+
+<div class="tab-content" id="tab-seo">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>SEO Organic</h2><span class="sub">GA4 + GSC · 16–22.06</span></div>
+    <div class="kpi-grid" id="seo-kpi"></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Метрики органіки</h2></div>
+    <div class="card"><table><thead><tr><th>Метрика</th><th class="num">16–22.06</th><th class="num">9–15.06</th><th class="num">Δ</th></tr></thead><tbody id="seo-table"></tbody></table></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>SEO-ліди</h2><span class="sub">7 лідів за тиждень</span></div>
+    <div class="card"><div style="overflow-x:auto;"><table id="seo-matrix" style="font-size:11px;"></table></div></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>ТОП-20 блогових сторінок</h2><span class="sub">за кліками GSC</span></div>
+    <div class="card"><div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Сторінка</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">Поз.</th></tr></thead><tbody id="seo-top-blog"></tbody></table></div></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">04<span class="slash">/</span></span><h2>ТОП-10 комерційних сторінок</h2></div>
+    <div class="card"><div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Сторінка</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">Поз.</th></tr></thead><tbody id="seo-top-com"></tbody></table>
+      <div class="note">Лідер: /blog/stoimost-prodvizhenija-sajta (174 кліки). Сторінки послуг SMM і Контекст активно конвертують у трафік.</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">05<span class="slash">/</span></span><h2>ТОП-30 запитів GSC</h2><span class="sub">за кліками 16–20.06 (21-22 з затримкою)</span></div>
+    <div class="card"><div style="overflow-x:auto;max-height:600px;overflow-y:auto;"><table><thead><tr><th>#</th><th>Запит</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">Поз.</th></tr></thead><tbody id="seo-queries"></tbody></table></div>
+      <div class="note">Лідер: «seo оптимізація» (19 кліків, поз 4.3). Транзакційні запити про ціну/вартість стабільно дають кліки.</div>
+    </div>
+  </section>
+</div>
+
+<div class="tab-content" id="tab-ppc">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>Контекст · Google Ads</h2><span class="sub">канал активний · ₴13 797</span></div>
+    <div class="kpi-grid" id="ppc-kpi"></div>
+    <div class="bigflag"><span class="icon">🚀</span><b>Контекст подвоївся: +16% vs W7.</b> Витрати ₴13 797 (vs ₴11 891). Search PPC 2.0 — основний драйвер (₴5 821). Кампанія "Створення попиту" стабільно ₴700/день. 2 CRM-ліди з PPC!</div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Кампанії</h2></div>
+    <div class="card"><table><thead><tr><th>Кампанія</th><th class="num">Витрати ₴</th><th>Тип</th></tr></thead><tbody>
+      <tr><td><b>Створення попиту</b></td><td class="num">₴4 447</td><td><span class="tag work">Демонд-ген</span></td></tr>
+      <tr><td><b>Search PPC 2.0</b></td><td class="num">₴5 821</td><td><span class="tag warm">Performance</span></td></tr>
+      <tr><td><b>Search_Brand</b></td><td class="num">₴3 529</td><td><span class="tag mql">Брендовий</span></td></tr>
+      <tr style="background:#000;color:#fff;font-weight:800;"><td><b>РАЗОМ</b></td><td class="num">₴13 797</td><td>7 днів</td></tr>
+    </tbody></table></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Витрати по днях</h2></div>
+    <div class="card"><table><thead><tr><th>Дата</th><th class="num">Brand ₴</th><th class="num">PPC 2.0 ₴</th><th class="num">Створ.попиту ₴</th><th class="num">Разом ₴</th></tr></thead><tbody id="ppc-daily"></tbody></table></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Ліди з контексту</h2></div>
+    <div class="card" id="ppc-matrix-card"></div>
+  </section>
+</div>
+
+<div class="tab-content" id="tab-drp">
+  <section class="section">
+    <div class="sec-head"><span class="num">00<span class="slash">/</span></span><h2>DRP канал</h2><span class="sub">6 лідів · vs W7: 6</span></div>
+    <div class="kpi-grid" id="drp-kpi"></div>
+    <div class="bigflag"><span class="icon">→</span><b>DRP стабільний</b>: 6 лідів (±0% vs W7). 6 з 6 — MQL (100%). 4 в воронці Elit-Web/DRP (рання), 1 в Elit-Web UA (Бриф) + 1 закрита Не оцінено. SQL ще немає.</div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="num">01<span class="slash">/</span></span><h2>Матриця 6 DRP-лідів</h2></div>
+    <div class="card"><div style="overflow-x:auto;"><table id="drp-matrix" style="font-size:11px;"></table></div></div>
+  </section>
+</div>
+
+</div>
+
+<script>
+Chart.defaults.font.family="'Mulish','Inter',sans-serif";Chart.defaults.font.size=11;Chart.defaults.color="#000";
+const fmt=n=>Number(n).toLocaleString("uk-UA");
+const pct=(a,b)=>b===0?(a===0?0:100):((a-b)/b)*100;
+const deltaTag=(a,b,inv)=>{if(b===undefined||b===null)return"—";const d=pct(a,b);if(Math.abs(d)<0.5)return `<span class="delta flat">±0%</span>`;const up=d>0;const cls=inv?(up?"down":"up"):(up?"up":"down");return `<span class="delta ${cls}">${up?"▲":"▼"} ${Math.abs(d).toFixed(0)}%</span>`;};
+
+document.querySelectorAll('.tab-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const t=b.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById('tab-'+t).classList.add('active');
+  });
+});
+
+const TARGET_LEADS = [{"date": "06-16", "name": "gamingtech.com.ua", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-16", "name": "gadanie.in.ua", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "—", "sql": "Not SQL", "qual": "Bad lead, low odds", "voz": "Expensive", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "sana-tex.com", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "baby_shopbc_", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL", "qual": "Not lead", "voz": "Not Request", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Входящие", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "garden-flora.com.ua", "usluga": "", "stage": "Бриф", "mql": "MQL", "sql": "Not SQL", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "Сайта нет (Саша)", "usluga": "", "stage": "На прогрев", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "VG-group.Kiev.ua", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL", "qual": "Untargeted lead, workable", "voz": "Expensive", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "Aquagrup.com.ua", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL", "qual": "Bad lead, low odds", "voz": "Expensive", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "finradnyk.media", "usluga": "SEO;SEO of dev stage", "stage": "Подготовка КП", "mql": "MQL", "sql": "Not SQL", "qual": "", "voz": "", "brief": "Так", "kp": "—"}, {"date": "06-18", "name": "Mtzmarket.com.ua", "usluga": "PPC", "stage": "Подготовка КП", "mql": "MQL", "sql": "Warm SQL", "qual": "", "voz": "", "brief": "Так", "kp": "—"}, {"date": "06-18", "name": "twinssslippers.com", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "lipskyman.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "welltex.ua", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "goodmoodfood.in.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "green-decor", "usluga": "", "stage": "Заявка с сайта", "mql": "Not MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "Сайта нет", "usluga": "", "stage": "Заявка с сайта", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "gen-nutrition.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "tresor_development", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "officelitbudm.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "charlie.in.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}];
+const DRP_LEADS = [{"date": "06-17", "name": "dniprolab.com", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "101matras.ua", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "gtmshop.com.ua", "usluga": "", "stage": "Бриф", "mql": "MQL", "sql": "Not SQL", "qual": "", "voz": "", "brief": "Так", "kp": "—"}, {"date": "06-19", "name": "sharm.ua", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "zainstrumentom.com.ua", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "timfaden.com", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}];
+const SEO_LEADS = [{"date": "06-17", "name": "cs4151140.prom.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Входящие", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "tcdautocenter.m45.plus", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "javelinmed.kiev.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "datadrivehub.com", "usluga": "", "stage": "Взято в работу", "mql": "Not MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Заявка с сайта", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}];
+const PPC_LEADS = [{"date": "06-19", "name": "taxi-svityaz.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "elitbudm.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}];
+const ALL_LEADS = [{"date": "06-16", "name": "gamingtech.com.ua", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-16", "name": "neor.ua", "usluga": "", "stage": "Бриф", "mql": "MQL", "sql": "Not SQL", "qual": "", "voz": "Reaserch information", "brief": "Так", "kp": "—"}, {"date": "06-16", "name": "gadanie.in.ua", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "—", "sql": "Not SQL", "qual": "Bad lead, low odds", "voz": "Expensive", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "renault-adamant.cn.ua", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "avtovin.com.ua", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "sana-tex.com", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "baby_shopbc_", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL", "qual": "Not lead", "voz": "Not Request", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "dniprolab.com", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Входящие", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "cs4151140.prom.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "101matras.ua", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "garden-flora.com.ua", "usluga": "", "stage": "Бриф", "mql": "MQL", "sql": "Not SQL", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "Сайта нет (Саша)", "usluga": "", "stage": "На прогрев", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-17", "name": "gtmshop.com.ua", "usluga": "", "stage": "Бриф", "mql": "MQL", "sql": "Not SQL", "qual": "", "voz": "", "brief": "Так", "kp": "—"}, {"date": "06-17", "name": "audi.kiev.ua", "usluga": "SEO;PPC;SMM", "stage": "Бриф", "mql": "MQL", "sql": "Warm SQL", "qual": "", "voz": "", "brief": "Так", "kp": "—"}, {"date": "06-18", "name": "VG-group.Kiev.ua", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL", "qual": "Untargeted lead, workable", "voz": "Expensive", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "Plumex.io", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL", "qual": "Bad lead, low odds", "voz": "Other", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "Aquagrup.com.ua", "usluga": "", "stage": "Закрыто и нереализовано", "mql": "MQL", "sql": "Not SQL", "qual": "Bad lead, low odds", "voz": "Expensive", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "finradnyk.media", "usluga": "SEO;SEO of dev stage", "stage": "Подготовка КП", "mql": "MQL", "sql": "Not SQL", "qual": "", "voz": "", "brief": "Так", "kp": "—"}, {"date": "06-18", "name": "Mtzmarket.com.ua", "usluga": "PPC", "stage": "Подготовка КП", "mql": "MQL", "sql": "Warm SQL", "qual": "", "voz": "", "brief": "Так", "kp": "—"}, {"date": "06-18", "name": "peugeot.te.ua", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "twinssslippers.com", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "online-apteka.com.ua", "usluga": "PPC", "stage": "Подготовка КП", "mql": "MQL", "sql": "Cold SQL", "qual": "", "voz": "", "brief": "Так", "kp": "—"}, {"date": "06-18", "name": "lipskyman.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "welltex.ua", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "goodmoodfood.in.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "green-decor", "usluga": "", "stage": "Заявка с сайта", "mql": "Not MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-18", "name": "Сайта нет", "usluga": "", "stage": "Заявка с сайта", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "sharm.ua", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "gen-nutrition.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "nrukraine.com", "usluga": "SEO;SEO of dev stage", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "taxi-svityaz.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "tresor_development", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "zainstrumentom.com.ua", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "trinityrental.com", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-19", "name": "timfaden.com", "usluga": "", "stage": "Встреча назначена", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Входящие", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "tcdautocenter.m45.plus", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "thrypto.com", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "officelitbudm.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Заявка с сайта", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "javelinmed.kiev.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "datadrivehub.com", "usluga": "", "stage": "Взято в работу", "mql": "Not MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "charlie.in.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "mitsubishi-newton.com.ua", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "elitbudm.com.ua", "usluga": "", "stage": "Заявка с сайта", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "Сайта нет ( Саша)", "usluga": "", "stage": "Заявка с сайта", "mql": "—", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}, {"date": "06-22", "name": "utelecom.in.ua тендер", "usluga": "", "stage": "Взято в работу", "mql": "MQL", "sql": "—", "qual": "", "voz": "", "brief": "—", "kp": "—"}];
+const BLOG = [{"page": "https://elit-web.ua/blog/stoimost-prodvizhenija-sajta", "clicks": 174, "impressions": 4368, "position": 12.07, "url": "/blog/stoimost-prodvizhenija-sajta"}, {"page": "https://elit-web.ua/ua/blog/chto-takoe-tehnicheskaja-optimizatsija-sajta", "clicks": 28, "impressions": 621, "position": 17.8, "url": "/ua/blog/chto-takoe-tehnicheskaja-optimizatsija-sajta"}, {"page": "https://elit-web.ua/blog/direkt-v-instagram", "clicks": 25, "impressions": 3374, "position": 6.64, "url": "/blog/direkt-v-instagram"}, {"page": "https://elit-web.ua/ua/blog/kak-razblokirovat-akkaunt-instagram", "clicks": 21, "impressions": 1360, "position": 7.21, "url": "/ua/blog/kak-razblokirovat-akkaunt-instagram"}, {"page": "https://elit-web.ua/ua/blog/stoimost-prodvizhenija-sajta", "clicks": 21, "impressions": 1807, "position": 12.17, "url": "/ua/blog/stoimost-prodvizhenija-sajta"}, {"page": "https://elit-web.ua/blog/kak-razblokirovat-akkaunt-instagram", "clicks": 20, "impressions": 1886, "position": 8.97, "url": "/blog/kak-razblokirovat-akkaunt-instagram"}, {"page": "https://elit-web.ua/blog/kak-proverit-sajt-na-moshennichestvo", "clicks": 18, "impressions": 1007, "position": 11.16, "url": "/blog/kak-proverit-sajt-na-moshennichestvo"}, {"page": "https://elit-web.ua/blog/kak-posmotret-statistiku-v-tiktok", "clicks": 16, "impressions": 863, "position": 7.74, "url": "/blog/kak-posmotret-statistiku-v-tiktok"}, {"page": "https://elit-web.ua/ua/blog/direkt-v-instagram", "clicks": 16, "impressions": 1826, "position": 5.72, "url": "/ua/blog/direkt-v-instagram"}, {"page": "https://elit-web.ua/blog/prodvizhenie-sajtov-v-top-10", "clicks": 15, "impressions": 3457, "position": 33.76, "url": "/blog/prodvizhenie-sajtov-v-top-10"}, {"page": "https://elit-web.ua/ua/blog/kak-posmotret-statistiku-v-tiktok", "clicks": 15, "impressions": 737, "position": 6.29, "url": "/ua/blog/kak-posmotret-statistiku-v-tiktok"}, {"page": "https://elit-web.ua/blog/kak-nastroit-google-shopping", "clicks": 14, "impressions": 566, "position": 7.41, "url": "/blog/kak-nastroit-google-shopping"}, {"page": "https://elit-web.ua/blog/statistika-youtube-kanala", "clicks": 14, "impressions": 268, "position": 9.35, "url": "/blog/statistika-youtube-kanala"}, {"page": "https://elit-web.ua/ua/blog/luchshee-vremja-dlja-publikatsij-v-instagram", "clicks": 12, "impressions": 674, "position": 4.59, "url": "/ua/blog/luchshee-vremja-dlja-publikatsij-v-instagram"}, {"page": "https://elit-web.ua/blog/luchshee-vremya-dlya-postinga-v-tiktok", "clicks": 11, "impressions": 3571, "position": 6.2, "url": "/blog/luchshee-vremya-dlya-postinga-v-tiktok"}, {"page": "https://elit-web.ua/ua/blog/chto-takoe-dorozhnaja-karta-proekta-roadmap", "clicks": 11, "impressions": 787, "position": 4.69, "url": "/ua/blog/chto-takoe-dorozhnaja-karta-proekta-roadmap"}];
+const COMM = [{"page": "https://elit-web.ua/", "clicks": 145, "impressions": 32883, "position": 12.1, "url": "/"}, {"page": "https://elit-web.ua/ua/", "clicks": 61, "impressions": 7808, "position": 15.95, "url": "/ua/"}, {"page": "https://elit-web.ua/uslugi-smm", "clicks": 51, "impressions": 2093, "position": 27.93, "url": "/uslugi-smm"}, {"page": "https://elit-web.ua/uslugi-kontekstnoy-reklamy", "clicks": 41, "impressions": 1325, "position": 26.12, "url": "/uslugi-kontekstnoy-reklamy"}];
+const QUERIES = [{"query": "seo оптимізація", "clicks": 19, "impressions": 84, "ctr": 0.2262, "position": 4.27}, {"query": "google shopping", "clicks": 14, "impressions": 154, "ctr": 0.0909, "position": 5.16}, {"query": "seo київ", "clicks": 10, "impressions": 55, "ctr": 0.1818, "position": 2.6}, {"query": "seo оптимізація сайта", "clicks": 10, "impressions": 14, "ctr": 0.7143, "position": 7.5}, {"query": "seo продвижение цены", "clicks": 10, "impressions": 20, "ctr": 0.5, "position": 8.3}, {"query": "цена продвижение сайтов", "clicks": 10, "impressions": 22, "ctr": 0.4545, "position": 23.27}, {"query": "цены продвижение сайта", "clicks": 10, "impressions": 24, "ctr": 0.4167, "position": 20.29}, {"query": "поисковая оптимизация сайтов", "clicks": 9, "impressions": 54, "ctr": 0.1667, "position": 3.3}, {"query": "цена продвижение сайта", "clicks": 9, "impressions": 35, "ctr": 0.2571, "position": 25.54}, {"query": "seo оптимізація сайтів", "clicks": 8, "impressions": 42, "ctr": 0.1905, "position": 7.83}, {"query": "пошукове просування сайту", "clicks": 8, "impressions": 114, "ctr": 0.0702, "position": 12.3}, {"query": "услуга контекстная реклама", "clicks": 8, "impressions": 28, "ctr": 0.2857, "position": 2.46}, {"query": "услуги контекстной рекламы", "clicks": 8, "impressions": 78, "ctr": 0.1026, "position": 6.05}, {"query": "цены продвижение сайтов", "clicks": 8, "impressions": 22, "ctr": 0.3636, "position": 21.73}, {"query": "seo оптимизация цены", "clicks": 7, "impressions": 25, "ctr": 0.28, "position": 7.96}, {"query": "заказать контекстную рекламу", "clicks": 7, "impressions": 101, "ctr": 0.0693, "position": 5.56}, {"query": "контекстная реклама услуги", "clicks": 7, "impressions": 76, "ctr": 0.0921, "position": 10.18}, {"query": "продвижение сайта в google цены", "clicks": 7, "impressions": 35, "ctr": 0.2, "position": 3.46}, {"query": "продвижение сайта цены в месяц", "clicks": 7, "impressions": 25, "ctr": 0.28, "position": 19.28}, {"query": "раскрутка сайта в google цена", "clicks": 7, "impressions": 109, "ctr": 0.0642, "position": 23.54}, {"query": "seo просування сайту ціна", "clicks": 6, "impressions": 33, "ctr": 0.1818, "position": 4.97}, {"query": "вартість просування сайту", "clicks": 6, "impressions": 62, "ctr": 0.0968, "position": 14.21}, {"query": "дірект це", "clicks": 6, "impressions": 125, "ctr": 0.048, "position": 2.27}, {"query": "контекстная реклама услуга", "clicks": 6, "impressions": 22, "ctr": 0.2727, "position": 4.27}, {"query": "продвижение сайта в поиске", "clicks": 6, "impressions": 37, "ctr": 0.1622, "position": 22.19}, {"query": "продвижение сайтов магазина", "clicks": 6, "impressions": 35, "ctr": 0.1714, "position": 19.4}, {"query": "продвижение сайтов цена", "clicks": 6, "impressions": 31, "ctr": 0.1935, "position": 18.68}, {"query": "продвижение сайтов цена в месяц", "clicks": 6, "impressions": 32, "ctr": 0.1875, "position": 12.41}, {"query": "продвижение сайтов цены", "clicks": 6, "impressions": 54, "ctr": 0.1111, "position": 13.98}, {"query": "сео продвижение цена", "clicks": 6, "impressions": 82, "ctr": 0.0732, "position": 3.93}];
+
+function stClass(s){
+  if(s==="Закрыто и нереализовано"||s==="Lost") return "lost";
+  if(s==="Успешно реализовано") return "won";
+  if(["Согласование договора","Выставление счета","Готово КП","Презентация КП","Подготовка КП"].includes(s)) return "kp";
+  if(s==="Бриф") return "brief";
+  if(s==="Взято в работу") return "work";
+  return "work";
+}
+
+function renderMatrix(elId, leads){
+  if(leads.length===0){
+    document.getElementById(elId).innerHTML = '<thead><tr><th>—</th></tr></thead><tbody><tr><td style="text-align:center;padding:20px;color:#999;font-style:italic;">Лідів немає</td></tr></tbody>';
+    return;
+  }
+  const head = `<thead><tr style="background:#000;color:#fff;"><th style="padding:7px;">#</th><th>Дата</th><th>Назва</th><th>Послуга</th><th>Стадія</th><th>MQL</th><th>SQL</th><th>Якість</th><th>Заперечення</th><th>Бриф</th><th>КП</th></tr></thead>`;
+  const rows = leads.map((l,i)=>{
+    const stc = stClass(l.stage);
+    const mqlc = l.mql==='MQL' ? 'mql' : l.mql==='Not MQL' ? 'notmql' : 'notsql';
+    const sqlc = l.sql==='Cold SQL' ? 'cold' : l.sql==='Warm SQL' ? 'warm' : l.sql==='Hot SQL' ? 'hot' : 'notsql';
+    return `<tr>
+      <td style="color:#999;">${i+1}</td>
+      <td>${l.date}</td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${(l.name||'').replace(/"/g,'&quot;')}">${l.name||'—'}</td>
+      <td style="font-size:10px;color:#5A5A5A;">${l.usluga||'—'}</td>
+      <td><span class="tag ${stc}">${(l.stage||'').substring(0,18)}</span></td>
+      <td><span class="tag ${mqlc}">${l.mql}</span></td>
+      <td><span class="tag ${sqlc}">${(l.sql||'').replace(' SQL','')}</span></td>
+      <td style="font-size:10px;color:#5A5A5A;">${l.qual||'—'}</td>
+      <td style="font-size:10px;color:#5A5A5A;">${l.voz||'—'}</td>
+      <td style="font-size:10px;font-weight:700;">${l.brief}</td>
+      <td style="font-size:10px;font-weight:700;">${l.kp}</td>
+    </tr>`;
+  }).join("");
+  document.getElementById(elId).innerHTML = head + `<tbody>${rows}</tbody>`;
+}
+
+const genKpis=[
+  {lbl:"Усього лідів",val:"49",sub:"36 (W7) "+deltaTag(49,36)},
+  {lbl:"MQL",val:"41",sub:"84% · vs 32",style:"accent"},
+  {lbl:"SQL валідні",val:"3",sub:"2 Warm + 1 Cold",style:"dark"},
+  {lbl:"План вик. (57)",val:"86%",sub:"49 з 57",style:"accent"},
+  {lbl:"Витрати Meta",val:"₴13 129",sub:"vs ₴19 291 "+deltaTag(13129,19291,true)},
+  {lbl:"Витрати Google",val:"₴13 797",sub:"+16% vs W7",style:"dark"},
+  {lbl:"Всього витрати",val:"₴26 926",sub:"Meta + Google Ads"},
+  {lbl:"Бриф заповнено",val:"5",sub:"з них 3 з SQL",style:"green"}
+];
+document.getElementById("gen-kpi").innerHTML=genKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+const channels=[
+  {name:"Target (Meta)",leads:21,prev:4,mql:18,sql:1},
+  {name:"SEO",leads:7,prev:5,mql:6,sql:0},
+  {name:"DRP",leads:6,prev:6,mql:6,sql:0},
+  {name:"Cold Email",leads:3,prev:0,mql:3,sql:1},
+  {name:"PPC (Контекст)",leads:2,prev:1,mql:2,sql:0},
+  {name:"Тендер",leads:2,prev:0,mql:2,sql:1},
+  {name:"Автодилери/CPO",leads:2,prev:0,mql:2,sql:0},
+  {name:"Інші",leads:6,prev:0,mql:2,sql:0}
+];
+document.getElementById("gen-channels").innerHTML=channels.map(c=>{
+  const mp=c.leads?c.mql/c.leads*100:0;
+  return `<tr><td><b>${c.name}</b></td><td class="num">${c.leads}</td><td class="num">${deltaTag(c.leads,c.prev)}</td><td class="num">${c.mql}</td><td class="num">${c.sql}</td><td class="num"><b>${mp.toFixed(0)}%</b></td></tr>`;
+}).join("");
+
+const stages=[
+  ["Заявка с сайта",16,"work"],
+  ["Взято в работу",13,"work"],
+  ["Закрыто и нереализовано",5,"lost"],
+  ["Встреча назначена",5,"work"],
+  ["Бриф",4,"brief"],
+  ["Подготовка КП",3,"kp"],
+  ["Входящие",2,"work"],
+  ["На прогрев",1,"work"]
+];
+document.getElementById("gen-stages").innerHTML=stages.map(s=>`<tr><td><b>${s[0]}</b></td><td class="num">${s[1]}</td><td><span class="tag ${s[2]}">${s[2]==='lost'?'Lost':s[2]==='kp'?'КП':s[2]==='brief'?'Бриф':'In progress'}</span></td></tr>`).join("");
+
+renderMatrix("gen-all-matrix", ALL_LEADS);
+
+const metaKpis=[
+  {lbl:"Витрати Meta",val:"₴13 129",sub:"₴19 291 попер. "+deltaTag(13129,19291,true)},
+  {lbl:"Ліди кабінет",val:"28",sub:"32 попер. "+deltaTag(28,32)},
+  {lbl:"Ліди CRM (Target)",val:"21",sub:"4 попер. "+deltaTag(21,4),style:"accent"},
+  {lbl:"Валідність CRM/каб",val:"75%",sub:"вище попер.",style:"dark"},
+  {lbl:"Покази",val:"60 052",sub:"6 днів акт."},
+  {lbl:"Кліки",val:"2 544",sub:"CTR 4.24%"},
+  {lbl:"CPL кабінет ₴",val:"₴469",sub:"₴604 попер."},
+  {lbl:"CPL CRM ₴",val:"₴625",sub:"₴803 попер.",style:"accent"}
+];
+document.getElementById("meta-kpi").innerHTML=metaKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+const metaRows=[
+  ["Витрати ₴","13129","19291",deltaTag(13129,19291,true)],
+  ["Покази","60052","60 699",deltaTag(60052,60699)],
+  ["Кліки","2544","2 938",deltaTag(2544,2938)],
+  ["CTR (%)","4.24","4.84",deltaTag(4.24,4.84)],
+  ["Ліди кабінет","28","32",deltaTag(28,32)],
+  ["Ліди CRM","21","24",deltaTag(21,24)],
+  ["CPL кабінет ₴","469","604",deltaTag(469,604,true)],
+  ["CPL CRM ₴","625","803",deltaTag(625,803,true)]
+];
+document.getElementById("meta-table").innerHTML=metaRows.map(r=>`<tr><td><b>${r[0]}</b></td><td class="num">${Number(r[1]).toLocaleString("uk-UA")}</td><td class="num">${Number(r[2]).toLocaleString("uk-UA")}</td><td class="num">${r[3]}</td></tr>`).join("");
+
+const metaQual=[["MQL",18,86],["Not MQL",2,10],["Warm SQL",1,5],["Not SQL",6,29],["Не оцінено",12,57]];
+document.getElementById("meta-quality").innerHTML=metaQual.map(q=>`<tr><td><b>${q[0]}</b></td><td class="num">${q[1]}</td><td class="num">${q[2]}%</td></tr>`).join("");
+
+const metaQual2=[["Bad lead, low odds",3],["Untargeted lead",1],["Not lead",1],["Expensive",3],["Not Request",1],["Не вказано",12]];
+document.getElementById("meta-qual2").innerHTML=metaQual2.map(q=>`<tr><td><b>${q[0]}</b></td><td class="num">${q[1]}</td></tr>`).join("");
+
+renderMatrix("meta-matrix", TARGET_LEADS);
+
+const seoKpis=[
+  {lbl:"Сесії orgnc",val:"1 901",sub:"2 149 попер. "+deltaTag(1901,2149)},
+  {lbl:"Користувачі",val:"1 694",sub:"1 822 попер. "+deltaTag(1694,1822)},
+  {lbl:"Engagement",val:"68.4%",sub:"engaged ses 1 301"},
+  {lbl:"Конверсії GA4",val:"1 216",sub:"1 567 попер.",style:"accent"},
+  {lbl:"GSC кліки",val:"1 412",sub:"5 днів (21-22 з затримкою)"},
+  {lbl:"GSC поз",val:"14.0",sub:"CTR 0.53%"},
+  {lbl:"GSC покази",val:"268K",sub:"268 654"},
+  {lbl:"SEO-ліди CRM",val:"7",sub:"5 попер. "+deltaTag(7,5),style:"accent"}
+];
+document.getElementById("seo-kpi").innerHTML=seoKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+const seoRows=[
+  ["Сесії organic","1 901","2 149",deltaTag(1901,2149)],
+  ["Користувачі","1 694","1 822",deltaTag(1694,1822)],
+  ["Engaged sessions","1 301","1 437",deltaTag(1301,1437)],
+  ["Engagement rate","68.4%","66.9%",deltaTag(68.4,66.9)],
+  ["Конверсії GA4","1 216","1 567",deltaTag(1216,1567)],
+  ["GSC кліки (5дн)","1 412","1 482",deltaTag(1412,1482)],
+  ["GSC покази","268K","261K",deltaTag(268,261)],
+  ["GSC середня поз.","14.0","13.3",deltaTag(14.0,13.3,true)]
+];
+document.getElementById("seo-table").innerHTML=seoRows.map(r=>`<tr><td><b>${r[0]}</b></td><td class="num">${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3]}</td></tr>`).join("");
+
+renderMatrix("seo-matrix", SEO_LEADS);
+
+document.getElementById("seo-top-blog").innerHTML=BLOG.map((p,i)=>`<tr><td style="color:#999;">${i+1}</td><td style="font-size:10px;max-width:380px;word-break:break-all;">${p.url}</td><td class="num"><b>${p.clicks}</b></td><td class="num">${p.impressions.toLocaleString("uk-UA")}</td><td class="num">${p.position}</td></tr>`).join("");
+document.getElementById("seo-top-com").innerHTML=COMM.map((p,i)=>`<tr><td style="color:#999;">${i+1}</td><td style="font-size:10px;max-width:380px;word-break:break-all;">${p.url||'/'}</td><td class="num"><b>${p.clicks}</b></td><td class="num">${p.impressions.toLocaleString("uk-UA")}</td><td class="num">${p.position}</td></tr>`).join("");
+document.getElementById("seo-queries").innerHTML=QUERIES.map((q,i)=>`<tr><td style="color:#999;">${i+1}</td><td>${q.query}</td><td class="num"><b>${q.clicks}</b></td><td class="num">${q.impressions}</td><td class="num">${(q.ctr*100).toFixed(1)}%</td><td class="num">${q.position.toFixed(1)}</td></tr>`).join("");
+
+const ppcKpis=[
+  {lbl:"Всього Google Ads",val:"₴13 797",sub:"₴11 891 W7 +16%",style:"accent"},
+  {lbl:"Створення попиту",val:"₴4 447",sub:"~42K показів"},
+  {lbl:"Search PPC 2.0",val:"₴5 821",sub:"894 покази · 36 кліків"},
+  {lbl:"Search Brand",val:"₴3 529",sub:"215 покази · 65 кліків"},
+  {lbl:"Ліди CRM (PPC)",val:"2",sub:"1 W7 ▲ +100%",style:"accent"},
+  {lbl:"Днів активно",val:"7",sub:"стабільно"},
+  {lbl:"CPL CRM ₴",val:"₴6 898",sub:"за 2 ліди"},
+  {lbl:"Ліди очікуємо",val:"5-8",sub:"з затримкою 1-2 тижні",style:"dark"}
+];
+document.getElementById("ppc-kpi").innerHTML=ppcKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+const ppcDaily=[
+  ["16.06", 853, 904, 710, 2467],
+  ["17.06", 578, 1416, 710, 2704],
+  ["18.06", 597, 932, 712, 2241],
+  ["19.06", 896, 1582, 704, 3182],
+  ["20.06", 178, 457, 702, 1337],
+  ["21.06", 122, 531, 699, 1352],
+  ["22.06", 305, 0, 209, 514]
+];
+document.getElementById("ppc-daily").innerHTML=ppcDaily.map(d=>`<tr><td><b>${d[0]}</b></td><td class="num">₴${d[1].toLocaleString("uk-UA")}</td><td class="num">₴${d[2].toLocaleString("uk-UA")}</td><td class="num">₴${d[3].toLocaleString("uk-UA")}</td><td class="num"><b>₴${d[4].toLocaleString("uk-UA")}</b></td></tr>`).join("")+`<tr style="background:#000;color:#fff;font-weight:800;"><td><b>РАЗОМ</b></td><td class="num">₴3 529</td><td class="num">₴5 821</td><td class="num">₴4 447</td><td class="num">₴13 797</td></tr>`;
+
+if(PPC_LEADS.length===0){
+  document.getElementById("ppc-matrix-card").innerHTML='<div style="text-align:center;padding:30px;color:#999;font-style:italic;">Лідів з PPC немає в CRM за цей період.</div>';
+}else{
+  document.getElementById("ppc-matrix-card").innerHTML='<div style="overflow-x:auto;"><table id="ppc-matrix" style="font-size:11px;"></table></div>';
+  renderMatrix("ppc-matrix", PPC_LEADS);
+}
+
+const drpKpis=[
+  {lbl:"DRP лідів",val:"6",sub:"6 (W7) ±0%",style:"accent"},
+  {lbl:"MQL",val:"6",sub:"100% MQL — рекорд",style:"green"},
+  {lbl:"SQL Valid",val:"0",sub:"очікують оцінки",style:"dark"},
+  {lbl:"Бриф заповнено",val:"1",sub:"gtmshop.com.ua"},
+  {lbl:"КП створено",val:"0",sub:"будуть на наступному тижні"},
+  {lbl:"Продано",val:"0",sub:"для нових лідів"},
+  {lbl:"Втрачено",val:"0",sub:"100% в роботі"},
+  {lbl:"Менеджерів",val:"3",sub:"Стахаєва, Стрижевський, Базиченко",style:"dark"}
+];
+document.getElementById("drp-kpi").innerHTML=drpKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+renderMatrix("drp-matrix", DRP_LEADS);
+</script>
+</body>
+</html>
