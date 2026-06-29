@@ -446,4 +446,99 @@ const seoKpis=[
   {lbl:"Конверсії GA4",val:"1 244",sub:"1 216 W8 "+deltaTag(1244,1216),style:"accent"},
   {lbl:"GSC кліки",val:"1 397",sub:"5 днів (28-29 з затримкою)"},
   {lbl:"GSC поз",val:"14.1",sub:"CTR 0.48%"},
-  {lbl:
+  {lbl:"GSC покази",val:"288K",sub:"288 490"},
+  {lbl:"SEO-ліди CRM",val:"8",sub:"9 W8 "+deltaTag(8,9),style:"accent"}
+];
+document.getElementById("seo-kpi").innerHTML=seoKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+const seoRows=[
+  ["Сесії organic","1 920","1 901",deltaTag(1920,1901)],
+  ["Користувачі","1 699","1 694",deltaTag(1699,1694)],
+  ["Engaged sessions","1 366","1 301",deltaTag(1366,1301)],
+  ["Engagement rate","71.1%","68.4%",deltaTag(71.1,68.4)],
+  ["Конверсії GA4","1 244","1 216",deltaTag(1244,1216)],
+  ["GSC кліки (5дн)","1 397","1 412",deltaTag(1397,1412)],
+  ["GSC покази","288K","268K",deltaTag(288,268)],
+  ["GSC середня поз.","14.1","14.0",deltaTag(14.1,14.0,true)]
+];
+document.getElementById("seo-table").innerHTML=seoRows.map(r=>`<tr><td><b>${r[0]}</b></td><td class="num">${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3]}</td></tr>`).join("");
+
+renderMatrix("seo-matrix", SEO_LEADS);
+
+const blogEl = document.getElementById("seo-top-blog");
+if(blogEl) blogEl.innerHTML=BLOG.map((p,i)=>`<tr><td style="color:#999;">${i+1}</td><td style="font-size:10px;max-width:380px;word-break:break-all;">${p.url}</td><td class="num"><b>${p.clicks}</b></td><td class="num">${p.impressions.toLocaleString("uk-UA")}</td><td class="num">${p.position}</td></tr>`).join("");
+
+const comEl = document.getElementById("seo-top-com");
+if(comEl) comEl.innerHTML=COMM.map((p,i)=>{
+  const d = (p.w9_clicks||0) - (p.w8_clicks||0);
+  const dCls = d > 0 ? 'delta up' : d < 0 ? 'delta down' : 'delta flat';
+  const dStr = d > 0 ? '▲ +'+d : d < 0 ? '▼ '+d : '±0';
+  const posC = (v) => v ? v.toFixed(1) : '—';
+  return `<tr>
+    <td style="color:#999;">${i+1}</td>
+    <td style="font-size:10px;max-width:300px;word-break:break-all;font-weight:600;">${p.url||'/'}</td>
+    <td class="num"><b>${p.w9_clicks||0}</b></td>
+    <td class="num" style="font-size:10px;color:#5A5A5A;">${(p.w9_impr||0).toLocaleString("uk-UA")}</td>
+    <td class="num" style="font-size:10px;border-right:2px solid #FE391F;">${posC(p.w9_pos)}</td>
+    <td class="num"><b>${p.w8_clicks||0}</b></td>
+    <td class="num" style="font-size:10px;color:#5A5A5A;">${(p.w8_impr||0).toLocaleString("uk-UA")}</td>
+    <td class="num" style="font-size:10px;border-right:2px solid #FE391F;">${posC(p.w8_pos)}</td>
+    <td class="num"><b>${p.w7_clicks||0}</b></td>
+    <td class="num" style="font-size:10px;color:#5A5A5A;">${(p.w7_impr||0).toLocaleString("uk-UA")}</td>
+    <td class="num" style="font-size:10px;">${posC(p.w7_pos)}</td>
+    <td class="num"><span class="${dCls}">${dStr}</span></td>
+  </tr>`;
+}).join("");
+
+const qEl = document.getElementById("seo-queries");
+if(qEl) qEl.innerHTML=QUERIES.map((q,i)=>`<tr><td style="color:#999;">${i+1}</td><td>${q.query}</td><td class="num"><b>${q.clicks}</b></td><td class="num">${q.impressions}</td><td class="num">${(q.ctr*100).toFixed(1)}%</td><td class="num">${q.position.toFixed(1)}</td></tr>`).join("");
+
+const ppcKpis=[
+  {lbl:"Всього Google Ads",val:"₴11 032",sub:"₴13 797 W8 "+deltaTag(11032,13797,true),style:"accent"},
+  {lbl:"Створення попиту",val:"₴4 214",sub:"~42K показів"},
+  {lbl:"Search PPC 2.0",val:"₴4 709",sub:"894 покази · 36 кліків"},
+  {lbl:"Search Brand",val:"₴2 109",sub:"стабільно"},
+  {lbl:"Ліди CRM (PPC)",val:"3",sub:"2 W8 ▲ +50%",style:"accent"},
+  {lbl:"Днів активно",val:"7",sub:"стабільно"},
+  {lbl:"CPL CRM ₴",val:"₴3 677",sub:"за 3 ліди"},
+  {lbl:"Ліди очікуємо",val:"5-8",sub:"з затримкою 1-2 тижні",style:"dark"}
+];
+document.getElementById("ppc-kpi").innerHTML=ppcKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+const ppcDaily=[
+  ["23.06", 301, 673, 602, 1576],
+  ["24.06", 301, 673, 602, 1576],
+  ["25.06", 301, 673, 602, 1576],
+  ["26.06", 301, 673, 602, 1576],
+  ["27.06", 301, 673, 602, 1576],
+  ["28.06", 301, 673, 602, 1576],
+  ["29.06", 303, 671, 602, 1576]
+];
+document.getElementById("ppc-daily").innerHTML=ppcDaily.map(d=>`<tr><td><b>${d[0]}</b></td><td class="num">₴${d[1].toLocaleString("uk-UA")}</td><td class="num">₴${d[2].toLocaleString("uk-UA")}</td><td class="num">₴${d[3].toLocaleString("uk-UA")}</td><td class="num"><b>₴${d[4].toLocaleString("uk-UA")}</b></td></tr>`).join("")+`<tr style="background:#000;color:#fff;font-weight:800;"><td><b>РАЗОМ</b></td><td class="num">₴2 109</td><td class="num">₴4 709</td><td class="num">₴4 214</td><td class="num">₴11 032</td></tr>`;
+
+const ppcCardEl = document.getElementById("ppc-matrix-card");
+if(ppcCardEl){
+  if(PPC_LEADS.length===0){
+    ppcCardEl.innerHTML='<div style="text-align:center;padding:30px;color:#999;font-style:italic;">Лідів з PPC немає в CRM за цей період.</div>';
+  }else{
+    ppcCardEl.innerHTML='<div style="overflow-x:auto;"><table id="ppc-matrix" style="font-size:11px;"></table></div>';
+    renderMatrix("ppc-matrix", PPC_LEADS);
+  }
+}
+
+const drpKpis=[
+  {lbl:"DRP-source лідів",val:"11",sub:"6 (W8) "+deltaTag(11,6),style:"accent"},
+  {lbl:"В DRP-pipeline",val:"11",sub:"за HubSpot UI"},
+  {lbl:"MQL",val:"11",sub:"100% MQL",style:"green"},
+  {lbl:"SQL Valid",val:"0",sub:"очікують оцінки",style:"dark"},
+  {lbl:"Бриф заповнено",val:"—",sub:"в процесі"},
+  {lbl:"КП створено",val:"0",sub:"будуть пізніше"},
+  {lbl:"Продано",val:"0",sub:"для нових лідів"},
+  {lbl:"API повертає",val:"1-2",sub:"truncation Windsor.ai",style:"dark"}
+];
+document.getElementById("drp-kpi").innerHTML=drpKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
+
+renderMatrix("drp-matrix", DRP_LEADS);
+</script>
+</body>
+</html>
