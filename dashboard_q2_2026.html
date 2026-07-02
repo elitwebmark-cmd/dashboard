@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>elit-web · Q2 2026 · квартальний звіт (квітень-червень)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+:root{--ew-red:#FE391F;--ew-black:#000;--ew-grey:#EDEDED;--ew-grey-dark:#5A5A5A;--ew-green:#0F6E56;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish','Inter',sans-serif;background:#F8F8F8;color:#000;padding:28px;}
+.wrap{max-width:1400px;margin:0 auto;}
+header{background:#000;color:#fff;padding:32px 36px;margin-bottom:24px;border-left:6px solid var(--ew-red);}
+.brand-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);}
+.brand-row .dot{width:8px;height:8px;background:var(--ew-red);border-radius:50%;}
+header h1{font-size:38px;font-weight:900;letter-spacing:-1.2px;line-height:1.05;text-transform:uppercase;}
+header h1 .accent{color:var(--ew-red);}
+header .sub{margin-top:10px;font-size:14px;color:rgba(255,255,255,0.75);letter-spacing:0.3px;}
+.section{margin-bottom:32px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #000;}
+.sec-head .num{font-size:16px;color:var(--ew-red);font-weight:900;letter-spacing:0.1em;}
+.sec-head h2{font-size:24px;font-weight:900;letter-spacing:-0.5px;}
+.sec-head .sub{margin-left:auto;font-size:11px;color:#5A5A5A;letter-spacing:0.5px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.kpi-grid.six{grid-template-columns:repeat(6,1fr);}
+.kpi{background:#fff;padding:20px 18px;border-top:3px solid #000;}
+.kpi.accent{border-top-color:var(--ew-red);}
+.kpi.green{border-top-color:var(--ew-green);}
+.kpi.dark{background:#000;color:#fff;border-top-color:var(--ew-red);}
+.kpi .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800;opacity:0.7;margin-bottom:8px;}
+.kpi .val{font-size:32px;font-weight:900;line-height:1;letter-spacing:-0.7px;}
+.kpi .sub{font-size:10.5px;margin-top:6px;opacity:0.7;}
+.card{background:#fff;padding:22px;border-top:3px solid #000;}
+.card.dark{background:#000;color:#fff;}
+.card h3{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;border-bottom:1px solid #EDEDED;padding-bottom:8px;}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+table th{text-align:left;background:#000;color:#fff;padding:11px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;}
+table th.num{text-align:right;}
+table td{padding:10px 12px;border-bottom:1px solid #EDEDED;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;}
+table tr:hover{background:#FAFAFA;}
+.month-cell{background:#F8F8F8 !important;font-weight:800;}
+.bigflag{background:var(--ew-red);color:#fff;padding:24px 28px;font-weight:800;font-size:16px;letter-spacing:-0.2px;display:flex;align-items:center;gap:16px;line-height:1.5;margin-bottom:22px;}
+.bigflag .icon{font-size:28px;flex-shrink:0;}
+.delta{display:inline-block;font-weight:800;font-size:11px;padding:2px 6px;margin-left:4px;border-radius:2px;}
+.delta.up{background:#D7EBD8;color:#0F6E56;}
+.delta.down{background:#F4DDDB;color:#9F2D26;}
+.delta.flat{background:#EDEDED;color:#5A5A5A;}
+.month-tag{display:inline-block;font-size:9px;font-weight:900;padding:3px 8px;letter-spacing:0.5px;text-transform:uppercase;}
+.tag-apr{background:#FE391F;color:#fff;}
+.tag-may{background:#0F6E56;color:#fff;}
+.tag-jun{background:#000;color:#fff;}
+.chart-wrap{height:340px;position:relative;}
+.chart-wrap.tall{height:400px;}
+.insights{list-style:none;padding:0;}
+.insights li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15);display:flex;gap:12px;font-size:13.5px;line-height:1.55;}
+.insights li:last-child{border-bottom:0;}
+.insights li .marker{color:var(--ew-red);font-weight:900;flex-shrink:0;}
+.link{color:#FE391F;font-weight:700;text-decoration:none;}
+.link:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand-row"><span class="dot"></span><span>elit-web · квартальний дешборд</span><span class="dot"></span><span>Q2 2026 · КВІТЕНЬ–ЧЕРВЕНЬ</span></div>
+    <h1><span class="accent">Q2 2026</span> · Квартал</h1>
+    <div class="sub">Порівняння 3 місяців · Квітень / Травень / Червень 2026 · всі канали, якість, витрати · 787 лідів · 10 угод виграно</div>
+  </header>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">00 /</span><h2>Ключові показники кварталу</h2><span class="sub">91 днів · Q2 2026</span></div>
+    <div class="bigflag"><span class="icon">Q2</span><b>787 лідів · 10 угод виграно · 113 валідних SQL · ₴621,440 витрачено на маркетинг</b>. План Q2 (732) виконано на 108%. Топ канал: Target (331), DRP (114), SEO (93).</div>
+    <div class="kpi-grid">
+      <div class="kpi accent"><div class="lbl">Усього лідів Q2</div><div class="val">787</div><div class="sub">Апр 245 · Тр 249 · Ч 293</div></div>
+      <div class="kpi accent"><div class="lbl">MQL Q2</div><div class="val">686</div><div class="sub">51% від усіх</div></div>
+      <div class="kpi green"><div class="lbl">Угод виграно</div><div class="val">10</div><div class="sub">Won stage</div></div>
+      <div class="kpi accent"><div class="lbl">План (732)</div><div class="val">108%</div><div class="sub">787 з 732</div></div>
+      <div class="kpi"><div class="lbl">Warm SQL</div><div class="val">40</div><div class="sub">теплі, конверсія +</div></div>
+      <div class="kpi"><div class="lbl">Cold SQL</div><div class="val">68</div><div class="sub">холодні</div></div>
+      <div class="kpi"><div class="lbl">Hot SQL</div><div class="val">5</div><div class="sub">гарячі</div></div>
+      <div class="kpi accent"><div class="lbl">SQL валідні</div><div class="val">113</div><div class="sub">W+C+H</div></div>
+      <div class="kpi"><div class="lbl">Витрати Meta</div><div class="val">₴266,079</div><div class="sub">3 місяці</div></div>
+      <div class="kpi"><div class="lbl">Витрати Google</div><div class="val">₴145,361</div><div class="sub">3 місяці</div></div>
+      <div class="kpi"><div class="lbl">Витрати DRP</div><div class="val">₴210,000</div><div class="sub">фікс. ₴70K × 3 міс</div></div>
+      <div class="kpi dark"><div class="lbl">Разом маркетинг</div><div class="val">₴621,440</div><div class="sub">Meta + Google + DRP</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">01 /</span><h2>Порівняння місяців</h2><span class="sub">квітень → травень → червень</span></div>
+    <div class="card">
+      <table>
+        <thead><tr>
+          <th>Метрика</th>
+          <th class="num"><span class="month-tag tag-apr">Квіт</span></th>
+          <th class="num"><span class="month-tag tag-may">Трав</span></th>
+          <th class="num"><span class="month-tag tag-jun">Черв</span></th>
+          <th class="num">Q2 разом</th>
+          <th class="num">Trend</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Усього лідів</b></td><td class="num">245</td><td class="num">249</td><td class="num">293</td><td class="num"><b>787</b></td><td class="num">📈 +20%</td></tr>
+          <tr><td><b>MQL (не Not SQL)</b></td><td class="num">211</td><td class="num">210</td><td class="num">265</td><td class="num"><b>686</b></td><td class="num">📊 varies</td></tr>
+          <tr><td><b>Active (не lost)</b></td><td class="num">22</td><td class="num">210</td><td class="num">135</td><td class="num"><b>367</b></td><td class="num">📊 varies</td></tr>
+          <tr><td><b>Lost (закрито)</b></td><td class="num">187</td><td class="num">39</td><td class="num">158</td><td class="num"><b>384</b></td><td class="num">—</td></tr>
+          <tr><td><b>Won (виграно)</b></td><td class="num">7</td><td class="num">2</td><td class="num">1</td><td class="num"><b>10</b></td><td class="num">📉 down</td></tr>
+          <tr><td><b>Warm SQL</b></td><td class="num">14</td><td class="num">18</td><td class="num">8</td><td class="num"><b>40</b></td><td class="num">📉</td></tr>
+          <tr><td><b>Cold SQL</b></td><td class="num">27</td><td class="num">26</td><td class="num">15</td><td class="num"><b>68</b></td><td class="num">📉</td></tr>
+          <tr><td><b>Hot SQL</b></td><td class="num">1</td><td class="num">4</td><td class="num">0</td><td class="num"><b>5</b></td><td class="num">📉</td></tr>
+          <tr style="background:#000;color:#fff;font-weight:800;"><td>SQL валідні</td><td class="num">42</td><td class="num">48</td><td class="num">23</td><td class="num">113</td><td class="num">📉 down</td></tr>
+          <tr><td><b>Target (fb lead)</b></td><td class="num">59</td><td class="num">126</td><td class="num">146</td><td class="num"><b>331</b></td><td class="num">📈 +148%</td></tr>
+          <tr><td><b>SEO</b></td><td class="num">27</td><td class="num">39</td><td class="num">27</td><td class="num"><b>93</b></td><td class="num">📊 varies</td></tr>
+          <tr><td><b>DRP</b></td><td class="num">51</td><td class="num">35</td><td class="num">28</td><td class="num"><b>114</b></td><td class="num">📉 -45%</td></tr>
+          <tr><td><b>Витрати Meta ₴</b></td><td class="num">73,233</td><td class="num">89,169</td><td class="num">103,677</td><td class="num"><b>266,079</b></td><td class="num">📈 +42%</td></tr>
+          <tr><td><b>Витрати Google ₴</b></td><td class="num">79,347</td><td class="num">15,960</td><td class="num">50,054</td><td class="num"><b>145,361</b></td><td class="num">📉 -37%</td></tr>
+          <tr><td><b>Витрати DRP ₴</b></td><td class="num">70 000</td><td class="num">70 000</td><td class="num">70 000</td><td class="num"><b>210,000</b></td><td class="num">flat</td></tr>
+          <tr style="background:#000;color:#fff;font-weight:800;"><td>Разом маркетинг ₴</td><td class="num">222,580</td><td class="num">175,129</td><td class="num">223,731</td><td class="num">621,440</td><td class="num">📊 varies</td></tr>
+          <tr><td><b>GA4 сесії organic</b></td><td class="num">12,443</td><td class="num">9,163</td><td class="num">9,987</td><td class="num"><b>31,593</b></td><td class="num">📉 -20%</td></tr>
+          <tr><td><b>GA4 конверсії</b></td><td class="num">6,515</td><td class="num">5,100</td><td class="num">5,524</td><td class="num"><b>17,139</b></td><td class="num">📊</td></tr>
+          <tr><td><b>GSC кліки</b></td><td class="num">10,632</td><td class="num">7,500</td><td class="num">8,489</td><td class="num"><b>26,621</b></td><td class="num">📉</td></tr>
+          <tr><td><b>GSC позиція</b></td><td class="num">13.98</td><td class="num">13.5</td><td class="num">13.64</td><td class="num"><b>~13.7</b></td><td class="num">📈 improved</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">02 /</span><h2>Динаміка лідів по місяцях</h2><span class="sub">stacked bar chart</span></div>
+    <div class="row-2">
+      <div class="card"><h3>Ліди / MQL / SQL</h3><div class="chart-wrap"><canvas id="leads-chart"></canvas></div></div>
+      <div class="card"><h3>Витрати по каналам</h3><div class="chart-wrap"><canvas id="spend-chart"></canvas></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">03 /</span><h2>Розподіл каналів Q2</h2><span class="sub">по місяцях</span></div>
+    <div class="row-3">
+      <div class="card"><h3><span class="month-tag tag-apr">Квітень</span> 245 лідів</h3><div class="chart-wrap"><canvas id="ch-apr"></canvas></div></div>
+      <div class="card"><h3><span class="month-tag tag-may">Травень</span> 249 лідів</h3><div class="chart-wrap"><canvas id="ch-may"></canvas></div></div>
+      <div class="card"><h3><span class="month-tag tag-jun">Червень</span> 293 лідів</h3><div class="chart-wrap"><canvas id="ch-jun"></canvas></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">04 /</span><h2>Якість лідів</h2><span class="sub">Warm + Cold + Hot SQL по місяцях</span></div>
+    <div class="row-2">
+      <div class="card"><h3>SQL по типах</h3><div class="chart-wrap"><canvas id="sql-chart"></canvas></div></div>
+      <div class="card"><h3>MQL vs Lost vs Won</h3><div class="chart-wrap"><canvas id="quality-chart"></canvas></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">05 /</span><h2>CPL по каналах</h2><span class="sub">вартість ліда</span></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Канал</th><th class="num">Квіт CPL ₴</th><th class="num">Трав CPL ₴</th><th class="num">Черв CPL ₴</th><th class="num">Q2 середній</th></tr></thead>
+        <tbody>
+          <tr><td><b>Meta (Target/fb lead)</b></td>
+            <td class="num">₴1,241</td>
+            <td class="num">₴707</td>
+            <td class="num">₴710</td>
+            <td class="num"><b>₴803</b></td></tr>
+          <tr><td><b>Google Ads (PPC)</b></td>
+            <td class="num">₴3,778</td>
+            <td class="num">₴3,192</td>
+            <td class="num">₴5,005</td>
+            <td class="num"><b>₴4,037</b></td></tr>
+          <tr><td><b>DRP (партнер)</b></td>
+            <td class="num">₴1,372</td>
+            <td class="num">₴2,000</td>
+            <td class="num">₴2,500</td>
+            <td class="num"><b>₴1,842</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">06 /</span><h2>Висновки та рекомендації</h2></div>
+    <div class="card dark">
+      <ul class="insights">
+        <li><span class="marker">▸</span><span><b>Тренд лідогенерації</b>: 245 (Апр) → 249 (Тр) → 293 (Ч). Зростання +20% за квартал. Червень найкращий за обсягом.</span></li>
+        <li><span class="marker">▸</span><span><b>Якість SQL деградує</b>: 42 (Апр) → 48 (Тр) → 23 (Ч). Червневе падіння через масові event-джерела (Expo Rau 32, Incrypted 18) без успішної кваліфікації.</span></li>
+        <li><span class="marker">▸</span><span><b>Won-угоди спадають</b>: 7 (Апр) → 2 (Тр) → 1 (Ч). Разом 10 угод за квартал. Потрібна робота з sales-командою над closing.</span></li>
+        <li><span class="marker">▸</span><span><b>Target-канал росте</b>: 59 → 126 → 146. +148% за квартал. Meta масштабує успішно, але CPL 710₴ (Ч) vs 1241₴ (Апр) — CRM-конверсія падає.</span></li>
+        <li><span class="marker">▸</span><span><b>DRP-канал у падінні</b>: 51 → 35 → 28. -45%. При фіксі ₴70K/міс, вартість DRP-ліда: ₴1373 (Апр) → ₴2000 (Тр) → ₴2500 (Ч). Партнер втрачає ефективність.</span></li>
+        <li><span class="marker">▸</span><span><b>SEO стабільний</b>: 27→39→27 CRM-лідів. GA4 12 443→9 163→9 987 сесій. Позиція GSC покращилась з 13.98 до 13.64.</span></li>
+        <li><span class="marker">▸</span><span><b>Event-канали (FMCG Expo, Incrypted, Expo Rau)</b>: 32 (Апр) + 0 (Тр) + 50 (Ч) = 82 лідів. Майже всі закриті нереалізованими. Ефективність під питанням.</span></li>
+        <li><span class="marker">▸</span><span><b>Витрати</b>: ₴222 580 → ₴175 129 → ₴223 731. Загалом Q2: ₴621,440. Середній CPL всього Q2: ₴789.</span></li>
+        <li><span class="marker">▸</span><span><b>Ключова рекомендація Q3</b>: (1) переглянути DRP-контракт — 210K квартально за 114 лідів = ₴1843/лід + низька якість; (2) зменшити event-фокус, посилити performance Meta+Google; (3) провалидувати «Не оцінені» ліди SQL.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">07 /</span><h2>Місячні дешборди</h2></div>
+    <div class="card">
+      <p style="font-size:14px;line-height:1.6;">Детальніше по кожному місяцю:</p>
+      <p style="font-size:14px;line-height:2;">
+        <a href="dashboard_april.html" class="link">→ Квітень 2026 (245 лідів)</a><br>
+        <a href="dashboard_may_apr.html" class="link">→ Травень 2026 (249 лідів)</a><br>
+        <a href="dashboard_june.html" class="link">→ Червень 2026 (293 лідів)</a><br>
+        <a href="dashboard_consolidated.html" class="link">→ Головний хаб (усі звіти)</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// Leads / MQL / SQL chart
+new Chart(document.getElementById('leads-chart'), {
+  type:'bar',
+  data:{
+    labels:['Квітень','Травень','Червень'],
+    datasets:[
+      {label:'Усього лідів', data:[245, 249, 293], backgroundColor:'#FE391F'},
+      {label:'MQL', data:[211, 210, 265], backgroundColor:'#000'},
+      {label:'SQL валідні', data:[42, 48, 23], backgroundColor:'#0F6E56'}
+    ]
+  },
+  options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'top'}}}
+});
+
+// Spend chart
+new Chart(document.getElementById('spend-chart'), {
+  type:'bar',
+  data:{
+    labels:['Квітень','Травень','Червень'],
+    datasets:[
+      {label:'Meta', data:[73233,89169,103677], backgroundColor:'#1877F2'},
+      {label:'Google Ads', data:[79347,15960,50054], backgroundColor:'#EA4335'},
+      {label:'DRP', data:[70000,70000,70000], backgroundColor:'#5A3F8C'}
+    ]
+  },
+  options:{responsive:true, maintainAspectRatio:false, scales:{x:{stacked:true}, y:{stacked:true}}, plugins:{legend:{position:'top'}}}
+});
+
+// Channels per month (donut)
+function chDonut(id, data){
+  new Chart(document.getElementById(id), {
+    type:'doughnut',
+    data:{labels:data.map(d=>d[0]), datasets:[{data:data.map(d=>d[1]), backgroundColor:['#FE391F','#0F6E56','#5A3F8C','#0C5460','#856404','#721C24','#5A5A5A','#856080','#B8000A','#F5E6E6']}]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'right', labels:{font:{size:11}}}}}
+  });
+}
+chDonut('ch-apr', [
+  ['Target',59],['SEO',27],['DRP',51],
+  ['Cold Email',21],['PPC',21],
+  ['Events (FMCG+NM)',32],['TikTok',11],
+  ['SMM',9],['Інші',15]
+]);
+chDonut('ch-may', [
+  ['Target',126],['SEO',39],['DRP',35],
+  ['Cold Email',13],['PPC',5],
+  ['SMM',12],['Інші',19]
+]);
+chDonut('ch-jun', [
+  ['Target',146],['SEO',27],['DRP',28],
+  ['Cold Email',14],['PPC',10],
+  ['Events (Expo+Incr)',50],
+  ['SMM',4],['Інші',14]
+]);
+
+// SQL by type chart
+new Chart(document.getElementById('sql-chart'), {
+  type:'bar',
+  data:{
+    labels:['Квітень','Травень','Червень'],
+    datasets:[
+      {label:'Hot SQL', data:[1,4,0], backgroundColor:'#C42814'},
+      {label:'Warm SQL', data:[14,18,8], backgroundColor:'#FE6647'},
+      {label:'Cold SQL', data:[27,26,15], backgroundColor:'#FE9379'}
+    ]
+  },
+  options:{responsive:true, maintainAspectRatio:false, scales:{x:{stacked:true}, y:{stacked:true}}, plugins:{legend:{position:'top'}}}
+});
+
+// Quality MQL/Lost/Won
+new Chart(document.getElementById('quality-chart'), {
+  type:'bar',
+  data:{
+    labels:['Квітень','Травень','Червень'],
+    datasets:[
+      {label:'MQL (активні)', data:[211, 210, 265], backgroundColor:'#0F6E56'},
+      {label:'Lost', data:[187,39,158], backgroundColor:'#5A5A5A'},
+      {label:'Won', data:[7,2,1], backgroundColor:'#FE391F'}
+    ]
+  },
+  options:{responsive:true, maintainAspectRatio:false, scales:{x:{stacked:true}, y:{stacked:true}}, plugins:{legend:{position:'top'}}}
+});
+</script>
+</body>
+</html>
