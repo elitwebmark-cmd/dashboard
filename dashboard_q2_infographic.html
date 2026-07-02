@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>elit-web · Q2 2026 · Детальна інфографіка</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+:root{--ew-red:#FE391F;--ew-black:#000;--ew-grey:#EDEDED;--ew-green:#0F6E56;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish','Inter',sans-serif;background:#F8F8F8;color:#000;padding:28px;}
+.wrap{max-width:1400px;margin:0 auto;}
+header{background:#000;color:#fff;padding:32px 36px;margin-bottom:24px;border-left:6px solid var(--ew-red);}
+.brand-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);}
+.brand-row .dot{width:8px;height:8px;background:var(--ew-red);border-radius:50%;}
+header h1{font-size:38px;font-weight:900;letter-spacing:-1.2px;line-height:1.05;text-transform:uppercase;}
+header h1 .accent{color:var(--ew-red);}
+header .sub{margin-top:10px;font-size:14px;color:rgba(255,255,255,0.75);}
+.section{margin-bottom:32px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #000;}
+.sec-head .num{font-size:16px;color:var(--ew-red);font-weight:900;}
+.sec-head h2{font-size:22px;font-weight:900;}
+.sec-head .sub{margin-left:auto;font-size:11px;color:#5A5A5A;}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.card{background:#fff;padding:20px;border-top:3px solid #000;}
+.card.dark{background:#000;color:#fff;}
+.card h3{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;border-bottom:1px solid #EDEDED;padding-bottom:8px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px;}
+.kpi{background:#fff;padding:16px 14px;border-top:3px solid #000;}
+.kpi.accent{border-top-color:var(--ew-red);}
+.kpi.dark{background:#000;color:#fff;}
+.kpi .lbl{font-size:9px;text-transform:uppercase;letter-spacing:1px;font-weight:800;opacity:0.7;margin-bottom:6px;}
+.kpi .val{font-size:24px;font-weight:900;line-height:1;}
+.kpi .sub{font-size:10px;margin-top:4px;opacity:0.7;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+table th{text-align:left;background:#000;color:#fff;padding:9px 10px;font-size:10px;text-transform:uppercase;letter-spacing:0.7px;font-weight:800;}
+table th.num{text-align:right;}
+table td{padding:8px 10px;border-bottom:1px solid #EDEDED;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;}
+table tr:hover{background:#FAFAFA;}
+.chart-wrap{height:320px;position:relative;}
+.chart-wrap.tall{height:400px;}
+.chart-wrap.small{height:240px;}
+.bigflag{background:var(--ew-red);color:#fff;padding:20px 24px;font-weight:800;font-size:15px;letter-spacing:-0.2px;display:flex;align-items:center;gap:14px;line-height:1.5;margin-bottom:22px;}
+.bigflag .icon{font-size:24px;flex-shrink:0;}
+.insights{list-style:none;padding:0;}
+.insights li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15);display:flex;gap:12px;font-size:13.5px;line-height:1.55;}
+.insights li:last-child{border-bottom:0;}
+.insights .marker{color:var(--ew-red);font-weight:900;flex-shrink:0;}
+.link{color:#FE391F;font-weight:700;text-decoration:none;}
+.link:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand-row"><span class="dot"></span><span>elit-web · детальна інфографіка</span><span class="dot"></span><span>Q2 2026 · КВІТЕНЬ–ЧЕРВЕНЬ</span></div>
+    <h1><span class="accent">Q2 2026</span> · Детальна інфографіка</h1>
+    <div class="sub">Аналіз 789 лідів (700 UA + 89 DRP) в розрізі місяців: ICP, якість, послуги, джерела, заперечення, брифи · експорт HubSpot 02.07.2026</div>
+  </header>
+
+  <section class="section">
+    <div class="kpi-grid">
+      <div class="kpi accent"><div class="lbl">Всього Q2</div><div class="val">789</div><div class="sub">3 місяці, 2 воронки</div></div>
+      <div class="kpi"><div class="lbl">Квітень</div><div class="val">245</div><div class="sub">207 UA + 38 DRP</div></div>
+      <div class="kpi"><div class="lbl">Травень</div><div class="val">244</div><div class="sub">219 UA + 25 DRP</div></div>
+      <div class="kpi"><div class="lbl">Червень</div><div class="val">300</div><div class="sub">274 UA + 26 DRP</div></div>
+      <div class="kpi dark"><div class="lbl">Не оцінено SQL</div><div class="val">129</div><div class="sub">Кв 29 · Тр 10 · Ч 90</div></div>
+      <div class="kpi accent"><div class="lbl">Брифів заповнено</div><div class="val">128</div><div class="sub">16% від усіх</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">01 /</span><h2>New SQL — по місяцях та тижнях</h2><span class="sub">розбивка Warm/Cold/Hot/Not/Не оцінено</span></div>
+    <div class="row-2">
+      <div class="card"><h3>По місяцях</h3><div class="chart-wrap"><canvas id="sql-monthly"></canvas></div></div>
+      <div class="card"><h3>По тижнях (Q2 усі 14 тижнів)</h3><div class="chart-wrap"><canvas id="sql-weekly"></canvas></div></div>
+    </div>
+    <br>
+    <div class="card">
+      <h3>Детальна таблиця SQL по місяцях</h3>
+      <table>
+        <thead><tr><th>Оцінка</th><th class="num">Квітень</th><th class="num">Травень</th><th class="num">Червень</th><th class="num">Q2 разом</th><th class="num">% Q2</th></tr></thead>
+        <tbody id="sql-table"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">02 /</span><h2>ICP — типи клієнтів</h2><span class="sub">по індустріях/типах бізнесу</span></div>
+    <div class="row-2">
+      <div class="card"><h3>Топ ICP по місяцях</h3><div class="chart-wrap tall"><canvas id="icp-chart"></canvas></div></div>
+      <div class="card">
+      <h3>Таблиця ICP</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Ecommerce</td><td class="num">61</td><td class="num">64</td><td class="num">60</td><td class="num"><b>185</b></td><td class="num">23.4%</td></tr><tr><td>Другое</td><td class="num">20</td><td class="num">31</td><td class="num">25</td><td class="num"><b>76</b></td><td class="num">9.6%</td></tr><tr><td>Не вказано</td><td class="num">17</td><td class="num">11</td><td class="num">46</td><td class="num"><b>74</b></td><td class="num">9.4%</td></tr><tr><td>Одежда и аксесуары</td><td class="num">11</td><td class="num">16</td><td class="num">19</td><td class="num"><b>46</b></td><td class="num">5.8%</td></tr><tr><td>IT/SaaS</td><td class="num">23</td><td class="num">12</td><td class="num">10</td><td class="num"><b>45</b></td><td class="num">5.7%</td></tr><tr><td>B2B оборудование</td><td class="num">14</td><td class="num">18</td><td class="num">8</td><td class="num"><b>40</b></td><td class="num">5.1%</td></tr><tr><td>Клиника</td><td class="num">8</td><td class="num">14</td><td class="num">13</td><td class="num"><b>35</b></td><td class="num">4.4%</td></tr><tr><td>Образовательные проекты</td><td class="num">8</td><td class="num">11</td><td class="num">6</td><td class="num"><b>25</b></td><td class="num">3.2%</td></tr><tr><td>Автодилеры</td><td class="num">4</td><td class="num">4</td><td class="num">14</td><td class="num"><b>22</b></td><td class="num">2.8%</td></tr><tr><td>Юридические услуги</td><td class="num">11</td><td class="num">4</td><td class="num">5</td><td class="num"><b>20</b></td><td class="num">2.5%</td></tr><tr><td>Эстетическая медицина</td><td class="num">6</td><td class="num">6</td><td class="num">7</td><td class="num"><b>19</b></td><td class="num">2.4%</td></tr><tr><td>Недвижимость</td><td class="num">10</td><td class="num">4</td><td class="num">5</td><td class="num"><b>19</b></td><td class="num">2.4%</td></tr><tr><td>Персональные услуги</td><td class="num">4</td><td class="num">6</td><td class="num">7</td><td class="num"><b>17</b></td><td class="num">2.2%</td></tr><tr><td>Строительные материалы</td><td class="num">9</td><td class="num">3</td><td class="num">5</td><td class="num"><b>17</b></td><td class="num">2.2%</td></tr><tr><td>Бытовые услуги</td><td class="num">4</td><td class="num">2</td><td class="num">7</td><td class="num"><b>13</b></td><td class="num">1.6%</td></tr></tbody></table>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">03 /</span><h2>Что важно клиенту</h2><span class="sub">пріоритети клієнтів</span></div>
+    <div class="row-2">
+      <div class="card"><h3>Розподіл</h3><div class="chart-wrap"><canvas id="important-chart"></canvas></div></div>
+      <div class="card">
+      <h3>Таблиця</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Не вказано</td><td class="num">207</td><td class="num">213</td><td class="num">270</td><td class="num"><b>690</b></td><td class="num">87.5%</td></tr><tr><td>Комплексный подход</td><td class="num">7</td><td class="num">12</td><td class="num">11</td><td class="num"><b>30</b></td><td class="num">3.8%</td></tr><tr><td>Продажи</td><td class="num">14</td><td class="num">3</td><td class="num">2</td><td class="num"><b>19</b></td><td class="num">2.4%</td></tr><tr><td>Цена; Качество</td><td class="num">3</td><td class="num">1</td><td class="num">1</td><td class="num"><b>5</b></td><td class="num">0.6%</td></tr><tr><td>Цена</td><td class="num">0</td><td class="num">1</td><td class="num">2</td><td class="num"><b>3</b></td><td class="num">0.4%</td></tr><tr><td>Лиды</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num"><b>3</b></td><td class="num">0.4%</td></tr><tr><td>Качество</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num"><b>3</b></td><td class="num">0.4%</td></tr><tr><td>Цена; Продажи; Позиции; Лиды</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num"><b>2</b></td><td class="num">0.3%</td></tr><tr><td>Цена; Продажи</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num"><b>2</b></td><td class="num">0.3%</td></tr><tr><td>Цена; Трафик; Позиции; Продажи; Лиды</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num"><b>2</b></td><td class="num">0.3%</td></tr><tr><td>Лиды; Продажи; Позиции; Трафик</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num"><b>2</b></td><td class="num">0.3%</td></tr><tr><td>Лиды; Продажи; Трафик</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num"><b>2</b></td><td class="num">0.3%</td></tr><tr><td>Качество; Цена</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num"><b>2</b></td><td class="num">0.3%</td></tr><tr><td>Цена; Продажи; Лиды</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num"><b>2</b></td><td class="num">0.3%</td></tr><tr><td>Продажи; Позиции; Трафик; Комплексный подход</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num"><b>1</b></td><td class="num">0.1%</td></tr></tbody></table>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">04 /</span><h2>Послуга — що замовляють</h2><span class="sub">SEO, PPC, SMM, комбінації</span></div>
+    <div class="row-2">
+      <div class="card"><h3>Топ послуг</h3><div class="chart-wrap"><canvas id="service-chart"></canvas></div></div>
+      <div class="card">
+      <h3>Таблиця послуг</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Не вказано</td><td class="num">189</td><td class="num">171</td><td class="num">243</td><td class="num"><b>603</b></td><td class="num">76.4%</td></tr><tr><td>PPC</td><td class="num">19</td><td class="num">10</td><td class="num">7</td><td class="num"><b>36</b></td><td class="num">4.6%</td></tr><tr><td>SEO</td><td class="num">10</td><td class="num">10</td><td class="num">7</td><td class="num"><b>27</b></td><td class="num">3.4%</td></tr><tr><td>SMM; SMM/Targeted Ads</td><td class="num">2</td><td class="num">8</td><td class="num">9</td><td class="num"><b>19</b></td><td class="num">2.4%</td></tr><tr><td>SMM/Targeted Ads</td><td class="num">2</td><td class="num">9</td><td class="num">6</td><td class="num"><b>17</b></td><td class="num">2.2%</td></tr><tr><td>SMM</td><td class="num">5</td><td class="num">6</td><td class="num">6</td><td class="num"><b>17</b></td><td class="num">2.2%</td></tr><tr><td>SEO; PPC</td><td class="num">2</td><td class="num">6</td><td class="num">3</td><td class="num"><b>11</b></td><td class="num">1.4%</td></tr><tr><td>SEO; PPC; SMM</td><td class="num">1</td><td class="num">6</td><td class="num">3</td><td class="num"><b>10</b></td><td class="num">1.3%</td></tr><tr><td>PPC; SEO</td><td class="num">5</td><td class="num">2</td><td class="num">3</td><td class="num"><b>10</b></td><td class="num">1.3%</td></tr><tr><td>PPC; SMM</td><td class="num">1</td><td class="num">4</td><td class="num">2</td><td class="num"><b>7</b></td><td class="num">0.9%</td></tr><tr><td>SMM; PPC</td><td class="num">2</td><td class="num">1</td><td class="num">1</td><td class="num"><b>4</b></td><td class="num">0.5%</td></tr><tr><td>PPC; SMM/Targeted Ads</td><td class="num">1</td><td class="num">2</td><td class="num">1</td><td class="num"><b>4</b></td><td class="num">0.5%</td></tr><tr><td>SMM; PPC; SEO</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td class="num"><b>3</b></td><td class="num">0.4%</td></tr><tr><td>SEO; SEO of dev stage</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num"><b>3</b></td><td class="num">0.4%</td></tr><tr><td>SEO Audit</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num"><b>3</b></td><td class="num">0.4%</td></tr></tbody></table>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">05 /</span><h2>Возражения — чому відмовляють</h2><span class="sub">аналіз причин відмов</span></div>
+    <div class="row-2">
+      <div class="card"><h3>Топ заперечень</h3><div class="chart-wrap"><canvas id="objection-chart"></canvas></div></div>
+      <div class="card">
+      <h3>Таблиця заперечень</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Дорого</td><td class="num">82</td><td class="num">98</td><td class="num">74</td><td class="num"><b>254</b></td><td class="num">32.2%</td></tr><tr><td>Не вказано</td><td class="num">22</td><td class="num">20</td><td class="num">124</td><td class="num"><b>166</b></td><td class="num">21.0%</td></tr><tr><td>Нет обратной связи</td><td class="num">51</td><td class="num">42</td><td class="num">41</td><td class="num"><b>134</b></td><td class="num">17.0%</td></tr><tr><td>Отложили на потом/приостановили проект</td><td class="num">39</td><td class="num">49</td><td class="num">28</td><td class="num"><b>116</b></td><td class="num">14.7%</td></tr><tr><td>Узнавали информацию</td><td class="num">15</td><td class="num">6</td><td class="num">11</td><td class="num"><b>32</b></td><td class="num">4.1%</td></tr><tr><td>Не предоставляем услугу</td><td class="num">13</td><td class="num">9</td><td class="num">8</td><td class="num"><b>30</b></td><td class="num">3.8%</td></tr><tr><td>Заявку не оставляли</td><td class="num">6</td><td class="num">4</td><td class="num">5</td><td class="num"><b>15</b></td><td class="num">1.9%</td></tr><tr><td>Сами перезвонят</td><td class="num">3</td><td class="num">7</td><td class="num">0</td><td class="num"><b>10</b></td><td class="num">1.3%</td></tr><tr><td>Другое</td><td class="num">2</td><td class="num">3</td><td class="num">3</td><td class="num"><b>8</b></td><td class="num">1.0%</td></tr><tr><td>Оплата за результат</td><td class="num">4</td><td class="num">2</td><td class="num">2</td><td class="num"><b>8</b></td><td class="num">1.0%</td></tr><tr><td>Выбрали другого подрядчика</td><td class="num">4</td><td class="num">2</td><td class="num">2</td><td class="num"><b>8</b></td><td class="num">1.0%</td></tr><tr><td>Взяли инхаус</td><td class="num">3</td><td class="num">2</td><td class="num">1</td><td class="num"><b>6</b></td><td class="num">0.8%</td></tr><tr><td>Конкуренты</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num"><b>1</b></td><td class="num">0.1%</td></tr><tr><td>Лид для партнеров</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num"><b>1</b></td><td class="num">0.1%</td></tr></tbody></table>
+    </div>
+    </div>
+    <br>
+    <div class="card dark"><ul class="insights">
+      <li><span class="marker">▸</span><span><b>Дорого</b> — топ заперечення (254 лідів). Треба або зменшити ціни, або сегментувати за бюджетом на етапі кваліфікації.</span></li>
+      <li><span class="marker">▸</span><span><b>Нет обратной связи</b> (134) — sales-команда не встигає обробити всі ліди?</span></li>
+      <li><span class="marker">▸</span><span><b>Отложили на потом</b> (116) — важливо повертатися до них через 2-3 міс.</span></li>
+    </ul></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">06 /</span><h2>Джерела — Источник сделки</h2><span class="sub">по каналах</span></div>
+    <div class="row-2">
+      <div class="card"><h3>Топ джерел</h3><div class="chart-wrap tall"><canvas id="source-chart"></canvas></div></div>
+      <div class="card">
+      <h3>Таблиця джерел</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>fb lead</td><td class="num">59</td><td class="num">121</td><td class="num">146</td><td class="num"><b>326</b></td><td class="num">41.3%</td></tr><tr><td>drp</td><td class="num">51</td><td class="num">36</td><td class="num">35</td><td class="num"><b>122</b></td><td class="num">15.5%</td></tr><tr><td>seo</td><td class="num">27</td><td class="num">39</td><td class="num">27</td><td class="num"><b>93</b></td><td class="num">11.8%</td></tr><tr><td>Cold Email</td><td class="num">21</td><td class="num">10</td><td class="num">14</td><td class="num"><b>45</b></td><td class="num">5.7%</td></tr><tr><td>ppc</td><td class="num">21</td><td class="num">1</td><td class="num">10</td><td class="num"><b>32</b></td><td class="num">4.1%</td></tr><tr><td>Expo Rau 2026</td><td class="num">0</td><td class="num">0</td><td class="num">32</td><td class="num"><b>32</b></td><td class="num">4.1%</td></tr><tr><td>FMCG Expo</td><td class="num">22</td><td class="num">10</td><td class="num">0</td><td class="num"><b>32</b></td><td class="num">4.1%</td></tr><tr><td>smm</td><td class="num">9</td><td class="num">18</td><td class="num">4</td><td class="num"><b>31</b></td><td class="num">3.9%</td></tr><tr><td>Incrypted Conference</td><td class="num">0</td><td class="num">0</td><td class="num">18</td><td class="num"><b>18</b></td><td class="num">2.3%</td></tr><tr><td>New Makers event 22.04.2026</td><td class="num">10</td><td class="num">1</td><td class="num">0</td><td class="num"><b>11</b></td><td class="num">1.4%</td></tr><tr><td>tik-tok</td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num"><b>11</b></td><td class="num">1.4%</td></tr><tr><td>Прямой</td><td class="num">4</td><td class="num">2</td><td class="num">0</td><td class="num"><b>6</b></td><td class="num">0.8%</td></tr><tr><td>Автодилери/CPO</td><td class="num">1</td><td class="num">0</td><td class="num">4</td><td class="num"><b>5</b></td><td class="num">0.6%</td></tr><tr><td>SMART FORUM 2.0</td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num"><b>5</b></td><td class="num">0.6%</td></tr><tr><td>email</td><td class="num">0</td><td class="num">2</td><td class="num">2</td><td class="num"><b>4</b></td><td class="num">0.5%</td></tr></tbody></table>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">07 /</span><h2>Стадії воронки</h2><span class="sub">Deal Stage</span></div>
+    <div class="row-2">
+      <div class="card"><h3>По стадіях</h3><div class="chart-wrap"><canvas id="stage-chart"></canvas></div></div>
+      <div class="card">
+      <h3>Таблиця стадій</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Закрыто и нереализовано</td><td class="num">223</td><td class="num">221</td><td class="num">172</td><td class="num"><b>616</b></td><td class="num">78.1%</td></tr><tr><td>Входящие</td><td class="num">4</td><td class="num">4</td><td class="num">39</td><td class="num"><b>47</b></td><td class="num">6.0%</td></tr><tr><td>Взято в работу</td><td class="num">1</td><td class="num">1</td><td class="num">27</td><td class="num"><b>29</b></td><td class="num">3.7%</td></tr><tr><td>Бриф</td><td class="num">1</td><td class="num">3</td><td class="num">17</td><td class="num"><b>21</b></td><td class="num">2.7%</td></tr><tr><td>Презентация КП</td><td class="num">3</td><td class="num">4</td><td class="num">7</td><td class="num"><b>14</b></td><td class="num">1.8%</td></tr><tr><td>Успешно реализовано</td><td class="num">7</td><td class="num">5</td><td class="num">1</td><td class="num"><b>13</b></td><td class="num">1.6%</td></tr><tr><td>Заявка с сайта</td><td class="num">0</td><td class="num">0</td><td class="num">10</td><td class="num"><b>10</b></td><td class="num">1.3%</td></tr><tr><td>Подготовка КП</td><td class="num">1</td><td class="num">1</td><td class="num">8</td><td class="num"><b>10</b></td><td class="num">1.3%</td></tr><tr><td>На прогрев</td><td class="num">3</td><td class="num">3</td><td class="num">3</td><td class="num"><b>9</b></td><td class="num">1.1%</td></tr><tr><td>Встреча назначена</td><td class="num">0</td><td class="num">1</td><td class="num">6</td><td class="num"><b>7</b></td><td class="num">0.9%</td></tr><tr><td>Presale проведен</td><td class="num">1</td><td class="num">1</td><td class="num">4</td><td class="num"><b>6</b></td><td class="num">0.8%</td></tr><tr><td>Готово КП</td><td class="num">0</td><td class="num">0</td><td class="num">5</td><td class="num"><b>5</b></td><td class="num">0.6%</td></tr><tr><td>Согласование договора</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num"><b>2</b></td><td class="num">0.3%</td></tr></tbody></table>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">08 /</span><h2>Готовність стартувати + Бриф + КП</h2></div>
+    <div class="row-3">
+      <div class="card">
+      <h3>Готовність стартувати</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Не вказано</td><td class="num">207</td><td class="num">213</td><td class="num">270</td><td class="num"><b>690</b></td><td class="num">87.5%</td></tr><tr><td>Приценивается</td><td class="num">36</td><td class="num">28</td><td class="num">27</td><td class="num"><b>91</b></td><td class="num">11.5%</td></tr><tr><td>В течении месяца</td><td class="num">1</td><td class="num">3</td><td class="num">2</td><td class="num"><b>6</b></td><td class="num">0.8%</td></tr><tr><td>В течении недели</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num"><b>1</b></td><td class="num">0.1%</td></tr><tr><td>Срочно</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num"><b>1</b></td><td class="num">0.1%</td></tr></tbody></table>
+    </div>
+      <div class="card">
+      <h3>Бриф заповнено?</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Ні</td><td class="num">206</td><td class="num">195</td><td class="num">260</td><td class="num"><b>661</b></td><td class="num">83.8%</td></tr><tr><td>Так</td><td class="num">39</td><td class="num">49</td><td class="num">40</td><td class="num"><b>128</b></td><td class="num">16.2%</td></tr></tbody></table>
+    </div>
+      <div class="card">
+      <h3>КП надіслано?</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Ні</td><td class="num">212</td><td class="num">218</td><td class="num">284</td><td class="num"><b>714</b></td><td class="num">90.5%</td></tr><tr><td>Так</td><td class="num">33</td><td class="num">26</td><td class="num">16</td><td class="num"><b>75</b></td><td class="num">9.5%</td></tr></tbody></table>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">09 /</span><h2>Дернуть в будущем?</h2><span class="sub">кому потрібен follow-up</span></div>
+    <div class="row-2">
+      <div class="card"><h3>Розподіл</h3><div class="chart-wrap"><canvas id="future-chart"></canvas></div></div>
+      <div class="card">
+      <h3>Таблиця</h3>
+      <table><thead><tr><th>Значення</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Разом</th><th class="num">% Q2</th></tr></thead>
+      <tbody><tr><td>Нет</td><td class="num">150</td><td class="num">145</td><td class="num">126</td><td class="num"><b>421</b></td><td class="num">53.4%</td></tr><tr><td>Да</td><td class="num">73</td><td class="num">83</td><td class="num">49</td><td class="num"><b>205</b></td><td class="num">26.0%</td></tr><tr><td>Не вказано</td><td class="num">22</td><td class="num">16</td><td class="num">125</td><td class="num"><b>163</b></td><td class="num">20.7%</td></tr></tbody></table>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">10 /</span><h2>Висновки та рекомендації</h2></div>
+    <div class="card dark">
+      <ul class="insights">
+        <li><span class="marker">▸</span><span><b>ICP: Ecommerce лідирує</b> — 185 з 789 (23%). Це головна ніша, потрібно поглиблювати експертизу.</span></li>
+        <li><span class="marker">▸</span><span><b>Клієнти хочуть комплексний підхід</b> — 30 лідів прямо назвали це головним. Продавайте комплекс, не окремі послуги.</span></li>
+        <li><span class="marker">▸</span><span><b>PPC + SEO — топ послуги</b>. Комбінації SEO+PPC популярніші за одиничні. Пропонуйте бандли.</span></li>
+        <li><span class="marker">▸</span><span><b>Дорого — топ заперечення</b> (254 лідa). Або в вартість, або в сегментацію по бюджету.</span></li>
+        <li><span class="marker">▸</span><span><b>SQL не оцінено = 129 лідів</b> (26% Q2). Sales не встигає — треба процес автоматизувати або расширити команду.</span></li>
+        <li><span class="marker">▸</span><span><b>Дернуть в будущем = Так</b> у 205 лідів. Побудуйте механізм автоматичного нагадування через 1-3 міс.</span></li>
+        <li><span class="marker">▸</span><span><b>Брифів мало</b> — тільки 128 з 789 (5%). Це вузьке горло воронки. Потрібно скорочувати шлях до брифу.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="sec-head"><span class="num">12 /</span><h2>SQL по каналах × місяць</h2><span class="sub">Warm+Cold+Hot SQL</span></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Канал</th><th class="num">Кв</th><th class="num">Тр</th><th class="num">Ч</th><th class="num">Q2</th></tr></thead>
+        <tbody><tr><td><b>Target</b></td><td class="num">5</td><td class="num">12</td><td class="num">10</td><td class="num"><b>27</b></td></tr>
+<tr><td><b>DRP</b></td><td class="num">14</td><td class="num">9</td><td class="num">3</td><td class="num"><b>26</b></td></tr>
+<tr><td><b>SEO</b></td><td class="num">4</td><td class="num">5</td><td class="num">3</td><td class="num"><b>12</b></td></tr>
+<tr><td><b>PPC</b></td><td class="num">9</td><td class="num">0</td><td class="num">1</td><td class="num"><b>10</b></td></tr>
+<tr><td><b>Cold Email</b></td><td class="num">4</td><td class="num">0</td><td class="num">2</td><td class="num"><b>6</b></td></tr>
+<tr><td><b>SMM</b></td><td class="num">0</td><td class="num">4</td><td class="num">1</td><td class="num"><b>5</b></td></tr>
+<tr><td><b>Прямой</b></td><td class="num">1</td><td class="num">2</td><td class="num">0</td><td class="num"><b>3</b></td></tr>
+<tr><td><b>Личный контакт</b></td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num"><b>2</b></td></tr>
+</tbody>
+      </table>
+    </div>
+    <br>
+    <div class="card"><h3>Візуалізація</h3><div class="chart-wrap tall"><canvas id="sql-ch-mo"></canvas></div></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">13 /</span><h2>SQL по каналах × тиждень</h2><span class="sub">14 тижнів Q2</span></div>
+    <div class="card scrollx" style="overflow-x:auto;">
+      <table style="font-size:11px;min-width:1400px;">
+        <thead><tr><th>Канал</th><th class="num">1т. квіт</th><th class="num">2т. квіт</th><th class="num">3т. квіт</th><th class="num">4т. квіт</th><th class="num">5т. квіт</th><th class="num">1т. тр</th><th class="num">2т. тр</th><th class="num">3т. тр</th><th class="num">4т. тр</th><th class="num">1т. черв</th><th class="num">2т. черв</th><th class="num">3т. черв</th><th class="num">4т. черв</th><th class="num">5т. черв</th><th class="num">Разом</th></tr></thead>
+        <tbody><tr><td><b>Target</b></td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num">3</td><td class="num">0</td><td class="num">4</td><td class="num">3</td><td class="num">5</td><td class="num">0</td><td class="num">2</td><td class="num">2</td><td class="num">4</td><td class="num">2</td><td class="num">0</td><td class="num"><b>27</b></td></tr>
+<tr><td><b>DRP</b></td><td class="num">1</td><td class="num">5</td><td class="num">2</td><td class="num">5</td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">1</td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num"><b>26</b></td></tr>
+<tr><td><b>SEO</b></td><td class="num">1</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num"><b>12</b></td></tr>
+<tr><td><b>PPC</b></td><td class="num">2</td><td class="num">1</td><td class="num">3</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num"><b>10</b></td></tr>
+<tr><td><b>Cold Email</b></td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num"><b>6</b></td></tr>
+<tr><td><b>SMM</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num"><b>5</b></td></tr>
+<tr><td><b>Прямой</b></td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num"><b>3</b></td></tr>
+<tr><td><b>Личный контакт</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num"><b>2</b></td></tr>
+</tbody>
+      </table>
+    </div>
+    <br>
+    <div class="card"><h3>Візуалізація</h3><div class="chart-wrap tall"><canvas id="sql-ch-wk"></canvas></div></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">14 /</span><h2>Вартість SQL-ліда — по тижнях</h2><span class="sub">Meta/Google/DRP · ₴ на SQL</span></div>
+    <div class="card scrollx" style="overflow-x:auto;">
+      <table style="font-size:11px;">
+        <thead>
+          <tr><th rowspan="2">Тиждень</th><th colspan="3" class="num" style="text-align:center;">Meta (Target)</th><th colspan="3" class="num" style="text-align:center;">Google (PPC)</th><th colspan="3" class="num" style="text-align:center;">DRP</th></tr>
+          <tr><th class="num">SQL</th><th class="num">₴</th><th class="num">CPL</th><th class="num">SQL</th><th class="num">₴</th><th class="num">CPL</th><th class="num">SQL</th><th class="num">₴</th><th class="num">CPL</th></tr>
+        </thead>
+        <tbody><tr><td><b>1т. квіт</b></td><td class="num">1</td><td class="num">₴3 661</td><td class="num"><b>₴3 661</b></td><td class="num">2</td><td class="num">₴3 968</td><td class="num"><b>₴1 984</b></td><td class="num">1</td><td class="num">₴17 500</td><td class="num"><b>₴17 500</b></td></tr>
+<tr><td><b>2т. квіт</b></td><td class="num">0</td><td class="num">₴18 308</td><td class="num"><b>—</b></td><td class="num">1</td><td class="num">₴19 837</td><td class="num"><b>₴19 837</b></td><td class="num">5</td><td class="num">₴17 500</td><td class="num"><b>₴3 500</b></td></tr>
+<tr><td><b>3т. квіт</b></td><td class="num">1</td><td class="num">₴18 308</td><td class="num"><b>₴18 308</b></td><td class="num">3</td><td class="num">₴19 837</td><td class="num"><b>₴6 612</b></td><td class="num">2</td><td class="num">₴17 500</td><td class="num"><b>₴8 750</b></td></tr>
+<tr><td><b>4т. квіт</b></td><td class="num">3</td><td class="num">₴18 308</td><td class="num"><b>₴6 102</b></td><td class="num">3</td><td class="num">₴19 837</td><td class="num"><b>₴6 612</b></td><td class="num">5</td><td class="num">₴17 500</td><td class="num"><b>₴3 500</b></td></tr>
+<tr><td><b>5т. квіт</b></td><td class="num">0</td><td class="num">₴22 292</td><td class="num"><b>—</b></td><td class="num">0</td><td class="num">₴3 990</td><td class="num"><b>—</b></td><td class="num">3</td><td class="num">₴17 500</td><td class="num"><b>₴5 833</b></td></tr>
+<tr><td><b>1т. тр</b></td><td class="num">4</td><td class="num">₴22 292</td><td class="num"><b>₴5 573</b></td><td class="num">0</td><td class="num">₴3 990</td><td class="num"><b>—</b></td><td class="num">3</td><td class="num">₴17 500</td><td class="num"><b>₴5 833</b></td></tr>
+<tr><td><b>2т. тр</b></td><td class="num">3</td><td class="num">₴22 292</td><td class="num"><b>₴7 430</b></td><td class="num">0</td><td class="num">₴3 990</td><td class="num"><b>—</b></td><td class="num">0</td><td class="num">₴17 500</td><td class="num"><b>—</b></td></tr>
+<tr><td><b>3т. тр</b></td><td class="num">5</td><td class="num">₴22 292</td><td class="num"><b>₴4 458</b></td><td class="num">0</td><td class="num">₴3 990</td><td class="num"><b>—</b></td><td class="num">1</td><td class="num">₴17 500</td><td class="num"><b>₴17 500</b></td></tr>
+<tr><td><b>4т. тр</b></td><td class="num">0</td><td class="num">₴12 540</td><td class="num"><b>—</b></td><td class="num">0</td><td class="num">₴12 540</td><td class="num"><b>—</b></td><td class="num">3</td><td class="num">₴17 500</td><td class="num"><b>₴5 833</b></td></tr>
+<tr><td><b>1т. черв</b></td><td class="num">2</td><td class="num">₴12 540</td><td class="num"><b>₴6 270</b></td><td class="num">0</td><td class="num">₴10 920</td><td class="num"><b>—</b></td><td class="num">3</td><td class="num">₴17 500</td><td class="num"><b>₴5 833</b></td></tr>
+<tr><td><b>2т. черв</b></td><td class="num">2</td><td class="num">₴12 540</td><td class="num"><b>₴6 270</b></td><td class="num">0</td><td class="num">₴11 510</td><td class="num"><b>—</b></td><td class="num">0</td><td class="num">₴17 500</td><td class="num"><b>—</b></td></tr>
+<tr><td><b>3т. черв</b></td><td class="num">4</td><td class="num">₴32 526</td><td class="num"><b>₴8 131</b></td><td class="num">0</td><td class="num">₴14 342</td><td class="num"><b>—</b></td><td class="num">0</td><td class="num">₴17 500</td><td class="num"><b>—</b></td></tr>
+<tr><td><b>4т. черв</b></td><td class="num">2</td><td class="num">₴12 000</td><td class="num"><b>₴6 000</b></td><td class="num">1</td><td class="num">₴5 000</td><td class="num"><b>₴5 000</b></td><td class="num">0</td><td class="num">₴17 500</td><td class="num"><b>—</b></td></tr>
+<tr><td><b>5т. черв</b></td><td class="num">0</td><td class="num">₴0</td><td class="num"><b>—</b></td><td class="num">0</td><td class="num">₴0</td><td class="num"><b>—</b></td><td class="num">0</td><td class="num">₴0</td><td class="num"><b>—</b></td></tr>
+</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">15 /</span><h2>Вартість SQL-ліда — місячна</h2><span class="sub">CPL по каналах + Q2 підсумок</span></div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr><th rowspan="2">Канал</th><th colspan="2" class="num" style="text-align:center;">Квітень</th><th colspan="2" class="num" style="text-align:center;">Травень</th><th colspan="2" class="num" style="text-align:center;">Червень</th><th colspan="2" class="num" style="text-align:center;">Q2 разом</th></tr>
+          <tr><th class="num">SQL</th><th class="num">CPL</th><th class="num">SQL</th><th class="num">CPL</th><th class="num">SQL</th><th class="num">CPL</th><th class="num">SQL</th><th class="num">CPL</th></tr>
+        </thead>
+        <tbody><tr><td><b>Target (Meta)</b></td><td class="num">5</td><td class="num">₴14 646</td><td class="num">12</td><td class="num">₴7 430</td><td class="num">10</td><td class="num">₴10 367</td><td class="num"><b>27</b></td><td class="num"><b>₴9 854</b></td></tr>
+<tr><td><b>PPC (Google)</b></td><td class="num">9</td><td class="num">₴8 816</td><td class="num">0</td><td class="num">—</td><td class="num">1</td><td class="num">₴50 054</td><td class="num"><b>10</b></td><td class="num"><b>₴14 536</b></td></tr>
+<tr><td><b>DRP (DRP)</b></td><td class="num">14</td><td class="num">₴5 000</td><td class="num">9</td><td class="num">₴7 777</td><td class="num">3</td><td class="num">₴23 333</td><td class="num"><b>26</b></td><td class="num"><b>₴8 076</b></td></tr>
+</tbody>
+      </table>
+      <p style="font-size:11px;color:#5A5A5A;margin-top:12px;">CPL = місячні витрати ÷ валідні SQL цього каналу. Meta ₴73K/89K/104K  Google ₴79K/16K/50K  DRP ₴70K × 3 міс.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">16 /</span><h2>Висновки по каналах</h2></div>
+    <div class="card dark">
+      <ul class="insights">
+        <li><span class="marker">▸</span><span><b>Target (Meta) — топ канал по SQL</b>: 27 SQL за Q2  стабільний CPL ₴9 814. Найкращий тиждень 3т. тр (травень) — 5 SQL за ₴4 458 кожен.</span></li>
+        <li><span class="marker">▸</span><span><b>DRP — потужний по обʼєму</b>: 26 SQL  CPL ₴8 076. Найкраще у квітні (14 SQL  CPL ₴5 000)  різко впав у червні (3 SQL  ₴23 333).</span></li>
+        <li><span class="marker">▸</span><span><b>Google Ads — дорого</b>: 10 SQL  CPL ₴14 536. Ефективний у квітні (9 SQL)  провал у травні-червні (1 SQL за 2 міс.).</span></li>
+        <li><span class="marker">▸</span><span><b>SEO — тихий герой</b>: 12 SQL безкоштовно (0 медіа). Стабільно 3-5 щомісяця.</span></li>
+        <li><span class="marker">▸</span><span><b>Cold Email — вигідний</b>: 6 SQL за Q2 без прямих витрат медіа (тільки sales-час).</span></li>
+        <li><span class="marker">▸</span><span><b>SMM активізувався у травні</b>: 4 SQL за один місяць.</span></li>
+        <li><span class="marker">▸</span><span><b>Проблема червня</b>: обʼєм лідів зріс (+22% до квітня)  а якість SQL впала на 45% (22 vs 42). Треба переглянути event-джерела (Expo Rau  Incrypted).</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">11 /</span><h2>Пов'язані дешборди</h2></div>
+    <div class="card">
+      <p style="font-size:14px;line-height:2;">
+        <a href="dashboard_q2_2026.html" class="link">→ Q2 2026 · квартальний зведений звіт</a><br>
+        <a href="dashboard_april.html" class="link">→ Квітень 2026 (245 лідів)</a><br>
+        <a href="dashboard_may_apr.html" class="link">→ Травень 2026 (249 лідів)</a><br>
+        <a href="dashboard_june.html" class="link">→ Червень 2026 (293 лідів)</a><br>
+        <a href="dashboard_consolidated.html" class="link">→ Головний хаб</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// SQL monthly
+new Chart(document.getElementById('sql-monthly'), {
+  type:'bar', data:{
+    labels:['Квітень','Травень','Червень'],
+    datasets:[
+      {label:'Hot SQL', data:[1,0,0], backgroundColor:'#C42814'},
+      {label:'Warm SQL', data:[14,14,8], backgroundColor:'#FE6647'},
+      {label:'Cold SQL', data:[27,22,14], backgroundColor:'#FE9379'},
+      {label:'Not SQL', data:[174,198,188], backgroundColor:'#5A5A5A'},
+      {label:'Не оцінено', data:[29,10,90], backgroundColor:'#EDEDED'}
+    ]
+  },
+  options:{responsive:true, maintainAspectRatio:false, scales:{x:{stacked:true}, y:{stacked:true}}, plugins:{legend:{position:'top'}}}
+});
+
+// SQL weekly
+const weeksSql = [{"week": "1т. квіт", "warm": 3, "cold": 3, "hot": 0, "not_sql": 12, "not_eval": 2}, {"week": "2т. квіт", "warm": 2, "cold": 7, "hot": 0, "not_sql": 31, "not_eval": 6}, {"week": "3т. квіт", "warm": 5, "cold": 4, "hot": 0, "not_sql": 26, "not_eval": 6}, {"week": "4т. квіт", "warm": 3, "cold": 10, "hot": 1, "not_sql": 55, "not_eval": 3}, {"week": "5т. квіт", "warm": 2, "cold": 4, "hot": 0, "not_sql": 55, "not_eval": 12}, {"week": "1т. тр", "warm": 5, "cold": 8, "hot": 0, "not_sql": 57, "not_eval": 2}, {"week": "2т. тр", "warm": 2, "cold": 3, "hot": 0, "not_sql": 37, "not_eval": 4}, {"week": "3т. тр", "warm": 4, "cold": 7, "hot": 0, "not_sql": 39, "not_eval": 4}, {"week": "4т. тр", "warm": 2, "cold": 3, "hot": 0, "not_sql": 60, "not_eval": 0}, {"week": "1т. черв", "warm": 2, "cold": 3, "hot": 0, "not_sql": 50, "not_eval": 2}, {"week": "2т. черв", "warm": 0, "cold": 3, "hot": 0, "not_sql": 39, "not_eval": 5}, {"week": "3т. черв", "warm": 3, "cold": 3, "hot": 0, "not_sql": 46, "not_eval": 14}, {"week": "4т. черв", "warm": 2, "cold": 4, "hot": 0, "not_sql": 39, "not_eval": 46}, {"week": "5т. черв", "warm": 1, "cold": 1, "hot": 0, "not_sql": 14, "not_eval": 23}];
+new Chart(document.getElementById('sql-weekly'), {
+  type:'bar', data:{
+    labels: weeksSql.map(w=>w.week.replace('2026-','')),
+    datasets:[
+      {label:'Hot', data: weeksSql.map(w=>w.hot), backgroundColor:'#C42814'},
+      {label:'Warm', data: weeksSql.map(w=>w.warm), backgroundColor:'#FE6647'},
+      {label:'Cold', data: weeksSql.map(w=>w.cold), backgroundColor:'#FE9379'},
+      {label:'Not SQL', data: weeksSql.map(w=>w.not_sql), backgroundColor:'#5A5A5A'},
+      {label:'Не оцінено', data: weeksSql.map(w=>w.not_eval), backgroundColor:'#EDEDED'}
+    ]
+  },
+  options:{responsive:true, maintainAspectRatio:false, scales:{x:{stacked:true}, y:{stacked:true}}, plugins:{legend:{position:'top'}}}
+});
+
+// SQL table
+document.getElementById('sql-table').innerHTML = `
+<tr><td><b>Hot SQL</b></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num"><b>1</b></td><td class="num">0.1%</td></tr>
+<tr><td><b>Warm SQL</b></td><td class="num">14</td><td class="num">14</td><td class="num">8</td><td class="num"><b>36</b></td><td class="num">4.6%</td></tr>
+<tr><td><b>Cold SQL</b></td><td class="num">27</td><td class="num">22</td><td class="num">14</td><td class="num"><b>63</b></td><td class="num">8.0%</td></tr>
+<tr style="background:#000;color:#fff;font-weight:800;"><td>SQL валідні</td><td class="num">42</td><td class="num">36</td><td class="num">22</td><td class="num">100</td><td class="num">12.7%</td></tr>
+<tr><td><b>Not SQL</b></td><td class="num">174</td><td class="num">198</td><td class="num">188</td><td class="num"><b>560</b></td><td class="num">71.0%</td></tr>
+<tr><td><b>Не оцінено (порожнє)</b></td><td class="num">29</td><td class="num">10</td><td class="num">90</td><td class="num"><b>129</b></td><td class="num">16%</td></tr>
+`;
+
+// Simple chart builder
+function buildBarChart(id, data, colors){
+  const labels = data.map(d => d[0].substring(0, 32));
+  const dsMonths = ['Кв','Тр','Ч'].map((m, i) => ({
+    label: m,
+    data: data.map(d => d[1][i]),
+    backgroundColor: colors[i]
+  }));
+  new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: { labels, datasets: dsMonths },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      scales: { x: {stacked:true}, y: {stacked:true} },
+      plugins: { legend: {position:'top'} }
+    }
+  });
+}
+
+const monthColors = ['#FE391F', '#0F6E56', '#000'];
+
+buildBarChart('icp-chart', [["Ecommerce", [61, 64, 60, 185]], ["\u0414\u0440\u0443\u0433\u043e\u0435", [20, 31, 25, 76]], ["\u041d\u0435 \u0432\u043a\u0430\u0437\u0430\u043d\u043e", [17, 11, 46, 74]], ["\u041e\u0434\u0435\u0436\u0434\u0430 \u0438 \u0430\u043a\u0441\u0435\u0441\u0443\u0430\u0440\u044b", [11, 16, 19, 46]], ["IT/SaaS", [23, 12, 10, 45]], ["B2B \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435", [14, 18, 8, 40]], ["\u041a\u043b\u0438\u043d\u0438\u043a\u0430", [8, 14, 13, 35]], ["\u041e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u044b", [8, 11, 6, 25]], ["\u0410\u0432\u0442\u043e\u0434\u0438\u043b\u0435\u0440\u044b", [4, 4, 14, 22]], ["\u042e\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0441\u043b\u0443\u0433\u0438", [11, 4, 5, 20]]], monthColors);
+buildBarChart('important-chart', [["\u041d\u0435 \u0432\u043a\u0430\u0437\u0430\u043d\u043e", [207, 213, 270, 690]], ["\u041a\u043e\u043c\u043f\u043b\u0435\u043a\u0441\u043d\u044b\u0439 \u043f\u043e\u0434\u0445\u043e\u0434", [7, 12, 11, 30]], ["\u041f\u0440\u043e\u0434\u0430\u0436\u0438", [14, 3, 2, 19]], ["\u0426\u0435\u043d\u0430; \u041a\u0430\u0447\u0435\u0441\u0442\u0432\u043e", [3, 1, 1, 5]], ["\u0426\u0435\u043d\u0430", [0, 1, 2, 3]], ["\u041b\u0438\u0434\u044b", [0, 2, 1, 3]], ["\u041a\u0430\u0447\u0435\u0441\u0442\u0432\u043e", [3, 0, 0, 3]], ["\u0426\u0435\u043d\u0430; \u041f\u0440\u043e\u0434\u0430\u0436\u0438; \u041f\u043e\u0437\u0438\u0446\u0438\u0438; \u041b\u0438\u0434\u044b", [0, 0, 2, 2]], ["\u0426\u0435\u043d\u0430; \u041f\u0440\u043e\u0434\u0430\u0436\u0438", [0, 0, 2, 2]], ["\u0426\u0435\u043d\u0430; \u0422\u0440\u0430\u0444\u0438\u043a; \u041f\u043e\u0437\u0438\u0446\u0438\u0438; \u041f\u0440\u043e\u0434\u0430\u0436\u0438; \u041b\u0438\u0434\u044b", [0, 1, 1, 2]]], monthColors);
+buildBarChart('service-chart', [["\u041d\u0435 \u0432\u043a\u0430\u0437\u0430\u043d\u043e", [189, 171, 243, 603]], ["PPC", [19, 10, 7, 36]], ["SEO", [10, 10, 7, 27]], ["SMM; SMM/Targeted Ads", [2, 8, 9, 19]], ["SMM/Targeted Ads", [2, 9, 6, 17]], ["SMM", [5, 6, 6, 17]], ["SEO; PPC", [2, 6, 3, 11]], ["SEO; PPC; SMM", [1, 6, 3, 10]], ["PPC; SEO", [5, 2, 3, 10]], ["PPC; SMM", [1, 4, 2, 7]], ["SMM; PPC", [2, 1, 1, 4]], ["PPC; SMM/Targeted Ads", [1, 2, 1, 4]]], monthColors);
+buildBarChart('objection-chart', [["\u0414\u043e\u0440\u043e\u0433\u043e", [82, 98, 74, 254]], ["\u041d\u0435 \u0432\u043a\u0430\u0437\u0430\u043d\u043e", [22, 20, 124, 166]], ["\u041d\u0435\u0442 \u043e\u0431\u0440\u0430\u0442\u043d\u043e\u0439 \u0441\u0432\u044f\u0437\u0438", [51, 42, 41, 134]], ["\u041e\u0442\u043b\u043e\u0436\u0438\u043b\u0438 \u043d\u0430 \u043f\u043e\u0442\u043e\u043c/\u043f\u0440\u0438\u043e\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u043b\u0438 \u043f\u0440\u043e\u0435\u043a\u0442", [39, 49, 28, 116]], ["\u0423\u0437\u043d\u0430\u0432\u0430\u043b\u0438 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e", [15, 6, 11, 32]], ["\u041d\u0435 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u043c \u0443\u0441\u043b\u0443\u0433\u0443", [13, 9, 8, 30]], ["\u0417\u0430\u044f\u0432\u043a\u0443 \u043d\u0435 \u043e\u0441\u0442\u0430\u0432\u043b\u044f\u043b\u0438", [6, 4, 5, 15]], ["\u0421\u0430\u043c\u0438 \u043f\u0435\u0440\u0435\u0437\u0432\u043e\u043d\u044f\u0442", [3, 7, 0, 10]], ["\u0414\u0440\u0443\u0433\u043e\u0435", [2, 3, 3, 8]], ["\u041e\u043f\u043b\u0430\u0442\u0430 \u0437\u0430 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442", [4, 2, 2, 8]]], monthColors);
+buildBarChart('source-chart', [["fb lead", [59, 121, 146, 326]], ["drp", [51, 36, 35, 122]], ["seo", [27, 39, 27, 93]], ["Cold Email", [21, 10, 14, 45]], ["ppc", [21, 1, 10, 32]], ["Expo Rau 2026", [0, 0, 32, 32]], ["FMCG Expo", [22, 10, 0, 32]], ["smm", [9, 18, 4, 31]], ["Incrypted Conference", [0, 0, 18, 18]], ["New Makers event 22.04.2026", [10, 1, 0, 11]], ["tik-tok", [11, 0, 0, 11]], ["\u041f\u0440\u044f\u043c\u043e\u0439", [4, 2, 0, 6]]], monthColors);
+buildBarChart('stage-chart', [["\u0417\u0430\u043a\u0440\u044b\u0442\u043e \u0438 \u043d\u0435\u0440\u0435\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043d\u043e", [223, 221, 172, 616]], ["\u0412\u0445\u043e\u0434\u044f\u0449\u0438\u0435", [4, 4, 39, 47]], ["\u0412\u0437\u044f\u0442\u043e \u0432 \u0440\u0430\u0431\u043e\u0442\u0443", [1, 1, 27, 29]], ["\u0411\u0440\u0438\u0444", [1, 3, 17, 21]], ["\u041f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044f \u041a\u041f", [3, 4, 7, 14]], ["\u0423\u0441\u043f\u0435\u0448\u043d\u043e \u0440\u0435\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043d\u043e", [7, 5, 1, 13]], ["\u0417\u0430\u044f\u0432\u043a\u0430 \u0441 \u0441\u0430\u0439\u0442\u0430", [0, 0, 10, 10]], ["\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u041a\u041f", [1, 1, 8, 10]], ["\u041d\u0430 \u043f\u0440\u043e\u0433\u0440\u0435\u0432", [3, 3, 3, 9]], ["\u0412\u0441\u0442\u0440\u0435\u0447\u0430 \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0430", [0, 1, 6, 7]]], monthColors);
+buildBarChart('future-chart', [["\u041d\u0435\u0442", [150, 145, 126, 421]], ["\u0414\u0430", [73, 83, 49, 205]], ["\u041d\u0435 \u0432\u043a\u0430\u0437\u0430\u043d\u043e", [22, 16, 125, 163]]], monthColors);
+
+
+// SQL by channel × month
+const sqlChMo = [{"ch": "Target", "apr": 5, "may": 12, "jun": 10}, {"ch": "DRP", "apr": 14, "may": 9, "jun": 3}, {"ch": "SEO", "apr": 4, "may": 5, "jun": 3}, {"ch": "PPC", "apr": 9, "may": 0, "jun": 1}, {"ch": "Cold Email", "apr": 4, "may": 0, "jun": 2}, {"ch": "SMM", "apr": 0, "may": 4, "jun": 1}, {"ch": "\u041f\u0440\u044f\u043c\u043e\u0439", "apr": 1, "may": 2, "jun": 0}, {"ch": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u043e\u043d\u0442\u0430\u043a\u0442", "apr": 0, "may": 2, "jun": 0}];
+new Chart(document.getElementById('sql-ch-mo'), {
+  type:'bar', data:{
+    labels: sqlChMo.map(x=>x.ch),
+    datasets:[
+      {label:'Квітень', data: sqlChMo.map(x=>x.apr), backgroundColor:'#FE391F'},
+      {label:'Травень', data: sqlChMo.map(x=>x.may), backgroundColor:'#0F6E56'},
+      {label:'Червень', data: sqlChMo.map(x=>x.jun), backgroundColor:'#000'}
+    ]
+  },
+  options:{indexAxis:'y', responsive:true, maintainAspectRatio:false, scales:{x:{stacked:true}, y:{stacked:true}}, plugins:{legend:{position:'top'}}}
+});
+
+// SQL by channel × week
+const chWk = {"Target": {"1т. квіт": 1, "2т. квіт": 0, "3т. квіт": 1, "4т. квіт": 3, "5т. квіт": 0, "1т. тр": 4, "2т. тр": 3, "3т. тр": 5, "4т. тр": 0, "1т. черв": 2, "2т. черв": 2, "3т. черв": 4, "4т. черв": 2, "5т. черв": 0}, "DRP": {"1т. квіт": 1, "2т. квіт": 5, "3т. квіт": 2, "4т. квіт": 5, "5т. квіт": 3, "1т. тр": 3, "2т. тр": 0, "3т. тр": 1, "4т. тр": 3, "1т. черв": 3, "2т. черв": 0, "3т. черв": 0, "4т. черв": 0, "5т. черв": 0}, "SEO": {"1т. квіт": 1, "2т. квіт": 0, "3т. квіт": 2, "4т. квіт": 1, "5т. квіт": 0, "1т. тр": 2, "2т. тр": 1, "3т. тр": 1, "4т. тр": 1, "1т. черв": 0, "2т. черв": 1, "3т. черв": 1, "4т. черв": 1, "5т. черв": 0}, "PPC": {"1т. квіт": 2, "2т. квіт": 1, "3т. квіт": 3, "4т. квіт": 3, "5т. квіт": 0, "1т. тр": 0, "2т. тр": 0, "3т. тр": 0, "4т. тр": 0, "1т. черв": 0, "2т. черв": 0, "3т. черв": 0, "4т. черв": 1, "5т. черв": 0}, "Cold Email": {"1т. квіт": 0, "2т. квіт": 1, "3т. квіт": 1, "4т. квіт": 1, "5т. квіт": 1, "1т. тр": 0, "2т. тр": 0, "3т. тр": 0, "4т. тр": 0, "1т. черв": 0, "2т. черв": 0, "3т. черв": 0, "4т. черв": 1, "5т. черв": 1}, "SMM": {"1т. квіт": 0, "2т. квіт": 0, "3т. квіт": 0, "4т. квіт": 0, "5т. квіт": 0, "1т. тр": 1, "2т. тр": 1, "3т. тр": 1, "4т. тр": 1, "1т. черв": 0, "2т. черв": 0, "3т. черв": 0, "4т. черв": 0, "5т. черв": 1}, "\u041f\u0440\u044f\u043c\u043e\u0439": {"1т. квіт": 0, "2т. квіт": 1, "3т. квіт": 0, "4т. квіт": 0, "5т. квіт": 0, "1т. тр": 0, "2т. тр": 0, "3т. тр": 2, "4т. тр": 0, "1т. черв": 0, "2т. черв": 0, "3т. черв": 0, "4т. черв": 0, "5т. черв": 0}, "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u043e\u043d\u0442\u0430\u043a\u0442": {"1т. квіт": 0, "2т. квіт": 0, "3т. квіт": 0, "4т. квіт": 0, "5т. квіт": 0, "1т. тр": 2, "2т. тр": 0, "3т. тр": 0, "4т. тр": 0, "1т. черв": 0, "2т. черв": 0, "3т. черв": 0, "4т. черв": 0, "5т. черв": 0}};
+const weeksLabels = ["1т. квіт", "2т. квіт", "3т. квіт", "4т. квіт", "5т. квіт", "1т. тр", "2т. тр", "3т. тр", "4т. тр", "1т. черв", "2т. черв", "3т. черв", "4т. черв", "5т. черв"];
+new Chart(document.getElementById('sql-ch-wk'), {
+  type:'bar', data:{
+    labels: weeksLabels,
+    datasets: Object.keys(chWk).map((ch, i) => ({
+      label: ch,
+      data: weeksLabels.map((_, wi) => chWk[ch][["1т. квіт", "2т. квіт", "3т. квіт", "4т. квіт", "5т. квіт", "1т. тр", "2т. тр", "3т. тр", "4т. тр", "1т. черв", "2т. черв", "3т. черв", "4т. черв", "5т. черв"][wi]]),
+      backgroundColor: ['#FE391F','#5A3F8C','#0F6E56','#856404','#0C5460','#721C24','#000','#5A5A5A'][i]
+    }))
+  },
+  options:{responsive:true, maintainAspectRatio:false, scales:{x:{stacked:true}, y:{stacked:true}}, plugins:{legend:{position:'top'}}}
+});
+
+</script>
+</body>
+</html>
