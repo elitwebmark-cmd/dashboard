@@ -117,7 +117,7 @@ table td.num{text-align:right;font-variant-numeric:tabular-nums;}
   </section>
   <section class="section">
     <div class="sec-head"><span class="num">02<span class="slash">/</span></span><h2>Канали лідів</h2><span class="sub">обсяг та якість</span></div>
-    <div class="card"><table><thead><tr><th>Канал</th><th class="num">Ліди</th><th class="num">vs W8</th><th class="num">MQL</th><th class="num">SQL валід.</th><th class="num">% MQL</th></tr></thead><tbody id="gen-channels"></tbody></table></div>
+    <div class="card"><table><thead><tr><th>Канал</th><th class="num">Ліди</th><th class="num">vs Березень</th><th class="num">MQL</th><th class="num">SQL валід.</th><th class="num">Не оцінено</th><th class="num">% MQL</th></tr></thead><tbody id="gen-channels"></tbody></table></div>
   </section>
   <section class="section">
     <div class="sec-head"><span class="num">03<span class="slash">/</span></span><h2>Стадії заявок</h2></div>
@@ -334,25 +334,25 @@ const genKpis=[
 document.getElementById("gen-kpi").innerHTML=genKpis.map(k=>`<div class="kpi ${k.style||''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join("");
 
 const channels=[
-  {name:"Target (fb lead)",leads:59,prev:0,mql:51,sql:5},
-  {name:"DRP (13 UA + 38 pipe)",leads:51,prev:0,mql:46,sql:14},
-  {name:"SEO (organic)",leads:27,prev:0,mql:22,sql:4},
-  {name:"FMCG Expo (event 28.04)",leads:22,prev:0,mql:21,sql:1},
-  {name:"Cold Email",leads:21,prev:0,mql:17,sql:4},
-  {name:"PPC (Google Ads)",leads:21,prev:0,mql:16,sql:9},
-  {name:"TikTok",leads:11,prev:0,mql:11,sql:2},
-  {name:"New Makers event (22.04)",leads:10,prev:0,mql:10,sql:0},
-  {name:"SMM",leads:9,prev:0,mql:6,sql:0},
-  {name:"SMART FORUM 2.0",leads:5,prev:0,mql:5,sql:1},
-  {name:"Прямой",leads:4,prev:0,mql:3,sql:1},
-  {name:"IT-rating",leads:2,prev:0,mql:0,sql:0},
-  {name:"Автодилери / CPO",leads:1,prev:0,mql:1,sql:1},
-  {name:"chatgpt.com",leads:1,prev:0,mql:1,sql:0},
-  {name:"входящий звонок",leads:1,prev:0,mql:1,sql:0}
+  {name:"Target (fb lead)",leads:59,prev:0,mql:51,sql:5,notEval:1},
+  {name:"DRP (13 UA + 38 pipe)",leads:51,prev:0,mql:46,sql:14,notEval:24},
+  {name:"SEO (organic)",leads:27,prev:0,mql:22,sql:4,notEval:0},
+  {name:"FMCG Expo (event 28.04)",leads:22,prev:0,mql:21,sql:1,notEval:3},
+  {name:"Cold Email",leads:21,prev:0,mql:17,sql:4,notEval:0},
+  {name:"PPC (Google Ads)",leads:21,prev:0,mql:16,sql:9,notEval:0},
+  {name:"TikTok",leads:11,prev:0,mql:11,sql:2,notEval:0},
+  {name:"New Makers event",leads:10,prev:0,mql:10,sql:0,notEval:1},
+  {name:"SMM",leads:9,prev:0,mql:6,sql:0,notEval:0},
+  {name:"SMART FORUM 2.0",leads:5,prev:0,mql:5,sql:1,notEval:0},
+  {name:"Прямой",leads:4,prev:0,mql:3,sql:1,notEval:0},
+  {name:"IT-rating",leads:2,prev:0,mql:0,sql:0,notEval:0},
+  {name:"Автодилери / CPO",leads:1,prev:0,mql:1,sql:1,notEval:0},
+  {name:"chatgpt.com",leads:1,prev:0,mql:1,sql:0,notEval:0},
+  {name:"входящий звонок",leads:1,prev:0,mql:1,sql:0,notEval:0}
 ];
 document.getElementById("gen-channels").innerHTML=channels.map(c=>{
   const mp=c.leads?c.mql/c.leads*100:0;
-  return `<tr><td><b>${c.name}</b></td><td class="num">${c.leads}</td><td class="num">${deltaTag(c.leads,c.prev)}</td><td class="num">${c.mql}</td><td class="num">${c.sql}</td><td class="num"><b>${mp.toFixed(0)}%</b></td></tr>`;
+  return `<tr><td><b>${c.name}</b></td><td class="num">${c.leads}</td><td class="num">${c.prev?deltaTag(c.leads,c.prev):"—"}</td><td class="num">${c.mql}</td><td class="num">${c.sql}</td><td class="num">${c.notEval||0}</td><td class="num"><b>${mp.toFixed(0)}%</b></td></tr>`;
 }).join("");
 
 const stages=[
