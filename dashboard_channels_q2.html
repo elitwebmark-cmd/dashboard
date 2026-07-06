@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>elit-web · Q2 2026 · Аналіз каналів</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+:root{--ew-red:#FE391F;--ew-black:#000;--ew-grey:#EDEDED;--ew-green:#0F6E56;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish',sans-serif;background:#F8F8F8;color:#000;padding:24px;}
+.wrap{max-width:1600px;margin:0 auto;}
+header{background:#000;color:#fff;padding:32px 36px;margin-bottom:24px;border-left:6px solid var(--ew-red);}
+.brand-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);}
+.brand-row .dot{width:8px;height:8px;background:var(--ew-red);border-radius:50%;}
+header h1{font-size:36px;font-weight:900;letter-spacing:-1.2px;line-height:1.05;text-transform:uppercase;}
+header h1 .accent{color:var(--ew-red);}
+header .sub{margin-top:10px;font-size:14px;color:rgba(255,255,255,0.75);}
+.section{margin-bottom:32px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #000;}
+.sec-head .num{font-size:16px;color:var(--ew-red);font-weight:900;}
+.sec-head h2{font-size:24px;font-weight:900;letter-spacing:-0.5px;}
+.sec-head .sub{margin-left:auto;font-size:11px;color:#5A5A5A;}
+.kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px;}
+.kpi{background:#fff;padding:16px 14px;border-top:3px solid #000;}
+.kpi.dark{background:#000;color:#fff;}
+.kpi .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;opacity:0.7;margin-bottom:6px;}
+.kpi .val{font-size:26px;font-weight:900;line-height:1;letter-spacing:-0.5px;}
+.kpi .sub{font-size:10px;margin-top:5px;opacity:0.7;line-height:1.4;}
+.card{background:#fff;padding:22px;border-top:3px solid #000;margin-bottom:16px;}
+.card h3{font-size:15px;font-weight:800;letter-spacing:-0.3px;margin-bottom:14px;border-bottom:1px solid #EDEDED;padding-bottom:10px;}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+table th{text-align:left;background:#000;color:#fff;padding:9px 8px;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;}
+table th.num{text-align:right;}
+table td{padding:8px 8px;border-bottom:1px solid #EDEDED;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;}
+table td.l{text-align:left;}
+table td small{color:#5A5A5A;font-weight:500;font-size:10px;}
+table td.accent{color:#FE391F;font-weight:800;}
+table td.small{font-size:11px;color:#0F6E56;font-weight:700;}
+table tr:hover{background:#FAFAFA;}
+.econ-table{min-width:1750px;}
+.econ-table th, .econ-table td{padding:5px 4px;font-size:11px;}
+.funnel-table th, .funnel-table td{padding:6px 5px;font-size:11px;}
+.chart-wrap{height:340px;position:relative;}
+.chart-wrap.tall{height:420px;}
+.bigflag{background:var(--ew-red);color:#fff;padding:22px 26px;font-weight:800;font-size:15px;letter-spacing:-0.2px;display:flex;align-items:center;gap:16px;line-height:1.5;margin-bottom:24px;}
+.bigflag .icon{font-size:28px;flex-shrink:0;}
+.insights{list-style:none;padding:0;}
+.insights li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15);display:flex;gap:12px;font-size:13.5px;line-height:1.5;}
+.insights li:last-child{border-bottom:0;}
+.insights .marker{color:var(--ew-red);font-weight:900;flex-shrink:0;}
+.card.dark{background:#000;color:#fff;}
+.card.dark h3{border-color:rgba(255,255,255,0.15);}
+.sales-info{background:#F8F8F8;padding:14px;margin-top:14px;font-size:12px;border-left:3px solid #000;}
+.link{color:var(--ew-red);font-weight:700;text-decoration:none;}
+.link:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand-row"><span class="dot"></span><span>elit-web · квартальний аналіз каналів</span><span class="dot"></span><span>Q2 2026 · квітень–червень</span></div>
+    <h1><span class="accent">Q2 2026</span> · Аналіз каналів</h1>
+    <div class="sub">SEO · DRP · Target (+TikTok) · Контекст (PPC) · Cold Email · юніт-економіка, вартість продажу, ROAS, конверсії, воронка</div>
+  </header>
+
+  <div class="bigflag"><span class="icon">📊</span><b>Q2 фокус-канали: 537 лідів · 473 MQL · 77 валідних SQL · 17 угод · витрати ₴726 165. Дохід від 5 каналів: ₴736 335· ROAS: 1.01x</b></div>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">00 /</span><h2>Огляд ключових каналів Q2</h2></div>
+    <div class="kpi-grid">
+      
+      <div class="kpi" style="border-top-color:#0F6E56;">
+        <div class="lbl">SEO</div>
+        <div class="val" style="color:#0F6E56;">93</div>
+        <div class="sub">₴46 333 · 13 SQL · 3 won · ROAS 5.06x</div>
+      </div>
+      <div class="kpi" style="border-top-color:#5A3F8C;">
+        <div class="lbl">DRP</div>
+        <div class="val" style="color:#5A3F8C;">89</div>
+        <div class="sub">₴210 000 · <b>37% валід.</b> · 19 SQL · 4 won · ROAS 2.70x</div>
+      </div>
+      <div class="kpi" style="border-top-color:#FE391F;">
+        <div class="lbl">Target</div>
+        <div class="val" style="color:#FE391F;">334</div>
+        <div class="sub">₴266 079 · 29 SQL · 1 won · ROAS 0.32x</div>
+      </div>
+      <div class="kpi" style="border-top-color:#856404;">
+        <div class="lbl">Контекст</div>
+        <div class="val" style="color:#856404;">32</div>
+        <div class="sub">₴145 361 · 10 SQL · 2 won · ROAS 0.94x</div>
+      </div>
+      <div class="kpi" style="border-top-color:#0C5460;">
+        <div class="lbl">Cold Email</div>
+        <div class="val" style="color:#0C5460;">45</div>
+        <div class="sub">₴58 392 · 6 SQL · 0 won · ROAS 0.00x</div>
+      </div>
+      <div class="kpi dark"><div class="lbl">Разом (5 каналів)</div><div class="val">537</div><div class="sub">₴726 165· дохід ₴736 335</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">01 /</span><h2>Тренди Q2 (по місяцях)</h2><span class="sub">квітень → травень → червень</span></div>
+    <div class="row-2">
+      <div class="card"><h3>Ліди по каналах</h3><div class="chart-wrap tall"><canvas id="c-leads"></canvas></div></div>
+      <div class="card"><h3>SQL валідні по каналах</h3><div class="chart-wrap tall"><canvas id="c-sql"></canvas></div></div>
+    </div>
+    <div class="row-2" style="margin-top:16px;">
+      <div class="card"><h3>Витрати по каналах</h3><div class="chart-wrap tall"><canvas id="c-spend"></canvas></div></div>
+      <div class="card"><h3>Won угоди по каналах</h3><div class="chart-wrap tall"><canvas id="c-won"></canvas></div></div>
+    </div>
+    <div class="row-2" style="margin-top:16px;">
+      <div class="card"><h3>Дохід по каналах ₴</h3><div class="chart-wrap tall"><canvas id="c-rev"></canvas></div></div>
+      <div class="card"><h3>ROAS (Дохід/Витрати)</h3><div class="chart-wrap tall"><canvas id="c-roas"></canvas></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">02 /</span><h2>💰 Розширена юніт-економіка</h2><span class="sub">CPL/CPMQL/CPSQL/CP Бриф/CP КП/CPA + всі конверсії + ROAS</span></div>
+    <p style="font-size:12px;color:#5A5A5A;margin-bottom:14px;line-height:1.6;background:#F0F0F0;padding:12px;border-left:3px solid #000;">
+      <b>Вартість:</b> CPL = Витрати/Ліди · CPMQL = Витрати/MQL · CPSQL = Витрати/валідні SQL (H+W+C) · CP Бриф = Витрати/заповнені брифи · CP КП = Витрати/надіслані КП · CPA = Витрати/продажі<br>
+      <b>Дохід & ROI:</b> Дохід = сума чеків проданих угод · Ср.чек = Дохід/Продажі · ROAS = Дохід/Витрати<br>
+      <b>Конверсії:</b> Л→MQL, Л→SQL, Л→Бриф, Л→КП, Л→Won, Л→Продаж (Л→$), MQL→SQL, Бриф→КП, КП→Won
+    </p>
+    
+    <div class="card" style="border-top-color:#0F6E56;">
+      <h3 style="color:#0F6E56;">💰 SEO · юніт-економіка Q2 (по місяцях)</h3>
+      <div style="overflow-x:auto;">
+      <table class="econ-table">
+        <thead>
+          <tr style="background:#000;color:#fff;">
+            <th rowspan="2">Період</th>
+            <th rowspan="2" class="num">Витрати ₴</th>
+            <th colspan="6" class="num" style="text-align:center;">Обʼєм воронки</th>
+            <th colspan="3" class="num" style="text-align:center;">Дохід & ROI</th>
+            <th colspan="6" class="num" style="text-align:center;">Вартість (₴)</th>
+            <th colspan="9" class="num" style="text-align:center;">Конверсії</th>
+          </tr>
+          <tr style="background:#333;color:#fff;">
+            <th class="num">Ліди</th><th class="num">MQL</th><th class="num">SQL</th>
+            <th class="num">Брифи</th><th class="num">КП</th><th class="num">Продажі</th>
+            <th class="num">Дохід</th><th class="num">Ср.чек</th><th class="num">ROAS</th>
+            <th class="num">CPL</th><th class="num">CPMQL</th><th class="num">CPSQL</th>
+            <th class="num">CP Бриф</th><th class="num">CP КП</th><th class="num">CPA</th>
+            <th class="num">Л→MQL</th><th class="num">Л→SQL</th>
+            <th class="num">Л→Бриф</th><th class="num">Л→КП</th><th class="num">Л→Won</th>
+            <th class="num">Л→$</th><th class="num">MQL→SQL</th>
+            <th class="num">Бриф→КП</th><th class="num">КП→Won</th>
+          </tr>
+        </thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num"><b>475</b></td>
+      <td class="num">27</td>
+      <td class="num">22</td>
+      <td class="num">4<br><small>H0·W3·C1</small></td>
+      <td class="num">2</td>
+      <td class="num">4</td>
+      <td class="num"><b>0</b></td>
+      <td class="num accent">—</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>0.00x</b></td>
+      <td class="num">₴17</td>
+      <td class="num">₴21</td>
+      <td class="num">₴118</td>
+      <td class="num">₴237</td>
+      <td class="num">₴118</td>
+      <td class="num accent"><b>—</b></td>
+      <td class="num small">81%</td>
+      <td class="num small">15%</td>
+      <td class="num small">7%</td>
+      <td class="num small">15%</td>
+      <td class="num small">4%</td>
+      <td class="num small">—</td>
+      <td class="num small">18%</td>
+      <td class="num small">200%</td>
+      <td class="num small">25%</td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num"><b>10 049</b></td>
+      <td class="num">39</td>
+      <td class="num">36</td>
+      <td class="num">5<br><small>H0·W3·C2</small></td>
+      <td class="num">8</td>
+      <td class="num">5</td>
+      <td class="num"><b>1</b></td>
+      <td class="num accent">₴28 700</td>
+      <td class="num">₴28 700</td>
+      <td class="num accent"><b>2.86x</b></td>
+      <td class="num">₴257</td>
+      <td class="num">₴279</td>
+      <td class="num">₴2 009</td>
+      <td class="num">₴1 256</td>
+      <td class="num">₴2 009</td>
+      <td class="num accent"><b>₴10 049</b></td>
+      <td class="num small">92%</td>
+      <td class="num small">13%</td>
+      <td class="num small">21%</td>
+      <td class="num small">13%</td>
+      <td class="num small">5%</td>
+      <td class="num small">3%</td>
+      <td class="num small">14%</td>
+      <td class="num small">62%</td>
+      <td class="num small">40%</td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num"><b>35 809</b></td>
+      <td class="num">27</td>
+      <td class="num">26</td>
+      <td class="num">4<br><small>H0·W1·C3</small></td>
+      <td class="num">6</td>
+      <td class="num">2</td>
+      <td class="num"><b>2</b></td>
+      <td class="num accent">₴205 716</td>
+      <td class="num">₴102 858</td>
+      <td class="num accent"><b>5.74x</b></td>
+      <td class="num">₴1 326</td>
+      <td class="num">₴1 377</td>
+      <td class="num">₴8 952</td>
+      <td class="num">₴5 968</td>
+      <td class="num">₴17 904</td>
+      <td class="num accent"><b>₴17 904</b></td>
+      <td class="num small">96%</td>
+      <td class="num small">15%</td>
+      <td class="num small">22%</td>
+      <td class="num small">7%</td>
+      <td class="num small">0%</td>
+      <td class="num small">7%</td>
+      <td class="num small">15%</td>
+      <td class="num small">33%</td>
+      <td class="num small">0%</td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num"><b>46 333</b></td>
+      <td class="num">93</td>
+      <td class="num">84</td>
+      <td class="num">13<br><small>H0·W7·C6</small></td>
+      <td class="num">16</td>
+      <td class="num">11</td>
+      <td class="num"><b>3</b></td>
+      <td class="num accent">₴234 416</td>
+      <td class="num">₴78 138</td>
+      <td class="num accent"><b>5.06x</b></td>
+      <td class="num">₴498</td>
+      <td class="num">₴551</td>
+      <td class="num">₴3 564</td>
+      <td class="num">₴2 895</td>
+      <td class="num">₴4 212</td>
+      <td class="num accent"><b>₴15 444</b></td>
+      <td class="num small">90%</td>
+      <td class="num small">14%</td>
+      <td class="num small">17%</td>
+      <td class="num small">12%</td>
+      <td class="num small">3%</td>
+      <td class="num small">3%</td>
+      <td class="num small">15%</td>
+      <td class="num small">69%</td>
+      <td class="num small">27%</td>
+    </tr></tbody>
+      </table>
+      </div>
+      <div class="sales-info">
+        <b>Продажі SEO за Q2:</b> 3 угод на ₴234 416
+        <div style="margin-top:10px;"><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ vodaland.com.ua (₴28,700)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ voronvid.store (₴88,716)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ lbcmortgage.com (₴117,000)</div></div>
+      </div>
+    </div>
+    
+    <div class="card" style="border-top-color:#5A3F8C;">
+      <h3 style="color:#5A3F8C;">💰 DRP · юніт-економіка Q2 · <span style="color:#000;">Full-funnel (DRP → UA)</span></h3>
+      <div style="background:#F0E8FF;padding:12px;font-size:12px;color:#3F2B60;margin-bottom:14px;border-left:3px solid #5A3F8C;">
+        <b>Логіка DRP-воронки:</b> усі DRP-ліди спочатку падають у DRP-воронку (Elit-Web/DRP). 
+        Валідні ліди переносяться у UA-воронку (з джерелом «drp»). Тому <b>Ліди</b> = DRP-воронка (89 Q2), 
+        <b>Валідних</b> = переклали в UA (33 Q2, <b>37% Q2 конверсія</b>). Далі MQL/SQL/Бриф/КП/Won рахуються з UA-drp боку.
+      </div>
+      <div style="overflow-x:auto;">
+      <table class="econ-table">
+        <thead>
+          <tr style="background:#000;color:#fff;">
+            <th rowspan="2">Період</th>
+            <th rowspan="2" class="num">Витрати ₴</th>
+            <th colspan="3" class="num" style="text-align:center;background:#5A3F8C;">Валідність DRP</th>
+            <th colspan="6" class="num" style="text-align:center;">Обʼєм воронки (UA-drp)</th>
+            <th colspan="3" class="num" style="text-align:center;">Дохід & ROI</th>
+            <th colspan="6" class="num" style="text-align:center;">Вартість (₴)</th>
+            <th colspan="9" class="num" style="text-align:center;">Конверсії</th>
+          </tr>
+          <tr style="background:#333;color:#fff;">
+            <th class="num" style="background:#5A3F8C;">Ліди (DRP-pipe)</th>
+            <th class="num" style="background:#5A3F8C;">Валідних</th>
+            <th class="num" style="background:#5A3F8C;">% валід.</th>
+            <th class="num">MQL</th><th class="num">SQL</th>
+            <th class="num">Брифи</th><th class="num">КП</th><th class="num">Продажі</th>
+            <th class="num">Дохід</th><th class="num">Ср.чек</th><th class="num">ROAS</th>
+            <th class="num">CPL</th>
+            <th class="num" style="background:#5A3F8C;">CP валідний</th>
+            <th class="num">CPMQL</th><th class="num">CPSQL</th>
+            <th class="num">CP Бриф</th><th class="num">CP КП</th><th class="num">CPA</th>
+            <th class="num">Л→MQL</th><th class="num">Л→SQL</th>
+            <th class="num">Л→Бриф</th><th class="num">Л→КП</th><th class="num">Л→Won</th>
+            <th class="num">Л→$</th><th class="num">MQL→SQL</th>
+            <th class="num">Бриф→КП</th><th class="num">КП→Won</th>
+          </tr>
+        </thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num"><b>70 000</b></td>
+      <td class="num" style="background:#F8F0FF;"><b>38</b></td>
+      <td class="num" style="background:#F8F0FF;">13</td>
+      <td class="num" style="background:#F8F0FF;color:#5A3F8C;"><b>34.2%</b></td>
+      <td class="num">13</td>
+      <td class="num">9<br><small>H0·W2·C7</small></td>
+      <td class="num">6</td>
+      <td class="num">8</td>
+      <td class="num"><b>2</b></td>
+      <td class="num accent">₴65 870</td>
+      <td class="num">₴32 935</td>
+      <td class="num accent"><b>0.94x</b></td>
+      <td class="num">₴1 842</td>
+      <td class="num" style="background:#F8F0FF;color:#5A3F8C;"><b>₴5 384</b></td>
+      <td class="num">₴5 384</td>
+      <td class="num">₴7 777</td>
+      <td class="num">₴11 666</td>
+      <td class="num">₴8 750</td>
+      <td class="num accent"><b>₴35 000</b></td>
+      <td class="num small">34%</td>
+      <td class="num small">24%</td>
+      <td class="num small">16%</td>
+      <td class="num small">21%</td>
+      <td class="num small">8%</td>
+      <td class="num small">5%</td>
+      <td class="num small">69%</td>
+      <td class="num small">133%</td>
+      <td class="num small">38%</td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num"><b>70 000</b></td>
+      <td class="num" style="background:#F8F0FF;"><b>25</b></td>
+      <td class="num" style="background:#F8F0FF;">11</td>
+      <td class="num" style="background:#F8F0FF;color:#5A3F8C;"><b>44.0%</b></td>
+      <td class="num">11</td>
+      <td class="num">7<br><small>H0·W0·C7</small></td>
+      <td class="num">6</td>
+      <td class="num">6</td>
+      <td class="num"><b>4</b></td>
+      <td class="num accent">₴119 858</td>
+      <td class="num">₴29 964</td>
+      <td class="num accent"><b>1.71x</b></td>
+      <td class="num">₴2 800</td>
+      <td class="num" style="background:#F8F0FF;color:#5A3F8C;"><b>₴6 363</b></td>
+      <td class="num">₴6 363</td>
+      <td class="num">₴10 000</td>
+      <td class="num">₴11 666</td>
+      <td class="num">₴11 666</td>
+      <td class="num accent"><b>₴17 500</b></td>
+      <td class="num small">44%</td>
+      <td class="num small">28%</td>
+      <td class="num small">24%</td>
+      <td class="num small">24%</td>
+      <td class="num small">4%</td>
+      <td class="num small">16%</td>
+      <td class="num small">64%</td>
+      <td class="num small">100%</td>
+      <td class="num small">17%</td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num"><b>70 000</b></td>
+      <td class="num" style="background:#F8F0FF;"><b>26</b></td>
+      <td class="num" style="background:#F8F0FF;">9</td>
+      <td class="num" style="background:#F8F0FF;color:#5A3F8C;"><b>34.6%</b></td>
+      <td class="num">8</td>
+      <td class="num">3<br><small>H0·W0·C3</small></td>
+      <td class="num">3</td>
+      <td class="num">4</td>
+      <td class="num"><b>2</b></td>
+      <td class="num accent">₴94 068</td>
+      <td class="num">₴47 034</td>
+      <td class="num accent"><b>1.34x</b></td>
+      <td class="num">₴2 692</td>
+      <td class="num" style="background:#F8F0FF;color:#5A3F8C;"><b>₴7 777</b></td>
+      <td class="num">₴8 750</td>
+      <td class="num">₴23 333</td>
+      <td class="num">₴23 333</td>
+      <td class="num">₴17 500</td>
+      <td class="num accent"><b>₴35 000</b></td>
+      <td class="num small">31%</td>
+      <td class="num small">12%</td>
+      <td class="num small">12%</td>
+      <td class="num small">15%</td>
+      <td class="num small">0%</td>
+      <td class="num small">8%</td>
+      <td class="num small">38%</td>
+      <td class="num small">133%</td>
+      <td class="num small">0%</td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num"><b>210 000</b></td>
+      <td class="num" style="background:#F8F0FF;"><b>89</b></td>
+      <td class="num" style="background:#F8F0FF;">33</td>
+      <td class="num" style="background:#F8F0FF;color:#5A3F8C;"><b>37.1%</b></td>
+      <td class="num">32</td>
+      <td class="num">19<br><small>H0·W2·C17</small></td>
+      <td class="num">15</td>
+      <td class="num">18</td>
+      <td class="num"><b>8</b></td>
+      <td class="num accent">₴279 796</td>
+      <td class="num">₴34 974</td>
+      <td class="num accent"><b>1.33x</b></td>
+      <td class="num">₴2 359</td>
+      <td class="num" style="background:#F8F0FF;color:#5A3F8C;"><b>₴6 363</b></td>
+      <td class="num">₴6 562</td>
+      <td class="num">₴11 052</td>
+      <td class="num">₴14 000</td>
+      <td class="num">₴11 666</td>
+      <td class="num accent"><b>₴26 250</b></td>
+      <td class="num small">36%</td>
+      <td class="num small">21%</td>
+      <td class="num small">17%</td>
+      <td class="num small">20%</td>
+      <td class="num small">4%</td>
+      <td class="num small">9%</td>
+      <td class="num small">59%</td>
+      <td class="num small">120%</td>
+      <td class="num small">22%</td>
+    </tr></tbody>
+      </table>
+      </div>
+      <div class="sales-info">
+        <b>Продажі DRP за Q2:</b> 8 угод на ₴279 796 · 
+        <b>Конверсія DRP → UA (Q2):</b> <span style="color:#5A3F8C;font-weight:800;">37.1%</span> 
+        (Кв 34% · Тр <b style="color:#0F6E56;">44%</b> · Ч 35%) — травень найкращий місяць по валідності!
+        <div style="margin-top:10px;"><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ project112.com.ua (₴28,548)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ project112.com.ua (₴37,322)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ voentorg1.com.ua (₴28,665)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ tsk.ua (₴43,416)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ orthomol.life (₴19,903)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ nuovoskin.clinic (₴27,874)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ arcos.com.ua (₴63,745)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ ladylike.ua (₴30,323)</div></div>
+      </div>
+    </div>
+    
+    <div class="card" style="border-top-color:#FE391F;">
+      <h3 style="color:#FE391F;">💰 Target · юніт-економіка Q2 (по місяцях)</h3>
+      <div style="overflow-x:auto;">
+      <table class="econ-table">
+        <thead>
+          <tr style="background:#000;color:#fff;">
+            <th rowspan="2">Період</th>
+            <th rowspan="2" class="num">Витрати ₴</th>
+            <th colspan="6" class="num" style="text-align:center;">Обʼєм воронки</th>
+            <th colspan="3" class="num" style="text-align:center;">Дохід & ROI</th>
+            <th colspan="6" class="num" style="text-align:center;">Вартість (₴)</th>
+            <th colspan="9" class="num" style="text-align:center;">Конверсії</th>
+          </tr>
+          <tr style="background:#333;color:#fff;">
+            <th class="num">Ліди</th><th class="num">MQL</th><th class="num">SQL</th>
+            <th class="num">Брифи</th><th class="num">КП</th><th class="num">Продажі</th>
+            <th class="num">Дохід</th><th class="num">Ср.чек</th><th class="num">ROAS</th>
+            <th class="num">CPL</th><th class="num">CPMQL</th><th class="num">CPSQL</th>
+            <th class="num">CP Бриф</th><th class="num">CP КП</th><th class="num">CPA</th>
+            <th class="num">Л→MQL</th><th class="num">Л→SQL</th>
+            <th class="num">Л→Бриф</th><th class="num">Л→КП</th><th class="num">Л→Won</th>
+            <th class="num">Л→$</th><th class="num">MQL→SQL</th>
+            <th class="num">Бриф→КП</th><th class="num">КП→Won</th>
+          </tr>
+        </thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num"><b>73 233</b></td>
+      <td class="num">70</td>
+      <td class="num">62</td>
+      <td class="num">7<br><small>H0·W3·C4</small></td>
+      <td class="num">7</td>
+      <td class="num">6</td>
+      <td class="num"><b>2</b></td>
+      <td class="num accent">₴51 746</td>
+      <td class="num">₴25 873</td>
+      <td class="num accent"><b>0.71x</b></td>
+      <td class="num">₴1 046</td>
+      <td class="num">₴1 181</td>
+      <td class="num">₴10 461</td>
+      <td class="num">₴10 461</td>
+      <td class="num">₴12 205</td>
+      <td class="num accent"><b>₴36 616</b></td>
+      <td class="num small">89%</td>
+      <td class="num small">10%</td>
+      <td class="num small">10%</td>
+      <td class="num small">9%</td>
+      <td class="num small">0%</td>
+      <td class="num small">3%</td>
+      <td class="num small">11%</td>
+      <td class="num small">86%</td>
+      <td class="num small">0%</td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num"><b>89 169</b></td>
+      <td class="num">121</td>
+      <td class="num">96</td>
+      <td class="num">12<br><small>H0·W3·C9</small></td>
+      <td class="num">21</td>
+      <td class="num">7</td>
+      <td class="num"><b>0</b></td>
+      <td class="num accent">—</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>0.00x</b></td>
+      <td class="num">₴736</td>
+      <td class="num">₴928</td>
+      <td class="num">₴7 430</td>
+      <td class="num">₴4 246</td>
+      <td class="num">₴12 738</td>
+      <td class="num accent"><b>—</b></td>
+      <td class="num small">79%</td>
+      <td class="num small">10%</td>
+      <td class="num small">17%</td>
+      <td class="num small">6%</td>
+      <td class="num small">0%</td>
+      <td class="num small">—</td>
+      <td class="num small">12%</td>
+      <td class="num small">33%</td>
+      <td class="num small">0%</td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num"><b>103 677</b></td>
+      <td class="num">143</td>
+      <td class="num">132</td>
+      <td class="num">10<br><small>H0·W3·C7</small></td>
+      <td class="num">17</td>
+      <td class="num">11</td>
+      <td class="num"><b>1</b></td>
+      <td class="num accent">₴33 651</td>
+      <td class="num">₴33 651</td>
+      <td class="num accent"><b>0.32x</b></td>
+      <td class="num">₴725</td>
+      <td class="num">₴785</td>
+      <td class="num">₴10 367</td>
+      <td class="num">₴6 098</td>
+      <td class="num">₴9 425</td>
+      <td class="num accent"><b>₴103 677</b></td>
+      <td class="num small">92%</td>
+      <td class="num small">7%</td>
+      <td class="num small">12%</td>
+      <td class="num small">8%</td>
+      <td class="num small">1%</td>
+      <td class="num small">1%</td>
+      <td class="num small">8%</td>
+      <td class="num small">65%</td>
+      <td class="num small">9%</td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num"><b>266 079</b></td>
+      <td class="num">334</td>
+      <td class="num">290</td>
+      <td class="num">29<br><small>H0·W9·C20</small></td>
+      <td class="num">45</td>
+      <td class="num">24</td>
+      <td class="num"><b>3</b></td>
+      <td class="num accent">₴85 397</td>
+      <td class="num">₴28 465</td>
+      <td class="num accent"><b>0.32x</b></td>
+      <td class="num">₴796</td>
+      <td class="num">₴917</td>
+      <td class="num">₴9 175</td>
+      <td class="num">₴5 912</td>
+      <td class="num">₴11 086</td>
+      <td class="num accent"><b>₴88 693</b></td>
+      <td class="num small">87%</td>
+      <td class="num small">9%</td>
+      <td class="num small">13%</td>
+      <td class="num small">7%</td>
+      <td class="num small">0%</td>
+      <td class="num small">1%</td>
+      <td class="num small">10%</td>
+      <td class="num small">53%</td>
+      <td class="num small">4%</td>
+    </tr></tbody>
+      </table>
+      </div>
+      <div class="sales-info">
+        <b>Продажі Target за Q2:</b> 3 угод на ₴85 397
+        <div style="margin-top:10px;"><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ amrita.ua (₴23,471)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ prk.com.ua (₴28,275)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ comforthouse.in.ua (₴33,651)</div></div>
+      </div>
+    </div>
+    
+    <div class="card" style="border-top-color:#856404;">
+      <h3 style="color:#856404;">💰 Контекст · юніт-економіка Q2 (по місяцях)</h3>
+      <div style="overflow-x:auto;">
+      <table class="econ-table">
+        <thead>
+          <tr style="background:#000;color:#fff;">
+            <th rowspan="2">Період</th>
+            <th rowspan="2" class="num">Витрати ₴</th>
+            <th colspan="6" class="num" style="text-align:center;">Обʼєм воронки</th>
+            <th colspan="3" class="num" style="text-align:center;">Дохід & ROI</th>
+            <th colspan="6" class="num" style="text-align:center;">Вартість (₴)</th>
+            <th colspan="9" class="num" style="text-align:center;">Конверсії</th>
+          </tr>
+          <tr style="background:#333;color:#fff;">
+            <th class="num">Ліди</th><th class="num">MQL</th><th class="num">SQL</th>
+            <th class="num">Брифи</th><th class="num">КП</th><th class="num">Продажі</th>
+            <th class="num">Дохід</th><th class="num">Ср.чек</th><th class="num">ROAS</th>
+            <th class="num">CPL</th><th class="num">CPMQL</th><th class="num">CPSQL</th>
+            <th class="num">CP Бриф</th><th class="num">CP КП</th><th class="num">CPA</th>
+            <th class="num">Л→MQL</th><th class="num">Л→SQL</th>
+            <th class="num">Л→Бриф</th><th class="num">Л→КП</th><th class="num">Л→Won</th>
+            <th class="num">Л→$</th><th class="num">MQL→SQL</th>
+            <th class="num">Бриф→КП</th><th class="num">КП→Won</th>
+          </tr>
+        </thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num"><b>79 347</b></td>
+      <td class="num">21</td>
+      <td class="num">16</td>
+      <td class="num">9<br><small>H0·W2·C7</small></td>
+      <td class="num">5</td>
+      <td class="num">6</td>
+      <td class="num"><b>1</b></td>
+      <td class="num accent">₴30 720</td>
+      <td class="num">₴30 720</td>
+      <td class="num accent"><b>0.39x</b></td>
+      <td class="num">₴3 778</td>
+      <td class="num">₴4 959</td>
+      <td class="num">₴8 816</td>
+      <td class="num">₴15 869</td>
+      <td class="num">₴13 224</td>
+      <td class="num accent"><b>₴79 347</b></td>
+      <td class="num small">76%</td>
+      <td class="num small">43%</td>
+      <td class="num small">24%</td>
+      <td class="num small">29%</td>
+      <td class="num small">10%</td>
+      <td class="num small">5%</td>
+      <td class="num small">56%</td>
+      <td class="num small">120%</td>
+      <td class="num small">33%</td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num"><b>15 960</b></td>
+      <td class="num">1</td>
+      <td class="num">1</td>
+      <td class="num">0<br><small>H0·W0·C0</small></td>
+      <td class="num">1</td>
+      <td class="num">1</td>
+      <td class="num"><b>1</b></td>
+      <td class="num accent">₴30 697</td>
+      <td class="num">₴30 697</td>
+      <td class="num accent"><b>1.92x</b></td>
+      <td class="num">₴15 960</td>
+      <td class="num">₴15 960</td>
+      <td class="num">—</td>
+      <td class="num">₴15 960</td>
+      <td class="num">₴15 960</td>
+      <td class="num accent"><b>₴15 960</b></td>
+      <td class="num small">100%</td>
+      <td class="num small">0%</td>
+      <td class="num small">100%</td>
+      <td class="num small">100%</td>
+      <td class="num small">0%</td>
+      <td class="num small">100%</td>
+      <td class="num small">0%</td>
+      <td class="num small">100%</td>
+      <td class="num small">0%</td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num"><b>50 054</b></td>
+      <td class="num">10</td>
+      <td class="num">9</td>
+      <td class="num">1<br><small>H0·W0·C1</small></td>
+      <td class="num">2</td>
+      <td class="num">0</td>
+      <td class="num"><b>1</b></td>
+      <td class="num accent">₴75 309</td>
+      <td class="num">₴75 309</td>
+      <td class="num accent"><b>1.50x</b></td>
+      <td class="num">₴5 005</td>
+      <td class="num">₴5 561</td>
+      <td class="num">₴50 054</td>
+      <td class="num">₴25 027</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>₴50 054</b></td>
+      <td class="num small">90%</td>
+      <td class="num small">10%</td>
+      <td class="num small">20%</td>
+      <td class="num small">0%</td>
+      <td class="num small">0%</td>
+      <td class="num small">10%</td>
+      <td class="num small">11%</td>
+      <td class="num small">0%</td>
+      <td class="num small">—</td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num"><b>145 361</b></td>
+      <td class="num">32</td>
+      <td class="num">26</td>
+      <td class="num">10<br><small>H0·W2·C8</small></td>
+      <td class="num">8</td>
+      <td class="num">7</td>
+      <td class="num"><b>3</b></td>
+      <td class="num accent">₴136 726</td>
+      <td class="num">₴45 575</td>
+      <td class="num accent"><b>0.94x</b></td>
+      <td class="num">₴4 542</td>
+      <td class="num">₴5 590</td>
+      <td class="num">₴14 536</td>
+      <td class="num">₴18 170</td>
+      <td class="num">₴20 765</td>
+      <td class="num accent"><b>₴48 453</b></td>
+      <td class="num small">81%</td>
+      <td class="num small">31%</td>
+      <td class="num small">25%</td>
+      <td class="num small">22%</td>
+      <td class="num small">6%</td>
+      <td class="num small">9%</td>
+      <td class="num small">38%</td>
+      <td class="num small">88%</td>
+      <td class="num small">29%</td>
+    </tr></tbody>
+      </table>
+      </div>
+      <div class="sales-info">
+        <b>Продажі Контекст за Q2:</b> 3 угод на ₴136 726
+        <div style="margin-top:10px;"><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ omnishop.com.ua (₴30,720)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ aquagold.com.ua (₴30,697)</div><div style="font-size:11px;padding:4px 0;border-bottom:1px solid #EDEDED;">✓ vip-print.ua (₴75,309)</div></div>
+      </div>
+    </div>
+    
+    <div class="card" style="border-top-color:#0C5460;">
+      <h3 style="color:#0C5460;">💰 Cold Email · юніт-економіка Q2 (по місяцях)</h3>
+      <div style="overflow-x:auto;">
+      <table class="econ-table">
+        <thead>
+          <tr style="background:#000;color:#fff;">
+            <th rowspan="2">Період</th>
+            <th rowspan="2" class="num">Витрати ₴</th>
+            <th colspan="6" class="num" style="text-align:center;">Обʼєм воронки</th>
+            <th colspan="3" class="num" style="text-align:center;">Дохід & ROI</th>
+            <th colspan="6" class="num" style="text-align:center;">Вартість (₴)</th>
+            <th colspan="9" class="num" style="text-align:center;">Конверсії</th>
+          </tr>
+          <tr style="background:#333;color:#fff;">
+            <th class="num">Ліди</th><th class="num">MQL</th><th class="num">SQL</th>
+            <th class="num">Брифи</th><th class="num">КП</th><th class="num">Продажі</th>
+            <th class="num">Дохід</th><th class="num">Ср.чек</th><th class="num">ROAS</th>
+            <th class="num">CPL</th><th class="num">CPMQL</th><th class="num">CPSQL</th>
+            <th class="num">CP Бриф</th><th class="num">CP КП</th><th class="num">CPA</th>
+            <th class="num">Л→MQL</th><th class="num">Л→SQL</th>
+            <th class="num">Л→Бриф</th><th class="num">Л→КП</th><th class="num">Л→Won</th>
+            <th class="num">Л→$</th><th class="num">MQL→SQL</th>
+            <th class="num">Бриф→КП</th><th class="num">КП→Won</th>
+          </tr>
+        </thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num"><b>19 464</b></td>
+      <td class="num">21</td>
+      <td class="num">17</td>
+      <td class="num">4<br><small>H0·W1·C3</small></td>
+      <td class="num">6</td>
+      <td class="num">5</td>
+      <td class="num"><b>0</b></td>
+      <td class="num accent">—</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>0.00x</b></td>
+      <td class="num">₴926</td>
+      <td class="num">₴1 144</td>
+      <td class="num">₴4 866</td>
+      <td class="num">₴3 244</td>
+      <td class="num">₴3 892</td>
+      <td class="num accent"><b>—</b></td>
+      <td class="num small">81%</td>
+      <td class="num small">19%</td>
+      <td class="num small">29%</td>
+      <td class="num small">24%</td>
+      <td class="num small">0%</td>
+      <td class="num small">—</td>
+      <td class="num small">24%</td>
+      <td class="num small">83%</td>
+      <td class="num small">0%</td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num"><b>19 464</b></td>
+      <td class="num">10</td>
+      <td class="num">10</td>
+      <td class="num">0<br><small>H0·W0·C0</small></td>
+      <td class="num">1</td>
+      <td class="num">0</td>
+      <td class="num"><b>0</b></td>
+      <td class="num accent">—</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>0.00x</b></td>
+      <td class="num">₴1 946</td>
+      <td class="num">₴1 946</td>
+      <td class="num">—</td>
+      <td class="num">₴19 464</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>—</b></td>
+      <td class="num small">100%</td>
+      <td class="num small">0%</td>
+      <td class="num small">10%</td>
+      <td class="num small">0%</td>
+      <td class="num small">0%</td>
+      <td class="num small">—</td>
+      <td class="num small">0%</td>
+      <td class="num small">0%</td>
+      <td class="num small">—</td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num"><b>19 464</b></td>
+      <td class="num">14</td>
+      <td class="num">14</td>
+      <td class="num">2<br><small>H0·W0·C2</small></td>
+      <td class="num">5</td>
+      <td class="num">0</td>
+      <td class="num"><b>0</b></td>
+      <td class="num accent">—</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>0.00x</b></td>
+      <td class="num">₴1 390</td>
+      <td class="num">₴1 390</td>
+      <td class="num">₴9 732</td>
+      <td class="num">₴3 892</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>—</b></td>
+      <td class="num small">100%</td>
+      <td class="num small">14%</td>
+      <td class="num small">36%</td>
+      <td class="num small">0%</td>
+      <td class="num small">0%</td>
+      <td class="num small">—</td>
+      <td class="num small">14%</td>
+      <td class="num small">0%</td>
+      <td class="num small">—</td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num"><b>58 392</b></td>
+      <td class="num">45</td>
+      <td class="num">41</td>
+      <td class="num">6<br><small>H0·W1·C5</small></td>
+      <td class="num">12</td>
+      <td class="num">5</td>
+      <td class="num"><b>0</b></td>
+      <td class="num accent">—</td>
+      <td class="num">—</td>
+      <td class="num accent"><b>0.00x</b></td>
+      <td class="num">₴1 297</td>
+      <td class="num">₴1 424</td>
+      <td class="num">₴9 732</td>
+      <td class="num">₴4 866</td>
+      <td class="num">₴11 678</td>
+      <td class="num accent"><b>—</b></td>
+      <td class="num small">91%</td>
+      <td class="num small">13%</td>
+      <td class="num small">27%</td>
+      <td class="num small">11%</td>
+      <td class="num small">0%</td>
+      <td class="num small">—</td>
+      <td class="num small">15%</td>
+      <td class="num small">42%</td>
+      <td class="num small">0%</td>
+    </tr></tbody>
+      </table>
+      </div>
+      <div class="sales-info">
+        <b>Продажі Cold Email за Q2:</b> 0 угод на —
+        
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">03 /</span><h2>🎯 Матриця стадій воронки</h2><span class="sub">по каналах × місяцях</span></div>
+    
+    <div class="card" style="border-top-color:#0F6E56;">
+      <h3 style="color:#0F6E56;">🎯 SEO · матриця стадій воронки Q2</h3>
+      <div style="overflow-x:auto;">
+      <table class="funnel-table">
+        <thead><tr>
+          <th>Період</th><th class="num">Ліди</th>
+          <th class="num">Входящие</th><th class="num">В роботі</th>
+          <th class="num">Бриф</th><th class="num">Підгот. КП</th><th class="num">Готово КП</th>
+          <th class="num">Презент.</th><th class="num">Договір</th>
+          <th class="num">Won</th><th class="num">Lost</th>
+        </tr></thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num">27</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">2 <small>7%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">4 <small>15%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>4%</small></td>
+      <td class="num">26 <small>96%</small></td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num">39</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">8 <small>21%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">5 <small>13%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">2 <small>5%</small></td>
+      <td class="num">35 <small>90%</small></td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num">27</td>
+      <td class="num">1 <small>4%</small></td>
+      <td class="num">3 <small>11%</small></td>
+      <td class="num">6 <small>22%</small></td>
+      <td class="num">2 <small>7%</small></td>
+      <td class="num">2 <small>7%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>4%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">18 <small>67%</small></td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num">93</td>
+      <td class="num">1 <small>1%</small></td>
+      <td class="num">3 <small>3%</small></td>
+      <td class="num">16 <small>17%</small></td>
+      <td class="num">2 <small>2%</small></td>
+      <td class="num">11 <small>12%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>1%</small></td>
+      <td class="num">3 <small>3%</small></td>
+      <td class="num">79 <small>85%</small></td>
+    </tr></tbody>
+      </table>
+      </div>
+    </div>
+    
+    <div class="card" style="border-top-color:#5A3F8C;">
+      <h3 style="color:#5A3F8C;">🎯 DRP · матриця стадій воронки Q2</h3>
+      <div style="overflow-x:auto;">
+      <table class="funnel-table">
+        <thead><tr>
+          <th>Період</th><th class="num">Ліди</th>
+          <th class="num">Входящие</th><th class="num">В роботі</th>
+          <th class="num">Бриф</th><th class="num">Підгот. КП</th><th class="num">Готово КП</th>
+          <th class="num">Презент.</th><th class="num">Договір</th>
+          <th class="num">Won</th><th class="num">Lost</th>
+        </tr></thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num">13</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">6 <small>46%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">8 <small>62%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>8%</small></td>
+      <td class="num">3 <small>23%</small></td>
+      <td class="num">7 <small>54%</small></td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num">11</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">6 <small>55%</small></td>
+      <td class="num">1 <small>9%</small></td>
+      <td class="num">6 <small>55%</small></td>
+      <td class="num">1 <small>9%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>9%</small></td>
+      <td class="num">6 <small>55%</small></td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num">9</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">3 <small>33%</small></td>
+      <td class="num">1 <small>11%</small></td>
+      <td class="num">4 <small>44%</small></td>
+      <td class="num">3 <small>33%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">3 <small>33%</small></td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num">33</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">15 <small>45%</small></td>
+      <td class="num">2 <small>6%</small></td>
+      <td class="num">18 <small>55%</small></td>
+      <td class="num">4 <small>12%</small></td>
+      <td class="num">1 <small>3%</small></td>
+      <td class="num">4 <small>12%</small></td>
+      <td class="num">16 <small>48%</small></td>
+    </tr></tbody>
+      </table>
+      </div>
+    </div>
+    
+    <div class="card" style="border-top-color:#FE391F;">
+      <h3 style="color:#FE391F;">🎯 Target · матриця стадій воронки Q2</h3>
+      <div style="overflow-x:auto;">
+      <table class="funnel-table">
+        <thead><tr>
+          <th>Період</th><th class="num">Ліди</th>
+          <th class="num">Входящие</th><th class="num">В роботі</th>
+          <th class="num">Бриф</th><th class="num">Підгот. КП</th><th class="num">Готово КП</th>
+          <th class="num">Презент.</th><th class="num">Договір</th>
+          <th class="num">Won</th><th class="num">Lost</th>
+        </tr></thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num">70</td>
+      <td class="num">1 <small>1%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">7 <small>10%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">6 <small>9%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">68 <small>97%</small></td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num">121</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>1%</small></td>
+      <td class="num">21 <small>17%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">7 <small>6%</small></td>
+      <td class="num">2 <small>2%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">118 <small>98%</small></td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num">143</td>
+      <td class="num">8 <small>6%</small></td>
+      <td class="num">11 <small>8%</small></td>
+      <td class="num">17 <small>12%</small></td>
+      <td class="num">1 <small>1%</small></td>
+      <td class="num">11 <small>8%</small></td>
+      <td class="num">5 <small>3%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>1%</small></td>
+      <td class="num">106 <small>74%</small></td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num">334</td>
+      <td class="num">9 <small>3%</small></td>
+      <td class="num">12 <small>4%</small></td>
+      <td class="num">45 <small>13%</small></td>
+      <td class="num">1 <small>0%</small></td>
+      <td class="num">24 <small>7%</small></td>
+      <td class="num">7 <small>2%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>0%</small></td>
+      <td class="num">292 <small>87%</small></td>
+    </tr></tbody>
+      </table>
+      </div>
+    </div>
+    
+    <div class="card" style="border-top-color:#856404;">
+      <h3 style="color:#856404;">🎯 Контекст · матриця стадій воронки Q2</h3>
+      <div style="overflow-x:auto;">
+      <table class="funnel-table">
+        <thead><tr>
+          <th>Період</th><th class="num">Ліди</th>
+          <th class="num">Входящие</th><th class="num">В роботі</th>
+          <th class="num">Бриф</th><th class="num">Підгот. КП</th><th class="num">Готово КП</th>
+          <th class="num">Презент.</th><th class="num">Договір</th>
+          <th class="num">Won</th><th class="num">Lost</th>
+        </tr></thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num">21</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">5 <small>24%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">6 <small>29%</small></td>
+      <td class="num">1 <small>5%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">2 <small>10%</small></td>
+      <td class="num">18 <small>86%</small></td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num">1</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>100%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>100%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>100%</small></td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num">10</td>
+      <td class="num">1 <small>10%</small></td>
+      <td class="num">2 <small>20%</small></td>
+      <td class="num">2 <small>20%</small></td>
+      <td class="num">1 <small>10%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">5 <small>50%</small></td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num">32</td>
+      <td class="num">1 <small>3%</small></td>
+      <td class="num">2 <small>6%</small></td>
+      <td class="num">8 <small>25%</small></td>
+      <td class="num">1 <small>3%</small></td>
+      <td class="num">7 <small>22%</small></td>
+      <td class="num">1 <small>3%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">2 <small>6%</small></td>
+      <td class="num">24 <small>75%</small></td>
+    </tr></tbody>
+      </table>
+      </div>
+    </div>
+    
+    <div class="card" style="border-top-color:#0C5460;">
+      <h3 style="color:#0C5460;">🎯 Cold Email · матриця стадій воронки Q2</h3>
+      <div style="overflow-x:auto;">
+      <table class="funnel-table">
+        <thead><tr>
+          <th>Період</th><th class="num">Ліди</th>
+          <th class="num">Входящие</th><th class="num">В роботі</th>
+          <th class="num">Бриф</th><th class="num">Підгот. КП</th><th class="num">Готово КП</th>
+          <th class="num">Презент.</th><th class="num">Договір</th>
+          <th class="num">Won</th><th class="num">Lost</th>
+        </tr></thead>
+        <tbody>
+    <tr><td class="l"><b>Квітень</b></td>
+      <td class="num">21</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">6 <small>29%</small></td>
+      <td class="num">1 <small>5%</small></td>
+      <td class="num">5 <small>24%</small></td>
+      <td class="num">1 <small>5%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">19 <small>90%</small></td>
+    </tr>
+    <tr><td class="l"><b>Травень</b></td>
+      <td class="num">10</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">1 <small>10%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">10 <small>100%</small></td>
+    </tr>
+    <tr><td class="l"><b>Червень</b></td>
+      <td class="num">14</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">4 <small>29%</small></td>
+      <td class="num">5 <small>36%</small></td>
+      <td class="num">1 <small>7%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">8 <small>57%</small></td>
+    </tr>
+    <tr><td class="l"><b>Q2 разом</b></td>
+      <td class="num">45</td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">4 <small>9%</small></td>
+      <td class="num">12 <small>27%</small></td>
+      <td class="num">2 <small>4%</small></td>
+      <td class="num">5 <small>11%</small></td>
+      <td class="num">1 <small>2%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">0 <small>0%</small></td>
+      <td class="num">37 <small>82%</small></td>
+    </tr></tbody>
+      </table>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">04 /</span><h2>💵 Матриця витрат Q2</h2></div>
+    <div class="card">
+      <table>
+        <thead><tr>
+          <th>Канал</th>
+          <th class="num">Квітень</th>
+          <th class="num">Травень</th>
+          <th class="num">Червень</th>
+          <th class="num">Q2 разом</th>
+          <th class="num">Q2 сер./міс</th>
+          <th class="num">Ліди Q2</th>
+          <th class="num">CPL Q2</th>
+        </tr></thead>
+        <tbody><tr><td class="l" style="color:#0F6E56;font-weight:800;">SEO</td>
+      <td class="num">₴475</td>
+      <td class="num">₴10 049</td>
+      <td class="num">₴35 809</td>
+      <td class="num"><b>₴46 333</b></td>
+      <td class="num">₴15 444</td>
+      <td class="num">93</td>
+      <td class="num"><b>₴498</b></td>
+    </tr><tr><td class="l" style="color:#5A3F8C;font-weight:800;">DRP</td>
+      <td class="num">₴70 000</td>
+      <td class="num">₴70 000</td>
+      <td class="num">₴70 000</td>
+      <td class="num"><b>₴210 000</b></td>
+      <td class="num">₴70 000</td>
+      <td class="num">89</td>
+      <td class="num"><b>₴2 359</b></td>
+    </tr><tr><td class="l" style="color:#FE391F;font-weight:800;">Target</td>
+      <td class="num">₴73 233</td>
+      <td class="num">₴89 169</td>
+      <td class="num">₴103 677</td>
+      <td class="num"><b>₴266 079</b></td>
+      <td class="num">₴88 693</td>
+      <td class="num">334</td>
+      <td class="num"><b>₴796</b></td>
+    </tr><tr><td class="l" style="color:#856404;font-weight:800;">Контекст</td>
+      <td class="num">₴79 347</td>
+      <td class="num">₴15 960</td>
+      <td class="num">₴50 054</td>
+      <td class="num"><b>₴145 361</b></td>
+      <td class="num">₴48 453</td>
+      <td class="num">32</td>
+      <td class="num"><b>₴4 542</b></td>
+    </tr><tr><td class="l" style="color:#0C5460;font-weight:800;">Cold Email</td>
+      <td class="num">₴19 464</td>
+      <td class="num">₴19 464</td>
+      <td class="num">₴19 464</td>
+      <td class="num"><b>₴58 392</b></td>
+      <td class="num">₴19 464</td>
+      <td class="num">45</td>
+      <td class="num"><b>₴1 297</b></td>
+    </tr>
+          <tr style="background:#000;color:#fff;font-weight:800;">
+            <td><b>РАЗОМ</b></td>
+            <td class="num">₴242 519</td>
+            <td class="num">₴204 642</td>
+            <td class="num">₴279 004</td>
+            <td class="num">₴726 165</td>
+            <td class="num">₴242 055</td>
+            <td class="num">593</td>
+            <td class="num">₴1 224</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:#5A5A5A;margin-top:14px;">
+        <b>SEO</b>: реальні витрати ₴475/10 049/35 809 (зростання) · <b>DRP</b>: фікс. ₴17 500/міс (партнерські) · <b>Target (Meta)</b>: з рекламного кабінету · <b>Контекст (Google Ads)</b>: з кабінету · <b>Cold Email</b>: фікс. ₴19 464/міс
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">05 /</span><h2>💵 Продажі Q2 по каналах</h2></div>
+    <div class="row-3">
+    <div class="card" style="border-top-color:#5A5A5A;">
+      <h3 style="color:#5A5A5A;">Не знайдено</h3>
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+        <div><div style="font-size:32px;font-weight:900;">14</div><div style="font-size:11px;color:#5A5A5A;">угод</div></div>
+        <div style="text-align:right;"><div style="font-size:22px;font-weight:800;color:#5A5A5A;">₴674 894</div><div style="font-size:11px;color:#5A5A5A;">дохід</div></div>
+      </div>
+      <div style="border-top:1px solid #EDEDED;padding-top:10px;">
+        <div style="font-size:12px;margin-bottom:8px;">Середній чек: <b>₴48 206</b></div>
+        <div style="font-size:11px;padding:3px 0;">• trailbox.com.ua (₴21,936)</div><br><div style="font-size:11px;padding:3px 0;">• trailbox.com.ua (₴20,000)</div><br><div style="font-size:11px;padding:3px 0;">• lousol.com (₴104,316)</div><br><div style="font-size:11px;padding:3px 0;">• masplus.net (₴15,203)</div><br><div style="font-size:11px;padding:3px 0;">• biotualet.com.ua/ (₴28,665)</div><br><div style="font-size:11px;padding:3px 0;">• yellowpro.it (₴35,460)</div><br><div style="font-size:11px;padding:3px 0;">• yellowpro.it (₴53,190)</div><br><div style="font-size:11px;padding:3px 0;">• ldvir.ua (₴92,408)</div><br><div style="font-size:11px;padding:3px 0;">• ldvir.ua (₴35,203)</div><br><div style="font-size:11px;padding:3px 0;">• tehno-mart.com.ua (₴30,803)</div><br><div style="font-size:11px;padding:3px 0;">• 11bags.com.ua (₴21,724)</div><br><div style="font-size:11px;padding:3px 0;">• kvshop.com.ua (₴106,187)</div><br><div style="font-size:11px;padding:3px 0;">• certus.com.ua (₴83,219)</div><br><div style="font-size:11px;padding:3px 0;">• hold.com.ua (₴26,580)</div>
+      </div>
+      
+    </div>
+    
+    <div class="card" style="border-top-color:#5A3F8C;">
+      <h3 style="color:#5A3F8C;">DRP</h3>
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+        <div><div style="font-size:32px;font-weight:900;">8</div><div style="font-size:11px;color:#5A5A5A;">угод</div></div>
+        <div style="text-align:right;"><div style="font-size:22px;font-weight:800;color:#5A3F8C;">₴279 796</div><div style="font-size:11px;color:#5A5A5A;">дохід</div></div>
+      </div>
+      <div style="border-top:1px solid #EDEDED;padding-top:10px;">
+        <div style="font-size:12px;margin-bottom:8px;">Середній чек: <b>₴34 974</b></div>
+        <div style="font-size:11px;padding:3px 0;">• project112.com.ua (₴28,548)</div><br><div style="font-size:11px;padding:3px 0;">• project112.com.ua (₴37,322)</div><br><div style="font-size:11px;padding:3px 0;">• voentorg1.com.ua (₴28,665)</div><br><div style="font-size:11px;padding:3px 0;">• tsk.ua (₴43,416)</div><br><div style="font-size:11px;padding:3px 0;">• orthomol.life (₴19,903)</div><br><div style="font-size:11px;padding:3px 0;">• nuovoskin.clinic (₴27,874)</div><br><div style="font-size:11px;padding:3px 0;">• arcos.com.ua (₴63,745)</div><br><div style="font-size:11px;padding:3px 0;">• ladylike.ua (₴30,323)</div>
+      </div>
+      <div style="margin-top:8px;font-size:11px;color:#5A5A5A;">Витрати Q2: ₴210 000 · ROAS: <b style="color:#5A3F8C;">1.33x</b></div>
+    </div>
+    
+    <div class="card" style="border-top-color:#0F6E56;">
+      <h3 style="color:#0F6E56;">SEO</h3>
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+        <div><div style="font-size:32px;font-weight:900;">3</div><div style="font-size:11px;color:#5A5A5A;">угод</div></div>
+        <div style="text-align:right;"><div style="font-size:22px;font-weight:800;color:#0F6E56;">₴234 416</div><div style="font-size:11px;color:#5A5A5A;">дохід</div></div>
+      </div>
+      <div style="border-top:1px solid #EDEDED;padding-top:10px;">
+        <div style="font-size:12px;margin-bottom:8px;">Середній чек: <b>₴78 138</b></div>
+        <div style="font-size:11px;padding:3px 0;">• vodaland.com.ua (₴28,700)</div><br><div style="font-size:11px;padding:3px 0;">• voronvid.store (₴88,716)</div><br><div style="font-size:11px;padding:3px 0;">• lbcmortgage.com (₴117,000)</div>
+      </div>
+      <div style="margin-top:8px;font-size:11px;color:#5A5A5A;">Витрати Q2: ₴46 333 · ROAS: <b style="color:#0F6E56;">5.06x</b></div>
+    </div>
+    
+    <div class="card" style="border-top-color:#5A5A5A;">
+      <h3 style="color:#5A5A5A;">Інші</h3>
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+        <div><div style="font-size:32px;font-weight:900;">5</div><div style="font-size:11px;color:#5A5A5A;">угод</div></div>
+        <div style="text-align:right;"><div style="font-size:22px;font-weight:800;color:#5A5A5A;">₴163 046</div><div style="font-size:11px;color:#5A5A5A;">дохід</div></div>
+      </div>
+      <div style="border-top:1px solid #EDEDED;padding-top:10px;">
+        <div style="font-size:12px;margin-bottom:8px;">Середній чек: <b>₴32 609</b></div>
+        <div style="font-size:11px;padding:3px 0;">• muscle.ua (₴30,406)</div><br><div style="font-size:11px;padding:3px 0;">• armaprime.com.ua (₴28,234)</div><br><div style="font-size:11px;padding:3px 0;">• kogart.eu (₴30,162)</div><br><div style="font-size:11px;padding:3px 0;">• gal.in.ua (₴43,465)</div><br><div style="font-size:11px;padding:3px 0;">• container-trade.net (₴30,779)</div>
+      </div>
+      
+    </div>
+    
+    <div class="card" style="border-top-color:#856404;">
+      <h3 style="color:#856404;">Контекст</h3>
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+        <div><div style="font-size:32px;font-weight:900;">3</div><div style="font-size:11px;color:#5A5A5A;">угод</div></div>
+        <div style="text-align:right;"><div style="font-size:22px;font-weight:800;color:#856404;">₴136 726</div><div style="font-size:11px;color:#5A5A5A;">дохід</div></div>
+      </div>
+      <div style="border-top:1px solid #EDEDED;padding-top:10px;">
+        <div style="font-size:12px;margin-bottom:8px;">Середній чек: <b>₴45 575</b></div>
+        <div style="font-size:11px;padding:3px 0;">• omnishop.com.ua (₴30,720)</div><br><div style="font-size:11px;padding:3px 0;">• aquagold.com.ua (₴30,697)</div><br><div style="font-size:11px;padding:3px 0;">• vip-print.ua (₴75,309)</div>
+      </div>
+      <div style="margin-top:8px;font-size:11px;color:#5A5A5A;">Витрати Q2: ₴145 361 · ROAS: <b style="color:#856404;">0.94x</b></div>
+    </div>
+    
+    <div class="card" style="border-top-color:#FE391F;">
+      <h3 style="color:#FE391F;">Target</h3>
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+        <div><div style="font-size:32px;font-weight:900;">3</div><div style="font-size:11px;color:#5A5A5A;">угод</div></div>
+        <div style="text-align:right;"><div style="font-size:22px;font-weight:800;color:#FE391F;">₴85 397</div><div style="font-size:11px;color:#5A5A5A;">дохід</div></div>
+      </div>
+      <div style="border-top:1px solid #EDEDED;padding-top:10px;">
+        <div style="font-size:12px;margin-bottom:8px;">Середній чек: <b>₴28 465</b></div>
+        <div style="font-size:11px;padding:3px 0;">• amrita.ua (₴23,471)</div><br><div style="font-size:11px;padding:3px 0;">• prk.com.ua (₴28,275)</div><br><div style="font-size:11px;padding:3px 0;">• comforthouse.in.ua (₴33,651)</div>
+      </div>
+      <div style="margin-top:8px;font-size:11px;color:#5A5A5A;">Витрати Q2: ₴266 079 · ROAS: <b style="color:#FE391F;">0.32x</b></div>
+    </div>
+    </div>
+    <div class="card dark" style="margin-top:16px;">
+      <ul class="insights">
+        <li><span class="marker">▸</span><span><b>«Не знайдено» = ₴675K</b> — 14 продажів за старими лідами (до квітня 2026).</span></li>
+        <li><span class="marker">▸</span><span><b>DRP + SEO — champions:</b> ROAS 5x+ при відносно скромних витратах.</span></li>
+        <li><span class="marker">▸</span><span><b>Target — 3 продажі за ₴85K</b> при витратах ₴266K — вагомий провал у монетизації.</span></li>
+        <li><span class="marker">▸</span><span><b>Cold Email — 0 продажів</b> при ₴58K — треба переглянути офер або зупинити.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">06 /</span><h2>🎯 Фінальний ROI</h2><span class="sub">Q2 підсумок з профітом</span></div>
+    <div class="card">
+      <div style="overflow-x:auto;">
+      <table>
+        <thead><tr>
+          <th>Канал</th>
+          <th class="num">Ліди</th><th class="num">MQL</th><th class="num">SQL</th><th class="num">Продажі</th>
+          <th class="num">Витрати Q2</th><th class="num">Дохід Q2</th><th class="num">Профіт</th>
+          <th class="num">ROAS</th><th class="num">ROI %</th>
+          <th class="num">CPL</th><th class="num">CPSQL</th><th class="num">CPA</th>
+        </tr></thead>
+        <tbody>
+        <tr style="border-left:5px solid #0F6E56;">
+          <td class="l" style="color:#0F6E56;font-weight:800;">SEO</td>
+          <td class="num">93</td>
+          <td class="num">84</td>
+          <td class="num">13</td>
+          <td class="num">3</td>
+          <td class="num">₴46 333</td>
+          <td class="num">₴234 416</td>
+          <td class="num" style="color:#0F6E56;"><b>₴188 083</b></td>
+          <td class="num"><b>5.06x</b></td>
+          <td class="num">406%</td>
+          <td class="num">₴498</td>
+          <td class="num">₴3 564</td>
+          <td class="num">₴15 444</td>
+        </tr>
+        <tr style="border-left:5px solid #5A3F8C;">
+          <td class="l" style="color:#5A3F8C;font-weight:800;">DRP <small style="font-weight:600;">(89 pipe, 33 valid)</small></td>
+          <td class="num">89</td>
+          <td class="num">32</td>
+          <td class="num">19</td>
+          <td class="num">8</td>
+          <td class="num">₴210 000</td>
+          <td class="num">₴279 796</td>
+          <td class="num" style="color:#0F6E56;"><b>₴69 796</b></td>
+          <td class="num"><b>1.33x</b></td>
+          <td class="num">33%</td>
+          <td class="num">₴2 359</td>
+          <td class="num">₴11 052</td>
+          <td class="num">₴26 250</td>
+        </tr>
+        <tr style="border-left:5px solid #FE391F;">
+          <td class="l" style="color:#FE391F;font-weight:800;">Target</td>
+          <td class="num">334</td>
+          <td class="num">290</td>
+          <td class="num">29</td>
+          <td class="num">3</td>
+          <td class="num">₴266 079</td>
+          <td class="num">₴85 397</td>
+          <td class="num" style="color:#9F2D26;"><b>-₴180 682</b></td>
+          <td class="num"><b>0.32x</b></td>
+          <td class="num">-68%</td>
+          <td class="num">₴796</td>
+          <td class="num">₴9 175</td>
+          <td class="num">₴88 693</td>
+        </tr>
+        <tr style="border-left:5px solid #856404;">
+          <td class="l" style="color:#856404;font-weight:800;">Контекст</td>
+          <td class="num">32</td>
+          <td class="num">26</td>
+          <td class="num">10</td>
+          <td class="num">3</td>
+          <td class="num">₴145 361</td>
+          <td class="num">₴136 726</td>
+          <td class="num" style="color:#9F2D26;"><b>-₴8 635</b></td>
+          <td class="num"><b>0.94x</b></td>
+          <td class="num">-6%</td>
+          <td class="num">₴4 542</td>
+          <td class="num">₴14 536</td>
+          <td class="num">₴48 453</td>
+        </tr>
+        <tr style="border-left:5px solid #0C5460;">
+          <td class="l" style="color:#0C5460;font-weight:800;">Cold Email</td>
+          <td class="num">45</td>
+          <td class="num">41</td>
+          <td class="num">6</td>
+          <td class="num">0</td>
+          <td class="num">₴58 392</td>
+          <td class="num">—</td>
+          <td class="num" style="color:#9F2D26;"><b>-₴58 392</b></td>
+          <td class="num"><b>0.00x</b></td>
+          <td class="num">-100%</td>
+          <td class="num">₴1 297</td>
+          <td class="num">₴9 732</td>
+          <td class="num">—</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">07 /</span><h2>Висновки та рекомендації Q3</h2></div>
+    <div class="card dark">
+      <ul class="insights">
+        <li><span class="marker">▸</span><span><b>💰 DRP — стабільний профітабельний:</b> ROAS 0.68x при витратах ₴210 000. Кожні ₴100 витрат приносять ₴67 доходу. <b>Треба збільшити бюджет.</b></span></li>
+        <li><span class="marker">▸</span><span><b>🏆 SEO — champion Q2:</b> ROAS 5.06x. Витрати ростуть (₴475 → ₴35 809), ефект видно у Q3. <b>Продовжуємо інвестувати.</b></span></li>
+        <li><span class="marker">▸</span><span><b>⚠ Target — потрібна ревізія:</b> 334 ліди за ₴266K, але лише 3 продажі. ROAS 0.32x. Переглянути креативи, ЦА, зменшити бюджет.</span></li>
+        <li><span class="marker">▸</span><span><b>Контекст</b>: ROAS 0.94x (майже break-even). CPL ₴4 542. Оптимізувати кампанії.</span></li>
+        <li><span class="marker">▸</span><span><b>🚫 Cold Email — 0 продажів</b> при ₴58 392. <b>Призупинити на 1 місяць</b>, переглянути офер.</span></li>
+        <li><span class="marker">▸</span><span><b>Конверсія Лід→Продаж:</b> DRP 24%, SEO 3%, Контекст 9%, Target 1%.</span></li>
+        <li><span class="marker">▸</span><span><b>Рекомендація Q3 (перерозподіл):</b> +40% DRP · +25% SEO · -60% Target · -100% Cold Email · Контекст без змін.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="num">08 /</span><h2>Пов'язані дешборди</h2></div>
+    <div class="card">
+      <p style="font-size:14px;line-height:2;">
+        <a href="dashboard_q2_2026.html" class="link">→ Q2 2026 (загальний квартал)</a><br>
+        <a href="dashboard_q2_infographic.html" class="link">→ Q2 Інфографіка детальна</a><br>
+        <a href="dashboard_april.html" class="link">→ Квітень 2026</a><br>
+        <a href="dashboard_may_apr.html" class="link">→ Травень 2026</a><br>
+        <a href="dashboard_june.html" class="link">→ Червень 2026</a><br>
+        <a href="dashboard_consolidated.html" class="link">→ Хаб</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const months = ['Квітень','Травень','Червень'];
+const chColors = {"SEO": "#0F6E56", "DRP": "#5A3F8C", "Target": "#FE391F", "\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442": "#856404", "Cold Email": "#0C5460"};
+
+function build(id, data, opts) {
+  opts = opts || {};
+  new Chart(document.getElementById(id), {
+    type: opts.type || 'bar',
+    data: {
+      labels: months,
+      datasets: Object.keys(data).map(function(ch) {
+        return {
+          label: ch,
+          data: data[ch],
+          backgroundColor: chColors[ch],
+          borderColor: chColors[ch],
+          borderWidth: 2,
+          fill: false,
+          tension: 0.3,
+        };
+      })
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } }
+    }
+  });
+}
+
+build('c-leads', {"SEO": [27, 39, 27], "DRP": [13, 11, 9], "Target": [70, 121, 143], "\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442": [21, 1, 10], "Cold Email": [21, 10, 14]}, {type:'line'});
+build('c-sql', {"SEO": [4, 5, 4], "DRP": [9, 7, 3], "Target": [7, 12, 10], "\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442": [9, 0, 1], "Cold Email": [4, 0, 2]}, {type:'bar'});
+build('c-spend', {"SEO": [475, 10049, 35809], "DRP": [70000, 70000, 70000], "Target": [73233, 89169, 103677], "\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442": [79347, 15960, 50054], "Cold Email": [19464, 19464, 19464]}, {type:'bar'});
+build('c-won', {"SEO": [1, 2, 0], "DRP": [3, 1, 0], "Target": [0, 0, 1], "\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442": [2, 0, 0], "Cold Email": [0, 0, 0]}, {type:'bar'});
+build('c-rev', {"SEO": [0, 28700.0, 205716.0], "DRP": [65870.0, 119858.0, 94068.0], "Target": [51746.0, 0, 33651.0], "\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442": [30720.0, 30697.0, 75309.0], "Cold Email": [0, 0, 0]}, {type:'bar'});
+build('c-roas', {"SEO": [0.0, 2.86, 5.74], "DRP": [0.94, 1.71, 1.34], "Target": [0.71, 0.0, 0.32], "\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442": [0.39, 1.92, 1.5], "Cold Email": [0.0, 0.0, 0.0]}, {type:'line'});
+</script>
+</body>
+</html>
