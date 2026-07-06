@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>elit-web · Канали Q2 деталь</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish',sans-serif;background:#F8F8F8;color:#000;padding:20px;}
+.wrap{max-width:1400px;margin:0 auto;}
+h1{font-size:28px;font-weight:900;text-transform:uppercase;letter-spacing:-0.5px;}
+h2{font-size:22px;font-weight:900;}
+h3{font-size:16px;font-weight:800;}
+.hero{background:#000;color:#fff;padding:24px 28px;margin-bottom:20px;border-left:6px solid #FE391F;}
+.tab-nav{display:flex;gap:0;margin-bottom:20px;background:#fff;border:2px solid #000;overflow:hidden;}
+.tab-btn{flex:1;padding:16px 20px;background:#fff;color:#000;border:0;font-family:inherit;font-weight:800;font-size:14px;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;border-right:2px solid #000;transition:all 0.2s;}
+.tab-btn:last-child{border-right:0;}
+.tab-btn:hover{background:#F8F8F8;}
+.tab-btn.active{background:#000;color:#fff;}
+.tab-btn.target.active{background:#FE391F;}
+.tab-btn.kontekst.active{background:#856404;}
+.tab-btn.ce.active{background:#0C5460;}
+.card{background:#fff;padding:22px;border-top:4px solid #000;margin-bottom:12px;}
+.callout{background:#F0F8FF;border-left:4px solid #FE391F;padding:14px 18px;margin-bottom:16px;font-size:13px;line-height:1.6;}
+.grid-2{display:grid;gap:14px;grid-template-columns:1fr 1fr;}
+.chart-wrap{background:#fff;padding:20px;border-top:4px solid #000;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+table th{background:#000;color:#fff;text-align:left;padding:9px 12px;font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;}
+table th.num{text-align:right;}
+table td{padding:8px 12px;border-bottom:1px solid #EDEDED;}
+table td.l{text-align:left;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+.scrollx{overflow-x:auto;}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr;}.tab-btn{padding:12px 8px;font-size:12px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+  <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-bottom:12px;">elit-web · детальний аналіз каналів Q2 2026 · v2</div>
+  <h1><span style="color:#FE391F;">Канали Q2</span> · Target · Контекст · Cold Email</h1>
+  <div style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.75);">v2: SQL за полем New SQL з HubSpot (виключено «Not SQL» та порожні). Додано конверсію клік→заявка для Контексту.</div>
+</div>
+<div class="tab-nav">
+  <button class="tab-btn target active" onclick="showTab('target')">🎯 TARGET · 334 ліди · 29 SQL</button>
+  <button class="tab-btn kontekst" onclick="showTab('kontekst')">🎯 КОНТЕКСТ · 32 ліди · 10 SQL</button>
+  <button class="tab-btn ce" onclick="showTab('ce')">📧 COLD EMAIL · 49 · 7 SQL</button>
+</div>
+
+<div class="tab-content" id="tab-target" style="display:none;">
+  <div style="background:#000;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #FE391F;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);">🎯 Target · Meta Ads + TikTok · Q2 2026</div>
+    <h2 style="font-size:26px;font-weight:900;margin-top:8px;">Target · Квіт-Черв 2026</h2>
+    <div style="font-size:13px;margin-top:6px;opacity:0.75;">334 ліди · 29 валідних SQL (8.7%) · ₴266 079 витрат · 3 продажі · ROAS 0.32x</div>
+  </div>
+  <div class="callout">
+    <b>Оновлено:</b> валідний SQL = лід з поле <code>New SQL</code> ∈ {Hot/Warm/Cold} (виключено «Not SQL» та порожні). 
+    <b>29 валідних SQL з 334 = 8.7%</b>. Це реальна конверсія Target у якісний лід — критично низька. 
+    Основне заперечення: «Дорого» (151 раз, 45% всіх заперечень).
+  </div>
+  <h3 style="margin:20px 0 14px;">Помісячні KPI · Витрати · Ліди · Воронка</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">
+    <div style="background:#fff;border-top:4px solid #FE391F;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Квітень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴73 233</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>70</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴1 046</div></div>
+            <div><b>7</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL ₴10 461</div></div>
+            <div><b>0</b> Бриф</div>
+            <div><b>0</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#FE391F;">0</b> Продажі</div>
+            
+          </div>
+        </div><div style="background:#fff;border-top:4px solid #FE391F;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Травень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴89 169</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>121</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴736</div></div>
+            <div><b>12</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL ₴7 430</div></div>
+            <div><b>0</b> Бриф</div>
+            <div><b>2</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#FE391F;">0</b> Продажі</div>
+            
+          </div>
+        </div><div style="background:#fff;border-top:4px solid #FE391F;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Червень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴103 677</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>143</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴725</div></div>
+            <div><b>10</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL ₴10 367</div></div>
+            <div><b>6</b> Бриф</div>
+            <div><b>10</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#FE391F;">1</b> Продажі</div>
+            
+          </div>
+        </div>
+  </div>
+  <h3 style="margin:20px 0 14px;">Якість лідів по місяцях (за полем New SQL)</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Місяць</th><th class="num">Всього</th><th class="num">🔥 Hot</th><th class="num">🌡 Warm</th><th class="num">❄ Cold</th><th class="num">✗ Not-SQL</th><th class="num">◯ Порожньо</th><th class="num" style="background:#0F6E56;">✅ Валідних</th></tr></thead>
+      <tbody><tr><td class="l"><b>Квітень</b></td><td class="num">70</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">3 (4%)</td><td class="num" style="color:#0C5460;font-weight:800;">4 (6%)</td><td class="num" style="color:#5A5A5A;">62 (89%)</td><td class="num" style="color:#999;">1 (1%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">7 (10%)</td></tr><tr><td class="l"><b>Травень</b></td><td class="num">121</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">3 (2%)</td><td class="num" style="color:#0C5460;font-weight:800;">9 (7%)</td><td class="num" style="color:#5A5A5A;">109 (90%)</td><td class="num" style="color:#999;">0 (0%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">12 (10%)</td></tr><tr><td class="l"><b>Червень</b></td><td class="num">143</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">3 (2%)</td><td class="num" style="color:#0C5460;font-weight:800;">7 (5%)</td><td class="num" style="color:#5A5A5A;">117 (82%)</td><td class="num" style="color:#999;">16 (11%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">10 (7%)</td></tr></tbody>
+    </table>
+  </div>
+  <h3 style="margin:20px 0 14px;">ТОП-заперечення</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Заперечення</th><th class="num">Разів</th><th class="num">%</th></tr></thead>
+      <tbody><tr><td class="l">Дорого</td><td class="num"><b>151</b></td><td class="num">51%</td></tr><tr><td class="l">Нет обратной связи</td><td class="num"><b>50</b></td><td class="num">17%</td></tr><tr><td class="l">Отложили на потом/приостановили проект</td><td class="num"><b>47</b></td><td class="num">16%</td></tr><tr><td class="l">Не предоставляем услугу</td><td class="num"><b>14</b></td><td class="num">5%</td></tr><tr><td class="l">Узнавали информацию</td><td class="num"><b>12</b></td><td class="num">4%</td></tr><tr><td class="l">Заявку не оставляли</td><td class="num"><b>8</b></td><td class="num">3%</td></tr><tr><td class="l">Оплата за результат</td><td class="num"><b>5</b></td><td class="num">2%</td></tr><tr><td class="l">Выбрали другого подрядчика</td><td class="num"><b>5</b></td><td class="num">2%</td></tr><tr><td class="l">Сами перезвонят</td><td class="num"><b>2</b></td><td class="num">1%</td></tr><tr><td class="l">Другое</td><td class="num"><b>1</b></td><td class="num">0%</td></tr></tbody>
+    </table>
+  </div>
+  <div class="callout" style="background:#FFF6CC;">
+    <b>Обмеження даних Meta Ads:</b> Windsor.ai повертає лише SEO-акаунт (₴6K/Q2). Target/TikTok кампанії потребують окремих credentials.
+  </div>
+  <div class="grid-2" style="margin-top:20px;">
+    <div class="chart-wrap" style="height:340px;">
+      <h3>Витрати та ліди</h3>
+      <canvas id="chTargetSpend" style="max-height:280px;"></canvas>
+    </div>
+    <div class="chart-wrap" style="height:340px;">
+      <h3>Воронка Target Q2</h3>
+      <canvas id="chTargetFunnel" style="max-height:280px;"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<div class="tab-content" id="tab-kontekst" style="display:none;">
+  <div style="background:#000;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #856404;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);">🎯 Контекст · Google Ads · Q2 2026</div>
+    <h2 style="font-size:26px;font-weight:900;margin-top:8px;">Контекстна реклама · Квіт-Черв 2026</h2>
+    <div style="font-size:13px;margin-top:6px;opacity:0.75;">32 ліди · 10 валідних SQL (31.2%) · ₴145 361 витрат · 3 продажі · ROAS 0.94x</div>
+  </div>
+  <div class="callout">
+    <b>Ключові знахідки:</b> Контекст має <b>найкращу якість SQL серед платних каналів — 31%</b>. 
+    3 продажі з 32 лідів = <b>Ліди→Продаж 9.4%</b>. 
+    <b>Search - PPC 2.0</b> — 38 конверсій за Q2 (найбільший обʼєм), <b>Search_Brand</b> — CPA ₴1 631 (найдешевша).
+    У травні провал: 1 лід за ₴15 960 — треба перевірити чому.
+  </div>
+  <h3 style="margin:20px 0 14px;">Помісячні KPI · з конверсією Клік→Заявка</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">
+    <div style="background:#fff;border-top:4px solid #856404;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Квітень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴79 347</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>21</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴3 778</div></div>
+            <div><b>9</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL ₴8 816</div></div>
+            <div><b>0</b> Бриф</div>
+            <div><b>1</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#856404;">2</b> Продажі</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;font-size:11px;">
+              <div style="color:#5A5A5A;">Клік→Заявка (PPC-камп): <b>4.33%</b> (21/485)</div>
+              <div style="color:#5A5A5A;">Клік→Заявка (усі): <b>1.538%</b> (21/1365)</div>
+            </div>
+          </div>
+        </div><div style="background:#fff;border-top:4px solid #856404;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Травень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴15 960</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>1</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴15 960</div></div>
+            <div><b>0</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL —</div></div>
+            <div><b>0</b> Бриф</div>
+            <div><b>0</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#856404;">0</b> Продажі</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;font-size:11px;">
+              <div style="color:#5A5A5A;">Клік→Заявка (PPC-камп): <b>2.50%</b> (1/40)</div>
+              <div style="color:#5A5A5A;">Клік→Заявка (усі): <b>0.327%</b> (1/306)</div>
+            </div>
+          </div>
+        </div><div style="background:#fff;border-top:4px solid #856404;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Червень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴50 054</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>10</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴5 005</div></div>
+            <div><b>1</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL ₴50 054</div></div>
+            <div><b>1</b> Бриф</div>
+            <div><b>1</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#856404;">0</b> Продажі</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;font-size:11px;">
+              <div style="color:#5A5A5A;">Клік→Заявка (PPC-камп): <b>6.90%</b> (10/145)</div>
+              <div style="color:#5A5A5A;">Клік→Заявка (усі): <b>0.047%</b> (10/21066)</div>
+            </div>
+          </div>
+        </div>
+  </div>
+  <h3 style="margin:20px 0 14px;">Кампанії Google Ads Q2 · з конверсією Клік→Ліди</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Кампанія</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">CPC</th><th class="num">Витрати</th><th class="num">Конв.</th><th class="num" style="background:#5A3F8C;">CR клік→лід</th><th class="num">CPA</th></tr></thead>
+      <tbody><tr><td class="l"><b>Search_Brand</b></td><td class="num">945</td><td class="num">6 989</td><td class="num">13.5%</td><td class="num">₴46</td><td class="num">₴44 032</td><td class="num"><b>27</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">2.86%</td><td class="num">₴1 631</td></tr><tr><td class="l"><b>Search - PPC 2.0</b></td><td class="num">586</td><td class="num">23 427</td><td class="num">2.5%</td><td class="num">₴122</td><td class="num">₴71 493</td><td class="num"><b>38</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">6.48%</td><td class="num">₴1 881</td></tr><tr><td class="l"><b>Leads-Search - Контекстна реклама</b></td><td class="num">84</td><td class="num">4 220</td><td class="num">2.0%</td><td class="num">₴60</td><td class="num">₴5 099</td><td class="num"><b>3</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">3.57%</td><td class="num">₴1 700</td></tr><tr><td class="l"><b>Leads-Search - Seo</b></td><td class="num">134</td><td class="num">3 557</td><td class="num">3.8%</td><td class="num">₴40</td><td class="num">₴5 373</td><td class="num"><b>1</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">0.75%</td><td class="num">₴5 373</td></tr><tr><td class="l"><b>Leads-Performance Max - PPC</b></td><td class="num">323</td><td class="num">10 691</td><td class="num">3.0%</td><td class="num">₴3</td><td class="num">₴967</td><td class="num"><b>0</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td><td class="num">—</td></tr><tr><td class="l"><b>Створення попиту (2026-06-04)</b></td><td class="num">20 665</td><td class="num">449 298</td><td class="num">4.6%</td><td class="num">—</td><td class="num">₴18 397</td><td class="num"><b>3</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">0.01%</td><td class="num">₴6 133</td></tr></tbody>
+    </table>
+  </div>
+  <p style="font-size:11px;color:#5A5A5A;margin-top:8px;">
+    <b>Best CR (клік→конверсія):</b> Search PPC 2.0 = 6.48% (найкраща конверсія в заявку). 
+    Search_Brand = 2.86% (але дешевша). Створення попиту = 0.01% (Display, майже не конвертить).
+  </p>
+  <h3 style="margin:20px 0 14px;">Кампанії по місяцях</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Місяць</th><th>Кампанія</th><th class="num">Кліки</th><th class="num">CTR</th><th class="num">CPC</th><th class="num">Витрати</th><th class="num">Конв.</th><th class="num" style="background:#5A3F8C;">CR клік→лід</th></tr></thead>
+      <tbody><tr><td class="l"><b>Квітень</b></td><td class="l">Search_Brand</td><td class="num">423</td><td class="num">8.2%</td><td class="num">₴50</td><td class="num">₴21 306</td><td class="num">15</td><td class="num" style="background:#F0F8FF;font-weight:800;">3.55%</td></tr><tr><td class="l"><b>Квітень</b></td><td class="l">Search - PPC 2.0</td><td class="num">401</td><td class="num">2.4%</td><td class="num">₴116</td><td class="num">₴46 603</td><td class="num">17</td><td class="num" style="background:#F0F8FF;font-weight:800;">4.24%</td></tr><tr><td class="l"><b>Квітень</b></td><td class="l">Leads-Search - Контекстна реклама</td><td class="num">84</td><td class="num">2.0%</td><td class="num">₴60</td><td class="num">₴5 099</td><td class="num">3</td><td class="num" style="background:#F0F8FF;font-weight:800;">3.57%</td></tr><tr><td class="l"><b>Квітень</b></td><td class="l">Leads-Search - Seo</td><td class="num">134</td><td class="num">3.8%</td><td class="num">₴40</td><td class="num">₴5 373</td><td class="num">1</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.75%</td></tr><tr><td class="l"><b>Квітень</b></td><td class="l">Leads-Performance Max - PPC</td><td class="num">323</td><td class="num">3.0%</td><td class="num">₴3</td><td class="num">₴967</td><td class="num">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>Травень</b></td><td class="l">Search_Brand</td><td class="num">266</td><td class="num">30.3%</td><td class="num">₴40</td><td class="num">₴10 874</td><td class="num">7</td><td class="num" style="background:#F0F8FF;font-weight:800;">2.63%</td></tr><tr><td class="l"><b>Травень</b></td><td class="l">Search - PPC 2.0</td><td class="num">40</td><td class="num">3.0%</td><td class="num">₴127</td><td class="num">₴5 087</td><td class="num">2</td><td class="num" style="background:#F0F8FF;font-weight:800;">5.00%</td></tr><tr><td class="l"><b>Червень</b></td><td class="l">Search_Brand</td><td class="num">256</td><td class="num">26.5%</td><td class="num">₴46</td><td class="num">₴11 853</td><td class="num">5</td><td class="num" style="background:#F0F8FF;font-weight:800;">1.95%</td></tr><tr><td class="l"><b>Червень</b></td><td class="l">Створення попиту (2026-06-04)</td><td class="num">20 665</td><td class="num">4.6%</td><td class="num">—</td><td class="num">₴18 397</td><td class="num">3</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.01%</td></tr><tr><td class="l"><b>Червень</b></td><td class="l">Search - PPC 2.0</td><td class="num">145</td><td class="num">2.9%</td><td class="num">₴136</td><td class="num">₴19 804</td><td class="num">19</td><td class="num" style="background:#F0F8FF;font-weight:800;">13.10%</td></tr></tbody>
+    </table>
+  </div>
+  <h3 style="margin:20px 0 14px;">ТОП пошукові запити Q2 · з CR клік→конв</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Search term</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">Витрати</th><th class="num">Конв.</th><th class="num" style="background:#5A3F8C;">CR клік→конв</th></tr></thead>
+      <tbody><tr><td class="l"><b>elit web</b></td><td class="num">365</td><td class="num">1 175</td><td class="num">₴20 871</td><td class="num" style="color:#0F6E56;font-weight:800;">14</td><td class="num" style="background:#F0F8FF;font-weight:800;">3.84%</td></tr><tr><td class="l"><b>elitweb</b></td><td class="num">58</td><td class="num">147</td><td class="num">₴1 738</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>еліт веб</b></td><td class="num">39</td><td class="num">97</td><td class="num">₴697</td><td class="num" style="color:#0F6E56;font-weight:800;">1</td><td class="num" style="background:#F0F8FF;font-weight:800;">2.56%</td></tr><tr><td class="l"><b>elite web</b></td><td class="num">7</td><td class="num">14</td><td class="num">₴77</td><td class="num" style="color:#0F6E56;font-weight:800;">1</td><td class="num" style="background:#F0F8FF;font-weight:800;">14.29%</td></tr><tr><td class="l"><b>маркетингова агенція</b></td><td class="num">7</td><td class="num">26</td><td class="num">₴685</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>гугл реклама</b></td><td class="num">4</td><td class="num">27</td><td class="num">₴467</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>сео просування сайту</b></td><td class="num">3</td><td class="num">5</td><td class="num">₴1 137</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>реклама гугл</b></td><td class="num">3</td><td class="num">20</td><td class="num">₴340</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>google ads</b></td><td class="num">3</td><td class="num">129</td><td class="num">₴323</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>анализ сайта</b></td><td class="num">3</td><td class="num">27</td><td class="num">₴187</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>элит веб</b></td><td class="num">3</td><td class="num">49</td><td class="num">₴147</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>traffic devils</b></td><td class="num">3</td><td class="num">15</td><td class="num">₴233</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>google search console</b></td><td class="num">3</td><td class="num">7</td><td class="num">₴66</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>сайту</b></td><td class="num">3</td><td class="num">4</td><td class="num">₴23</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr><tr><td class="l"><b>елітвеб</b></td><td class="num">3</td><td class="num">4</td><td class="num">₴19</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td></tr></tbody>
+    </table>
+  </div>
+  <p style="font-size:11px;color:#5A5A5A;margin-top:8px;">
+    <b>Найкращий CR:</b> «elite web» = 14.3%, «elit web» = 3.84%, «еліт веб» = 2.56%. ~85% витрат — брендовий трафік (захисна стратегія).
+  </p>
+  <h3 style="margin:20px 0 14px;">Якість лідів по місяцях (за New SQL)</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Місяць</th><th class="num">Всього</th><th class="num">🔥 Hot</th><th class="num">🌡 Warm</th><th class="num">❄ Cold</th><th class="num">✗ Not-SQL</th><th class="num">◯ Порожньо</th><th class="num" style="background:#0F6E56;">✅ Валідних</th></tr></thead>
+      <tbody><tr><td class="l"><b>Квітень</b></td><td class="num">21</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">2 (10%)</td><td class="num" style="color:#0C5460;font-weight:800;">7 (33%)</td><td class="num" style="color:#5A5A5A;">12 (57%)</td><td class="num" style="color:#999;">0 (0%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">9 (43%)</td></tr><tr><td class="l"><b>Травень</b></td><td class="num">1</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">0 (0%)</td><td class="num" style="color:#0C5460;font-weight:800;">0 (0%)</td><td class="num" style="color:#5A5A5A;">1 (100%)</td><td class="num" style="color:#999;">0 (0%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">0 (0%)</td></tr><tr><td class="l"><b>Червень</b></td><td class="num">10</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">0 (0%)</td><td class="num" style="color:#0C5460;font-weight:800;">1 (10%)</td><td class="num" style="color:#5A5A5A;">7 (70%)</td><td class="num" style="color:#999;">2 (20%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">1 (10%)</td></tr></tbody>
+    </table>
+  </div>
+  <h3 style="margin:20px 0 14px;">ТОП-заперечення</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Заперечення</th><th class="num">Разів</th><th class="num">%</th></tr></thead>
+      <tbody><tr><td class="l">Дорого</td><td class="num"><b>16</b></td><td class="num">64%</td></tr><tr><td class="l">Нет обратной связи</td><td class="num"><b>5</b></td><td class="num">20%</td></tr><tr><td class="l">Не предоставляем услугу</td><td class="num"><b>2</b></td><td class="num">8%</td></tr><tr><td class="l">Отложили на потом/приостановили проект</td><td class="num"><b>1</b></td><td class="num">4%</td></tr><tr><td class="l">Выбрали другого подрядчика</td><td class="num"><b>1</b></td><td class="num">4%</td></tr></tbody>
+    </table>
+  </div>
+  <div class="grid-2" style="margin-top:20px;">
+    <div class="chart-wrap" style="height:340px;">
+      <h3>Витрати та ліди по місяцях</h3>
+      <canvas id="chKontekstSpend" style="max-height:280px;"></canvas>
+    </div>
+    <div class="chart-wrap" style="height:340px;">
+      <h3>Воронка Контекст Q2</h3>
+      <canvas id="chKontekstFunnel" style="max-height:280px;"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<div class="tab-content" id="tab-ce" style="display:none;">
+  <div style="background:#000;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #0C5460;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);">📧 Cold Email · Q2 2026</div>
+    <h2 style="font-size:26px;font-weight:900;margin-top:8px;">Cold Email · Квіт-Черв 2026</h2>
+    <div style="font-size:13px;margin-top:6px;opacity:0.75;">49 лідів · 7 валідних SQL (14.3%) · ₴58 392 витрат · 1 продаж</div>
+  </div>
+  <div class="callout">
+    <b>Оновлено:</b> 7 валідних SQL з 49 лідів = 14% валідність (за полем New SQL). 
+    Основні заперечення: «Дорого» (13), «Нет обратной связи» (12), «Отложили» (8). 
+    При ₴19K/міс і 0-1 продажах — треба переорієнтувати офер або ICP.
+  </div>
+  <h3 style="margin:20px 0 14px;">Помісячні KPI</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">
+    <div style="background:#fff;border-top:4px solid #0C5460;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Квітень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴19 464</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>21</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴926</div></div>
+            <div><b>4</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL ₴4 866</div></div>
+            <div><b>0</b> Бриф</div>
+            <div><b>2</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#0C5460;">0</b> Продажі</div>
+            
+          </div>
+        </div><div style="background:#fff;border-top:4px solid #0C5460;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Травень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴19 464</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>12</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴1 622</div></div>
+            <div><b>1</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL ₴19 464</div></div>
+            <div><b>0</b> Бриф</div>
+            <div><b>0</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#0C5460;">1</b> Продажі</div>
+            
+          </div>
+        </div><div style="background:#fff;border-top:4px solid #0C5460;padding:16px;">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;">Червень</div>
+          <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;">₴19 464</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;font-size:12px;">
+            <div><b>16</b> ліди<div style="font-size:10px;color:#5A5A5A;">CPL ₴1 216</div></div>
+            <div><b>2</b> вал.SQL<div style="font-size:10px;color:#5A5A5A;">CPSQL ₴9 732</div></div>
+            <div><b>1</b> Бриф</div>
+            <div><b>1</b> КП</div>
+            <div style="grid-column:span 2;padding-top:6px;border-top:1px solid #EDEDED;"><b style="color:#0C5460;">0</b> Продажі</div>
+            
+          </div>
+        </div>
+  </div>
+  <h3 style="margin:20px 0 14px;">Якість лідів по місяцях (за New SQL)</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Місяць</th><th class="num">Всього</th><th class="num">🔥 Hot</th><th class="num">🌡 Warm</th><th class="num">❄ Cold</th><th class="num">✗ Not-SQL</th><th class="num">◯ Порожньо</th><th class="num" style="background:#0F6E56;">✅ Валідних</th></tr></thead>
+      <tbody><tr><td class="l"><b>Квітень</b></td><td class="num">21</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">1 (5%)</td><td class="num" style="color:#0C5460;font-weight:800;">3 (14%)</td><td class="num" style="color:#5A5A5A;">17 (81%)</td><td class="num" style="color:#999;">0 (0%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">4 (19%)</td></tr><tr><td class="l"><b>Травень</b></td><td class="num">12</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">0 (0%)</td><td class="num" style="color:#0C5460;font-weight:800;">1 (8%)</td><td class="num" style="color:#5A5A5A;">11 (92%)</td><td class="num" style="color:#999;">0 (0%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">1 (8%)</td></tr><tr><td class="l"><b>Червень</b></td><td class="num">16</td><td class="num" style="color:#FE391F;font-weight:800;">0 (0%)</td><td class="num" style="color:#856404;font-weight:800;">0 (0%)</td><td class="num" style="color:#0C5460;font-weight:800;">2 (12%)</td><td class="num" style="color:#5A5A5A;">10 (62%)</td><td class="num" style="color:#999;">4 (25%)</td><td class="num" style="background:#F0F8FF;font-weight:900;">2 (12%)</td></tr></tbody>
+    </table>
+  </div>
+  <h3 style="margin:20px 0 14px;">Етапи воронки</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>Стадія</th><th class="num">Квітень</th><th class="num">Травень</th><th class="num">Червень</th><th class="num">Разом Q2</th></tr></thead>
+      <tbody><tr><td class="l"><b>Всього лідів</b></td><td class="num">21</td><td class="num">12</td><td class="num">16</td><td class="num"><b>49</b></td></tr><tr><td class="l"><b>Валідні SQL (H+W+C)</b></td><td class="num">4</td><td class="num">1</td><td class="num">2</td><td class="num"><b>7</b></td></tr><tr><td class="l"><b>Бриф</b></td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num"><b>1</b></td></tr><tr><td class="l"><b>КП</b></td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td class="num"><b>3</b></td></tr><tr><td class="l"><b>Продажі (Won)</b></td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num"><b>1</b></td></tr><tr><td class="l"><b>Закрито (Lost)</b></td><td class="num">19</td><td class="num">11</td><td class="num">10</td><td class="num"><b>40</b></td></tr></tbody>
+    </table>
+  </div>
+  <h3 style="margin:20px 0 14px;">ТОП-заперечення</h3>
+  <div class="card scrollx">
+    <table>
+      <thead><tr><th>Заперечення</th><th class="num">Разів</th><th class="num">%</th></tr></thead>
+      <tbody><tr><td class="l">Дорого</td><td class="num"><b>13</b></td><td class="num">32%</td></tr><tr><td class="l">Нет обратной связи</td><td class="num"><b>12</b></td><td class="num">29%</td></tr><tr><td class="l">Отложили на потом/приостановили проект</td><td class="num"><b>8</b></td><td class="num">20%</td></tr><tr><td class="l">Узнавали информацию</td><td class="num"><b>2</b></td><td class="num">5%</td></tr><tr><td class="l">Заявку не оставляли</td><td class="num"><b>2</b></td><td class="num">5%</td></tr><tr><td class="l">Не предоставляем услугу</td><td class="num"><b>2</b></td><td class="num">5%</td></tr><tr><td class="l">Другое</td><td class="num"><b>1</b></td><td class="num">2%</td></tr><tr><td class="l">Выбрали другого подрядчика</td><td class="num"><b>1</b></td><td class="num">2%</td></tr></tbody>
+    </table>
+  </div>
+  <div class="grid-2" style="margin-top:20px;">
+    <div class="chart-wrap" style="height:340px;">
+      <h3>Витрати та ліди</h3>
+      <canvas id="chCESpend" style="max-height:280px;"></canvas>
+    </div>
+    <div class="chart-wrap" style="height:340px;">
+      <h3>Розподіл якості Q2</h3>
+      <canvas id="chCEQual" style="max-height:280px;"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:20px;padding:20px;">
+  <p style="font-size:14px;line-height:2;">
+    <a href="dashboard_channels_matrix.html" style="color:#FE391F;font-weight:700;text-decoration:none;">← Матриця порівняння</a> · 
+    <a href="dashboard_seo_2026.html" style="color:#FE391F;font-weight:700;text-decoration:none;">🔍 SEO 2026</a> · 
+    <a href="dashboard_channels_q2.html" style="color:#FE391F;font-weight:700;text-decoration:none;">💰 Q2 аналіз</a> · 
+    <a href="dashboard_consolidated.html" style="color:#FE391F;font-weight:700;text-decoration:none;">🏠 Хаб</a>
+  </p>
+</div>
+</div>
+<script>
+Chart.defaults.font.family = "'Mulish',sans-serif";
+Chart.defaults.font.weight = 700;
+const MSHORT = ["\u041a\u0432\u0456", "\u0422\u0440\u0430", "\u0427\u0435\u0440"];
+let charts = {};
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+name).style.display = 'block';
+  document.querySelector('.tab-btn.'+name).classList.add('active');
+  setTimeout(() => initCharts(name), 50);
+}
+function initCharts(name) {
+  if (name === 'target' && !charts.target) {
+    charts.target = true;
+    new Chart(document.getElementById('chTargetSpend'), {
+      type:'bar', data:{labels:MSHORT, datasets:[
+        {label:'Витрати ₴', data:[73233, 89169, 103677], backgroundColor:'#FE391F', yAxisID:'y'},
+        {label:'Ліди', data:[70, 121, 143], type:'line', borderColor:'#000', backgroundColor:'transparent', yAxisID:'y1', tension:0.3, borderWidth:3},
+      ]},
+      options:{responsive:true,maintainAspectRatio:false,scales:{y:{position:'left',ticks:{callback:v=>'₴'+(v/1000).toFixed(0)+'K'}},y1:{position:'right',grid:{display:false}}}}
+    });
+    new Chart(document.getElementById('chTargetFunnel'), {
+      type:'bar', data:{labels:['Ліди','Валідних SQL','Бриф','КП','Won'],
+        datasets:[{label:'Кількість', data:[334, 29, 6, 12, 1], backgroundColor:['#FE391F','#856404','#5A3F8C','#0F6E56','#000']}]},
+      options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}}}
+    });
+  }
+  if (name === 'kontekst' && !charts.kontekst) {
+    charts.kontekst = true;
+    new Chart(document.getElementById('chKontekstSpend'), {
+      type:'bar', data:{labels:MSHORT, datasets:[
+        {label:'Витрати ₴', data:[79347, 15960, 50054], backgroundColor:'#856404', yAxisID:'y'},
+        {label:'Ліди', data:[21, 1, 10], type:'line', borderColor:'#000', backgroundColor:'transparent', yAxisID:'y1', tension:0.3, borderWidth:3},
+      ]},
+      options:{responsive:true,maintainAspectRatio:false,scales:{y:{position:'left',ticks:{callback:v=>'₴'+(v/1000).toFixed(0)+'K'}},y1:{position:'right',grid:{display:false}}}}
+    });
+    new Chart(document.getElementById('chKontekstFunnel'), {
+      type:'bar', data:{labels:['Ліди','Валідних SQL','Бриф','КП','Won'],
+        datasets:[{label:'Кількість', data:[32, 10, 1, 2, 2], backgroundColor:['#856404','#856404','#5A3F8C','#0F6E56','#000']}]},
+      options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}}}
+    });
+  }
+  if (name === 'ce' && !charts.ce) {
+    charts.ce = true;
+    new Chart(document.getElementById('chCESpend'), {
+      type:'bar', data:{labels:MSHORT, datasets:[
+        {label:'Витрати ₴', data:[19464, 19464, 19464], backgroundColor:'#0C5460', yAxisID:'y'},
+        {label:'Ліди', data:[21, 12, 16], type:'line', borderColor:'#000', backgroundColor:'transparent', yAxisID:'y1', tension:0.3, borderWidth:3},
+      ]},
+      options:{responsive:true,maintainAspectRatio:false,scales:{y:{position:'left',ticks:{callback:v=>'₴'+(v/1000).toFixed(0)+'K'}},y1:{position:'right',grid:{display:false}}}}
+    });
+    new Chart(document.getElementById('chCEQual'), {
+      type:'doughnut', data:{labels:['🔥 Hot','🌡 Warm','❄ Cold','✗ Not-SQL'],
+        datasets:[{data:[0, 1, 6, 38], backgroundColor:['#FE391F','#856404','#0C5460','#5A5A5A']}]},
+      options:{responsive:true,maintainAspectRatio:false}
+    });
+  }
+}
+showTab('target');
+</script>
+</body>
+</html>

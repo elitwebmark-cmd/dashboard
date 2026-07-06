@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>elit-web · Тиждень 30.06-06.07.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish',sans-serif;background:#F8F8F8;color:#000;padding:20px;}
+.wrap{max-width:1400px;margin:0 auto;}
+header{background:#000;color:#fff;padding:28px 32px;margin-bottom:20px;border-left:6px solid #FE391F;}
+h1{font-size:30px;font-weight:900;text-transform:uppercase;letter-spacing:-0.5px;}
+h1 .a{color:#FE391F;}
+h2{font-size:22px;font-weight:900;}
+h3{font-size:16px;font-weight:800;margin-bottom:12px;}
+.brand-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);}
+.dot{width:8px;height:8px;background:#FE391F;border-radius:50%;}
+.tab-nav{display:flex;gap:0;margin-bottom:20px;background:#fff;border:2px solid #000;overflow:hidden;flex-wrap:wrap;}
+.tab-btn{flex:1;min-width:140px;padding:14px 16px;background:#fff;color:#000;border:0;font-family:inherit;font-weight:800;font-size:12px;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;border-right:2px solid #000;transition:all 0.2s;}
+.tab-btn:last-child{border-right:0;}
+.tab-btn:hover{background:#F8F8F8;}
+.tab-btn.active{background:#000;color:#fff;}
+.tab-btn.overview.active{background:#000;}
+.tab-btn.seo.active{background:#0F6E56;}
+.tab-btn.target.active{background:#FE391F;}
+.tab-btn.kontekst.active{background:#856404;}
+.tab-btn.ce.active{background:#0C5460;}
+.section{margin-bottom:26px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #000;}
+.sec-head .num{font-size:18px;color:#FE391F;font-weight:800;}
+.sec-head .sub{margin-left:auto;font-size:11px;color:#5A5A5A;letter-spacing:0.5px;}
+.card{background:#fff;padding:22px;border-top:4px solid #000;margin-bottom:12px;}
+.card.accent{border-top-color:#FE391F;}
+.card.green{border-top-color:#0F6E56;}
+.kpi-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-bottom:20px;}
+.kpi{background:#fff;border-top:4px solid #000;padding:16px;}
+.kpi.accent{border-top-color:#FE391F;}
+.kpi.green{border-top-color:#0F6E56;}
+.kpi.purple{border-top-color:#5A3F8C;}
+.kpi .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;color:#5A5A5A;margin-bottom:6px;}
+.kpi .val{font-size:28px;font-weight:900;letter-spacing:-1px;line-height:1;font-variant-numeric:tabular-nums;}
+.kpi .hint{font-size:11px;color:#5A5A5A;margin-top:6px;line-height:1.4;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+table th{background:#000;color:#fff;text-align:left;padding:9px 10px;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;}
+table th.num{text-align:right;}
+table td{padding:8px 10px;border-bottom:1px solid #EDEDED;}
+table td.l{text-align:left;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#000;color:#fff;font-weight:900;border-bottom:0;}
+.scrollx{overflow-x:auto;}
+.callout{background:#F0F8FF;border-left:4px solid #FE391F;padding:14px 18px;margin-bottom:16px;font-size:13px;line-height:1.6;}
+.grid-2{display:grid;gap:14px;grid-template-columns:1fr 1fr;}
+.chart-wrap{background:#fff;padding:16px;border-top:4px solid #000;height:320px;position:relative;}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr;}.tab-btn{padding:10px 8px;font-size:11px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand-row"><span class="dot"></span><span>elit-web · тижневий звіт</span><span class="dot"></span></div>
+  <h1><span class="a">Тиждень</span> · 30.06 – 06.07.2026</h1>
+  <div style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.75);">5 вкладок: Огляд · SEO · Target · Контекст · Cold Email. HubSpot (61 лідів) + Google Ads + Meta + GSC + GA4.</div>
+</header>
+
+<div class="tab-nav">
+  <button class="tab-btn overview active" onclick="showTab('overview')">📊 ОГЛЯД</button>
+  <button class="tab-btn seo" onclick="showTab('seo')">🔍 SEO · 8 лідів</button>
+  <button class="tab-btn target" onclick="showTab('target')">🎯 TARGET · 30</button>
+  <button class="tab-btn kontekst" onclick="showTab('kontekst')">💰 КОНТЕКСТ · 5</button>
+  <button class="tab-btn ce" onclick="showTab('ce')">📧 COLD EMAIL · 1</button>
+</div>
+
+<div class="tab-content" id="tab-overview" style="display:block;">
+  <div class="section">
+    <div class="sec-head"><span class="num">00</span><h2>Ключові показники тижня</h2><span class="sub">7 днів</span></div>
+    <div class="kpi-grid">
+      <div class="kpi accent"><div class="lbl">Всього лідів</div><div class="val">61</div><div class="hint">Всі pipelines HubSpot</div></div>
+      <div class="kpi"><div class="lbl">Target · Meta+TikTok</div><div class="val">30</div><div class="hint">49% всіх лідів</div></div>
+      <div class="kpi green"><div class="lbl">SEO · Organic</div><div class="val">8</div><div class="hint">13% всіх лідів</div></div>
+      <div class="kpi"><div class="lbl">Контекст · Google Ads</div><div class="val">5</div><div class="hint">8% всіх лідів</div></div>
+      <div class="kpi"><div class="lbl">Cold Email</div><div class="val">1</div><div class="hint">SMM: 2 · Порожньо: 15</div></div>
+      <div class="kpi purple"><div class="lbl">Валідних SQL</div><div class="val">3</div><div class="hint">За полем New SQL (H+W+C)</div></div>
+      <div class="kpi green"><div class="lbl">GSC кліки (5 дн)</div><div class="val">1 463</div><div class="hint">Дані за сб/нд ще не готові</div></div>
+      <div class="kpi green"><div class="lbl">GA4 organic сесії</div><div class="val">2 081</div><div class="hint">1 446 конверсій</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">01</span><h2>Матриця каналів</h2><span class="sub">Витрати · Ліди · Якість · Воронка</span></div>
+    <div class="card scrollx">
+      <table>
+        <thead><tr><th>Канал</th><th class="num">Витрати</th><th class="num">Ліди</th><th class="num">CPL</th><th class="num">🔥H</th><th class="num">🌡W</th><th class="num">❄C</th><th class="num">✗Not</th><th class="num">◯</th><th class="num" style="background:#0F6E56;">✅Вал.SQL</th><th class="num">CPSQL</th><th class="num">Бриф</th><th class="num">КП</th><th class="num">Won</th></tr></thead>
+        <tbody>
+          <tr>
+      <td class="l"><span style="width:10px;height:10px;background:#FE391F;display:inline-block;margin-right:8px;border-radius:2px;"></span><b>Target</b></td>
+      <td class="num">₴24 200</td>
+      <td class="num"><b>30</b></td>
+      <td class="num">₴806</td>
+      <td class="num" style="color:#FE391F;font-weight:800;">0</td>
+      <td class="num" style="color:#856404;font-weight:800;">0</td>
+      <td class="num" style="color:#0C5460;font-weight:800;">0</td>
+      <td class="num" style="color:#5A5A5A;">2</td>
+      <td class="num" style="color:#999;">28</td>
+      <td class="num" style="background:#F0F8FF;font-weight:900;">0</td>
+      <td class="num">—</td>
+      <td class="num">0</td>
+      <td class="num">1</td>
+      <td class="num" style="color:#0F6E56;font-weight:800;">0</td>
+    </tr>
+          <tr>
+      <td class="l"><span style="width:10px;height:10px;background:#0F6E56;display:inline-block;margin-right:8px;border-radius:2px;"></span><b>SEO</b></td>
+      <td class="num">₴8 350</td>
+      <td class="num"><b>8</b></td>
+      <td class="num">₴1 043</td>
+      <td class="num" style="color:#FE391F;font-weight:800;">0</td>
+      <td class="num" style="color:#856404;font-weight:800;">1</td>
+      <td class="num" style="color:#0C5460;font-weight:800;">0</td>
+      <td class="num" style="color:#5A5A5A;">1</td>
+      <td class="num" style="color:#999;">6</td>
+      <td class="num" style="background:#F0F8FF;font-weight:900;">1</td>
+      <td class="num">₴8 350</td>
+      <td class="num">2</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#0F6E56;font-weight:800;">0</td>
+    </tr>
+          <tr>
+      <td class="l"><span style="width:10px;height:10px;background:#856404;display:inline-block;margin-right:8px;border-radius:2px;"></span><b>Контекст</b></td>
+      <td class="num">₴9 990</td>
+      <td class="num"><b>5</b></td>
+      <td class="num">₴1 998</td>
+      <td class="num" style="color:#FE391F;font-weight:800;">0</td>
+      <td class="num" style="color:#856404;font-weight:800;">0</td>
+      <td class="num" style="color:#0C5460;font-weight:800;">0</td>
+      <td class="num" style="color:#5A5A5A;">2</td>
+      <td class="num" style="color:#999;">3</td>
+      <td class="num" style="background:#F0F8FF;font-weight:900;">0</td>
+      <td class="num">—</td>
+      <td class="num">2</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#0F6E56;font-weight:800;">0</td>
+    </tr>
+          <tr>
+      <td class="l"><span style="width:10px;height:10px;background:#0C5460;display:inline-block;margin-right:8px;border-radius:2px;"></span><b>Cold Email</b></td>
+      <td class="num">₴4 540</td>
+      <td class="num"><b>1</b></td>
+      <td class="num">₴4 540</td>
+      <td class="num" style="color:#FE391F;font-weight:800;">0</td>
+      <td class="num" style="color:#856404;font-weight:800;">0</td>
+      <td class="num" style="color:#0C5460;font-weight:800;">0</td>
+      <td class="num" style="color:#5A5A5A;">0</td>
+      <td class="num" style="color:#999;">1</td>
+      <td class="num" style="background:#F0F8FF;font-weight:900;">0</td>
+      <td class="num">—</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#0F6E56;font-weight:800;">0</td>
+    </tr>
+          <tr>
+      <td class="l"><span style="width:10px;height:10px;background:#5A3F8C;display:inline-block;margin-right:8px;border-radius:2px;"></span><b>SMM</b></td>
+      <td class="num">—</td>
+      <td class="num"><b>2</b></td>
+      <td class="num">—</td>
+      <td class="num" style="color:#FE391F;font-weight:800;">0</td>
+      <td class="num" style="color:#856404;font-weight:800;">1</td>
+      <td class="num" style="color:#0C5460;font-weight:800;">0</td>
+      <td class="num" style="color:#5A5A5A;">0</td>
+      <td class="num" style="color:#999;">1</td>
+      <td class="num" style="background:#F0F8FF;font-weight:900;">1</td>
+      <td class="num">—</td>
+      <td class="num">1</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#0F6E56;font-weight:800;">0</td>
+    </tr>
+          <tr class="total"><td>УСЬОГО ТИЖДЕНЬ</td><td class="num">₴47 080</td><td class="num">46</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">02</span><h2>Розподіл по воронках та стадіях</h2></div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Розподіл по воронках HubSpot</h3>
+        <table><thead><tr><th>Воронка</th><th class="num">Лідів</th><th class="num">%</th></tr></thead><tbody><tr><td class="l">Elit-Web UA</td><td class="num"><b>46</b></td><td class="num">75%</td></tr><tr><td class="l">Leads from Partners</td><td class="num"><b>6</b></td><td class="num">10%</td></tr><tr><td class="l">Elit-Web Бурж</td><td class="num"><b>5</b></td><td class="num">8%</td></tr><tr><td class="l">Партнери Elit-Web</td><td class="num"><b>4</b></td><td class="num">7%</td></tr></tbody></table>
+      </div>
+      <div class="card">
+        <h3>Розподіл по стадіях</h3>
+        <table><thead><tr><th>Стадія</th><th class="num">Лідів</th><th class="num">%</th></tr></thead><tbody><tr><td class="l">Взято в работу</td><td class="num"><b>26</b></td><td class="num">43%</td></tr><tr><td class="l">Заявка с сайта</td><td class="num"><b>12</b></td><td class="num">20%</td></tr><tr><td class="l">Входящие</td><td class="num"><b>10</b></td><td class="num">16%</td></tr><tr><td class="l">Бриф</td><td class="num"><b>6</b></td><td class="num">10%</td></tr><tr><td class="l">Первинний контакт</td><td class="num"><b>4</b></td><td class="num">7%</td></tr><tr><td class="l">Подготовка КП</td><td class="num"><b>2</b></td><td class="num">3%</td></tr><tr><td class="l">Закрыто и нереализовано</td><td class="num"><b>1</b></td><td class="num">2%</td></tr></tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">03</span><h2>Візуалізація</h2></div>
+    <div class="grid-2">
+      <div class="chart-wrap"><h3>Ліди по каналах</h3><canvas id="chChannel" style="max-height:250px;"></canvas></div>
+      <div class="chart-wrap"><h3>Стадії воронки</h3><canvas id="chStage" style="max-height:250px;"></canvas></div>
+    </div>
+  </div>
+</div>
+<div class="tab-content" id="tab-seo" style="display:none;">
+  <div style="background:#0F6E56;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #FE391F;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.75);">🔍 SEO · Organic search · 30.06-06.07</div>
+    <h2 style="font-size:26px;font-weight:900;margin-top:8px;">SEO деталь тижня</h2>
+    <div style="font-size:13px;margin-top:6px;opacity:0.9;">8 лідів · 1 463 GSC кліків (5 дн) · 2 081 GA4 сесій · 1 446 конверсій</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">01</span><h2>Динаміка по днях</h2></div>
+    <div class="grid-2">
+      <div class="chart-wrap"><h3>GSC кліки</h3><canvas id="chGSC" style="max-height:250px;"></canvas></div>
+      <div class="chart-wrap"><h3>GA4 сесії + конверсії</h3><canvas id="chGA4" style="max-height:250px;"></canvas></div>
+    </div>
+    <div class="card scrollx" style="margin-top:14px;">
+      <table><thead><tr><th>День</th><th class="num">GSC кліки</th><th class="num">GA4 сесії</th><th class="num">GA4 конв.</th></tr></thead>
+        <tbody><tr><td class="l"><b>Пн 30.06</b></td><td class="num">309</td><td class="num">315</td><td class="num">156</td></tr><tr><td class="l"><b>Вт 01.07</b></td><td class="num">332</td><td class="num">388</td><td class="num">211</td></tr><tr><td class="l"><b>Ср 02.07</b></td><td class="num">277</td><td class="num">343</td><td class="num">192</td></tr><tr><td class="l"><b>Чт 03.07</b></td><td class="num">278</td><td class="num">338</td><td class="num">181</td></tr><tr><td class="l"><b>Пт 04.07</b></td><td class="num">267</td><td class="num">275</td><td class="num">156</td></tr><tr><td class="l"><b>Сб 05.07</b></td><td class="num">—</td><td class="num">298</td><td class="num">187</td></tr><tr><td class="l"><b>Нд 06.07</b></td><td class="num">—</td><td class="num">124</td><td class="num">363</td></tr><tr class="total"><td>УСЬОГО</td><td class="num">1 463</td><td class="num">2 081</td><td class="num">1 446</td></tr></tbody></table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">02</span><h2>ТОП пошукові запити</h2><span class="sub">38 запитів з клк ≥5</span></div>
+    <div class="callout">
+      Найпопулярніші тематики тижня: <b>SEO-послуги</b> (seo оптимізація, seo київ, seo просування), <b>контекстна реклама</b> (заказать/замовити/услуги), <b>ціни та вартість</b> послуг. Брендовий запит <b>«еліт веб»</b> — CTR 60% на позиції 1.
+    </div>
+    <div class="card scrollx"><table><thead><tr><th>Запит</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">Позиція</th></tr></thead><tbody><tr><td class="l"><span style="background:#000;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#1</span>seo оптимізація</td><td class="num"><b>27</b></td><td class="num">106</td><td class="num">25.5%</td><td class="num">2.7</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#2</span>заказать контекстную рекламу</td><td class="num"><b>15</b></td><td class="num">145</td><td class="num">10.3%</td><td class="num">1.5</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#3</span>seo київ</td><td class="num"><b>14</b></td><td class="num">59</td><td class="num">23.7%</td><td class="num">8.2</td></tr><tr><td class="l"><span style="background:#5A5A5A;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#4</span>google shopping</td><td class="num"><b>12</b></td><td class="num">118</td><td class="num">10.2%</td><td class="num">11.5</td></tr><tr><td class="l"><span style="background:#5A5A5A;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#5</span>seo оптимізація сайту</td><td class="num"><b>12</b></td><td class="num">124</td><td class="num">9.7%</td><td class="num">5.7</td></tr><tr><td class="l"><span style="background:#5A5A5A;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#6</span>контекстна реклама замовити</td><td class="num"><b>11</b></td><td class="num">83</td><td class="num">13.3%</td><td class="num">16.4</td></tr><tr><td class="l"><span style="background:#5A5A5A;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#7</span>поисковая оптимизация сайтов</td><td class="num"><b>11</b></td><td class="num">56</td><td class="num">19.6%</td><td class="num">3.4</td></tr><tr><td class="l"><span style="background:#5A5A5A;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#8</span>seo оптимизация цены</td><td class="num"><b>10</b></td><td class="num">35</td><td class="num">28.6%</td><td class="num">1.9</td></tr><tr><td class="l"><span style="background:#5A5A5A;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#9</span>продвижение сайтов магазина</td><td class="num"><b>9</b></td><td class="num">39</td><td class="num">23.1%</td><td class="num">6.2</td></tr><tr><td class="l"><span style="background:#5A5A5A;color:#fff;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#10</span>услуги контекстной рекламы</td><td class="num"><b>9</b></td><td class="num">92</td><td class="num">9.8%</td><td class="num">4.0</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#11</span>контекстная реклама услуги</td><td class="num"><b>8</b></td><td class="num">66</td><td class="num">12.1%</td><td class="num">2.8</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#12</span>продвижение сайта в поиске</td><td class="num"><b>8</b></td><td class="num">34</td><td class="num">23.5%</td><td class="num">2.9</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#13</span>контекстная реклама услуга</td><td class="num"><b>7</b></td><td class="num">24</td><td class="num">29.2%</td><td class="num">2.2</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#14</span>поисковое продвижение интернет магазина</td><td class="num"><b>7</b></td><td class="num">66</td><td class="num">10.6%</td><td class="num">14.9</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#15</span>продвижение сайтов сео топ</td><td class="num"><b>7</b></td><td class="num">47</td><td class="num">14.9%</td><td class="num">4.7</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#16</span>раскрутка сайта в google цена</td><td class="num"><b>7</b></td><td class="num">99</td><td class="num">7.1%</td><td class="num">17.3</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#17</span>seo просування сайту ціна</td><td class="num"><b>6</b></td><td class="num">32</td><td class="num">18.8%</td><td class="num">1.6</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#18</span>еліт веб</td><td class="num"><b>6</b></td><td class="num">10</td><td class="num">60.0%</td><td class="num">1.0</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#19</span>контекстная реклама заказать стоимость</td><td class="num"><b>6</b></td><td class="num">24</td><td class="num">25.0%</td><td class="num">2.1</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#20</span>оптимизация и продвижение интернет магазина</td><td class="num"><b>6</b></td><td class="num">31</td><td class="num">19.4%</td><td class="num">16.4</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#21</span>продвижение интернет магазина услуга</td><td class="num"><b>6</b></td><td class="num">31</td><td class="num">19.4%</td><td class="num">3.2</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#22</span>продвижение сайта по ключевым словам цена</td><td class="num"><b>6</b></td><td class="num">33</td><td class="num">18.2%</td><td class="num">5.4</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#23</span>сколько стоит создание и продвижение сайта цены</td><td class="num"><b>6</b></td><td class="num">29</td><td class="num">20.7%</td><td class="num">3.7</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#24</span>создание продвижение и оптимизация сайтов</td><td class="num"><b>6</b></td><td class="num">30</td><td class="num">20.0%</td><td class="num">1.2</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#25</span>услуга контекстная реклама</td><td class="num"><b>6</b></td><td class="num">42</td><td class="num">14.3%</td><td class="num">1.8</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#26</span>seo продвижение корпоративных сайтов</td><td class="num"><b>5</b></td><td class="num">51</td><td class="num">9.8%</td><td class="num">2.2</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#27</span>замовити просування інтернет магазину</td><td class="num"><b>5</b></td><td class="num">24</td><td class="num">20.8%</td><td class="num">3.9</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#28</span>оптимизация сайта для поисковиков</td><td class="num"><b>5</b></td><td class="num">33</td><td class="num">15.2%</td><td class="num">2.3</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#29</span>продвижение сайта в топ 3 цена</td><td class="num"><b>5</b></td><td class="num">46</td><td class="num">10.9%</td><td class="num">3.0</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#30</span>продвижение сайта по трафику цена</td><td class="num"><b>5</b></td><td class="num">34</td><td class="num">14.7%</td><td class="num">9.1</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#31</span>продвижение сайтов броско</td><td class="num"><b>5</b></td><td class="num">20</td><td class="num">25.0%</td><td class="num">1.6</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#32</span>просування сайтів інтернет магазинів</td><td class="num"><b>5</b></td><td class="num">28</td><td class="num">17.9%</td><td class="num">6.7</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#33</span>рекламная оптимизация сайтов</td><td class="num"><b>5</b></td><td class="num">42</td><td class="num">11.9%</td><td class="num">1.0</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#34</span>сео оптимизация и продвижение сайта</td><td class="num"><b>5</b></td><td class="num">44</td><td class="num">11.4%</td><td class="num">2.7</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#35</span>сео продвижение сайта стоимость</td><td class="num"><b>5</b></td><td class="num">20</td><td class="num">25.0%</td><td class="num">1.7</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#36</span>стоимость смм услуг</td><td class="num"><b>5</b></td><td class="num">26</td><td class="num">19.2%</td><td class="num">1.9</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#37</span>услуги смм цена</td><td class="num"><b>5</b></td><td class="num">21</td><td class="num">23.8%</td><td class="num">1.6</td></tr><tr><td class="l"><span style="background:#DCDCDC;color:#000;padding:2px 7px;font-size:10px;font-weight:800;margin-right:6px;">#38</span>цена на продвижение сайтов</td><td class="num"><b>5</b></td><td class="num">20</td><td class="num">25.0%</td><td class="num">1.0</td></tr></tbody></table></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">03</span><h2>Розподіл трафіку · інфо vs комерц</h2></div>
+    <div class="grid-2">
+      <div class="card accent">
+        <h3>📖 Інфо-трафік (блог)</h3>
+        <div style="font-size:36px;font-weight:900;color:#5A3F8C;margin:8px 0;">592</div>
+        <div style="font-size:13px;color:#5A5A5A;">60.4% всіх кліків</div>
+        <div style="font-size:12px;color:#5A5A5A;margin-top:6px;">35 блогових сторінок</div>
+      </div>
+      <div class="card">
+        <h3>💰 Комерц-трафік (послуги)</h3>
+        <div style="font-size:36px;font-weight:900;color:#FE391F;margin:8px 0;">388</div>
+        <div style="font-size:13px;color:#5A5A5A;">39.6% всіх кліків</div>
+        <div style="font-size:12px;color:#5A5A5A;margin-top:6px;">8 комерційних сторінок</div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px;padding:16px;">
+      <div style="height:40px;display:flex;overflow:hidden;border:2px solid #000;">
+        <div style="width:60.4%;background:#5A3F8C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:13px;">📖 60%</div>
+        <div style="width:39.6%;background:#FE391F;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:13px;">💰 40%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">04</span><h2>ТОП-8 комерційних сторінок</h2></div>
+    <div class="callout">
+      Головна (<code>/</code> + <code>/ua/</code>) — <b>227 кліків</b>. SMM послуги — 67, Контекст — 71 (RU+UA). Регіональні сторінки просування слабо представлені.
+    </div>
+    <div class="card scrollx"><table><thead><tr><th>Сторінка</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">Позиція</th></tr></thead><tbody><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">C1</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/</span></td><td class="num"><b>166</b></td><td class="num">43 946</td><td class="num">0.40%</td><td class="num">11.7</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">C2</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/uslugi-smm</span></td><td class="num"><b>67</b></td><td class="num">3 899</td><td class="num">1.70%</td><td class="num">27.8</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">C3</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/</span></td><td class="num"><b>61</b></td><td class="num">8 470</td><td class="num">0.70%</td><td class="num">16.3</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">C4</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/uslugi-kontekstnoy-reklamy</span></td><td class="num"><b>57</b></td><td class="num">2 209</td><td class="num">2.60%</td><td class="num">15.0</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">C5</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/uslugi-kontekstnoy-reklamy</span></td><td class="num"><b>14</b></td><td class="num">753</td><td class="num">1.90%</td><td class="num">40.4</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">C6</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/prodvizhenie-sajta-po-pozitsijam</span></td><td class="num"><b>8</b></td><td class="num">782</td><td class="num">1.00%</td><td class="num">31.0</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">C7</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/prodvizhenie-sajta-po-trafiku</span></td><td class="num"><b>8</b></td><td class="num">523</td><td class="num">1.50%</td><td class="num">23.6</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">C8</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/prodvizhenie-sajta-po-lidam</span></td><td class="num"><b>7</b></td><td class="num">263</td><td class="num">2.70%</td><td class="num">41.7</td></tr></tbody></table></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">05</span><h2>ТОП-35 блогових сторінок</h2></div>
+    <div class="callout">
+      <b>Стаття про вартість просування</b> — лідер тижня (185 клк). Стаття «як перевірити сайт на шахрайство» вже майже не дає трафіку (23 клк — раніше давала ~450/тиждень).
+    </div>
+    <div class="card scrollx"><table><thead><tr><th>Стаття</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">Позиція</th></tr></thead><tbody><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B1</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/stoimost-prodvizhenija-sajta</span></td><td class="num"><b>185</b></td><td class="num">13 255</td><td class="num">1.40%</td><td class="num">18.0</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B2</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/chto-takoe-tehnicheskaja-optimizatsija-sajta</span></td><td class="num"><b>44</b></td><td class="num">1 049</td><td class="num">4.20%</td><td class="num">22.1</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B3</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/kak-proverit-sajt-na-moshennichestvo</span></td><td class="num"><b>23</b></td><td class="num">855</td><td class="num">2.70%</td><td class="num">11.1</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B4</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/stoimost-prodvizhenija-sajta</span></td><td class="num"><b>22</b></td><td class="num">2 650</td><td class="num">0.80%</td><td class="num">9.9</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B5</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/direkt-v-instagram</span></td><td class="num"><b>18</b></td><td class="num">3 244</td><td class="num">0.60%</td><td class="num">6.6</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B6</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/kak-posmotret-statistiku-v-tiktok</span></td><td class="num"><b>18</b></td><td class="num">593</td><td class="num">3.00%</td><td class="num">5.9</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B7</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/luchshee-vremya-dlya-postinga-v-tiktok</span></td><td class="num"><b>16</b></td><td class="num">3 166</td><td class="num">0.50%</td><td class="num">6.2</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B8</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/chto-takoe-arbitrazh-trafika</span></td><td class="num"><b>15</b></td><td class="num">1 159</td><td class="num">1.30%</td><td class="num">7.7</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B9</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/kak-razblokirovat-akkaunt-instagram</span></td><td class="num"><b>15</b></td><td class="num">1 128</td><td class="num">1.30%</td><td class="num">7.2</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B10</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/direkt-v-instagram</span></td><td class="num"><b>14</b></td><td class="num">1 673</td><td class="num">0.80%</td><td class="num">5.5</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B11</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/kak-nastroit-google-shopping</span></td><td class="num"><b>13</b></td><td class="num">625</td><td class="num">2.10%</td><td class="num">9.3</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B12</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/kak-razblokirovat-akkaunt-instagram</span></td><td class="num"><b>13</b></td><td class="num">1 400</td><td class="num">0.90%</td><td class="num">9.4</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B13</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/optimizaciya-sajta-internet-magazina</span></td><td class="num"><b>12</b></td><td class="num">377</td><td class="num">3.20%</td><td class="num">53.7</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B14</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/stoimost-kontekstnoj-reklamy</span></td><td class="num"><b>12</b></td><td class="num">1 636</td><td class="num">0.70%</td><td class="num">38.8</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B15</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/magazin-tiktok-shop</span></td><td class="num"><b>12</b></td><td class="num">325</td><td class="num">3.70%</td><td class="num">6.2</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B16</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/statistika-youtube-kanala</span></td><td class="num"><b>11</b></td><td class="num">259</td><td class="num">4.20%</td><td class="num">9.8</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B17</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/prodvizhenie-internet-magazinov</span></td><td class="num"><b>10</b></td><td class="num">1 584</td><td class="num">0.60%</td><td class="num">53.6</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B18</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/populjarnye-heshtegi-v-tiktok</span></td><td class="num"><b>10</b></td><td class="num">404</td><td class="num">2.50%</td><td class="num">5.3</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B19</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/kak-popast-v-rekomendatsii-instagram</span></td><td class="num"><b>9</b></td><td class="num">751</td><td class="num">1.20%</td><td class="num">4.4</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B20</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/kak-posmotret-istoriju-sajta</span></td><td class="num"><b>9</b></td><td class="num">499</td><td class="num">1.80%</td><td class="num">14.4</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B21</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/kak-posmotret-statistiku-v-tiktok</span></td><td class="num"><b>9</b></td><td class="num">787</td><td class="num">1.10%</td><td class="num">6.9</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B22</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/chto-takoe-dorozhnaja-karta-proekta-roadmap</span></td><td class="num"><b>9</b></td><td class="num">651</td><td class="num">1.40%</td><td class="num">4.8</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B23</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/kak-podkljuchit-biznes-akkaunt-v-tik-tok</span></td><td class="num"><b>9</b></td><td class="num">513</td><td class="num">1.80%</td><td class="num">5.9</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B24</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/chto-takoe-tehnicheskaja-optimizatsija-sajta</span></td><td class="num"><b>8</b></td><td class="num">1 456</td><td class="num">0.50%</td><td class="num">22.1</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B25</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/prodvizhenie-sajtov-v-top-10</span></td><td class="num"><b>8</b></td><td class="num">5 331</td><td class="num">0.20%</td><td class="num">30.5</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B26</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/skolko-stoit-reklama-v-instagrame</span></td><td class="num"><b>8</b></td><td class="num">893</td><td class="num">0.90%</td><td class="num">13.2</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B27</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/chto-takoe-hajlajts-v-instagram</span></td><td class="num"><b>7</b></td><td class="num">1 319</td><td class="num">0.50%</td><td class="num">5.4</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B28</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/kak-privjazat-instagram-k-fejsbuku</span></td><td class="num"><b>7</b></td><td class="num">716</td><td class="num">1.00%</td><td class="num">8.0</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B29</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/kak-sozdat-aktualnoe-v-instagram</span></td><td class="num"><b>7</b></td><td class="num">1 068</td><td class="num">0.70%</td><td class="num">7.4</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B30</span><span style="background:#5A5A5A;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">RU</span><span style="font-family:monospace;font-size:11px;">/blog/skolko-stoit-raskrutka-internet-magazina</span></td><td class="num"><b>7</b></td><td class="num">3 433</td><td class="num">0.20%</td><td class="num">60.9</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B31</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/kak-posmotret-istoriju-sajta</span></td><td class="num"><b>7</b></td><td class="num">207</td><td class="num">3.40%</td><td class="num">7.9</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B32</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/kak-sozdat-aktualnoe-v-instagram</span></td><td class="num"><b>7</b></td><td class="num">322</td><td class="num">2.20%</td><td class="num">6.1</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B33</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/business-account-instagram</span></td><td class="num"><b>6</b></td><td class="num">864</td><td class="num">0.70%</td><td class="num">7.8</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B34</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/kak-nabrat-podpischikov-v-instagram</span></td><td class="num"><b>6</b></td><td class="num">225</td><td class="num">2.70%</td><td class="num">8.0</td></tr><tr><td class="l"><span style="background:#000;color:#fff;padding:1px 6px;font-size:10px;font-weight:800;margin-right:6px;">B35</span><span style="background:#0F6E56;color:#fff;padding:1px 5px;font-size:9px;margin-right:6px;">UA</span><span style="font-family:monospace;font-size:11px;">/ua/blog/statistika-youtube-kanala</span></td><td class="num"><b>6</b></td><td class="num">135</td><td class="num">4.40%</td><td class="num">8.1</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="tab-content" id="tab-target" style="display:none;">
+  <div style="background:#FE391F;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #000;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.85);">🎯 Target · Meta + TikTok · 30.06-06.07</div>
+    <h2 style="font-size:26px;font-weight:900;margin-top:8px;">Target деталь тижня</h2>
+    <div style="font-size:13px;margin-top:6px;opacity:0.9;">30 лідів · ~₴24 200 витрат · CPL ₴806</div>
+  </div>
+
+  <div class="callout">
+    <b>Обмеження даних Meta Ads:</b> Windsor.ai показує тільки SEO-акаунт Meta (₴329 на SEO-кампанії). 
+    Target/TikTok-акаунти вимагають окремих credentials — деталь кампаній недоступна. 
+    Кількість Target-лідів у HubSpot (30) — фактичний показник роботи каналу.
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">01</span><h2>Meta Ads (доступний акаунт)</h2></div>
+    <div class="card scrollx">
+      <table>
+        <thead><tr><th>Кампанія</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">CPC</th><th class="num">Витрати</th></tr></thead>
+        <tbody><tr><td class="l"><b>ABO | SEO</b> <span style="background:#0F6E56;color:#fff;padding:1px 6px;font-size:9px;">SEO кампанії</span></td><td class="num">592</td><td class="num">22 192</td><td class="num">2.67%</td><td class="num">₴0.56</td><td class="num">₴329</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">02</span><h2>HubSpot ліди Target</h2></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Всього</th><th class="num">🔥 Hot</th><th class="num">🌡 Warm</th><th class="num">❄ Cold</th><th class="num">✗ Not-SQL</th><th class="num">◯ Порожньо</th><th class="num" style="background:#0F6E56;">✅ Валідних</th></tr></thead>
+        <tbody><tr><td class="l"><b>30</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">28</td><td class="num" style="background:#F0F8FF;font-weight:900;">0</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">03</span><h2>Стадії Target-лідів</h2></div>
+    <div class="card">
+      <table><thead><tr><th>Стадія</th><th class="num">Лідів</th><th class="num">%</th></tr></thead><tbody><tr><td class="l">Взято в работу</td><td class="num"><b>12</b></td><td class="num">40%</td></tr><tr><td class="l">Заявка с сайта</td><td class="num"><b>8</b></td><td class="num">27%</td></tr><tr><td class="l">Входящие</td><td class="num"><b>8</b></td><td class="num">27%</td></tr><tr><td class="l">Подготовка КП</td><td class="num"><b>1</b></td><td class="num">3%</td></tr><tr><td class="l">Закрыто и нереализовано</td><td class="num"><b>1</b></td><td class="num">3%</td></tr></tbody></table>
+    </div>
+    <p style="font-size:12px;color:#5A5A5A;margin-top:8px;">
+      Більшість Target-лідів у стадії «Взято в работу» — свіжі, оцінка New SQL ще не проставлена. Тому валідних SQL — 0 з 30, 28 — порожні.
+    </p>
+  </div>
+</div>
+<div class="tab-content" id="tab-kontekst" style="display:none;">
+  <div style="background:#856404;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #FE391F;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.75);">🎯 Контекст · Google Ads · 30.06-06.07</div>
+    <h2 style="font-size:26px;font-weight:900;margin-top:8px;">Контекст деталь тижня</h2>
+    <div style="font-size:13px;margin-top:6px;opacity:0.9;">5 лідів HubSpot · ₴9 991 витрат · 205 кліків Google Ads · 8 конверсій</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">01</span><h2>Google Ads кампанії</h2></div>
+    <div class="card scrollx">
+      <table>
+        <thead><tr><th>Кампанія</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">CPC</th><th class="num">Витрати</th><th class="num">Конв.</th><th class="num" style="background:#5A3F8C;">CR клік→конв</th><th class="num">CPA</th></tr></thead>
+        <tbody>
+          <tr><td class="l"><b>Search_Brand</b></td><td class="num">48</td><td class="num">149</td><td class="num">32.2%</td><td class="num">₴52</td><td class="num">₴2 513</td><td class="num"><b>2</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">4.17%</td><td class="num">₴1 256</td></tr><tr><td class="l"><b>Search - PPC 2.0</b></td><td class="num">39</td><td class="num">1 951</td><td class="num">2.0%</td><td class="num">₴187</td><td class="num">₴7 326</td><td class="num"><b>6</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">15.38%</td><td class="num">₴1 221</td></tr><tr><td class="l"><b>Створення попиту</b></td><td class="num">118</td><td class="num">2 415</td><td class="num">4.9%</td><td class="num">₴1</td><td class="num">₴152</td><td class="num"><b>0</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">0.00%</td><td class="num">—</td></tr>
+          <tr class="total"><td>УСЬОГО</td><td class="num">205</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">₴9 991</td><td class="num">8</td><td class="num">3.90%</td><td class="num">₴1 248</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">02</span><h2>ТОП пошукові запити · що приносило кліки</h2></div>
+    <div class="card scrollx">
+      <table>
+        <thead><tr><th>Search term</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">Витрати</th><th class="num">Конв.</th><th class="num" style="background:#5A3F8C;">CR клік→конв</th></tr></thead>
+        <tbody><tr><td class="l"><b>elit web</b></td><td class="num">28</td><td class="num">85</td><td class="num">₴1 681</td><td class="num" style="color:#0F6E56;font-weight:800;">2</td><td class="num" style="background:#F0F8FF;font-weight:800;">7.1%</td></tr><tr><td class="l"><b>elitweb</b></td><td class="num">12</td><td class="num">26</td><td class="num">₴482</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.0%</td></tr><tr><td class="l"><b>еліт веб</b></td><td class="num">4</td><td class="num">20</td><td class="num">₴171</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.0%</td></tr><tr><td class="l"><b>контекстная реклама</b></td><td class="num">2</td><td class="num">8</td><td class="num">₴605</td><td class="num" style="color:#0F6E56;font-weight:800;">2</td><td class="num" style="background:#F0F8FF;font-weight:800;">100.0%</td></tr><tr><td class="l"><b>google ads украина</b></td><td class="num">2</td><td class="num">4</td><td class="num">₴408</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.0%</td></tr><tr><td class="l"><b>элит веб</b></td><td class="num">2</td><td class="num">4</td><td class="num">₴160</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.0%</td></tr><tr><td class="l"><b>гугл реклама</b></td><td class="num">2</td><td class="num">34</td><td class="num">₴471</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.0%</td></tr><tr><td class="l"><b>настройка гугл рекламы</b></td><td class="num">1</td><td class="num">1</td><td class="num">₴324</td><td class="num" style="color:#0F6E56;font-weight:800;">2</td><td class="num" style="background:#F0F8FF;font-weight:800;">200.0%</td></tr><tr><td class="l"><b>реклама под ключ</b></td><td class="num">1</td><td class="num">2</td><td class="num">₴106</td><td class="num" style="color:#0F6E56;font-weight:800;">1</td><td class="num" style="background:#F0F8FF;font-weight:800;">100.0%</td></tr><tr><td class="l"><b>google ads</b></td><td class="num">1</td><td class="num">58</td><td class="num">₴210</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.0%</td></tr><tr><td class="l"><b>eliteweb</b></td><td class="num">1</td><td class="num">4</td><td class="num">₴10</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.0%</td></tr><tr><td class="l"><b>елітвеб</b></td><td class="num">1</td><td class="num">2</td><td class="num">₴9</td><td class="num" style="color:#0F6E56;font-weight:800;">0</td><td class="num" style="background:#F0F8FF;font-weight:800;">0.0%</td></tr></tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:#5A5A5A;margin-top:8px;">
+      <b>Найкращі:</b> «настройка гугл рекламы» — 1 клк → 2 конв (200% CR!), «реклама под ключ» — 1 клк → 1 конв (100%), «elit web» — 28 клк → 2 конв.
+      <b>Марно:</b> «гугл реклама» ₴471 без конв, «google ads украина» ₴408 без конв.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">03</span><h2>HubSpot ліди Контексту</h2></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Всього</th><th class="num">🔥 Hot</th><th class="num">🌡 Warm</th><th class="num">❄ Cold</th><th class="num">✗ Not-SQL</th><th class="num">◯ Порожньо</th><th class="num" style="background:#0F6E56;">✅ Валідних</th></tr></thead>
+        <tbody><tr><td class="l"><b>5</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">3</td><td class="num" style="background:#F0F8FF;font-weight:900;">0</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="tab-content" id="tab-ce" style="display:none;">
+  <div style="background:#0C5460;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #FE391F;">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.85);">📧 Cold Email · 30.06-06.07</div>
+    <h2 style="font-size:26px;font-weight:900;margin-top:8px;">Cold Email деталь тижня</h2>
+    <div style="font-size:13px;margin-top:6px;opacity:0.9;">1 лід · ~₴4 540 витрат · CPL ₴4540</div>
+  </div>
+
+  <div class="callout" style="background:#FFF6CC;">
+    <b>⚠ Слабкий тиждень для CE:</b> лише 1 лід за ₴4 540 витрат. При середньому чеку ~₴50K, CPL ₴4540 — потрібно щонайменше 1 угода щомісяця, щоб окупити канал. Час переглянути ICP або офер.
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">01</span><h2>HubSpot ліди Cold Email</h2></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Всього</th><th class="num">🔥 Hot</th><th class="num">🌡 Warm</th><th class="num">❄ Cold</th><th class="num">✗ Not-SQL</th><th class="num">◯ Порожньо</th><th class="num" style="background:#0F6E56;">✅ Валідних</th></tr></thead>
+        <tbody><tr><td class="l"><b>1</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num" style="background:#F0F8FF;font-weight:900;">0</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="num">02</span><h2>Порівняння з попередніми тижнями</h2></div>
+    <div class="callout">
+      <b>Cold Email за Q2:</b> 49 лідів за квартал (~16-21 лідів/міс). Цей тиждень — <b>1 лід</b>, це найгірший тижневий результат.
+      Треба перевірити: (1) чи працює послідовність e-mail, (2) чи не потрапили ми в spam-фільтри, (3) чи актуальна база.
+    </div>
+  </div>
+</div>
+
+<div class="card" style="padding:20px;margin-top:14px;">
+  <p style="font-size:14px;line-height:2;">
+    <a href="dashboard_channels_detail.html" style="color:#FE391F;font-weight:700;text-decoration:none;">🎯 Канали Q2 деталь</a> · 
+    <a href="dashboard_channels_matrix.html" style="color:#FE391F;font-weight:700;text-decoration:none;">📊 Матриця Q2</a> · 
+    <a href="dashboard_seo_2026.html" style="color:#FE391F;font-weight:700;text-decoration:none;">🔍 SEO 2026</a> · 
+    <a href="dashboard_consolidated.html" style="color:#FE391F;font-weight:700;text-decoration:none;">🏠 Хаб</a>
+  </p>
+</div>
+
+</div>
+
+<script>
+Chart.defaults.font.family="'Mulish',sans-serif";
+Chart.defaults.font.weight=700;
+let charts = {};
+
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+name).style.display = 'block';
+  document.querySelector('.tab-btn.'+name).classList.add('active');
+  setTimeout(() => initCharts(name), 50);
+}
+
+function initCharts(name) {
+  if (name === 'overview' && !charts.overview) {
+    charts.overview = true;
+    new Chart(document.getElementById('chChannel'), {
+      type:'doughnut', data:{
+        labels:['Target (30)','Порожньо (15)','SEO (8)','Контекст (5)','SMM (2)','Cold Email (1)'],
+        datasets:[{data:[30,15,8,5,2,1], backgroundColor:['#FE391F','#CCC','#0F6E56','#856404','#5A3F8C','#0C5460']}]
+      }, options:{responsive:true,maintainAspectRatio:false}
+    });
+    new Chart(document.getElementById('chStage'), {
+      type:'bar', data:{
+        labels:["\u041f\u0435\u0440\u0432\u0438\u043d\u043d\u0438\u0439 \u043a\u043e\u043d\u0442\u0430\u043a\u0442", "\u0417\u0430\u044f\u0432\u043a\u0430 \u0441 \u0441\u0430\u0439\u0442\u0430", "\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u041a\u041f", "\u0412\u0437\u044f\u0442\u043e \u0432 \u0440\u0430\u0431\u043e\u0442\u0443", "\u0412\u0445\u043e\u0434\u044f\u0449\u0438\u0435", "\u0411\u0440\u0438\u0444", "\u0417\u0430\u043a\u0440\u044b\u0442\u043e \u0438 \u043d\u0435\u0440\u0435\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043d\u043e"],
+        datasets:[{label:'Лідів', data:[4, 12, 2, 26, 10, 6, 1], backgroundColor:'#000'}]
+      }, options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}}}
+    });
+  }
+  if (name === 'seo' && !charts.seo) {
+    charts.seo = true;
+    new Chart(document.getElementById('chGSC'), {
+      type:'bar', data:{labels:["\u041f\u043d 30.06", "\u0412\u0442 01.07", "\u0421\u0440 02.07", "\u0427\u0442 03.07", "\u041f\u0442 04.07"], datasets:[{label:'GSC кліки', data:[309, 332, 277, 278, 267], backgroundColor:'#0F6E56'}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
+    });
+    new Chart(document.getElementById('chGA4'), {
+      type:'bar', data:{labels:["\u041f\u043d 30.06", "\u0412\u0442 01.07", "\u0421\u0440 02.07", "\u0427\u0442 03.07", "\u041f\u0442 04.07", "\u0421\u0431 05.07", "\u041d\u0434 06.07"], datasets:[
+        {label:'Сесії', data:[315, 388, 343, 338, 275, 298, 124], backgroundColor:'#0F6E56', yAxisID:'y'},
+        {label:'Конверсії', data:[156, 211, 192, 181, 156, 187, 363], type:'line', borderColor:'#FE391F', backgroundColor:'transparent', tension:0.3, borderWidth:3, yAxisID:'y1'}
+      ]}, options:{responsive:true,maintainAspectRatio:false,scales:{y:{position:'left'},y1:{position:'right',grid:{display:false}}}}
+    });
+  }
+}
+
+showTab('overview');
+</script>
+</body>
+</html>
