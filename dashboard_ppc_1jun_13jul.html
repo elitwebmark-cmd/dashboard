@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>elit-web · PPC · 01.06-13.07.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Mulish',sans-serif;background:#F8F8F8;color:#000;padding:20px;}
+.wrap{max-width:1600px;margin:0 auto;}
+header{background:#856404;color:#fff;padding:28px 32px;margin-bottom:20px;border-left:6px solid #000;}
+h1{font-size:30px;font-weight:900;text-transform:uppercase;letter-spacing:-0.5px;}
+h2{font-size:20px;font-weight:900;}
+h3{font-size:15px;font-weight:800;margin-bottom:10px;}
+.section{margin-bottom:24px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #000;}
+.sec-head .num{font-size:16px;color:#856404;font-weight:800;}
+.card{background:#fff;padding:20px;border-top:4px solid #000;margin-bottom:12px;}
+.kpi-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}
+.kpi{background:#fff;border-top:4px solid #000;padding:14px;}
+.kpi.accent{border-top-color:#856404;}
+.kpi .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#5A5A5A;}
+.kpi .val{font-size:26px;font-weight:900;letter-spacing:-0.5px;margin-top:4px;font-variant-numeric:tabular-nums;}
+.kpi .hint{font-size:10px;color:#5A5A5A;margin-top:4px;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+table th{background:#000;color:#fff;text-align:left;padding:8px 10px;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;}
+table th.num{text-align:right;}
+table td{padding:7px 10px;border-bottom:1px solid #EDEDED;}
+table td.l{text-align:left;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#000;color:#fff;font-weight:900;}
+.grid-2{display:grid;gap:14px;grid-template-columns:1fr 1fr;}
+.grid-3{display:grid;gap:14px;grid-template-columns:2fr 1fr 1fr;}
+.chart-wrap{background:#fff;padding:16px;border-top:4px solid #000;height:280px;position:relative;}
+.filters{background:#fff;padding:14px 20px;margin-bottom:12px;border-top:4px solid #856404;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.filters label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#5A5A5A;}
+.filters select,.filters input{padding:8px 12px;font-family:inherit;font-weight:700;font-size:12px;border:2px solid #000;background:#fff;cursor:pointer;outline:none;}
+.filters input{cursor:text;min-width:200px;}
+.filters .btn{padding:8px 14px;background:#000;color:#fff;border:0;cursor:pointer;font-weight:800;font-size:11px;text-transform:uppercase;}
+.filters .count-badge{margin-left:auto;font-size:12px;font-weight:800;color:#856404;}
+.matrix-wrap{background:#fff;border-top:4px solid #000;overflow-x:auto;}
+#leadTable{min-width:1200px;}
+#leadTable td{padding:6px 8px;font-size:11px;}
+.pill{display:inline-block;padding:1px 6px;font-size:9px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.3px;}
+.pill.hot{background:#FE391F;}
+.pill.warm{background:#856404;}
+.pill.cold{background:#0C5460;}
+.pill.not{background:#5A5A5A;}
+.pill.empty{background:#CCCCCC;color:#000;}
+.stage-won{color:#0F6E56;font-weight:800;}
+.stage-lost{color:#9F2D26;}
+.callout{background:#FFF6CC;border-left:4px solid #856404;padding:12px 16px;font-size:12px;line-height:1.5;margin-bottom:14px;}
+@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.7);margin-bottom:10px;">elit-web · канал деталь · 43 дні</div>
+  <h1>Контекст · PPC · 01.06 – 13.07.2026</h1>
+  <div style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.85);">17 лідів HubSpot · ₴69 376 витрат Google Ads · 21,335 кліків · 39 конверсій</div>
+</header>
+
+<div class="callout">
+  ⚠ <b>Гарячі дані:</b> період включає липень 2026 (1-13.07), для якого HubSpot ще не має заповнених полів "Услуга", "Возражение", "Причина програшу", "Ниша". Ліди все ще в роботі — метрики частково orientaтивні.
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">01</span><h2>KPI за період</h2></div>
+  <div class="kpi-grid">
+    <div class="kpi accent"><div class="lbl">Всього лідів HubSpot</div><div class="val">17</div><div class="hint">Червень: 10 · Липень 1-13: 7</div></div>
+    <div class="kpi"><div class="lbl">🔥 Hot SQL</div><div class="val" style="color:#FE391F;">0</div></div>
+    <div class="kpi"><div class="lbl">🌡 Warm SQL</div><div class="val" style="color:#856404;">0</div></div>
+    <div class="kpi"><div class="lbl">❄ Cold SQL</div><div class="val" style="color:#0C5460;">1</div></div>
+    <div class="kpi"><div class="lbl">✗ Not SQL</div><div class="val" style="color:#5A5A5A;">13</div></div>
+    <div class="kpi"><div class="lbl">◯ Порожньо</div><div class="val" style="color:#999;">3</div></div>
+    <div class="kpi" style="border-top-color:#0F6E56;"><div class="lbl">✅ Валідних SQL</div><div class="val" style="color:#0F6E56;">1</div><div class="hint">5.9% з лідів</div></div>
+    <div class="kpi"><div class="lbl">Бриф</div><div class="val">2</div></div>
+    <div class="kpi"><div class="lbl">КП</div><div class="val">1</div></div>
+    <div class="kpi"><div class="lbl">Won (продано)</div><div class="val" style="color:#0F6E56;">0</div></div>
+    <div class="kpi"><div class="lbl">Lost</div><div class="val" style="color:#9F2D26;">10</div></div>
+    <div class="kpi"><div class="lbl">В роботі</div><div class="val">4</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">02</span><h2>Юніт-економіка (43 дні)</h2></div>
+  <div class="kpi-grid">
+    <div class="kpi accent"><div class="lbl">Витрати Google Ads</div><div class="val">₴69 376</div><div class="hint">3 активні кампанії</div></div>
+    <div class="kpi"><div class="lbl">Кліки Google Ads</div><div class="val">21 335</div></div>
+    <div class="kpi"><div class="lbl">Конверсії GA</div><div class="val">39</div></div>
+    <div class="kpi accent"><div class="lbl">CPL (HubSpot)</div><div class="val">₴4 080</div><div class="hint">Витрати / Ліди CRM</div></div>
+    <div class="kpi"><div class="lbl">CPSQL</div><div class="val">₴69 376</div><div class="hint">Витрати / Валідні SQL</div></div>
+    <div class="kpi"><div class="lbl">CPA</div><div class="val">—</div><div class="hint">Витрати / Продажі (Won)</div></div>
+    <div class="kpi"><div class="lbl">CR клік→лід</div><div class="val">0.08%</div><div class="hint">HubSpot ліди / Google Ads кліки</div></div>
+    <div class="kpi"><div class="lbl">CR клік→конв GA</div><div class="val">0.18%</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">03</span><h2>Google Ads кампанії за період</h2></div>
+  <div class="card" style="overflow-x:auto;">
+    <table>
+      <thead><tr><th>Кампанія</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">CTR</th><th class="num">CPC</th><th class="num">Витрати</th><th class="num">Конв.</th><th class="num" style="background:#5A3F8C;">CR клк→конв</th><th class="num">CPA</th></tr></thead>
+      <tbody><tr><td class="l"><b>Search_Brand</b></td><td class="num">348</td><td class="num">1 265</td><td class="num">27.5%</td><td class="num">₴48</td><td class="num">₴16 743</td><td class="num"><b>5</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">1.44%</td><td class="num">₴3 348</td></tr><tr><td class="l"><b>Створення попиту (2026-06-04)</b></td><td class="num">20 765</td><td class="num">450 978</td><td class="num">4.6%</td><td class="num">—</td><td class="num">₴18 492</td><td class="num"><b>3</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">0.01%</td><td class="num">₴6 164</td></tr><tr><td class="l"><b>Search - PPC 2.0</b></td><td class="num">222</td><td class="num">8 684</td><td class="num">2.6%</td><td class="num">₴153</td><td class="num">₴34 141</td><td class="num"><b>31</b></td><td class="num" style="background:#F0F8FF;font-weight:800;">13.96%</td><td class="num">₴1 101</td></tr>
+        <tr class="total"><td>УСЬОГО</td><td class="num">21 335</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">₴69 376</td><td class="num">39</td><td class="num">0.18%</td><td class="num">₴1 778</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:11px;color:#5A5A5A;margin-top:8px;">
+    <b>Аналіз:</b> <b>Search - PPC 2.0</b> — 31 конверсія при 222 кліках (найкращий CR 13.96%, CPA ₴1 101). 
+    <b>Search_Brand</b> — 5 конв за низький CPC (₴48). 
+    <b>Створення попиту</b> — 20K кліків Display, 3 конв (майже не конвертить, CR 0.01%).
+  </p>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">04</span><h2>Розбивка HubSpot лідів</h2></div>
+  <div class="grid-3">
+    <div class="card">
+      <h3>Послуги (мультизначення)</h3>
+      <div style="overflow-x:auto;"><table><thead><tr><th>Послуга</th><th class="num">Разів</th><th class="num">%</th></tr></thead><tbody><tr><td class="l">PPC</td><td class="num"><b>1</b></td><td class="num">100%</td></tr></tbody></table></div>
+    </div>
+    <div class="card">
+      <h3>Заперечення</h3>
+      <div style="overflow-x:auto;"><table><thead><tr><th>Заперечення</th><th class="num">Разів</th><th class="num">%</th></tr></thead><tbody><tr><td class="l">Дорого</td><td class="num"><b>5</b></td><td class="num">83%</td></tr><tr><td class="l">Нет обратной связи</td><td class="num"><b>1</b></td><td class="num">17%</td></tr></tbody></table></div>
+    </div>
+    <div class="card">
+      <h3>По місяцях</h3>
+      <table><thead><tr><th>Місяць</th><th class="num">Лідів</th></tr></thead><tbody><tr><td class="l">Червень</td><td class="num"><b>10</b></td></tr><tr><td class="l">Липень (1-13)</td><td class="num"><b>7</b></td></tr></tbody></table>
+      <div style="margin-top:16px;height:180px;"><canvas id="chMonth"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">05</span><h2>Матриця лідів</h2><span style="margin-left:auto;font-size:11px;color:#5A5A5A;">Фільтри + пошук</span></div>
+  
+  <div class="filters">
+    <label>Якість:</label>
+    <select id="fQuality" onchange="applyFilters()">
+      <option value="">Всі</option>
+      <option value="Hot SQL">🔥 Hot SQL</option>
+      <option value="Warm SQL">🌡 Warm SQL</option>
+      <option value="Cold SQL">❄ Cold SQL</option>
+      <option value="Not SQL">✗ Not SQL</option>
+      <option value="__empty">◯ Порожньо</option>
+    </select>
+    
+    <label>Стадія:</label>
+    <select id="fStage" onchange="applyFilters()"></select>
+    
+    <label>Місяць:</label>
+    <select id="fMonth" onchange="applyFilters()">
+      <option value="">Всі</option>
+      <option value="2026-06">Червень</option>
+      <option value="2026-07">Липень (1-13)</option>
+    </select>
+    
+    <input type="text" id="fSearch" placeholder="Пошук (назва/домен)" oninput="applyFilters()">
+    
+    <button class="btn" onclick="resetFilters()">Скинути</button>
+    
+    <span class="count-badge" id="countBadge"></span>
+  </div>
+  
+  <div class="matrix-wrap">
+    <table id="leadTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Дата</th>
+          <th>Deal Name</th>
+          <th>Домен</th>
+          <th>Стадія</th>
+          <th>Якість</th>
+          <th>Послуга</th>
+          <th>Бриф</th>
+          <th>КП</th>
+          <th>Заперечення</th>
+          <th>Причина lost</th>
+          <th>Ниша</th>
+          <th class="num">Amount</th>
+        </tr>
+      </thead>
+      <tbody id="leadTbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card" style="margin-top:14px;padding:16px;">
+  <p style="font-size:13px;line-height:1.8;">
+    <a href="dashboard_kontekst_q2.html" style="color:#856404;font-weight:700;text-decoration:none;">🎯 Контекст Q2 (32 ліди)</a> · 
+    <a href="dashboard_channels_detail.html" style="color:#856404;font-weight:700;text-decoration:none;">📊 Всі канали Q2</a> · 
+    <a href="dashboard_consolidated.html" style="color:#856404;font-weight:700;text-decoration:none;">🏠 Хаб</a>
+  </p>
+</div>
+
+</div>
+
+<script>
+const LEADS = [{"name": "prozo.com.ua", "stage": "Закрыто и нереализовано", "created": "2026-06-30", "objection": "Дорого", "new_sql": "Not SQL", "mql_score": "MQL", "amount": 0.0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "Prozo", "domain": "prozo.com.ua"}, {"name": "trimatech.com.ua", "stage": "Бриф", "created": "2026-06-30", "objection": "", "new_sql": "Not SQL", "mql_score": "MQL", "amount": 0.0, "usluga": "", "brief": "https://docs.google.com/spreadsheets/d/1Z_84uT6Skmj3xGuA5tHX7mQPBYf1DAgjMePyqsBKKiA/edit?gid=0#gid=0", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "trimatech.com.ua", "domain": "trimatech.com.ua"}, {"name": "itsmartheads.com", "stage": "Взято в работу", "created": "2026-06-29", "objection": "", "new_sql": "", "mql_score": "MQL", "amount": 0.0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "IT Smart Heads", "domain": "https://itsmartheads.com/"}, {"name": "letssmokehookah.store", "stage": "Взято в работу", "created": "2026-06-29", "objection": "Дорого", "new_sql": "Not SQL", "mql_score": "MQL", "amount": 0.0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "letssmokehookah.store", "domain": "letssmokehookah.store"}, {"name": "bikepizza.com.ua", "stage": "Закрыто и нереализовано", "created": "2026-06-29", "objection": "Дорого", "new_sql": "Not SQL", "mql_score": "MQL", "amount": 0.0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "bikepizza.com.ua", "domain": "bikepizza.com.ua"}, {"name": "сайта нет ( Саша) ", "stage": "Закрыто и нереализовано", "created": "2026-06-23", "objection": "Нет обратной связи", "new_sql": "Not SQL", "mql_score": 0, "amount": 0.0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "", "domain": "сайта нет "}, {"name": "techsunsystem.tech", "stage": "Заявка с сайта", "created": "2026-06-22", "objection": "", "new_sql": "", "mql_score": "MQL", "amount": 0.0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "TechSunSystem", "domain": "techsunsystem.tech"}, {"name": "elitbudm.com.ua(officelitbudm.com.ua)", "stage": "Подготовка КП", "created": "2026-06-22", "objection": "", "new_sql": "Cold SQL", "mql_score": "MQL", "amount": 0.0, "usluga": "PPC", "brief": "https://docs.google.com/spreadsheets/d/1uaxMiVb2ynOnP3YdeeqIHLxd0_epVGoQ1cTSWit8nIs/edit?gid=0#gid=0", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "elitbudm.com.ua", "domain": "elitbudm.com.ua"}, {"name": "taxi-svityaz.com.ua", "stage": "Закрыто и нереализовано", "created": "2026-06-19", "objection": "Дорого", "new_sql": "Not SQL", "mql_score": "MQL", "amount": 0.0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "taxi-svityaz.com.ua", "domain": "https://taxi-svityaz.com.ua/"}, {"name": "macaronforum.ink", "stage": "Закрыто и нереализовано", "created": "2026-06-15", "objection": "Дорого", "new_sql": "Not SQL", "mql_score": "MQL", "amount": 0.0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "https://macaronforum.ink", "domain": "https://macaronforum.ink"}, {"name": "monto.com.ua", "stage": "Бриф", "created": "2026-07-01", "objection": "", "new_sql": "Not SQL", "mql_score": 0, "amount": 0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "", "domain": "monto.com.ua"}, {"name": "petguru.com.ua", "stage": "Закрыто и нереализовано", "created": "2026-07-01", "objection": "", "new_sql": "Not SQL", "mql_score": 0, "amount": 0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "", "domain": "petguru.com.ua"}, {"name": "laguna-koblevo.com.ua", "stage": "Закрыто и нереализовано", "created": "2026-07-02", "objection": "", "new_sql": "Not SQL", "mql_score": 0, "amount": 0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "", "domain": "laguna-koblevo.com.ua"}, {"name": "melonsocks.com.ua", "stage": "Закрыто и нереализовано", "created": "2026-07-08", "objection": "", "new_sql": "Not SQL", "mql_score": 0, "amount": 0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "", "domain": "melonsocks.com.ua"}, {"name": "rolltechno.com.ua", "stage": "Закрыто и нереализовано", "created": "2026-07-12", "objection": "", "new_sql": "Not SQL", "mql_score": 0, "amount": 0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "", "domain": "rolltechno.com.ua"}, {"name": "✅vandalvape.life", "stage": "Взято в работу", "created": "2026-07-12", "objection": "", "new_sql": "", "mql_score": 0, "amount": 0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "", "domain": "vandalvape.life"}, {"name": "eveli.com.ua", "stage": "Закрыто и нереализовано", "created": "2026-07-12", "objection": "", "new_sql": "Not SQL", "mql_score": 0, "amount": 0, "usluga": "", "brief": "", "kp": "", "reason_lost": "", "niche": "", "industry": "", "company": "", "domain": "eveli.com.ua"}];
+
+Chart.defaults.font.family="'Mulish',sans-serif";
+Chart.defaults.font.weight=700;
+
+new Chart(document.getElementById('chMonth'), {
+  type:'bar', data:{
+    labels:['Червень','Липень 1-13'],
+    datasets:[{label:'Лідів', data:[10, 7], backgroundColor:'#856404'}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
+});
+
+function uniqueSorted(arr, key) {
+  const set = new Set();
+  arr.forEach(l => { const v = l[key]; if (typeof v === 'string' && v.trim()) set.add(v); });
+  return [...set].sort();
+}
+
+function populate(selId, values, label) {
+  const el = document.getElementById(selId);
+  el.innerHTML = `<option value="">Всі ${label}</option>`;
+  values.forEach(v => {
+    el.innerHTML += `<option value="${v.replace(/"/g,'&quot;')}">${v.length>50?v.slice(0,50)+'…':v}</option>`;
+  });
+}
+
+populate('fStage', uniqueSorted(LEADS, 'stage'), 'стадії');
+
+function pillFor(sql) {
+  if (sql === 'Hot SQL') return '<span class="pill hot">🔥 HOT</span>';
+  if (sql === 'Warm SQL') return '<span class="pill warm">🌡 WARM</span>';
+  if (sql === 'Cold SQL') return '<span class="pill cold">❄ COLD</span>';
+  if (sql === 'Not SQL') return '<span class="pill not">✗ NOT</span>';
+  return '<span class="pill empty">◯</span>';
+}
+
+function stageClass(stage) {
+  if (stage === 'Успешно реализовано') return 'stage-won';
+  if (stage === 'Закрыто и нереализовано') return 'stage-lost';
+  return '';
+}
+
+function render(filtered) {
+  const tbody = document.getElementById('leadTbody');
+  tbody.innerHTML = '';
+  filtered.forEach((l, i) => {
+    const amt = l.amount ? '₴' + (l.amount).toLocaleString('uk-UA') : '—';
+    tbody.innerHTML += `
+      <tr>
+        <td>${i+1}</td>
+        <td>${l.created||'—'}</td>
+        <td title="${l.name}">${l.name.length>35?l.name.slice(0,35)+'…':l.name}</td>
+        <td>${l.domain||'—'}</td>
+        <td class="${stageClass(l.stage)}">${l.stage||'—'}</td>
+        <td>${pillFor(l.new_sql)}</td>
+        <td>${l.usluga||'—'}</td>
+        <td>${l.brief?'✓':''}</td>
+        <td>${l.kp?'✓':''}</td>
+        <td>${l.objection?l.objection.slice(0,50):'—'}</td>
+        <td>${l.reason_lost?l.reason_lost.slice(0,40):'—'}</td>
+        <td>${l.niche||l.industry||'—'}</td>
+        <td class="num">${amt}</td>
+      </tr>
+    `;
+  });
+  document.getElementById('countBadge').textContent = `${filtered.length} з ${LEADS.length}`;
+}
+
+function applyFilters() {
+  const q = document.getElementById('fQuality').value;
+  const st = document.getElementById('fStage').value;
+  const mn = document.getElementById('fMonth').value;
+  const search = document.getElementById('fSearch').value.toLowerCase();
+  
+  const filtered = LEADS.filter(l => {
+    if (q === '__empty' && l.new_sql) return false;
+    if (q && q !== '__empty' && l.new_sql !== q) return false;
+    if (st && l.stage !== st) return false;
+    if (mn && (!l.created || l.created.slice(0,7) !== mn)) return false;
+    if (search) {
+      const hay = ((l.name||'') + ' ' + (l.domain||'')).toLowerCase();
+      if (!hay.includes(search)) return false;
+    }
+    return true;
+  });
+  render(filtered);
+}
+
+function resetFilters() {
+  ['fQuality','fStage','fMonth','fSearch'].forEach(id => document.getElementById(id).value = '');
+  applyFilters();
+}
+
+render(LEADS);
+</script>
+</body>
+</html>
