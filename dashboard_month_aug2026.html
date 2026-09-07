@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="uk"><head><meta charset="UTF-8"><title>Elit-web · Серпень 2026 · Marketing Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Mulish',sans-serif;background:#F5F5F5;color:#000;padding:20px;}
+.wrap{max-width:1500px;margin:0 auto;}
+header{background:#000;color:#fff;padding:28px 32px;margin-bottom:20px;border-left:6px solid #FE391F;}
+h1{font-size:30px;font-weight:900;text-transform:uppercase;letter-spacing:-0.5px;}
+h1 .a{color:#FE391F;}
+h2{font-size:22px;font-weight:900;}
+h3{font-size:14px;font-weight:800;margin-bottom:10px;}
+.brand-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);}
+.dot{width:8px;height:8px;background:#FE391F;border-radius:50%;}
+.tab-nav{display:flex;gap:0;margin-bottom:20px;background:#fff;border:2px solid #000;overflow:hidden;flex-wrap:wrap;}
+.tab-btn{flex:1;min-width:140px;padding:14px 16px;background:#fff;color:#000;border:0;font-family:inherit;font-weight:800;font-size:12px;cursor:pointer;text-transform:uppercase;border-right:2px solid #000;}
+.tab-btn:last-child{border-right:0;}
+.tab-btn.active{background:#000;color:#fff;}
+.tab-btn.seo.active{background:#0F6E56;}
+.tab-btn.target.active{background:#FE391F;}
+.tab-btn.kontekst.active{background:#856404;}
+.tab-btn.react.active{background:#5A3F8C;}
+.tab-btn.econ.active{background:#0C5460;}
+.section{margin-bottom:26px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #000;}
+.sec-head .num{font-size:18px;color:#FE391F;font-weight:800;}
+.sec-head .sub{margin-left:auto;font-size:11px;color:#5A5A5A;letter-spacing:0.5px;}
+.card{background:#fff;padding:22px;border-top:4px solid #000;margin-bottom:12px;}
+.card.accent{border-top-color:#FE391F;}
+.chart-wrap{background:#fff;padding:20px;border-top:4px solid #0F6E56;}
+.kpi-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-bottom:20px;}
+.kpi{background:#fff;border-top:4px solid #000;padding:16px;}
+.kpi.accent{border-top-color:#FE391F;}
+.kpi.green{border-top-color:#0F6E56;}
+.kpi.purple{border-top-color:#5A3F8C;}
+.kpi .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;color:#5A5A5A;margin-bottom:6px;}
+.kpi .val{font-size:26px;font-weight:900;letter-spacing:-1px;line-height:1;font-variant-numeric:tabular-nums;}
+.kpi .hint{font-size:11px;color:#5A5A5A;margin-top:6px;}
+.callout{padding:14px 18px;border-left:4px solid #FE391F;font-size:13px;margin-bottom:14px;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+table th{background:#000;color:#fff;text-align:left;padding:9px 10px;font-size:10px;text-transform:uppercase;font-weight:800;}
+table th.num{text-align:right;}
+table td{padding:8px 10px;border-bottom:1px solid #EDEDED;}
+table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+table tr.total td{background:#000;color:#fff;font-weight:900;}
+.scrollx{overflow-x:auto;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr;}}
+</style></head>
+<body><div class="wrap">
+<header>
+<div class="brand-row"><span class="dot"></span><span>Elit-web · Marketing Report</span></div>
+<h1>Серпень <span class="a">2026</span> · Місячний звіт</h1>
+<div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:8px;">01.08 – 31.08 · 3 воронки UA + DRP + Wezom · Всього 173 лідів · ₴149 383 витрат</div>
+</header>
+
+<div class="tab-nav">
+<button class="tab-btn active" data-tab="overview">📊 Overview</button>
+<button class="tab-btn seo" data-tab="seo">🔍 SEO</button>
+<button class="tab-btn target" data-tab="target">🎯 Target</button>
+<button class="tab-btn kontekst" data-tab="kontekst">💰 Контекст</button>
+<button class="tab-btn react" data-tab="react">♻ Реактивація</button>
+<button class="tab-btn econ" data-tab="econ">💵 Юніт-економіка</button>
+</div>
+
+<div class="tab-content" id="tab-overview" style="display:block;">
+<div class="section">
+  <div class="sec-head"><span class="num">00</span><h2>Місячний підсумок · Серпень 2026</h2><span class="sub">01.08 – 31.08 · UA + DRP + Wezom</span></div>
+  <div class="callout" style="background:#E5F5EC;">✅ 5 воронок тижневих звітів W6-W9 (03-31.08) + оцінка хвоста 01-02.08. Всього лідів: <b>173</b>. Валідних Won: <b>3</b>.</div>
+  <div class="kpi-grid">
+    <div class="kpi accent"><div class="lbl">Всього лідів</div><div class="val">173</div><div class="hint"><span style="color:#9F2D26;">▼ -69</span> vs Липень (242)</div></div>
+    <div class="kpi"><div class="lbl">Target</div><div class="val">88</div><div class="hint"><span style="color:#0F6E56;">▲ +5</span></div></div>
+    <div class="kpi green"><div class="lbl">SEO</div><div class="val">24</div><div class="hint"><span style="color:#9F2D26;">▼ -6</span></div></div>
+    <div class="kpi"><div class="lbl">Контекст (PPC)</div><div class="val">16</div><div class="hint"><span style="color:#9F2D26;">▼ -8</span></div></div>
+    <div class="kpi purple"><div class="lbl">Реактивація</div><div class="val">29</div><div class="hint">старт 04.08</div></div>
+    <div class="kpi"><div class="lbl">Cold Email</div><div class="val">4</div></div>
+    <div class="kpi"><div class="lbl">Інше</div><div class="val">12</div></div>
+    <div class="kpi accent"><div class="lbl">₴ Витрати</div><div class="val">149 383</div><div class="hint">CPL ₴951</div></div>
+    <div class="kpi green"><div class="lbl">GSC кліки</div><div class="val">8 544</div><div class="hint"><span style="color:#0F6E56;">▲ +444</span> vs Липень</div></div>
+    <div class="kpi green"><div class="lbl">GA4 сесії</div><div class="val">13 871</div><div class="hint">6 666 конв</div></div>
+    <div class="kpi accent"><div class="lbl">✅ Won</div><div class="val" style="color:#0F6E56;">3</div><div class="hint">закриті угоди</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">01</span><h2>Розподіл по тижнях</h2></div>
+  <div class="card scrollx">
+    <table><thead><tr><th>Тиждень</th><th class="num">Всього</th><th class="num">Target</th><th class="num">SEO</th><th class="num">Kontekst</th><th class="num">Реакт</th><th class="num">Інше</th><th class="num">Target ₴</th><th class="num">GAds ₴</th></tr></thead>
+    <tbody><tr><td><b>01-02.08 (хвіст)</b></td><td class="num">8</td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">₴4 600</td><td class="num">₴4 100</td></tr><tr><td><b>W6 · 03-10.08</b></td><td class="num">47</td><td class="num">19</td><td class="num">6</td><td class="num">5</td><td class="num">7</td><td class="num">7</td><td class="num">₴15 975</td><td class="num">₴17 500</td></tr><tr><td><b>W7 · 10-17.08</b></td><td class="num">27</td><td class="num">13</td><td class="num">3</td><td class="num">2</td><td class="num">8</td><td class="num">0</td><td class="num">₴17 072</td><td class="num">₴11 829</td></tr><tr><td><b>W8 · 17-24.08</b></td><td class="num">52</td><td class="num">31</td><td class="num">8</td><td class="num">5</td><td class="num">5</td><td class="num">3</td><td class="num">₴18 040</td><td class="num">₴18 899</td></tr><tr><td><b>W9 · 25-31.08</b></td><td class="num">39</td><td class="num">17</td><td class="num">7</td><td class="num">4</td><td class="num">9</td><td class="num">2</td><td class="num">₴17 500</td><td class="num">₴17 266</td></tr>
+    <tr class="total"><td>УСЬОГО</td><td class="num">173</td><td class="num">88</td><td class="num">24</td><td class="num">16</td><td class="num">29</td><td class="num">12</td><td class="num">₴73 187</td><td class="num">₴76 196</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">02</span><h2>Матриця каналів (місяць)</h2></div>
+  <div class="card scrollx">
+    <table><thead><tr><th>Канал</th><th class="num">Ліди</th><th class="num">Витрати</th><th class="num">CPL</th><th class="num">Тип</th></tr></thead>
+    <tbody>
+<tr><td><b>🎯 Target (Meta)</b></td><td class="num">88</td><td class="num">₴73 187</td><td class="num">₴831</td><td class="num" style="color:#FE391F;">факт</td></tr>
+<tr><td><b>🎯 Контекст (Google Ads)</b></td><td class="num">16</td><td class="num">₴76 196</td><td class="num">₴4 762</td><td class="num" style="color:#FE391F;">факт</td></tr>
+<tr><td><b>🔍 SEO (органіка)</b></td><td class="num">24</td><td class="num" style="color:#0F6E56;">—</td><td class="num" style="color:#0F6E56;">органіка</td><td class="num" style="color:#0F6E56;">включ. у SEO бюджет</td></tr>
+<tr><td><b>♻ Реактивація (Саша)</b></td><td class="num">29</td><td class="num" style="color:#5A3F8C;">—</td><td class="num" style="color:#5A3F8C;">без окр. бюджету</td><td class="num" style="color:#5A3F8C;">експеримент</td></tr>
+<tr><td><b>📧 Cold Email</b></td><td class="num">4</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr><td><b>Інше</b></td><td class="num">12</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="total"><td>УСЬОГО платні</td><td class="num">104</td><td class="num">₴149 383</td><td class="num">₴1 436</td><td class="num">—</td></tr>
+<tr class="total"><td>УСЬОГО органіка+реакт</td><td class="num">53</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+</tbody></table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">03</span><h2>Візуалізація</h2></div>
+  <div class="grid-2">
+    <div class="chart-wrap"><h3>Ліди по каналах</h3><canvas id="chCh" style="max-height:280px;"></canvas></div>
+    <div class="chart-wrap"><h3>Динаміка по тижнях</h3><canvas id="chWk" style="max-height:280px;"></canvas></div>
+  </div>
+</div>
+</div>
+<div class="tab-content" id="tab-seo" style="display:none;">
+<div style="background:#0F6E56;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #FE391F;">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.75);">🔍 SEO · Organic · Серпень 2026</div>
+<h2 style="font-size:26px;font-weight:900;margin-top:8px;">SEO деталь місяця</h2>
+<div style="font-size:13px;margin-top:6px;opacity:0.9;">24 лідів · 8 544 GSC кліків · 13 871 GA4 сесій · 6 666 конверсій</div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">01</span><h2>Динаміка по днях (31 день)</h2></div>
+  <div class="grid-2">
+    <div class="chart-wrap"><h3>GSC кліки по днях</h3><canvas id="chGSC" style="max-height:250px;"></canvas></div>
+    <div class="chart-wrap"><h3>GA4 organic сесії + конверсії</h3><canvas id="chGA4" style="max-height:250px;"></canvas></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">02</span><h2>Розподіл трафіку · інфо vs комерц</h2></div>
+  <div class="grid-2">
+    <div class="card accent"><h3>📖 Інфо (блог)</h3><div style="font-size:36px;font-weight:900;color:#5A3F8C;margin:8px 0;">1 307</div><div style="font-size:13px;color:#5A5A5A;">28.1% · 11 стор.</div></div>
+    <div class="card"><h3>💰 Комерц</h3><div style="font-size:36px;font-weight:900;color:#FE391F;margin:8px 0;">3 349</div><div style="font-size:13px;color:#5A5A5A;">71.9% · 6 стор.</div></div>
+  </div>
+  <div class="card" style="margin-top:14px;padding:16px;"><div style="height:40px;display:flex;overflow:hidden;border:2px solid #000;"><div style="width:28.1%;background:#5A3F8C;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;">📖 28%</div><div style="width:71.9%;background:#FE391F;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;">💰 72%</div></div></div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">03</span><h2>ТОП пошукові запити (місяць)</h2></div>
+  <div class="card scrollx"><table><thead><tr><th>Запит</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">Поз.</th></tr></thead><tbody><tr><td>seo</td><td class="num">95</td><td class="num">3 605</td><td class="num">8.4</td></tr><tr><td>hotjar</td><td class="num">53</td><td class="num">18 369</td><td class="num">3.6</td></tr><tr><td>seo оптимізація</td><td class="num">47</td><td class="num">489</td><td class="num">10.2</td></tr><tr><td>google shopping</td><td class="num">44</td><td class="num">925</td><td class="num">11.3</td></tr><tr><td>агентство интернет маркетинга</td><td class="num">37</td><td class="num">458</td><td class="num">12.5</td></tr><tr><td>в описании профиля</td><td class="num">37</td><td class="num">3 658</td><td class="num">7.9</td></tr><tr><td>seo оптимізація сайта</td><td class="num">31</td><td class="num">199</td><td class="num">3.6</td></tr></tbody></table></div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">04</span><h2>ТОП-6 комерційних сторінок</h2></div>
+  <div class="card scrollx"><table><thead><tr><th>Сторінка</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">Поз.</th></tr></thead><tbody><tr><td><a href="https://elit-web.ua/" target="_blank" style="color:#000;font-size:11px;">elit-web.ua</a></td><td class="num">2057</td><td class="num">313 790</td><td class="num">10.1</td></tr><tr><td><a href="https://elit-web.ua/ua/" target="_blank" style="color:#000;font-size:11px;">ua</a></td><td class="num">585</td><td class="num">51 902</td><td class="num">12.4</td></tr><tr><td><a href="https://elit-web.ua/uslugi-smm" target="_blank" style="color:#000;font-size:11px;">uslugi-smm</a></td><td class="num">337</td><td class="num">25 697</td><td class="num">27.5</td></tr><tr><td><a href="https://elit-web.ua/prodvighenie-zarubeghnyh-saytov" target="_blank" style="color:#000;font-size:11px;">prodvighenie-zarubeghnyh-saytov</a></td><td class="num">155</td><td class="num">18 979</td><td class="num">15.0</td></tr><tr><td><a href="https://elit-web.ua/uslugi-kontekstnoy-reklamy" target="_blank" style="color:#000;font-size:11px;">uslugi-kontekstnoy-reklamy</a></td><td class="num">130</td><td class="num">15 878</td><td class="num">17.2</td></tr><tr><td><a href="https://elit-web.ua/google-shopping" target="_blank" style="color:#000;font-size:11px;">google-shopping</a></td><td class="num">85</td><td class="num">4 442</td><td class="num">13.8</td></tr></tbody></table></div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">05</span><h2>ТОП-11 блогових сторінок</h2></div>
+  <div class="card scrollx"><table><thead><tr><th>Стаття</th><th class="num">Кліки</th><th class="num">Покази</th><th class="num">Поз.</th></tr></thead><tbody><tr><td><a href="https://elit-web.ua/blog/stoimost-prodvizhenija-sajta" target="_blank" style="color:#000;font-size:11px;">stoimost-prodvizhenija-sajta</a></td><td class="num">433</td><td class="num">120 590</td><td class="num">13.8</td></tr><tr><td><a href="https://elit-web.ua/blog/direkt-v-instagram" target="_blank" style="color:#000;font-size:11px;">direkt-v-instagram</a></td><td class="num">135</td><td class="num">25 383</td><td class="num">6.9</td></tr><tr><td><a href="https://elit-web.ua/ua/blog/stoimost-prodvizhenija-sajta" target="_blank" style="color:#000;font-size:11px;">stoimost-prodvizhenija-sajta</a></td><td class="num">123</td><td class="num">15 858</td><td class="num">11.9</td></tr><tr><td><a href="https://elit-web.ua/blog/prodvizhenie-sajta-etapy" target="_blank" style="color:#000;font-size:11px;">prodvizhenie-sajta-etapy</a></td><td class="num">100</td><td class="num">60 334</td><td class="num">26.5</td></tr><tr><td><a href="https://elit-web.ua/blog/kak-razblokirovat-akkaunt-instagram" target="_blank" style="color:#000;font-size:11px;">kak-razblokirovat-akkaunt-instagram</a></td><td class="num">86</td><td class="num">8 862</td><td class="num">9.2</td></tr><tr><td><a href="https://elit-web.ua/ua/blog/kak-razblokirovat-akkaunt-instagram" target="_blank" style="color:#000;font-size:11px;">kak-razblokirovat-akkaunt-instagram</a></td><td class="num">84</td><td class="num">6 095</td><td class="num">7.4</td></tr><tr><td><a href="https://elit-web.ua/blog/opisanie-v-instagram" target="_blank" style="color:#000;font-size:11px;">opisanie-v-instagram</a></td><td class="num">73</td><td class="num">8 865</td><td class="num">8.7</td></tr><tr><td><a href="https://elit-web.ua/ua/blog/direkt-v-instagram" target="_blank" style="color:#000;font-size:11px;">direkt-v-instagram</a></td><td class="num">73</td><td class="num">9 655</td><td class="num">5.3</td></tr><tr><td><a href="https://elit-web.ua/blog/kak-nastroit-google-shopping" target="_blank" style="color:#000;font-size:11px;">kak-nastroit-google-shopping</a></td><td class="num">69</td><td class="num">5 917</td><td class="num">9.6</td></tr><tr><td><a href="https://elit-web.ua/blog/kak-posmotret-statistiku-v-tiktok" target="_blank" style="color:#000;font-size:11px;">kak-posmotret-statistiku-v-tiktok</a></td><td class="num">67</td><td class="num">3 846</td><td class="num">7.3</td></tr><tr><td><a href="https://elit-web.ua/ua/blog/chto-takoe-tehnicheskaja-optimizatsija-sajta" target="_blank" style="color:#000;font-size:11px;">chto-takoe-tehnicheskaja-optimizatsija-sajta</a></td><td class="num">64</td><td class="num">6 546</td><td class="num">18.6</td></tr></tbody></table></div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="num">06</span><h2>Всі дні (детально)</h2></div>
+  <div class="card scrollx" style="max-height:400px;overflow-y:auto;"><table><thead><tr><th>Дата</th><th class="num">GSC кліки</th><th class="num">GA4 сесії</th><th class="num">GA4 конв.</th></tr></thead><tbody><tr><td>01.08</td><td class="num">216</td><td class="num">257</td><td class="num">144</td></tr><tr><td>02.08</td><td class="num">217</td><td class="num">279</td><td class="num">158</td></tr><tr><td>03.08</td><td class="num">295</td><td class="num">373</td><td class="num">200</td></tr><tr><td>04.08</td><td class="num">238</td><td class="num">420</td><td class="num">206</td></tr><tr><td>05.08</td><td class="num">324</td><td class="num">616</td><td class="num">267</td></tr><tr><td>06.08</td><td class="num">276</td><td class="num">775</td><td class="num">298</td></tr><tr><td>07.08</td><td class="num">270</td><td class="num">476</td><td class="num">228</td></tr><tr><td>08.08</td><td class="num">246</td><td class="num">328</td><td class="num">195</td></tr><tr><td>09.08</td><td class="num">256</td><td class="num">292</td><td class="num">176</td></tr><tr><td>10.08</td><td class="num">293</td><td class="num">358</td><td class="num">208</td></tr><tr><td>11.08</td><td class="num">308</td><td class="num">347</td><td class="num">191</td></tr><tr><td>12.08</td><td class="num">273</td><td class="num">373</td><td class="num">197</td></tr><tr><td>13.08</td><td class="num">301</td><td class="num">385</td><td class="num">222</td></tr><tr><td>14.08</td><td class="num">301</td><td class="num">1</td><td class="num">0</td></tr><tr><td>15.08</td><td class="num">258</td><td class="num">299</td><td class="num">164</td></tr><tr><td>16.08</td><td class="num">246</td><td class="num">510</td><td class="num">209</td></tr><tr><td>17.08</td><td class="num">328</td><td class="num">873</td><td class="num">331</td></tr><tr><td>18.08</td><td class="num">322</td><td class="num">911</td><td class="num">341</td></tr><tr><td>19.08</td><td class="num">287</td><td class="num">1 128</td><td class="num">415</td></tr><tr><td>20.08</td><td class="num">274</td><td class="num">715</td><td class="num">262</td></tr><tr><td>21.08</td><td class="num">297</td><td class="num">445</td><td class="num">231</td></tr><tr><td>22.08</td><td class="num">252</td><td class="num">328</td><td class="num">198</td></tr><tr><td>23.08</td><td class="num">245</td><td class="num">322</td><td class="num">191</td></tr><tr><td>24.08</td><td class="num">266</td><td class="num">298</td><td class="num">183</td></tr><tr><td>25.08</td><td class="num">335</td><td class="num">414</td><td class="num">229</td></tr><tr><td>26.08</td><td class="num">285</td><td class="num">369</td><td class="num">196</td></tr><tr><td>27.08</td><td class="num">287</td><td class="num">392</td><td class="num">226</td></tr><tr><td>28.08</td><td class="num">281</td><td class="num">337</td><td class="num">190</td></tr><tr><td>29.08</td><td class="num">226</td><td class="num">351</td><td class="num">204</td></tr><tr><td>30.08</td><td class="num">249</td><td class="num">325</td><td class="num">180</td></tr><tr><td>31.08</td><td class="num">292</td><td class="num">574</td><td class="num">226</td></tr><tr class="total"><td>УСЬОГО (31 день)</td><td class="num">8 544</td><td class="num">13 871</td><td class="num">6 666</td></tr></tbody></table></div>
+</div>
+</div>
+<div class="tab-content" id="tab-target" style="display:none;">
+<div style="background:#FE391F;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #000;">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.85);">🎯 Target · Meta Ads · Серпень 2026</div>
+<h2 style="font-size:26px;font-weight:900;margin-top:8px;">Target деталь місяця</h2>
+<div style="font-size:13px;margin-top:6px;opacity:0.9;">88 лідів · ₴73 187 · CPL ₴831</div>
+</div>
+<div class="section"><div class="sec-head"><span class="num">01</span><h2>Ефективність по тижнях</h2></div>
+<div class="card scrollx"><table><thead><tr><th>Тиждень</th><th class="num">Ліди Target</th><th class="num">Витрати</th><th class="num">CPL</th></tr></thead>
+<tbody><tr><td>01-02.08 (хвіст)</td><td class="num">8</td><td class="num">₴4 600</td><td class="num">₴575</td></tr><tr><td>W6 · 03-10.08</td><td class="num">19</td><td class="num">₴15 975</td><td class="num">₴840</td></tr><tr><td>W7 · 10-17.08</td><td class="num">13</td><td class="num">₴17 072</td><td class="num">₴1 313</td></tr><tr><td>W8 · 17-24.08</td><td class="num">31</td><td class="num">₴18 040</td><td class="num">₴581</td></tr><tr><td>W9 · 25-31.08</td><td class="num">17</td><td class="num">₴17 500</td><td class="num">₴1 029</td></tr>
+<tr class="total"><td>УСЬОГО</td><td class="num">88</td><td class="num">₴73 187</td><td class="num">₴831</td></tr></tbody></table></div></div>
+
+<div class="section"><div class="sec-head"><span class="num">02</span><h2>Порівняння з Липнем</h2></div>
+<div class="grid-2">
+<div class="card"><h3>Ліди</h3><div style="font-size:28px;font-weight:900;color:#FE391F;">88</div><div style="font-size:12px;color:#5A5A5A;margin-top:6px;">Липень: 83 · <span style="color:#0F6E56;">▲ +5</span></div></div>
+<div class="card"><h3>Витрати</h3><div style="font-size:28px;font-weight:900;color:#FE391F;">₴73 187</div><div style="font-size:12px;color:#5A5A5A;margin-top:6px;">Липень: ₴76 000</div></div>
+</div></div>
+</div>
+<div class="tab-content" id="tab-kontekst" style="display:none;">
+<div style="background:#856404;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #FE391F;">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.75);">🎯 Контекст · Google Ads · Серпень 2026</div>
+<h2 style="font-size:26px;font-weight:900;margin-top:8px;">Контекст деталь місяця</h2>
+<div style="font-size:13px;margin-top:6px;opacity:0.9;">16 лідів · ₴76 196 · 7 285 кліків · CPL ₴4 762</div>
+</div>
+<div class="section"><div class="sec-head"><span class="num">01</span><h2>Google Ads кампанії</h2></div>
+<div class="card scrollx"><table><thead><tr><th>Кампанія</th><th class="num">Кліки</th><th class="num">CPC</th><th class="num">Витрати</th><th class="num">Конв.</th></tr></thead>
+<tbody><tr><td>Search - PPC 2.0</td><td class="num">391</td><td class="num">₴102.92</td><td class="num">₴40 242</td><td class="num">16</td></tr><tr><td>Leads-Search - Seo</td><td class="num">64</td><td class="num">₴237.34</td><td class="num">₴15 189</td><td class="num">4</td></tr><tr><td>Створення попиту</td><td class="num">6 653</td><td class="num">₴1.83</td><td class="num">₴12 184</td><td class="num">5</td></tr><tr><td>Search_Brand</td><td class="num">177</td><td class="num">₴48.47</td><td class="num">₴8 580</td><td class="num">5</td></tr><tr class="total"><td>УСЬОГО</td><td class="num">7 285</td><td class="num">—</td><td class="num">₴76 196</td><td class="num">30</td></tr></tbody></table></div></div>
+
+<div class="section"><div class="sec-head"><span class="num">02</span><h2>Ефективність по тижнях</h2></div>
+<div class="card scrollx"><table><thead><tr><th>Тиждень</th><th class="num">Ліди (Kontekst)</th><th class="num">GAds ₴</th><th class="num">CPL</th></tr></thead>
+<tbody><tr><td>01-02.08 (хвіст)</td><td class="num">0</td><td class="num">₴4 100</td><td class="num">₴—</td></tr><tr><td>W6 · 03-10.08</td><td class="num">5</td><td class="num">₴17 500</td><td class="num">₴3 500</td></tr><tr><td>W7 · 10-17.08</td><td class="num">2</td><td class="num">₴11 829</td><td class="num">₴5 914</td></tr><tr><td>W8 · 17-24.08</td><td class="num">5</td><td class="num">₴18 899</td><td class="num">₴3 779</td></tr><tr><td>W9 · 25-31.08</td><td class="num">4</td><td class="num">₴17 266</td><td class="num">₴4 316</td></tr>
+</tbody></table></div></div>
+</div>
+<div class="tab-content" id="tab-react" style="display:none;">
+<div style="background:#5A3F8C;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #FE391F;">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.85);">♻ Реактивація · Саша · Серпень 2026</div>
+<h2 style="font-size:26px;font-weight:900;margin-top:8px;">Реактивація деталь місяця</h2>
+<div style="font-size:13px;margin-top:6px;opacity:0.9;">29 лідів · старт 04.08 · без окремого бюджету</div>
+</div>
+<div class="section"><div class="sec-head"><span class="num">01</span><h2>Розбивка по тижнях</h2></div>
+<div class="card scrollx"><table><thead><tr><th>Тиждень</th><th class="num">Ліди</th></tr></thead>
+<tbody><tr><td>01-02.08 (хвіст)</td><td class="num">0</td></tr><tr><td>W6 · 03-10.08</td><td class="num">7</td></tr><tr><td>W7 · 10-17.08</td><td class="num">8</td></tr><tr><td>W8 · 17-24.08</td><td class="num">5</td></tr><tr><td>W9 · 25-31.08</td><td class="num">9</td></tr>
+<tr class="total"><td>УСЬОГО за серпень</td><td class="num">29</td></tr></tbody></table></div></div>
+
+<div class="section"><div class="sec-head"><span class="num">02</span><h2>Загальна статистика напрямку</h2></div>
+<div class="callout" style="background:#F0EDF7;">📊 За серпень опрацьовано ~208 контактів (з бази реактивації). Отримано <b>29</b> лідів. Конверсія ~13.9%.</div>
+<p style="font-size:13px;color:#5A5A5A;margin-top:12px;">Детальна аналітика напрямку — у окремому HTML "Реактивація Саша" (4 вкладки: W1/W2/W3/All+Compare).</p>
+</div>
+</div>
+<div class="tab-content" id="tab-econ" style="display:none;">
+<div style="background:#000;color:#fff;padding:24px;margin-bottom:20px;border-left:6px solid #FE391F;">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.85);">💰 Юніт-економіка · Серпень 2026</div>
+<h2 style="font-size:26px;font-weight:900;margin-top:8px;">Юніт-економіка місяця</h2>
+<div style="font-size:13px;margin-top:6px;opacity:0.9;">Дані з HubSpot експорту (173 ліди) · валідних SQL: 21 · Won: 3</div>
+</div>
+
+<div class="section"><div class="sec-head"><span class="num">01</span><h2>По каналах (факт)</h2></div>
+<div class="card scrollx"><table><thead><tr><th>Канал</th><th class="num">Ліди</th><th class="num">Валідних SQL</th><th class="num">Won</th><th class="num">Витрати</th><th class="num">CPL</th><th class="num">CPSQL</th><th class="num">L→SQL</th></tr></thead>
+<tbody>
+<tr><td>🎯 Target</td><td class="num">88</td><td class="num">9</td><td class="num">0</td><td class="num">₴73 187</td><td class="num">₴831</td><td class="num">₴8 131</td><td class="num">10.2%</td></tr>
+<tr><td>🎯 Контекст</td><td class="num">16</td><td class="num">2</td><td class="num" style="color:#0F6E56;">1 ✅</td><td class="num">₴76 196</td><td class="num">₴4 762</td><td class="num">₴38 098</td><td class="num">12.5%</td></tr>
+<tr><td>🔍 SEO</td><td class="num">24</td><td class="num">5</td><td class="num" style="color:#0F6E56;">1 ✅</td><td class="num">—</td><td class="num">органіка</td><td class="num">—</td><td class="num">20.8%</td></tr>
+<tr><td>♻ Реактивація</td><td class="num">29</td><td class="num">3</td><td class="num">0</td><td class="num">без бюдж.</td><td class="num">—</td><td class="num">—</td><td class="num">10.3%</td></tr>
+<tr><td>🏥 Мед. мкт</td><td class="num">7</td><td class="num">1</td><td class="num">0</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">14.3%</td></tr>
+<tr><td>📧 Cold Email</td><td class="num">4</td><td class="num">0</td><td class="num" style="color:#0F6E56;">1 ✅</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">0%</td></tr>
+<tr><td>Інше</td><td class="num">12</td><td class="num">1</td><td class="num">0</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr class="total"><td>УСЬОГО</td><td class="num">173</td><td class="num">21</td><td class="num">3</td><td class="num">₴149 383</td><td class="num">₴951</td><td class="num">₴7 113</td><td class="num">12.1%</td></tr>
+</tbody></table></div></div>
+
+<div class="section"><div class="sec-head"><span class="num">02</span><h2>Won угоди (факт)</h2></div>
+<div class="card scrollx"><table><thead><tr><th>Клієнт</th><th>Канал</th><th class="num">Сума ₴</th></tr></thead>
+<tbody>
+<tr><td>beautylux-innovation.com</td><td>Контекст</td><td class="num">₴650</td></tr>
+<tr><td>leto.net.ua</td><td>Cold Email</td><td class="num">₴1 350</td></tr>
+<tr><td>✅ elfashop.ua</td><td>SEO</td><td class="num">не вказ.</td></tr>
+</tbody></table></div>
+<p style="font-size:12px;color:#5A5A5A;margin-top:6px;">💡 Суми у HubSpot виглядають як передплата/тестові платежі. Реальний обсяг — уточнити у продавців.</p></div>
+
+<div class="section"><div class="sec-head"><span class="num">03</span><h2>Юніт-економіка · зведення</h2></div>
+<div class="grid-2">
+<div class="card accent"><h3>Валідних SQL (факт)</h3><div style="font-size:32px;font-weight:900;color:#FE391F;">21</div><div style="font-size:12px;color:#5A5A5A;margin-top:6px;">L→SQL: 12.1%</div></div>
+<div class="card"><h3>Won (факт)</h3><div style="font-size:32px;font-weight:900;color:#0F6E56;">3</div><div style="font-size:12px;color:#5A5A5A;margin-top:6px;">з 173 лідів = 1.7% · SQL→Won: 14.3%</div></div>
+<div class="card"><h3>Дохід (оцінка LTV)</h3><div style="font-size:32px;font-weight:900;color:#0F6E56;">₴135 000</div><div style="font-size:12px;color:#5A5A5A;margin-top:6px;">3 × ₴45 000 серед. чек</div></div>
+<div class="card"><h3>Cost per Won</h3><div style="font-size:32px;font-weight:900;color:#856404;">₴49 794</div><div style="font-size:12px;color:#5A5A5A;margin-top:6px;">₴149 383 / 3</div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+// Tabs
+document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+  btn.classList.add('active');
+  document.getElementById('tab-' + btn.dataset.tab).style.display = 'block';
+}));
+
+const DATES = ["01.08", "02.08", "03.08", "04.08", "05.08", "06.08", "07.08", "08.08", "09.08", "10.08", "11.08", "12.08", "13.08", "14.08", "15.08", "16.08", "17.08", "18.08", "19.08", "20.08", "21.08", "22.08", "23.08", "24.08", "25.08", "26.08", "27.08", "28.08", "29.08", "30.08", "31.08"];
+const GSC = [216, 217, 295, 238, 324, 276, 270, 246, 256, 293, 308, 273, 301, 301, 258, 246, 328, 322, 287, 274, 297, 252, 245, 266, 335, 285, 287, 281, 226, 249, 292];
+const GA4 = [257, 279, 373, 420, 616, 775, 476, 328, 292, 358, 347, 373, 385, 1, 299, 510, 873, 911, 1128, 715, 445, 328, 322, 298, 414, 369, 392, 337, 351, 325, 574];
+const GA4C = [144, 158, 200, 206, 267, 298, 228, 195, 176, 208, 191, 197, 222, 0, 164, 209, 331, 341, 415, 262, 231, 198, 191, 183, 229, 196, 226, 190, 204, 180, 226];
+const WK_LBL = ["01-02.08 (\u0445\u0432\u0456\u0441\u0442)", "W6", "W7", "W8", "W9"];
+const WK_TOT = [8, 47, 27, 52, 39];
+const CH_LBL = ['Target','SEO','Контекст','Реактивація','Cold Email','Інше'];
+const CH_VAL = [88,24,16,29,4,12];
+const CH_COL = ['#FE391F','#0F6E56','#856404','#5A3F8C','#0C5460','#5A5A5A'];
+
+setTimeout(() => {
+  new Chart(document.getElementById('chCh'), {type:'doughnut',data:{labels:CH_LBL,datasets:[{data:CH_VAL,backgroundColor:CH_COL}]},options:{responsive:true,maintainAspectRatio:false}});
+  new Chart(document.getElementById('chWk'), {type:'bar',data:{labels:WK_LBL,datasets:[{label:'Ліди',data:WK_TOT,backgroundColor:'#FE391F'}]},options:{responsive:true,maintainAspectRatio:false}});
+  new Chart(document.getElementById('chGSC'), {type:'line',data:{labels:DATES,datasets:[{label:'GSC кліки',data:GSC,borderColor:'#0F6E56',backgroundColor:'rgba(15,110,86,0.15)',fill:true,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false}});
+  new Chart(document.getElementById('chGA4'), {type:'line',data:{labels:DATES,datasets:[{label:'Сесії',data:GA4,borderColor:'#5A3F8C',fill:false,tension:0.3},{label:'Конверсії',data:GA4C,borderColor:'#FE391F',fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false}});
+}, 100);
+</script>
+</body></html>
